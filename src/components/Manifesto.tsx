@@ -8,7 +8,7 @@ export default function Manifesto() {
 
   return (
     <section id="manifesto" className="bg-ink text-paper py-20 md:py-28 px-6 md:px-10">
-      <p className="text-xs label text-paper/50 mb-8">{t.kicker}</p>
+      <p className="label text-paper/50 mb-8">{t.kicker}</p>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}

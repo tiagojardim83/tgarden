@@ -14,7 +14,7 @@ export default function FeatureStrip() {
             data-cursor="VIEW"
             className="group relative px-6 md:px-10 py-10 md:py-14 min-h-[280px] md:min-h-[380px] flex flex-col justify-between gap-10 border-ink/15 md:border-l first:border-l-0 [border-left-width:0] md:[border-left-width:1px] bg-paper hover:bg-ink transition-colors duration-500 cursor-default"
           >
-            <p className="text-xs label text-ink-soft group-hover:text-paper/50 transition-colors duration-500">
+            <p className="label text-ink-soft group-hover:text-paper/50 transition-colors duration-500">
               {item.number} / {t.kicker}
             </p>
 

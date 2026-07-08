@@ -1,7 +1,7 @@
 import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import uxuiImg from '../assets/images/thumb-ux-ui.jpg'
-import tgardenImg from '../assets/images/project-tgarden.jpg'
+import tgardenImg from '../assets/images/Thumb_lobs.jpg'
 import lobsImg from '../assets/images/project-lobs.jpg'
 import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
@@ -95,9 +95,23 @@ export const projectsCopy = {
   en: { kicker: '02 — Projects', heading: 'Seven fronts, one same signature.', cta: 'All fronts' },
 }
 
-export const projects = [
+export interface ProjectSummary {
+  id: string
+  slug?: string
+  category: string
+  title: string
+  year: string
+  count: string
+  countEn: string
+  tag: string
+  tagEn: string
+  image: string
+}
+
+export const projects: ProjectSummary[] = [
   {
     id: 'visual-identity',
+    slug: 'maoka',
     category: 'Visual Identity',
     title: 'Maoka',
     year: '2024',
@@ -109,6 +123,7 @@ export const projects = [
   },
   {
     id: 'key-visual',
+    slug: 'figa',
     category: 'Key Visual',
     title: 'Figa',
     year: '2025/26',
@@ -120,6 +135,7 @@ export const projects = [
   },
   {
     id: 'ux-ui',
+    slug: 'movimento-humano',
     category: 'UX/UI Design',
     title: 'Movimento Humano',
     year: '2025/26',
@@ -131,6 +147,7 @@ export const projects = [
   },
   {
     id: 'web-design',
+    slug: 'tgarden-site',
     category: 'Web Design & Development',
     title: 'TGarden',
     year: '2025/26',
@@ -142,6 +159,7 @@ export const projects = [
   },
   {
     id: 'motion-design',
+    slug: 'carnaval-dos-sonhos',
     category: 'Motion Design',
     title: 'Carnaval dos Sonhos',
     year: '2025/26',
@@ -153,6 +171,7 @@ export const projects = [
   },
   {
     id: 'packaging',
+    slug: 'velvo',
     category: 'Packaging Design',
     title: 'Velvo',
     year: '2025/26',
@@ -164,6 +183,7 @@ export const projects = [
   },
   {
     id: 'fashion',
+    slug: 'lobs-brazilian-art',
     category: 'Fashion Design',
     title: 'Lobs Brazilian Art',
     year: '2025/26',
@@ -214,25 +234,37 @@ export const manifestoCopy = {
 export const contactCopy = {
   pt: {
     kicker: '06 — Contact',
-    heading: "Vamos falar sobre uma ideia.",
-    sub: 'Conte um pouco sobre o seu projeto — respondo pessoalmente.',
+    heading: 'Vamos falar sobre uma ideia.',
     name: 'Nome',
+    namePlaceholder: 'Seu nome',
     email: 'E-mail',
+    emailPlaceholder: 'voce@email.com',
     subject: 'Assunto',
+    subjectPlaceholder: 'Sobre o que é?',
     message: 'Mensagem',
+    messagePlaceholder: 'Conte um pouco sobre sua ideia, projeto ou convite.',
     send: 'Enviar mensagem',
-    location: 'Armação dos Búzios · RJ/BR · Atende Brasil & Exterior',
+    direct: 'Direto',
+    social: 'Redes',
+    locationLine1: 'Armação dos Búzios | RJ/BR',
+    locationLine2: 'Atende Brasil & Exterior',
   },
   en: {
     kicker: '06 — Contact',
     heading: "Let's talk about an idea.",
-    sub: 'Tell me a bit about your project — I answer personally.',
     name: 'Name',
+    namePlaceholder: 'Your name',
     email: 'E-mail',
+    emailPlaceholder: 'you@email.com',
     subject: 'Subject',
+    subjectPlaceholder: "What's it about?",
     message: 'Message',
+    messagePlaceholder: 'Tell me a bit about your idea, project or invitation.',
     send: 'Send message',
-    location: 'Armação dos Búzios · RJ/BR · Serving Brazil & abroad',
+    direct: 'Direct',
+    social: 'Social',
+    locationLine1: 'Armação dos Búzios | RJ/BR',
+    locationLine2: 'Serving Brazil & abroad',
   },
 }
 
@@ -247,3 +279,26 @@ export const socials = [
 export const email = 'tiagojardim@tgarden.com.br'
 
 export const footerWord = '© DESIGN & IMPACTO'
+
+export const projectPageCopy = {
+  pt: {
+    back: 'Voltar',
+    project: 'Projeto',
+    client: 'Cliente',
+    sector: 'Setor',
+    year: 'Ano',
+    scope: 'Escopo',
+    moreProjects: 'Mais projetos',
+    allProjects: 'Todos os projetos',
+  },
+  en: {
+    back: 'Back',
+    project: 'Project',
+    client: 'Client',
+    sector: 'Sector',
+    year: 'Year',
+    scope: 'Scope',
+    moreProjects: 'More projects',
+    allProjects: 'All projects',
+  },
+}

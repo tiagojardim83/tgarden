@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
 import { navItems } from '../data/content'
 import { useLang } from '../lib/lang'
@@ -6,9 +7,15 @@ import { useLang } from '../lib/lang'
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const { lang, toggle } = useLang()
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
 
   const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    if (pathname === '/') {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate(`/#${id}`)
+    }
     setMenuOpen(false)
   }
 
@@ -29,7 +36,7 @@ export default function Nav() {
             <button
               key={item.id}
               onClick={() => scrollTo(item.id)}
-              className="text-xs label py-2 hover:text-red transition-colors"
+              className="label py-2 hover:text-red transition-colors"
             >
               {item.label}
             </button>
@@ -39,7 +46,7 @@ export default function Nav() {
         <div className="flex items-center gap-4">
           <button
             onClick={toggle}
-            className="text-xs label border border-ink px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-300"
+            className="label border border-ink px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-300"
             aria-label="Toggle language"
           >
             {lang === 'pt' ? 'EN' : 'PT'}
@@ -48,7 +55,7 @@ export default function Nav() {
           <button
             onClick={() => scrollTo('contact')}
             data-cursor="GO"
-            className="hidden sm:inline-flex items-center gap-1.5 text-xs label hover:text-red transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 label hover:text-red transition-colors"
           >
             {lang === 'pt' ? 'Falar comigo' : 'Talk to me'} →
           </button>

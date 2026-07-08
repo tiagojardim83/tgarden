@@ -16,7 +16,7 @@ export default function Footer() {
         />
       </div>
 
-      <div className="mt-10 px-6 md:px-10 py-6 border-t border-paper/15 flex flex-wrap items-center justify-between gap-4 text-xs label text-paper/60">
+      <div className="mt-10 px-6 md:px-10 py-6 border-t border-paper/15 flex flex-wrap items-center justify-between gap-4 label text-paper/60">
         <span>© {year} TGarden — Tiago Jardim</span>
 
         <nav className="hidden md:flex items-center gap-6">

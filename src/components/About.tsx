@@ -25,10 +25,10 @@ export default function About() {
         </motion.h2>
 
         <div className="col-span-1 md:col-span-3">
-          <p className="text-xs label text-ink-soft mb-6">{t.kicker}</p>
+          <p className="label text-ink-soft mb-6">{t.kicker}</p>
           <ul className="flex flex-col gap-2.5">
             {competencies.map((c) => (
-              <li key={c} className="text-[10px] label text-ink">
+              <li key={c} className="label text-ink">
                 + {c}
               </li>
             ))}

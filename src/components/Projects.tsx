@@ -1,4 +1,5 @@
 import { useRef, useState, type MouseEvent } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, useMotionValue, useSpring } from 'motion/react'
 import { projects, projectsCopy } from '../data/content'
 import { useLang } from '../lib/lang'
@@ -8,6 +9,7 @@ export default function Projects() {
   const t = projectsCopy[lang]
   const [hovered, setHovered] = useState<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const navigate = useNavigate()
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -25,7 +27,7 @@ export default function Projects() {
     <section id="projects" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
       <div className="flex items-end justify-between mb-14 gap-6 flex-wrap">
         <div>
-          <p className="text-xs label text-ink-soft mb-4">{t.kicker}</p>
+          <p className="label text-ink-soft mb-4">{t.kicker}</p>
           <h2 className="font-display uppercase text-4xl md:text-6xl leading-[1.05] max-w-2xl">{t.heading}</h2>
         </div>
       </div>
@@ -34,7 +36,13 @@ export default function Projects() {
         {projects.map((project, i) => (
           <motion.a
             key={project.id}
-            href={`#${project.id}`}
+            href={project.slug ? `/tgarden/projetos/${project.slug}` : `#${project.id}`}
+            onClick={(e) => {
+              if (project.slug) {
+                e.preventDefault()
+                navigate(`/projetos/${project.slug}`)
+              }
+            }}
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
             initial={{ opacity: 0, y: 16 }}
@@ -57,7 +65,7 @@ export default function Projects() {
               {lang === 'pt' ? project.tag : project.tagEn}
             </span>
             <span
-              className={`hidden md:block text-xs label w-16 text-right transition-colors ${
+              className={`hidden md:block label w-16 text-right transition-colors ${
                 hovered === i ? 'text-paper/60' : 'text-ink-soft group-hover:text-red'
               }`}
             >
@@ -81,7 +89,7 @@ export default function Projects() {
       </div>
 
       <div className="flex justify-end mt-6">
-        <a href="#fragments" data-cursor="GO" className="text-xs label hover:text-red transition-colors">
+        <a href="#fragments" data-cursor="GO" className="label hover:text-red transition-colors">
           {t.cta} →
         </a>
       </div>

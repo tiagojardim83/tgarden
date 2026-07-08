@@ -51,7 +51,7 @@ export default function Hero() {
                 {t.sub}
               </p>
               <div className="w-10 h-px bg-ink mb-3" />
-              <p className="inline-block bg-ink text-paper font-sans text-xs label px-3 py-1.5">{t.tag}</p>
+              <p className="inline-block bg-ink text-paper font-sans label px-3 py-1.5">{t.tag}</p>
             </motion.div>
 
             <span className="block overflow-hidden">
@@ -82,7 +82,7 @@ export default function Hero() {
             {t.sub}
           </p>
           <div className="w-10 h-px bg-ink mb-3" />
-          <p className="inline-block bg-ink text-paper text-xs label px-3 py-1.5">{t.tag}</p>
+          <p className="inline-block bg-ink text-paper label px-3 py-1.5">{t.tag}</p>
         </motion.div>
       </div>
     </section>

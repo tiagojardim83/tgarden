@@ -1,34 +1,25 @@
+import { Route, Routes } from 'react-router-dom'
 import { MotionConfig } from 'motion/react'
 import { LangProvider } from './lib/lang'
 import Cursor from './components/Cursor'
 import Nav from './components/Nav'
-import Hero from './components/Hero'
-import FeatureStrip from './components/FeatureStrip'
-import About from './components/About'
-import Projects from './components/Projects'
-import Skills from './components/Skills'
-import Fragments from './components/Fragments'
-import Manifesto from './components/Manifesto'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Home from './pages/Home'
+import ProjectPage from './pages/ProjectPage'
 
 function App() {
   return (
     <MotionConfig reducedMotion="user">
       <LangProvider>
         <Cursor />
-        <Nav />
-        <main>
-          <Hero />
-          <FeatureStrip />
-          <About />
-          <Projects />
-          <Skills />
-          <Fragments />
-          <Manifesto />
-          <Contact />
-        </main>
-        <Footer />
+        <div className="max-w-[1260px] mx-auto bg-paper">
+          <Nav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projetos/:slug" element={<ProjectPage />} />
+          </Routes>
+          <Footer />
+        </div>
       </LangProvider>
     </MotionConfig>
   )

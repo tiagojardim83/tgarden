@@ -43,7 +43,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
-      <p className="text-xs label text-ink-soft mb-4">{t.kicker}</p>
+      <p className="label text-ink-soft mb-4">{t.kicker}</p>
       <h2 className="font-display uppercase text-4xl md:text-6xl leading-[1.05] max-w-2xl mb-14">{t.heading}</h2>
 
       <div className="grid md:grid-cols-2 gap-x-16">
