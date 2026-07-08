@@ -9,11 +9,11 @@ export default function About() {
   const t = about[lang]
 
   return (
-    <section id="about" className="relative px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
+    <section id="about" className="relative px-6 md:px-10 pt-20 md:pt-28">
       <Globe className="absolute right-0 top-0 w-56 md:w-80 z-0 pointer-events-auto" />
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-10 md:gap-y-14">
-        <div className="hidden md:block md:col-span-3" />
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-10 md:gap-y-14 md:items-start">
+        <p className="label text-ink-soft col-span-1 md:col-span-3">{t.kicker}</p>
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,16 +24,13 @@ export default function About() {
           {t.heading}
         </motion.h2>
 
-        <div className="col-span-1 md:col-span-3">
-          <p className="label text-ink-soft mb-6">{t.kicker}</p>
-          <ul className="flex flex-col gap-2.5">
-            {competencies.map((c) => (
-              <li key={c} className="label text-ink">
-                + {c}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="col-span-1 md:col-span-3 flex flex-col gap-2.5">
+          {competencies.map((c) => (
+            <li key={c} className="label text-ink">
+              + {c}
+            </li>
+          ))}
+        </ul>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}

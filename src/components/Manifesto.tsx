@@ -8,19 +8,21 @@ export default function Manifesto() {
 
   return (
     <section id="manifesto" className="bg-ink text-paper py-20 md:py-28 px-6 md:px-10">
-      <p className="label text-paper/50 mb-8">{t.kicker}</p>
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-6 md:items-start">
+        <p className="label text-paper/50 md:col-span-3">{t.kicker}</p>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="font-display uppercase text-3xl md:text-5xl leading-[1.15] max-w-4xl"
-      >
-        {t.text}
-      </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="md:col-span-9 font-display uppercase text-4xl md:text-6xl leading-[1.15]"
+        >
+          {t.text}
+        </motion.p>
 
-      <p className="mt-10 text-sm text-paper/50">{t.signature}</p>
+        <p className="md:col-start-4 md:col-span-9 text-sm text-paper/50">{t.signature}</p>
+      </div>
     </section>
   )
 }

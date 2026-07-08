@@ -1,6 +1,5 @@
 import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
-import uxuiImg from '../assets/images/thumb-ux-ui.jpg'
 import tgardenImg from '../assets/images/Thumb_lobs.jpg'
 import lobsImg from '../assets/images/project-lobs.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
@@ -30,6 +29,9 @@ export interface ProjectDetail {
   categoryTotal: string
   year: string
   heroImage: string
+  heroVideoKey?: string
+  /** false = fact sheet renders once, right under the intro. Defaults to true (repeats after every section, as in Maoka). */
+  factSheetRepeat?: boolean
   pt: ProjectDetailCopy
   en: ProjectDetailCopy
 }
@@ -46,6 +48,7 @@ interface ProjectDetailCopy {
   category: string
   title: string
   heroStatement: string
+  intro?: string[]
   client: string
   sector: string
   scope: string
@@ -177,117 +180,93 @@ export const projectDetails: ProjectDetail[] = [
     categoryTotal: '05',
     year: '2025',
     heroImage: figaImg,
+    heroVideoKey: 'figa-01',
+    factSheetRepeat: false,
     pt: {
       category: 'Key Visual',
       title: 'Figa',
-      heroStatement: 'Uma key visual não ilustra o evento. Ela é o motivo pra ir.',
-      client: 'Figa',
-      sector: 'Eventos & Cultura',
-      scope: 'Key Visual, Direção de Arte',
+      heroStatement: 'Key visual',
+      intro: [
+        'Key visuals construídos como sistemas vivos — imagens em movimento que carregam a marca por telas, palcos e ruas.',
+      ],
+      client: 'Figa, Movida, Rokka',
+      sector: 'Eventos & Marcas de Experiência',
+      scope: 'Key Visual, Motion, Direção de Arte',
       sections: [
         {
           videoKey: 'figa-02',
-          heading: 'Uma imagem, mil aplicações.',
-          text: 'Cartaz, story, palco, ingresso — a mesma peça central precisa funcionar em qualquer formato sem perder força. Key visual é sistema, não decoração.',
-          client: 'Figa',
+          heading: 'Uma imagem que se move, uma marca que respira.',
+          text: 'Key visual é mais do que um cartaz. É uma postura — o jeito que a marca se posiciona, aparece e fala em cada ponto de contato. Cada projeto nasce de um gesto e se desdobra em sistema: tipografia, ritmo, cor e movimento trabalhando como um só.',
+          client: 'Movida',
           sector: 'Eventos & Cultura',
         },
         {
           videoKey: 'figa-03',
-          heading: 'Ritmo visual para uma line-up.',
-          text: 'Tipografia com energia de palco, paleta vibrante e uma composição que muda de escala sem perder identidade — do outdoor ao feed.',
-          client: 'Figa',
+          heading: 'Uma composição, muitas histórias.',
+          text: 'A mesma grade visual acomoda peças completamente diferentes sem perder identidade — porque o sistema é a marca, não cada peça individual.',
+          client: 'Movida',
           sector: 'Eventos & Cultura',
+        },
+        {
+          videoKey: 'figa-04',
+          heading: 'Frames como linguagem de marca.',
+          text: 'Movimento é editorial. Corte, cadência e textura definem a voz da marca tanto quanto tipografia ou cor. De aberturas de evento a loops para redes sociais, cada peça nasce pra viver em movimento antes de virar impresso.',
+          client: 'Rokka',
+          sector: 'Música & Vida Noturna',
+        },
+        {
+          videoKey: 'figa-05',
+          heading: 'Um sistema, muitas superfícies.',
+          text: 'A mesma key visual escala de uma tela de celular a um painel de rua sem perder tensão ou clareza. Modularidade, contenção e um gesto central forte: é isso que segura tudo junto em qualquer formato.',
+          client: 'Figa, Movida, Rokka',
+          sector: 'Aplicação Urbana & Impressa',
         },
       ],
       closing:
-        'UMA KEY VISUAL FORTE SE RECONHECE DE LONGE E FUNCIONA DE PERTO. NA TGARDEN, CONSTRUÍMOS IMAGENS-CHAVE QUE CARREGAM UMA CAMPANHA INTEIRA NAS COSTAS.',
+        'KEY VISUAL COMO COREOGRAFIA — UMA MARCA QUE CHEGA EM MOVIMENTO E FICA NA MEMÓRIA.',
     },
     en: {
       category: 'Key Visual',
       title: 'Figa',
-      heroStatement: "A key visual doesn't illustrate the event. It's the reason to go.",
-      client: 'Figa',
-      sector: 'Events & Culture',
-      scope: 'Key Visual, Art Direction',
+      heroStatement: 'Key visual',
+      intro: [
+        'Key visuals built as living systems — moving images that carry the brand across screens, stages and streets.',
+      ],
+      client: 'Figa, Movida, Rokka',
+      sector: 'Events & Experience Brands',
+      scope: 'Key Visual, Motion, Art Direction',
       sections: [
         {
           videoKey: 'figa-02',
-          heading: 'One image, a thousand applications.',
-          text: 'Poster, story, stage, ticket — the same central piece has to work in every format without losing strength. Key visual is a system, not decoration.',
-          client: 'Figa',
+          heading: 'An image that moves, a brand that breathes.',
+          text: "Key visual is more than a poster. It's a posture — the way the brand stands, looks and speaks across every touchpoint. Each project starts with a gesture and unfolds into a system: type, rhythm, color and motion working as one.",
+          client: 'Movida',
           sector: 'Events & Culture',
         },
         {
           videoKey: 'figa-03',
-          heading: 'Visual rhythm for a line-up.',
-          text: 'Typography with stage energy, a vibrant palette and a composition that changes scale without losing identity — from billboard to feed.',
-          client: 'Figa',
+          heading: 'One composition, many stories.',
+          text: 'The same visual grid holds completely different pieces without losing identity — because the system is the brand, not any single piece.',
+          client: 'Movida',
           sector: 'Events & Culture',
         },
-      ],
-      closing:
-        'A STRONG KEY VISUAL IS RECOGNIZED FROM FAR AWAY AND WORKS UP CLOSE. AT TGARDEN, WE BUILD KEY IMAGES THAT CARRY AN ENTIRE CAMPAIGN ON THEIR BACK.',
-    },
-  },
-  {
-    slug: 'movimento-humano',
-    categoryId: 'ux-ui',
-    projectNumber: '01',
-    categoryTotal: '01',
-    year: '2025',
-    heroImage: uxuiImg,
-    pt: {
-      category: 'UX/UI Design',
-      title: 'Movimento Humano',
-      heroStatement: 'Boa interface não se nota. Ela só funciona.',
-      client: 'Movimento Humano',
-      sector: 'Saúde & Bem-estar Digital',
-      scope: 'UX/UI Design, Produto Digital',
-      sections: [
         {
-          videoKey: 'movimento-02',
-          heading: 'Fluxo antes de tela.',
-          text: 'Cada tela existe pra resolver uma decisão do usuário. Antes de desenhar um pixel, mapeamos a jornada inteira — onde trava, onde flui, onde perde.',
-          client: 'Movimento Humano',
-          sector: 'Saúde & Bem-estar Digital',
+          videoKey: 'figa-04',
+          heading: 'Frames as brand language.',
+          text: 'Movement is editorial. Cuts, pacing and texture define the voice as much as type or color do. From event openers to social loops, each piece is built to live in motion first and translate into print second.',
+          client: 'Rokka',
+          sector: 'Music & Nightlife',
         },
         {
-          videoKey: 'movimento-03',
-          heading: 'Consistência é confiança.',
-          text: 'Um sistema de componentes coerente faz o produto parecer maior do que é — e mais fácil de usar do que qualquer concorrente.',
-          client: 'Movimento Humano',
-          sector: 'Saúde & Bem-estar Digital',
+          videoKey: 'figa-05',
+          heading: 'One system, many surfaces.',
+          text: "The same key visual scales from a phone screen to a stage backdrop without losing tension or clarity. Modularity, restraint and a strong central gesture: that's what holds it together across formats.",
+          client: 'Figa, Movida, Rokka',
+          sector: 'Street & Print Application',
         },
       ],
       closing:
-        'UMA BOA INTERFACE É INVISÍVEL: O USUÁRIO SÓ PERCEBE O QUE CONSEGUIU FAZER, NUNCA O CAMINHO QUE PERCORREU.',
-    },
-    en: {
-      category: 'UX/UI Design',
-      title: 'Movimento Humano',
-      heroStatement: "Good interface goes unnoticed. It just works.",
-      client: 'Movimento Humano',
-      sector: 'Digital Health & Wellness',
-      scope: 'UX/UI Design, Digital Product',
-      sections: [
-        {
-          videoKey: 'movimento-02',
-          heading: 'Flow before screen.',
-          text: 'Every screen exists to resolve a user decision. Before drawing a single pixel, we map the entire journey — where it stalls, where it flows, where it loses people.',
-          client: 'Movimento Humano',
-          sector: 'Digital Health & Wellness',
-        },
-        {
-          videoKey: 'movimento-03',
-          heading: 'Consistency is trust.',
-          text: 'A coherent component system makes the product feel bigger than it is — and easier to use than any competitor.',
-          client: 'Movimento Humano',
-          sector: 'Digital Health & Wellness',
-        },
-      ],
-      closing:
-        'A GOOD INTERFACE IS INVISIBLE: THE USER ONLY NOTICES WHAT THEY MANAGED TO DO, NEVER THE PATH THEY TOOK TO GET THERE.',
+        'KEY VISUAL AS CHOREOGRAPHY — A BRAND THAT ARRIVES MOVING AND STAYS IN THE MEMORY.',
     },
   },
   {

@@ -43,8 +43,12 @@ export default function Skills() {
 
   return (
     <section id="skills" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
-      <p className="label text-ink-soft mb-4">{t.kicker}</p>
-      <h2 className="font-display uppercase text-4xl md:text-6xl leading-[1.05] max-w-2xl mb-14">{t.heading}</h2>
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mb-14">
+        <p className="label text-ink-soft md:col-span-3">{t.kicker}</p>
+        <h2 className="md:col-span-9 font-display uppercase text-4xl md:text-6xl leading-[1.05]">
+          {t.heading}
+        </h2>
+      </div>
 
       <div className="grid md:grid-cols-2 gap-x-16">
         {columns.map((col, ci) => (

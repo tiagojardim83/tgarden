@@ -4,7 +4,7 @@ import { useLang } from '../lib/lang'
 import { getProjectDetail, getSectionVideo } from '../data/projectDetails'
 import { projects, projectPageCopy } from '../data/content'
 
-function FactSheet({
+export function FactSheet({
   client,
   sector,
   year,
@@ -49,6 +49,7 @@ export default function ProjectPage() {
 
   const copy = detail[lang]
   const otherProjects = projects.filter((p) => p.id !== detail.categoryId)
+  const heroVideoUrl = detail.heroVideoKey ? getSectionVideo(detail.heroVideoKey) : undefined
 
   return (
     <main className="px-6 md:px-10 pt-8 md:pt-10">
@@ -56,32 +57,61 @@ export default function ProjectPage() {
         ← {ui.back}
       </Link>
 
-      <div className="mt-10 md:mt-14">
-        <p className="label text-ink-soft mb-3">
-          {ui.project} {detail.projectNumber} / {detail.categoryTotal}
-        </p>
-        <p className="label text-red mb-6">
-          {detail.year} — {copy.category}
-        </p>
+      <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-6 md:items-start">
+        <div className="md:col-span-3">
+          <p className="label text-ink-soft mb-3">
+            {ui.project} {detail.projectNumber} / {detail.categoryTotal}
+          </p>
+          <p className="label text-red">{detail.year} — {copy.category}</p>
+        </div>
+
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="font-display uppercase text-3xl md:text-6xl leading-[1.05] max-w-4xl"
+          className="md:col-start-4 md:col-span-9 font-display uppercase text-3xl md:text-6xl leading-[1.05]"
         >
           {copy.heroStatement}
         </motion.h1>
+
+        {copy.intro && (
+          <div className="md:col-start-4 md:col-span-9 flex flex-col gap-4">
+            {copy.intro.map((p, i) => (
+              <p key={i} className="text-sm md:text-base leading-relaxed text-ink-soft">
+                {p}
+              </p>
+            ))}
+          </div>
+        )}
+
+        {detail.factSheetRepeat === false && (
+          <div className="md:col-start-4 md:col-span-9">
+            <FactSheet client={copy.client} sector={copy.sector} year={detail.year} scope={copy.scope} ui={ui} />
+          </div>
+        )}
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="mt-12 md:mt-16 aspect-[16/9] overflow-hidden bg-ink/5"
-      >
-        <img src={detail.heroImage} alt={copy.title} className="w-full h-full object-cover" />
-      </motion.div>
+      {heroVideoUrl ? (
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="-mx-6 md:-mx-10 mt-12 md:mt-16 bg-ink"
+        >
+          <video src={heroVideoUrl} autoPlay muted loop playsInline className="w-full h-auto block" />
+        </motion.div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-12 md:mt-16 aspect-[16/9] overflow-hidden bg-ink/5"
+        >
+          <img src={detail.heroImage} alt={copy.title} className="w-full h-full object-cover" />
+        </motion.div>
+      )}
 
       <div className="flex flex-col gap-16 md:gap-24 mt-16 md:mt-24">
         {copy.sections.map((s, i) => {
@@ -94,11 +124,15 @@ export default function ProjectPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="max-w-2xl"
+                className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
               >
-                {displayNumber && <p className="label text-ink-soft mb-3">{displayNumber}</p>}
-                <h2 className="font-display uppercase text-2xl md:text-4xl leading-tight mb-4">{s.heading}</h2>
-                <p className="text-sm md:text-base leading-relaxed text-ink-soft">{s.text}</p>
+                {displayNumber && <p className="label text-ink-soft md:col-span-3">{displayNumber}</p>}
+                <h2 className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight">
+                  {s.heading}
+                </h2>
+                <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
+                  {s.text}
+                </p>
               </motion.div>
 
               {videoUrl && (
@@ -113,9 +147,11 @@ export default function ProjectPage() {
                 </motion.div>
               )}
 
-              <div className="mt-8 md:mt-10">
-                <FactSheet client={s.client} sector={s.sector} year={detail.year} scope={copy.scope} ui={ui} />
-              </div>
+              {detail.factSheetRepeat !== false && (
+                <div className="mt-8 md:mt-10">
+                  <FactSheet client={s.client} sector={s.sector} year={detail.year} scope={copy.scope} ui={ui} />
+                </div>
+              )}
             </div>
           )
         })}
@@ -139,14 +175,14 @@ export default function ProjectPage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {otherProjects.map((p) => (
             <Link key={p.id} to="/#projects" data-cursor="VIEW" className="group block">
-              <div className="aspect-[4/5] overflow-hidden bg-ink/5">
+              <div className="aspect-video overflow-hidden bg-ink/5">
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                 />
               </div>
               <p className="label text-ink-soft mt-3">{p.category}</p>

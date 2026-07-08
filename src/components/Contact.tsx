@@ -40,8 +40,12 @@ export default function Contact() {
 
   return (
     <section id="contact" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
-      <h2 className="font-display uppercase text-4xl md:text-6xl leading-[1.05] max-w-2xl">{t.heading}</h2>
-      <p className="label text-ink-soft mt-8 mb-14">{t.kicker}</p>
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mb-14">
+        <p className="label text-ink-soft md:col-span-3">{t.kicker}</p>
+        <h2 className="md:col-span-9 font-display uppercase text-4xl md:text-6xl leading-[1.05]">
+          {t.heading}
+        </h2>
+      </div>
 
       <div className="grid md:grid-cols-12 gap-10">
         <div className="md:col-span-7">

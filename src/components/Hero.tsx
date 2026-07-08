@@ -22,7 +22,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative px-6 md:px-10">
+      <div className="relative">
         <h1 className="font-display leading-[0.85]">
           <span className="block overflow-hidden">
             <motion.div
@@ -76,7 +76,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="md:hidden flex flex-col items-start py-6"
+          className="md:hidden flex flex-col items-start px-6 py-6"
         >
           <p className="inline-block bg-ink text-paper text-[11px] md:text-sm font-medium leading-snug normal-case tracking-normal mb-4 px-3 py-2">
             {t.sub}
