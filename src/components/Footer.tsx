@@ -6,12 +6,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-ink text-paper overflow-hidden">
-      <div className="pt-10 md:pt-16">
+      <div className="h-[20vw] md:h-[16vw] flex items-center overflow-hidden">
         <Marquee
           text={footerWord}
           direction="left"
           duration={12}
-          className="font-display text-[13vw] leading-none"
+          className="font-display text-[28vw] md:text-[24vw] leading-none translate-y-[4%]"
           gapClassName="pr-10 md:pr-16"
         />
       </div>
@@ -21,8 +21,13 @@ export default function Footer() {
 
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <a key={item.id} href={`#${item.id}`} className="hover:text-paper transition-colors">
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className="group flex items-center gap-1.5 hover:text-paper transition-colors"
+            >
               {item.label}
+              <span className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
             </a>
           ))}
         </nav>

@@ -1,4 +1,6 @@
+@import '@fontsource/archivo/300.css';
 @import '@fontsource/archivo/500.css';
+@import '@fontsource/archivo/700.css';
 @import '@fontsource/archivo-black/400.css';
 
 @tailwind base;
