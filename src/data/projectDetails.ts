@@ -401,13 +401,6 @@ export const projectDetails: ProjectDetail[] = [
           client: 'Box',
           sector: 'Entretenimento',
         },
-        {
-          videoKey: 'Motion_10',
-          heading: 'Uma marca que pulsa.',
-          text: 'O resultado final é uma identidade que se movimenta com naturalidade em qualquer tela.',
-          client: 'Cidades Invisíveis',
-          sector: 'Fotografia & Responsabilidade Social',
-        },
       ],
       closing:
         'CIDADES INVISÍVEIS SÓ EXISTEM PRA QUEM NUNCA PRECISOU OLHAR PRA ELAS.',
@@ -475,13 +468,6 @@ export const projectDetails: ProjectDetail[] = [
           text: 'Each piece tells a short story, with a beginning, climax and resolution within a few seconds.',
           client: 'Box',
           sector: 'Entertainment',
-        },
-        {
-          videoKey: 'Motion_10',
-          heading: 'A brand that pulses.',
-          text: 'The final result is an identity that moves naturally across any screen.',
-          client: 'Cidades Invisíveis',
-          sector: 'Photography & Social Responsibility',
         },
       ],
       closing:
