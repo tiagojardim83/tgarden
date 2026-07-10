@@ -82,7 +82,7 @@ export default function Nav() {
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="md:hidden fixed inset-0 z-[100] bg-ink flex flex-col items-center justify-center gap-8"
+            className="md:hidden fixed inset-0 z-[100] bg-red flex flex-col items-center justify-center px-6"
           >
             <button
               className="absolute top-6 right-6 flex flex-col gap-1.5 w-7"
@@ -93,18 +93,20 @@ export default function Nav() {
               <span className="h-[2px] bg-paper block -rotate-45 -translate-y-[3px]" />
             </button>
 
-            {navItems.map((item, i) => (
-              <motion.button
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + i * 0.06 }}
-                onClick={() => scrollTo(item.id)}
-                className="font-display text-paper text-3xl"
-              >
-                {item.label}
-              </motion.button>
-            ))}
+            <div className="w-full max-w-sm border-t border-paper/30">
+              {navItems.map((item, i) => (
+                <motion.button
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.06 }}
+                  onClick={() => scrollTo(item.id)}
+                  className="w-full border-b border-paper/30 py-5 font-display uppercase text-paper text-3xl"
+                >
+                  {item.label}
+                </motion.button>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>,
