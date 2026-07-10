@@ -18,8 +18,8 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projetos/movimento-humano" element={<MovimentoHumano />} />
-          <Route path="/projetos/:slug" element={<ProjectPage />} />
+          <Route path="/projects/movimento-humano" element={<MovimentoHumano />} />
+          <Route path="/projects/:slug" element={<ProjectPage />} />
         </Routes>
         <Footer />
       </LangProvider>
