@@ -187,7 +187,7 @@ export default function ProjectPage() {
           {otherProjects.map((p) => (
             <Link
               key={p.id}
-              to={p.slug ? `/projects/${p.slug}` : '/#projects'}
+              to={p.slug ? `/projetos/${p.slug}` : '/#projects'}
               data-cursor="VIEW"
               className="group block"
             >

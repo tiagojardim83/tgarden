@@ -35,7 +35,7 @@ function ProjectRow({
   return (
     <motion.a
       ref={rowRef}
-      href={project.slug ? `/tgarden/projects/${project.slug}` : `#${project.id}`}
+      href={project.slug ? `/tgarden/projetos/${project.slug}` : `#${project.id}`}
       onClick={onNavigate}
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverEnd}
@@ -138,7 +138,7 @@ export default function Projects() {
             onNavigate={(e) => {
               if (project.slug) {
                 e.preventDefault()
-                navigate(`/projects/${project.slug}`)
+                navigate(`/projetos/${project.slug}`)
               }
             }}
           />
