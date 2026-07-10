@@ -16,7 +16,7 @@ export default function About() {
 
   return (
     <section id="about" className="relative px-6 md:px-10 pt-20 md:pt-28">
-      <Globe className="absolute right-0 top-20 md:top-28 w-32 sm:w-48 md:w-80 -translate-x-6 md:-translate-x-16 lg:-translate-x-24 z-0 pointer-events-auto" />
+      <Globe className="absolute right-0 top-20 md:top-28 w-32 sm:w-48 md:w-80 -translate-x-6 md:-translate-x-16 lg:-translate-x-24 z-20 pointer-events-auto" />
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-10 md:gap-y-14 md:items-start">
         <p className="label text-ink-soft col-span-1 md:col-span-3">{t.kicker}</p>
