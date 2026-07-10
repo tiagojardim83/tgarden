@@ -29,7 +29,7 @@ function ProjectRow({
   const imageRotate = useTransform(scrollYProgress, [0, 1], [-14, 6])
 
   const canHover = useCanHover()
-  const inView = useInView(rowRef, { amount: 0.5 })
+  const inView = useInView(rowRef, { margin: '-50% 0px -50% 0px' })
   const active = isHovered || (!canHover && inView)
 
   return (
@@ -89,7 +89,7 @@ export default function Projects() {
   const navigate = useNavigate()
   const headingRef = useRef<HTMLHeadingElement>(null)
   const canHoverHeading = useCanHover()
-  const headingInView = useInView(headingRef, { amount: 0.6 })
+  const headingInView = useInView(headingRef, { margin: '-50% 0px -50% 0px' })
   const headingActive = !canHoverHeading && headingInView
 
   const x = useMotionValue(0)

@@ -16,7 +16,7 @@ const CELLS = [
 function FragmentCell({ src, i }: { src: string; i: number }) {
   const ref = useRef<HTMLDivElement>(null)
   const canHover = useCanHover()
-  const inView = useInView(ref, { amount: 0.6 })
+  const inView = useInView(ref, { margin: '-50% 0px -50% 0px' })
   const active = !canHover && inView
 
   return (
@@ -46,7 +46,7 @@ export default function Fragments() {
   const t = fragmentsCopy[lang]
   const headingRef = useRef<HTMLHeadingElement>(null)
   const canHover = useCanHover()
-  const headingInView = useInView(headingRef, { amount: 0.6 })
+  const headingInView = useInView(headingRef, { margin: '-50% 0px -50% 0px' })
   const headingActive = !canHover && headingInView
 
   return (

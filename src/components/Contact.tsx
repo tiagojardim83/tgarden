@@ -32,7 +32,7 @@ function FormField({
 function SocialLink({ label, href }: { label: string; href: string }) {
   const ref = useRef<HTMLAnchorElement>(null)
   const canHover = useCanHover()
-  const inView = useInView(ref, { amount: 0.8 })
+  const inView = useInView(ref, { margin: '-50% 0px -50% 0px' })
   const active = !canHover && inView
 
   return (
@@ -61,11 +61,11 @@ export default function Contact() {
 
   const headingRef = useRef<HTMLHeadingElement>(null)
   const canHover = useCanHover()
-  const headingInView = useInView(headingRef, { amount: 0.6 })
+  const headingInView = useInView(headingRef, { margin: '-50% 0px -50% 0px' })
   const headingActive = !canHover && headingInView
 
   const emailRef = useRef<HTMLAnchorElement>(null)
-  const emailInView = useInView(emailRef, { amount: 0.8 })
+  const emailInView = useInView(emailRef, { margin: '-50% 0px -50% 0px' })
   const emailActive = !canHover && emailInView
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {

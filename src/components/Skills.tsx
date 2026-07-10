@@ -43,7 +43,7 @@ export default function Skills() {
   const columns = [skills.slice(0, half), skills.slice(half)]
   const headingRef = useRef<HTMLHeadingElement>(null)
   const canHover = useCanHover()
-  const headingInView = useInView(headingRef, { amount: 0.6 })
+  const headingInView = useInView(headingRef, { margin: '-50% 0px -50% 0px' })
   const headingActive = !canHover && headingInView
 
   return (

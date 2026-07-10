@@ -8,7 +8,7 @@ import Marquee from './Marquee'
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
   const ref = useRef<HTMLAnchorElement>(null)
   const canHover = useCanHover()
-  const inView = useInView(ref, { amount: 0.8 })
+  const inView = useInView(ref, { margin: '-50% 0px -50% 0px' })
   const active = !canHover && inView
 
   return (
