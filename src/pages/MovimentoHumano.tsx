@@ -335,7 +335,12 @@ export default function MovimentoHumano() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {otherProjects.map((p) => (
-            <Link key={p.id} to="/#projects" data-cursor="VIEW" className="group block">
+            <Link
+              key={p.id}
+              to={p.slug ? `/projetos/${p.slug}` : '/#projects'}
+              data-cursor="VIEW"
+              className="group block"
+            >
               <div className="aspect-video overflow-hidden bg-ink/5">
                 <img
                   src={p.image}

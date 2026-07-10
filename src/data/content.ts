@@ -271,8 +271,6 @@ export const contactCopy = {
 export const socials = [
   { label: 'Instagram', handle: '@_tgarden', href: 'https://instagram.com/_tgarden' },
   { label: 'LinkedIn', handle: 'tiago-jardim', href: 'https://linkedin.com/in/tiago-jardim-5ab6b3b8' },
-  { label: 'Behance', handle: 'tiagojardim', href: 'https://behance.net/tiagojardim' },
-  { label: 'Vimeo', handle: 'tiagojardim', href: 'https://vimeo.com/tiagojardim' },
   { label: 'WhatsApp', handle: 'tgardenstudio', href: 'https://wa.me/tgardenstudio' },
 ]
 

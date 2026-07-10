@@ -25,7 +25,7 @@ export default function Nav() {
         <button
           onClick={() => scrollTo('hero')}
           data-cursor="TOP"
-          className="flex items-center gap-2 font-display uppercase text-sm tracking-tight"
+          className="flex items-center gap-2 label"
         >
           <span className="w-2 h-2 bg-ink inline-block" />
           ©TGarden

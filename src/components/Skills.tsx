@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { motion, useAnimation, useInView } from 'motion/react'
 import { skills, skillsCopy } from '../data/content'
 import { useLang } from '../lib/lang'
+import { useCanHover } from '../lib/useCanHover'
 
 function SkillBar({ skill, index }: { skill: (typeof skills)[number]; index: number }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -40,12 +41,20 @@ export default function Skills() {
   const t = skillsCopy[lang]
   const half = Math.ceil(skills.length / 2)
   const columns = [skills.slice(0, half), skills.slice(half)]
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const canHover = useCanHover()
+  const headingInView = useInView(headingRef, { amount: 0.6 })
+  const headingActive = !canHover && headingInView
 
   return (
     <section id="skills" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mb-14">
         <p className="label text-ink-soft md:col-span-3">{t.kicker}</p>
-        <h2 className="md:col-span-9 font-display uppercase text-4xl md:text-6xl leading-[1.05]">
+        <h2
+          ref={headingRef}
+          data-cursor=""
+          className={`md:col-span-9 font-display uppercase text-5xl md:text-8xl leading-[0.9] md:leading-none tracking-tightest transition-colors duration-300 hover:text-red ${headingActive ? 'text-red' : ''}`}
+        >
           {t.heading}
         </h2>
       </div>

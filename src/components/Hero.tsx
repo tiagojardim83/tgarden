@@ -12,19 +12,19 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col pt-4 md:pt-6">
-      <div className="flex items-start justify-between gap-6 px-6 md:px-10 py-4 md:py-5 border-y border-ink/15 text-sm">
+      <div className="flex items-start justify-between gap-6 px-6 md:px-10 py-4 md:py-5 border-y border-ink/15 text-[10px] leading-[15px] tracking-[0.18em] uppercase">
         <div>
-          <p className="font-light uppercase tracking-tight">{t.name}</p>
+          <p className="font-light">{t.name}</p>
           <p className="font-bold text-ink-soft mt-0.5">· {t.location}</p>
         </div>
-        <div className="text-right uppercase leading-snug">
+        <div className="text-right">
           <p className="font-light">{t.roleLine1}</p>
           <p className="font-bold">{t.roleLine2}</p>
         </div>
       </div>
 
       <div className="relative flex-1 flex flex-col justify-center">
-        <h1 className="font-display leading-[0.85]">
+        <h1 className="font-display leading-[0.78]">
           <span className="block overflow-hidden">
             <motion.div
               initial={{ y: '100%' }}
@@ -36,7 +36,7 @@ export default function Hero() {
                 direction="left"
                 duration={14}
                 separator={dot}
-                className="text-red text-[24vw] md:text-[19vw]"
+                className="text-red text-[24vw] tracking-tightest"
               />
             </motion.div>
           </span>
@@ -66,7 +66,7 @@ export default function Hero() {
                   direction="right"
                   duration={16}
                   separator={dot}
-                  className="text-red text-[24vw] md:text-[19vw]"
+                  className="text-red text-[24vw] tracking-tightest"
                 />
               </motion.div>
             </span>
@@ -79,16 +79,16 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
         >
-          <GlassLogo3D className="w-[94vw] h-[94vw] max-w-[1560px] max-h-[1560px]" />
+          <GlassLogo3D className="w-[390vw] h-[390vw] md:w-[94vw] md:h-[94vw] max-w-[1560px] max-h-[1560px]" />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="md:hidden flex flex-col items-start px-6 py-6"
+          className="md:hidden absolute right-6 bottom-10 z-10 flex flex-col items-start max-w-[75%]"
         >
-          <p className="text-[11px] md:text-sm font-medium leading-snug normal-case tracking-normal text-ink mb-4">
+          <p className="text-[11px] font-medium leading-snug normal-case tracking-normal text-ink mb-4">
             {t.sub}
           </p>
           <div className="w-10 h-px bg-ink mb-3" />

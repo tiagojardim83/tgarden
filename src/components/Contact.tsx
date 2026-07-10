@@ -1,7 +1,8 @@
-import { useState, type FormEvent } from 'react'
-import { motion } from 'motion/react'
+import { useRef, useState, type FormEvent } from 'react'
+import { motion, useInView } from 'motion/react'
 import { contactCopy, email, socials } from '../data/content'
 import { useLang } from '../lib/lang'
+import { useCanHover } from '../lib/useCanHover'
 
 function FormField({
   label,
@@ -28,10 +29,44 @@ function FormField({
   )
 }
 
+function SocialLink({ label, href }: { label: string; href: string }) {
+  const ref = useRef<HTMLAnchorElement>(null)
+  const canHover = useCanHover()
+  const inView = useInView(ref, { amount: 0.8 })
+  const active = !canHover && inView
+
+  return (
+    <a
+      ref={ref}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      data-cursor={label}
+      className={`group flex items-center justify-between py-2.5 border-b border-ink/15 label transition-colors ${
+        active ? 'text-red' : 'hover:text-red'
+      }`}
+    >
+      {label}
+      <span className={`transition-transform duration-300 ${active ? 'translate-x-1' : 'group-hover:translate-x-1'}`}>
+        →
+      </span>
+    </a>
+  )
+}
+
 export default function Contact() {
   const { lang } = useLang()
   const t = contactCopy[lang]
   const [sent, setSent] = useState(false)
+
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const canHover = useCanHover()
+  const headingInView = useInView(headingRef, { amount: 0.6 })
+  const headingActive = !canHover && headingInView
+
+  const emailRef = useRef<HTMLAnchorElement>(null)
+  const emailInView = useInView(emailRef, { amount: 0.8 })
+  const emailActive = !canHover && emailInView
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -42,7 +77,11 @@ export default function Contact() {
     <section id="contact" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mb-14">
         <p className="label text-ink-soft md:col-span-3">{t.kicker}</p>
-        <h2 className="md:col-span-9 font-display uppercase text-4xl md:text-6xl leading-[1.05]">
+        <h2
+          ref={headingRef}
+          data-cursor=""
+          className={`md:col-span-9 font-display uppercase text-5xl md:text-8xl leading-[0.9] md:leading-none tracking-tightest transition-colors duration-300 hover:text-red ${headingActive ? 'text-red' : ''}`}
+        >
           {t.heading}
         </h2>
       </div>
@@ -69,7 +108,7 @@ export default function Contact() {
               <button
                 type="submit"
                 data-cursor="SEND"
-                className="group mt-8 self-start inline-flex items-center gap-3 bg-ink text-paper rounded-md px-6 py-3 label hover:bg-red transition-colors duration-300"
+                className="group mt-8 self-start inline-flex items-center gap-3 bg-ink text-paper px-6 py-3 label hover:bg-red transition-colors duration-300"
               >
                 {t.send}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -82,9 +121,12 @@ export default function Contact() {
           <div>
             <p className="label text-ink-soft mb-3">{t.direct}</p>
             <a
+              ref={emailRef}
               href={`mailto:${email}`}
               data-cursor="MAIL"
-              className="font-display uppercase text-xl md:text-2xl leading-tight hover:text-red transition-colors"
+              className={`font-display uppercase text-2xl md:text-3xl tracking-tightest transition-colors ${
+                emailActive ? 'text-red' : 'hover:text-red'
+              }`}
             >
               {email.split('@')[0]}
               <wbr />@{email.split('@')[1]}
@@ -95,17 +137,7 @@ export default function Contact() {
             <p className="label text-ink-soft mb-3">{t.social}</p>
             <div className="flex flex-col">
               {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  data-cursor={s.label}
-                  className="group flex items-center justify-between py-2.5 border-b border-ink/15 label hover:text-red transition-colors"
-                >
-                  {s.label}
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </a>
+                <SocialLink key={s.label} label={s.label} href={s.href} />
               ))}
             </div>
           </div>
