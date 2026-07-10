@@ -107,6 +107,7 @@ export interface ProjectSummary {
   tag: string
   tagEn: string
   image: string
+  imageFit?: 'contain'
 }
 
 export const projects: ProjectSummary[] = [
@@ -169,6 +170,7 @@ export const projects: ProjectSummary[] = [
     tag: 'Carnaval dos Sonhos',
     tagEn: 'Carnaval dos Sonhos',
     image: motionImg,
+    imageFit: 'contain',
   },
   {
     id: 'packaging',

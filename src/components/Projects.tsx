@@ -72,10 +72,14 @@ function ProjectRow({
       </span>
 
       <motion.div
-        className="md:hidden pointer-events-none absolute right-3 top-3 z-20 w-16 h-16 rounded-md overflow-hidden shadow-xl"
+        className="md:hidden pointer-events-none absolute right-3 top-3 z-20 w-16 h-16 rounded-md overflow-hidden shadow-xl bg-black"
         style={{ opacity: imageOpacity, scale: imageScale, rotate: imageRotate }}
       >
-        <img src={project.image} alt="" className="w-full h-full object-cover" />
+        <img
+          src={project.image}
+          alt=""
+          className={`w-full h-full ${project.imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
+        />
       </motion.div>
     </motion.a>
   )
@@ -141,14 +145,18 @@ export default function Projects() {
         ))}
 
         <motion.div
-          className="pointer-events-none absolute z-20 w-44 h-32 md:w-56 md:h-40 overflow-hidden hidden md:block"
+          className="pointer-events-none absolute z-20 w-44 h-32 md:w-56 md:h-40 overflow-hidden hidden md:block bg-black"
           style={{ left: springX, top: springY, translateX: '-50%', translateY: '-50%' }}
           initial={false}
           animate={{ opacity: hovered !== null ? 1 : 0, scale: hovered !== null ? 1 : 0.92 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
         >
           {hovered !== null && (
-            <img src={projects[hovered].image} alt="" className="w-full h-full object-cover" />
+            <img
+              src={projects[hovered].image}
+              alt=""
+              className={`w-full h-full ${projects[hovered].imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
+            />
           )}
         </motion.div>
       </div>
