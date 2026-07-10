@@ -52,7 +52,7 @@ export const featureStrip = [
   {
     number: '02',
     pt: { kicker: 'Design de Apresentação', heading: 'Apresentações de Alto Impacto' },
-    en: { kicker: 'Presentation Design', heading: 'High-Impact Presentations' },
+    en: { kicker: 'Presentation Design', heading: 'High-Impact Presenta­tions' },
   },
   {
     number: '03',

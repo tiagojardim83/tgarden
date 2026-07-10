@@ -108,13 +108,17 @@ export default function Projects() {
     <section id="projects" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mb-14">
         <p className="label text-ink-soft md:col-span-3">{t.kicker}</p>
-        <h2
+        <motion.h2
           ref={headingRef}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
           data-cursor=""
           className={`md:col-span-9 font-display uppercase text-5xl md:text-7xl lg:text-8xl leading-[0.9] text-balance tracking-tightest transition-colors duration-300 hover:text-red ${headingActive ? 'text-red' : ''}`}
         >
           {t.heading}
-        </h2>
+        </motion.h2>
       </div>
 
       <div ref={containerRef} onMouseMove={onMouseMove} className="relative">

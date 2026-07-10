@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { useInView } from 'motion/react'
+import { motion, useInView } from 'motion/react'
 import { featureStrip } from '../data/content'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
@@ -27,13 +27,17 @@ function FeatureCard({ item, lang }: { item: (typeof featureStrip)[number]; lang
         {item.number} / {t.kicker}
       </p>
 
-      <h3
+      <motion.h3
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
         className={`font-display uppercase text-3xl md:text-5xl tracking-tightest transition-colors duration-500 ${
           active ? 'text-paper' : 'text-ink group-hover:text-paper'
         }`}
       >
         {t.heading}
-      </h3>
+      </motion.h3>
 
       <span
         className={`w-11 h-11 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-colors duration-500 ${

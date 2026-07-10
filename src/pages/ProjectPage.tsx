@@ -169,7 +169,15 @@ export default function ProjectPage() {
 
       <div className="mt-16 md:mt-24 mb-20 md:mb-28">
         <div className="flex items-end justify-between mb-10 gap-6 flex-wrap">
-          <h3 className="font-display uppercase text-2xl md:text-4xl">{ui.moreProjects}</h3>
+          <motion.h3
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="font-display uppercase text-2xl md:text-4xl"
+          >
+            {ui.moreProjects}
+          </motion.h3>
           <Link to="/#projects" className="label hover:text-red transition-colors">
             {ui.allProjects} →
           </Link>
