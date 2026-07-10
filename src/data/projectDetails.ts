@@ -345,14 +345,14 @@ export const projectDetails: ProjectDetail[] = [
       scope: 'Motion Design, Direção de Arte',
       sections: [
         {
-          videoKey: 'carnaval-02',
+          videoKey: 'Motion_01',
           heading: 'Movimento com propósito.',
           text: 'Cada transição carrega intenção — velocidade, peso e ritmo contam a história tanto quanto a imagem parada.',
           client: 'Carnaval dos Sonhos',
           sector: 'Entretenimento & Cultura Popular',
         },
         {
-          videoKey: 'carnaval-03',
+          videoKey: 'Motion_02',
           heading: 'Da tela ao bloco de rua.',
           text: 'Um sistema de motion pensado pra viver em vídeo, palco de trio elétrico e redes sociais, sem perder identidade em nenhum formato.',
           client: 'Carnaval dos Sonhos',
@@ -371,14 +371,14 @@ export const projectDetails: ProjectDetail[] = [
       scope: 'Motion Design, Art Direction',
       sections: [
         {
-          videoKey: 'carnaval-02',
+          videoKey: 'Motion_01',
           heading: 'Movement with purpose.',
           text: 'Every transition carries intention — speed, weight and rhythm tell the story just as much as the still image does.',
           client: 'Carnaval dos Sonhos',
           sector: 'Entertainment & Popular Culture',
         },
         {
-          videoKey: 'carnaval-03',
+          videoKey: 'Motion_02',
           heading: 'From screen to street parade.',
           text: 'A motion system built to live on video, on a parade float stage and on social feeds, without losing identity in any format.',
           client: 'Carnaval dos Sonhos',
