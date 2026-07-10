@@ -74,8 +74,8 @@ export default function Hero() {
         </h1>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
         >
