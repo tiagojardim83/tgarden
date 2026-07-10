@@ -104,7 +104,7 @@ export default function Nav() {
             </button>
 
             <div className="flex-1 flex flex-col items-center justify-center w-full">
-              <img src={logoMark} alt="TGarden" className="w-16 h-16 mb-5 shrink-0" />
+              <img src={logoMark} alt="TGarden" className="w-48 h-48 mb-5 shrink-0" />
 
               <div className="w-full max-w-sm border-t border-paper/30">
                 {navItems.map((item, i) => (
