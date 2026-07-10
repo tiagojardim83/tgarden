@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
 import { navItems } from '../data/content'
@@ -20,6 +21,7 @@ export default function Nav() {
   }
 
   return (
+    <>
     <header className="sticky top-0 z-[60] bg-paper/90 backdrop-blur-sm border-b border-ink/15">
       <div className="flex items-center justify-between px-6 md:px-10 py-4">
         <button
@@ -70,7 +72,9 @@ export default function Nav() {
           </button>
         </div>
       </div>
+    </header>
 
+    {createPortal(
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -78,8 +82,17 @@ export default function Nav() {
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="md:hidden fixed inset-0 bg-ink flex flex-col items-center justify-center gap-8"
+            className="md:hidden fixed inset-0 z-[100] bg-ink flex flex-col items-center justify-center gap-8"
           >
+            <button
+              className="absolute top-6 right-6 flex flex-col gap-1.5 w-7"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <span className="h-[2px] bg-paper block rotate-45 translate-y-[3px]" />
+              <span className="h-[2px] bg-paper block -rotate-45 -translate-y-[3px]" />
+            </button>
+
             {navItems.map((item, i) => (
               <motion.button
                 key={item.id}
@@ -94,7 +107,9 @@ export default function Nav() {
             ))}
           </motion.div>
         )}
-      </AnimatePresence>
-    </header>
+      </AnimatePresence>,
+      document.body
+    )}
+    </>
   )
 }
