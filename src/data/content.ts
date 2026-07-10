@@ -2,6 +2,7 @@ import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import uxuiImg from '../assets/images/thumb-ux-ui.jpg'
 import tgardenImg from '../assets/images/Thumb_lobs.jpg'
+import motionImg from '../assets/images/Thumb_Site_Motion.webp'
 import lobsImg from '../assets/images/project-lobs.jpg'
 import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
@@ -167,7 +168,7 @@ export const projects: ProjectSummary[] = [
     countEn: '1 project',
     tag: 'Carnaval dos Sonhos',
     tagEn: 'Carnaval dos Sonhos',
-    image: gallery4,
+    image: motionImg,
   },
   {
     id: 'packaging',
