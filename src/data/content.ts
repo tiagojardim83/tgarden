@@ -23,7 +23,7 @@ export const navItems = [
 export const hero = {
   pt: {
     name: 'Tiago Jardim',
-    location: 'Rio de Janeiro / BR',
+    location: 'Búzios / RJ',
     roleLine1: 'Diretor Criativo',
     roleLine2: 'Designer',
     nameTop: 'TGARDEN',
@@ -33,7 +33,7 @@ export const hero = {
   },
   en: {
     name: 'Tiago Jardim',
-    location: 'Rio de Janeiro / BR',
+    location: 'Búzios / RJ',
     roleLine1: 'Creative Director',
     roleLine2: 'Designer',
     nameTop: 'TGARDEN',

@@ -12,10 +12,10 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col pt-4 md:pt-6">
-      <div className="flex items-start justify-between gap-6 px-6 md:px-10 py-4 md:py-5 border-y border-ink/15 text-[10px] leading-[15px] tracking-[0.18em] uppercase">
+      <div className="flex items-start justify-between gap-6 px-6 md:px-10 py-4 md:py-5 border-b border-ink/15 text-[10px] leading-[15px] tracking-[0.18em] uppercase">
         <div>
           <p className="font-light">{t.name}</p>
-          <p className="font-bold text-ink-soft mt-0.5">· {t.location}</p>
+          <p className="font-bold text-ink-soft mt-0.5">{t.location}</p>
         </div>
         <div className="text-right">
           <p className="font-light">{t.roleLine1}</p>
