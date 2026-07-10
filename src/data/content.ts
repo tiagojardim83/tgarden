@@ -1,11 +1,12 @@
 import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import uxuiImg from '../assets/images/thumb-ux-ui.jpg'
-import tgardenImg from '../assets/images/Thumb_lobs.jpg'
+import thumbTgardenImg from '../assets/images/thumb-tgarden.jpg'
 import motionImg from '../assets/images/Thumb_Site_Motion.webp'
-import lobsImg from '../assets/images/project-lobs.jpg'
+import thumbLobsImg from '../assets/images/Thumb_Fashion_Design.jpg'
 import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
+import thumbVelvoImg from '../assets/images/thumb-velvo.jpg'
 import gallery3 from '../assets/images/gallery-3.jpg'
 import gallery4 from '../assets/images/gallery-4.jpg'
 import gallery5 from '../assets/images/gallery-5.jpg'
@@ -157,7 +158,7 @@ export const projects: ProjectSummary[] = [
     countEn: '1 project',
     tag: 'TGarden',
     tagEn: 'TGarden',
-    image: tgardenImg,
+    image: thumbTgardenImg,
   },
   {
     id: 'motion-design',
@@ -182,7 +183,7 @@ export const projects: ProjectSummary[] = [
     countEn: '1 project',
     tag: 'Velvo',
     tagEn: 'Velvo',
-    image: gallery2,
+    image: thumbVelvoImg,
   },
   {
     id: 'fashion',
@@ -194,7 +195,7 @@ export const projects: ProjectSummary[] = [
     countEn: '1 project',
     tag: 'Lobs Brazilian Art',
     tagEn: 'Lobs Brazilian Art',
-    image: lobsImg,
+    image: thumbLobsImg,
   },
 ]
 
