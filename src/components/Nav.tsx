@@ -103,21 +103,23 @@ export default function Nav() {
               <span className="h-[2px] bg-paper block -rotate-45 -translate-y-[3px]" />
             </button>
 
-            <img src={logoMark} alt="TGarden" className="w-10 h-10 shrink-0" />
+            <div className="flex-1 flex flex-col items-center justify-center w-full">
+              <img src={logoMark} alt="TGarden" className="w-16 h-16 mb-5 shrink-0" />
 
-            <div className="flex-1 flex flex-col justify-center w-full max-w-sm border-t border-paper/30">
-              {navItems.map((item, i) => (
-                <motion.button
-                  key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.06 }}
-                  onClick={() => scrollTo(item.id)}
-                  className="w-full border-b border-paper/30 py-5 font-display uppercase text-paper text-3xl"
-                >
-                  {item.label}
-                </motion.button>
-              ))}
+              <div className="w-full max-w-sm border-t border-paper/30">
+                {navItems.map((item, i) => (
+                  <motion.button
+                    key={item.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.06 }}
+                    onClick={() => scrollTo(item.id)}
+                    className="w-full border-b border-paper/30 py-5 font-display uppercase text-paper text-3xl"
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+              </div>
             </div>
 
             <div className="flex items-center gap-6 shrink-0">
