@@ -16,7 +16,7 @@ export default function Manifesto() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="md:col-span-9 font-display uppercase text-4xl md:text-8xl leading-[0.9] md:leading-none tracking-tightest"
+          className="md:col-span-9 font-display uppercase text-5xl md:text-8xl leading-[0.9] md:leading-none tracking-tightest"
         >
           {t.text.split(' ').map((word, wi) => (
             <span key={wi}>

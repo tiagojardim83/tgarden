@@ -25,7 +25,7 @@ function FragmentCell({ src, i }: { src: string; i: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: (i % 3) * 0.08, duration: 0.6 }}
-      className={`overflow-hidden bg-ink/5 ${CELLS[i] ?? ''} ${i === 5 ? 'col-span-2 md:col-span-3' : ''}`}
+      className={`overflow-hidden bg-ink/5 ${CELLS[i] ?? ''} ${i === 5 ? 'md:col-span-3' : ''}`}
     >
       <div ref={ref} className="group relative w-full h-full overflow-hidden">
         <img
