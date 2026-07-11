@@ -207,7 +207,7 @@ export const skills = [
   { name: 'Premiere', short: 'Pr', value: 78 },
   { name: 'InDesign', short: 'Id', value: 75 },
   { name: 'Figma', short: 'Fig', value: 70 },
-  { name: 'IA/VIDEO', short: 'IA/VIDEO', value: 85, trending: true },
+  { name: 'IA/GEN', short: 'IA/GEN', value: 85, trending: true },
 ]
 
 export const fragmentsCopy = {
