@@ -31,7 +31,7 @@ export const hero = {
     nameTop: 'TGARDEN',
     nameBottom: 'TIAGO JARDIM',
     sub: 'Projetos que conectam identidade, imagem e experiência.',
-    tag: 'TGARDEN DESIGN',
+    tag: 'TGARDEN STUDIO',
   },
   en: {
     name: 'Tiago Jardim',
@@ -41,7 +41,7 @@ export const hero = {
     nameTop: 'TGARDEN',
     nameBottom: 'TIAGO JARDIM',
     sub: 'Projects that connect identity, image and experience.',
-    tag: 'TGARDEN DESIGN',
+    tag: 'TGARDEN STUDIO',
   },
 }
 
