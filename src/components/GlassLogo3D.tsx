@@ -11,6 +11,7 @@ import { Environment, MeshTransmissionMaterial } from '@react-three/drei'
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js'
 import * as THREE from 'three'
 import logoUrl from '../assets/tgarden-mark.svg'
+import { useCanHover } from '../lib/useCanHover'
 
 const blackBackground = new THREE.Color('#0a0a0a')
 const MAX_TILT = 1.1
@@ -91,6 +92,7 @@ function LogoMesh({ dragging, rotation, velocity }: DragRefs) {
 }
 
 export default function GlassLogo3D({ className = '' }: { className?: string }) {
+  const canHover = useCanHover()
   const dragging = useRef(false)
   const last = useRef({ x: 0, y: 0 })
   const rotation = useRef({ x: 0, y: 0 })
@@ -142,12 +144,15 @@ export default function GlassLogo3D({ className = '' }: { className?: string }) 
         </Suspense>
       </Canvas>
       {/* Interactive hitbox stays centered and modestly sized so the oversized
-          bleed canvas doesn't swallow clicks meant for content behind/around it. */}
-      <div
-        className="absolute inset-[18%] pointer-events-auto cursor-grab active:cursor-grabbing"
-        data-cursor="DRAG"
-        onPointerDown={onPointerDown}
-      />
+          bleed canvas doesn't swallow clicks meant for content behind/around it.
+          Desktop only — on touch devices the logo just auto-spins. */}
+      {canHover && (
+        <div
+          className="absolute inset-[18%] pointer-events-auto cursor-grab active:cursor-grabbing"
+          data-cursor="DRAG"
+          onPointerDown={onPointerDown}
+        />
+      )}
     </div>
   )
 }
