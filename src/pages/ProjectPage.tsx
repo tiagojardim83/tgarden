@@ -5,6 +5,40 @@ import { useLang } from '../lib/lang'
 import { getProjectDetail, getSectionVideo } from '../data/projectDetails'
 import { projects, projectPageCopy } from '../data/content'
 
+function WorldIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 34.64 34.63" className={className} fill="currentColor">
+      <path d="M17.32,21.53c-5.99,0-17.32-.88-17.32-4.21s11.33-4.21,17.32-4.21,17.32.88,17.32,4.21-11.33,4.21-17.32,4.21ZM17.32,14.5c-4.39,0-8.52.36-11.61,1.01-3.58.76-4.32,1.62-4.32,1.8s.73,1.04,4.32,1.8c3.09.65,7.22,1.01,11.61,1.01s8.51-.36,11.61-1.01c3.58-.76,4.32-1.61,4.32-1.8s-.73-1.05-4.32-1.8c-3.09-.65-7.22-1.01-11.61-1.01Z" />
+      <path d="M17.32,28.67C7.77,28.67,0,23.58,0,17.32S7.77,5.96,17.32,5.96s17.32,5.1,17.32,11.36-7.77,11.36-17.32,11.36ZM17.32,7.35C8.54,7.35,1.39,11.82,1.39,17.32s7.14,9.96,15.92,9.96,15.92-4.47,15.92-9.96-7.14-9.96-15.92-9.96Z" />
+      <path d="M17.32,34.63c-3.54,0-4.47-11.33-4.47-17.32S13.78,0,17.32,0s4.47,11.33,4.47,17.32-.93,17.32-4.47,17.32ZM17.32,1.39c-1.04,0-3.08,5.62-3.08,15.92s2.03,15.92,3.08,15.92,3.08-5.62,3.08-15.92-2.03-15.92-3.08-15.92Z" />
+      <path d="M17.32,34.63c-6.26,0-11.36-7.77-11.36-17.32S11.06,0,17.32,0s11.35,7.77,11.35,17.32-5.09,17.32-11.35,17.32ZM17.32,1.39c-5.49,0-9.97,7.15-9.97,15.92s4.47,15.92,9.97,15.92,9.96-7.15,9.96-15.92S22.81,1.39,17.32,1.39Z" />
+      <path d="M17.32,34.63C7.77,34.63,0,26.87,0,17.32S7.77,0,17.32,0s17.32,7.77,17.32,17.32-7.77,17.32-17.32,17.32ZM17.32,1.39C8.54,1.39,1.39,8.54,1.39,17.32s7.14,15.92,15.92,15.92,15.92-7.15,15.92-15.92S26.1,1.39,17.32,1.39Z" />
+    </svg>
+  )
+}
+
+export function LiveSiteLink({ href, label, className = '' }: { href: string; label: string; className?: string }) {
+  return (
+    <div className={`grid grid-cols-2 border-y border-ink/15 ${className}`}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        data-cursor="VIEW"
+        className="group flex items-center gap-3 py-6 md:py-8 pr-4 w-fit"
+      >
+        <span className="inline-flex items-center gap-3 bg-ink text-paper px-6 py-3 label group-hover:bg-red transition-colors duration-300">
+          {label}
+          <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </span>
+      </a>
+      <div className="flex items-center justify-end pr-4 md:pr-6 border-l border-ink/15 py-6 md:py-8">
+        <WorldIcon className="w-8 h-8 md:w-9 md:h-9 text-ink" />
+      </div>
+    </div>
+  )
+}
+
 function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
@@ -177,16 +211,7 @@ export default function ProjectPage() {
                 </p>
 
                 {s.liveUrl && (
-                  <a
-                    href={s.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    data-cursor="VIEW"
-                    className="group md:col-start-4 md:col-span-9 self-start inline-flex items-center gap-3 bg-ink text-paper px-6 py-3 label hover:bg-red transition-colors duration-300 w-fit"
-                  >
-                    {ui.viewLive}
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                  </a>
+                  <LiveSiteLink href={s.liveUrl} label={ui.viewLive} className="md:col-start-4 md:col-span-9" />
                 )}
               </motion.div>
 

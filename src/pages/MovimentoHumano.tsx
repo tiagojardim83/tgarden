@@ -4,7 +4,7 @@ import { motion, useInView, useScroll, useSpring, useTransform } from 'motion/re
 import { useLang } from '../lib/lang'
 import { projects, projectPageCopy } from '../data/content'
 import { useCanHover } from '../lib/useCanHover'
-import { FactSheet } from './ProjectPage'
+import { FactSheet, LiveSiteLink } from './ProjectPage'
 
 const spring = { stiffness: 220, damping: 32, mass: 0.6 }
 
@@ -339,16 +339,11 @@ export default function MovimentoHumano() {
             transition={{ duration: 0.8 }}
           />
 
-          <a
+          <LiveSiteLink
             href="https://www.lobs.com.br/"
-            target="_blank"
-            rel="noreferrer"
-            data-cursor="VIEW"
-            className="group md:col-start-4 md:col-span-9 mt-8 md:mt-10 self-start inline-flex items-center gap-3 bg-ink text-paper px-6 py-3 label hover:bg-red transition-colors duration-300 w-fit"
-          >
-            {ui.viewLive}
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </a>
+            label={ui.viewLive}
+            className="md:col-start-4 md:col-span-9 mt-8 md:mt-10"
+          />
 
           <div className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10">
             <LobsBuild center={lobsScreen02} back={lobsScreen03} front={lobsScreen01} />
