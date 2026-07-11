@@ -3,10 +3,21 @@ import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import tgardenImg from '../assets/images/Thumb_lobs.jpg'
 import lobsImg from '../assets/images/project-lobs.jpg'
 import gallery1 from '../assets/images/gallery-1.jpg'
-import gallery2 from '../assets/images/gallery-2.jpg'
 import gallery4 from '../assets/images/gallery-4.jpg'
 import efetivaImg02 from '../assets/images/webdesign_efetiva_02.jpg'
 import efetivaImg03 from '../assets/images/webdesign_efetiva_03.jpg'
+import velvoImg01 from '../assets/images/01_Velvo.jpg'
+import velvoImg02 from '../assets/images/02_Velvo.jpg'
+import velvoImg03 from '../assets/images/03_Velvo.jpg'
+import velvoImg04 from '../assets/images/04_Velvo.jpg'
+import velvoImg05 from '../assets/images/05_Velvo.jpg'
+import velvoImg06 from '../assets/images/06_Velvo.jpg'
+import velvoImg07 from '../assets/images/07_Velvo.jpg'
+import velvoImg08 from '../assets/images/08_Velvo.jpg'
+import velvoImg08b from '../assets/images/08.1_Velvo.jpg'
+import velvoImg09 from '../assets/images/09_Velvo.jpg'
+import velvoImg10 from '../assets/images/10_Velvo.jpg'
+import velvoImg11 from '../assets/images/11_Velvo.jpg'
 
 // Any file dropped in src/assets/videos/ named "<key>.<ext>" (e.g. "05.mp4")
 // is picked up automatically and matched to the section with that videoKey.
@@ -548,26 +559,37 @@ export const projectDetails: ProjectDetail[] = [
     projectNumber: '01',
     categoryTotal: '01',
     year: '2025',
-    heroImage: gallery2,
+    heroImage: velvoImg01,
+    factSheetRepeat: false,
     pt: {
       category: 'Packaging Design',
       title: 'Velvo',
       heroStatement: 'A embalagem é o primeiro produto que o cliente realmente sente.',
+      intro: [
+        'Três segundos. É o tempo que uma embalagem tem pra se destacar antes da mão do cliente ir pra outra marca.',
+        'Textura, peso e acabamento comunicam qualidade antes mesmo da primeira palavra ser lida no rótulo — da paisagem que inspirou a marca ao produto na mão do cliente, cada peça continua a anterior.',
+      ],
       client: 'Velvo',
       sector: 'Bens de Consumo',
       scope: 'Packaging Design, Identidade Visual',
       sections: [
         {
-          videoKey: 'velvo-02',
-          heading: 'Prateleira é campo de batalha.',
-          text: 'Três segundos. É o tempo que uma embalagem tem pra se destacar antes da mão do cliente ir pra outra marca.',
-          client: 'Velvo',
-          sector: 'Bens de Consumo',
-        },
-        {
-          videoKey: 'velvo-03',
-          heading: 'Material como mensagem.',
-          text: 'Textura, peso e acabamento comunicam qualidade antes mesmo da primeira palavra ser lida no rótulo.',
+          videoKey: 'velvo-sequence',
+          images: [
+            velvoImg02,
+            velvoImg03,
+            velvoImg04,
+            velvoImg05,
+            velvoImg06,
+            velvoImg07,
+            velvoImg08,
+            velvoImg08b,
+            velvoImg09,
+            velvoImg11,
+            velvoImg10,
+          ],
+          heading: 'Um sistema, em sequência.',
+          text: 'Mood board, garrafa, rótulo, identidade e fotografia — uma sequência visual contínua, sem interrupções.',
           client: 'Velvo',
           sector: 'Bens de Consumo',
         },
@@ -579,21 +601,31 @@ export const projectDetails: ProjectDetail[] = [
       category: 'Packaging Design',
       title: 'Velvo',
       heroStatement: "Packaging is the first product the customer actually feels.",
+      intro: [
+        "Three seconds. That's how long a package has to stand out before the customer's hand moves to another brand.",
+        "Texture, weight and finish communicate quality before a single word is read on the label — from the landscape that inspired the brand to the product in the customer's hand, each piece continues the last.",
+      ],
       client: 'Velvo',
       sector: 'Consumer Goods',
       scope: 'Packaging Design, Visual Identity',
       sections: [
         {
-          videoKey: 'velvo-02',
-          heading: 'The shelf is a battlefield.',
-          text: "Three seconds. That's how long a package has to stand out before the customer's hand moves to another brand.",
-          client: 'Velvo',
-          sector: 'Consumer Goods',
-        },
-        {
-          videoKey: 'velvo-03',
-          heading: 'Material as message.',
-          text: 'Texture, weight and finish communicate quality before a single word is read on the label.',
+          videoKey: 'velvo-sequence',
+          images: [
+            velvoImg02,
+            velvoImg03,
+            velvoImg04,
+            velvoImg05,
+            velvoImg06,
+            velvoImg07,
+            velvoImg08,
+            velvoImg08b,
+            velvoImg09,
+            velvoImg11,
+            velvoImg10,
+          ],
+          heading: 'One system, in sequence.',
+          text: 'Mood board, bottle, label, identity and photography — one continuous visual sequence, without interruption.',
           client: 'Velvo',
           sector: 'Consumer Goods',
         },
