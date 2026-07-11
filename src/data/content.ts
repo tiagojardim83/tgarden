@@ -94,8 +94,8 @@ export const competencies = [
 ]
 
 export const projectsCopy = {
-  pt: { kicker: '02 / Projects', heading: 'Sete frentes, uma mesma assinatura.', cta: 'Todas as frentes' },
-  en: { kicker: '02 / Projects', heading: 'Seven fronts, one same signature.', cta: 'All fronts' },
+  pt: { kicker: '02 / Projects', heading: 'Oito frentes, uma mesma assinatura.', cta: 'Todas as frentes' },
+  en: { kicker: '02 / Projects', heading: 'Eight fronts, one same signature.', cta: 'All fronts' },
 }
 
 export interface ProjectSummary {
