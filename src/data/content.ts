@@ -114,6 +114,18 @@ export interface ProjectSummary {
 
 export const projects: ProjectSummary[] = [
   {
+    id: 'presentation-design',
+    slug: 'presentation-design',
+    category: 'Presentation Design',
+    title: 'Presentation Design',
+    year: '2025/26',
+    count: '1 projeto',
+    countEn: '1 project',
+    tag: 'Presentation Design',
+    tagEn: 'Presentation Design',
+    image: gallery1,
+  },
+  {
     id: 'visual-identity',
     slug: 'maoka',
     category: 'Visual Identity',
@@ -138,6 +150,19 @@ export const projects: ProjectSummary[] = [
     image: figaImg,
   },
   {
+    id: 'motion-design',
+    slug: 'cidades-invisiveis',
+    category: 'Motion Design',
+    title: 'Cidades Invisíveis',
+    year: '2025/26',
+    count: '1 projeto',
+    countEn: '1 project',
+    tag: 'Cidades Invisíveis',
+    tagEn: 'Cidades Invisíveis',
+    image: motionImg,
+    imageFit: 'contain',
+  },
+  {
     id: 'ux-ui',
     slug: 'movimento-humano',
     category: 'UX/UI Design',
@@ -160,19 +185,6 @@ export const projects: ProjectSummary[] = [
     tag: 'TGarden',
     tagEn: 'TGarden',
     image: thumbTgardenImg,
-  },
-  {
-    id: 'motion-design',
-    slug: 'cidades-invisiveis',
-    category: 'Motion Design',
-    title: 'Cidades Invisíveis',
-    year: '2025/26',
-    count: '1 projeto',
-    countEn: '1 project',
-    tag: 'Cidades Invisíveis',
-    tagEn: 'Cidades Invisíveis',
-    image: motionImg,
-    imageFit: 'contain',
   },
   {
     id: 'packaging',

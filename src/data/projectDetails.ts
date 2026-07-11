@@ -2,6 +2,7 @@ import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import tgardenImg from '../assets/images/Thumb_lobs.jpg'
 import lobsImg from '../assets/images/project-lobs.jpg'
+import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
 import gallery4 from '../assets/images/gallery-4.jpg'
 
@@ -57,6 +58,51 @@ interface ProjectDetailCopy {
 }
 
 export const projectDetails: ProjectDetail[] = [
+  {
+    // PLACEHOLDER — Tiago will send the real client(s), sections and media for this project.
+    slug: 'presentation-design',
+    categoryId: 'presentation-design',
+    projectNumber: '01',
+    categoryTotal: '01',
+    year: '2025/26',
+    heroImage: gallery1,
+    pt: {
+      category: 'Presentation Design',
+      title: 'Presentation Design',
+      heroStatement: 'Ideias que conseguem investimento.',
+      client: 'Em breve',
+      sector: 'Apresentações de Alto Impacto',
+      scope: 'Presentation Design, Direção Criativa',
+      sections: [
+        {
+          videoKey: 'presentation-01',
+          heading: 'Conteúdo em breve.',
+          text: 'Em breve, o case completo deste projeto.',
+          client: 'Em breve',
+          sector: 'Apresentações de Alto Impacto',
+        },
+      ],
+      closing: 'UMA IDEIA SÓ EXISTE DE VERDADE QUANDO ALGUÉM DIZ SIM A ELA.',
+    },
+    en: {
+      category: 'Presentation Design',
+      title: 'Presentation Design',
+      heroStatement: 'Ideas that get funded.',
+      client: 'Coming soon',
+      sector: 'High-Impact Presentations',
+      scope: 'Presentation Design, Creative Direction',
+      sections: [
+        {
+          videoKey: 'presentation-01',
+          heading: 'Content coming soon.',
+          text: "This project's full case study is coming soon.",
+          client: 'Coming soon',
+          sector: 'High-Impact Presentations',
+        },
+      ],
+      closing: "AN IDEA ONLY TRULY EXISTS ONCE SOMEONE SAYS YES TO IT.",
+    },
+  },
   {
     slug: 'maoka',
     categoryId: 'visual-identity',
