@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, type CSSProperties } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useLang } from '../lib/lang'
@@ -174,7 +174,14 @@ export default function ProjectPage() {
           transition={{ duration: 0.8 }}
           className="-mx-6 md:-mx-10 mt-12 md:mt-16 bg-ink"
         >
-          <video src={heroVideoUrl} autoPlay muted loop playsInline className="w-full h-auto block" />
+          <video
+            src={heroVideoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block"
+          />
         </motion.div>
       ) : (
         <motion.div
@@ -229,7 +236,15 @@ export default function ProjectPage() {
                   transition={{ duration: 0.8 }}
                   className="-mx-6 md:-mx-10 mt-8 md:mt-10"
                 >
-                  <video src={videoUrl} autoPlay muted loop playsInline className="w-full h-auto block" />
+                  <video
+                    src={videoUrl}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{ '--mobile-ar': s.mobileAspect ?? '18/25' } as CSSProperties}
+                    className="w-full aspect-[var(--mobile-ar)] md:aspect-auto md:h-auto object-cover block"
+                  />
                 </motion.div>
               )}
 
@@ -251,7 +266,7 @@ export default function ProjectPage() {
                         muted
                         loop
                         playsInline
-                        className="w-full h-auto block"
+                        className="w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block"
                       />
                     ) : block.embedUrl ? (
                       <EmbedFrame

@@ -292,7 +292,7 @@ export default function MovimentoHumano() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-8 md:mt-10 aspect-video bg-ink"
+            className="mt-8 md:mt-10 aspect-[3/5] md:aspect-video bg-ink"
           >
             <iframe
               className="w-full h-full"

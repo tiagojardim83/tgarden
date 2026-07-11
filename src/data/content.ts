@@ -147,8 +147,8 @@ export const projects: ProjectSummary[] = [
     category: 'Motion Design',
     title: 'Cidades Invisíveis',
     year: '2025/26',
-    count: '1 projeto',
-    countEn: '1 project',
+    count: '8 projetos',
+    countEn: '8 projects',
     image: motionImg,
     imageFit: 'contain',
   },
@@ -195,19 +195,19 @@ export const projects: ProjectSummary[] = [
 ]
 
 export const skillsCopy = {
-  pt: { kicker: '03 / Skills', heading: 'Habilidade em desenvolvimento.' },
-  en: { kicker: '03 / Skills', heading: 'Software skill in development.' },
+  pt: { kicker: '03 / Skills', heading: 'Habilidade em desenvolvimento.', trending: 'em alta' },
+  en: { kicker: '03 / Skills', heading: 'Software skill in development.', trending: 'trending' },
 }
 
 export const skills = [
   { name: 'Illustrator', short: 'Ai', value: 90 },
   { name: 'After Effects', short: 'Ae', value: 85 },
-  { name: 'Framer', short: 'Fr', value: 82 },
+  { name: 'IA/FRONT-END', short: 'IA/FRONT-END', value: 88, trending: true },
   { name: 'Photoshop', short: 'Ps', value: 80 },
   { name: 'Premiere', short: 'Pr', value: 78 },
   { name: 'InDesign', short: 'Id', value: 75 },
   { name: 'Figma', short: 'Fig', value: 70 },
-  { name: 'XD', short: 'Xd', value: 62 },
+  { name: 'IA/VIDEO', short: 'IA/VIDEO', value: 85, trending: true },
 ]
 
 export const fragmentsCopy = {

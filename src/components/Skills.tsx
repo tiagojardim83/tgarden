@@ -4,7 +4,15 @@ import { skills, skillsCopy } from '../data/content'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
 
-function SkillBar({ skill, index }: { skill: (typeof skills)[number]; index: number }) {
+function SkillBar({
+  skill,
+  index,
+  trendingLabel,
+}: {
+  skill: (typeof skills)[number]
+  index: number
+  trendingLabel: string
+}) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { amount: 0.4 })
   const controls = useAnimation()
@@ -24,11 +32,25 @@ function SkillBar({ skill, index }: { skill: (typeof skills)[number]; index: num
   }, [inView])
 
   return (
-    <div ref={ref} onMouseEnter={play} className="flex items-center gap-4 py-3 cursor-default">
-      <span className="font-display text-sm w-8 shrink-0">{skill.short}</span>
-      <div className="flex-1 h-2 rounded-full bg-ink/10 overflow-hidden">
-        <motion.div className="h-full rounded-full bg-ink" initial={{ width: '0%' }} animate={controls} />
+    <div ref={ref} onMouseEnter={play} className="cursor-default">
+      <span className={`font-display text-sm block mb-2 ${skill.trending ? 'text-red' : ''}`}>{skill.short}</span>
+      <div className="h-2 rounded-full bg-ink/10 overflow-hidden">
+        <motion.div
+          className={`h-full rounded-full ${skill.trending ? 'bg-red' : 'bg-ink'}`}
+          initial={{ width: '0%' }}
+          animate={controls}
+        />
       </div>
+      {skill.trending && (
+        <motion.span
+          initial={{ opacity: 0, y: -6 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -6 }}
+          transition={{ duration: 0.5, delay: 0.3 + index * 0.04, ease: [0.22, 1, 0.36, 1] }}
+          className="label text-red mt-2 block"
+        >
+          {trendingLabel}
+        </motion.span>
+      )}
       <span className="sr-only">
         {skill.name} / {skill.value}%
       </span>
@@ -39,8 +61,6 @@ function SkillBar({ skill, index }: { skill: (typeof skills)[number]; index: num
 export default function Skills() {
   const { lang } = useLang()
   const t = skillsCopy[lang]
-  const half = Math.ceil(skills.length / 2)
-  const columns = [skills.slice(0, half), skills.slice(half)]
   const headingRef = useRef<HTMLHeadingElement>(null)
   const canHover = useCanHover()
   const headingInView = useInView(headingRef, { margin: '-50% 0px -50% 0px' })
@@ -63,13 +83,9 @@ export default function Skills() {
         </motion.h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-x-16">
-        {columns.map((col, ci) => (
-          <div key={ci}>
-            {col.map((skill, i) => (
-              <SkillBar key={skill.name} skill={skill} index={ci === 0 ? i : i + half} />
-            ))}
-          </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10">
+        {skills.map((skill, i) => (
+          <SkillBar key={skill.name} skill={skill} index={i} trendingLabel={t.trending} />
         ))}
       </div>
     </section>

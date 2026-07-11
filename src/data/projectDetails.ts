@@ -82,6 +82,8 @@ interface ProjectSection {
   factSheetPosition?: 'before' | 'after'
   /** Each media image animates in on its own as it's scrolled to, instead of the whole block fading in together. */
   staggerMedia?: boolean
+  /** Mobile aspect ratio (e.g. '16/9') for this section's video, overriding the site default of 18/25 (1080x1500). */
+  mobileAspect?: string
 }
 
 interface ProjectDetailCopy {
@@ -159,6 +161,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: '02',
+          mobileAspect: '16/9',
           heading: 'Identidade antes do logo.',
           text: 'Uma identidade visual não é só um logo, uma cor ou uma fonte. É o sistema operacional de uma marca: o conjunto de sinais, regras e comportamentos que torna uma empresa reconhecível, confiável e memorável antes mesmo de uma palavra ser lida.',
           client: 'Maoka',
@@ -166,6 +169,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '05',
+          mobileAspect: '16/9',
           heading: 'Lola',
           text: 'Uma marca premium de autocuidado traduzida em uma linguagem calma e presente: tons suaves, tipografia elegante e um logo que respira junto com a marca.',
           client: 'Lola',
@@ -173,6 +177,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '06',
+          mobileAspect: '16/9',
           heading: 'Fazenda Santa Mônica',
           text: 'Alimentos de alto padrão e experiências rurais reunidos em um sistema visual autêntico, refinado e atemporal.',
           client: 'Fazenda Santa Mônica',
@@ -180,6 +185,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '07',
+          mobileAspect: '16/9',
           heading: 'Duck Motorcycle',
           text: 'Uma marca premium de motocicletas com alma de estrada, inspirada na herança do custom americano, no espírito Harley-Davidson de liberdade e pertencimento, unindo cromados, couro e tipografia robusta em uma identidade que atravessa gerações.',
           client: 'Duck Motorcycle',
@@ -187,6 +193,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '08',
+          mobileAspect: '16/9',
           heading: 'Vanessa Ferreira',
           text: 'Uma marca premium de beleza e skincare construída como um universo delicado e confiante: cores suaves, tipografia elegante e um símbolo pessoal e aspiracional.',
           client: 'Vanessa Ferreira',
@@ -194,6 +201,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '09',
+          mobileAspect: '16/9',
           heading: 'Mova',
           text: 'Uma produtora de eventos e ativações de marca que transforma experiências físicas em narrativas visuais: identidade flexível e modular, pronta para se adaptar a qualquer palco, marca ou momento.',
           client: 'Mova',
@@ -213,6 +221,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: '02',
+          mobileAspect: '16/9',
           heading: 'Identity before the logo.',
           text: 'A visual identity is not just a logo, a color or a font. It is the operating system of a brand: the set of signs, rules and behaviors that makes a company recognizable, trustworthy and memorable before a single word is read.',
           client: 'Maoka',
@@ -220,6 +229,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '05',
+          mobileAspect: '16/9',
           heading: 'Lola',
           text: 'A premium self-care brand translated into a calm yet present language: soft tones, elegant typography and a logo that breathes with the brand.',
           client: 'Lola',
@@ -227,6 +237,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '06',
+          mobileAspect: '16/9',
           heading: 'Fazenda Santa Mônica',
           text: 'High-end food and rural experiences brought together in a visual system that feels authentic, refined and timeless.',
           client: 'Fazenda Santa Mônica',
@@ -234,6 +245,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '07',
+          mobileAspect: '16/9',
           heading: 'Duck Motorcycle',
           text: 'A premium motorcycle brand with road-worn soul, inspired by American custom heritage, in the Harley-Davidson spirit of freedom and belonging, blending chrome, leather and bold typography into an identity built to last generations.',
           client: 'Duck Motorcycle',
@@ -241,6 +253,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '08',
+          mobileAspect: '16/9',
           heading: 'Vanessa Ferreira',
           text: 'A premium beauty and skincare brand built as a delicate but confident universe: soft colors, elegant typography and a symbol that feels personal and aspirational.',
           client: 'Vanessa Ferreira',
@@ -248,6 +261,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: '09',
+          mobileAspect: '16/9',
           heading: 'Mova',
           text: 'An event production and brand activation studio that turns physical experiences into visual narratives: a flexible, modular identity built to adapt to any stage, brand or moment.',
           client: 'Mova',
@@ -436,7 +450,7 @@ export const projectDetails: ProjectDetail[] = [
     slug: 'cidades-invisiveis',
     categoryId: 'motion-design',
     projectNumber: '01',
-    categoryTotal: '01',
+    categoryTotal: '08',
     year: '2025',
     heroImage: gallery4,
     heroVideoKey: 'Motion_03',
@@ -450,6 +464,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'Motion_01',
+          mobileAspect: '16/9',
           heading: 'Movimento com propósito.',
           text: 'Cada transição carrega intenção: velocidade, peso e ritmo contam a história tanto quanto a imagem parada.',
           client: 'Agência 2DA',
@@ -457,6 +472,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'Motion_02',
+          mobileAspect: '16/9',
           heading: 'Da tela ao bloco de rua.',
           text: 'Um sistema de motion pensado pra viver em vídeo, palco de trio elétrico e redes sociais, sem perder identidade em nenhum formato.',
           client: 'Box / Cantin / Its Shooow Time',
@@ -464,6 +480,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'Motion_04',
+          mobileAspect: '16/9',
           heading: 'Transições com identidade.',
           text: 'Cortes e transições deixam de ser recursos técnicos e passam a fazer parte da linguagem da marca.',
           client: 'Prime Produtora',
@@ -471,6 +488,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'Motion_05',
+          mobileAspect: '16/9',
           heading: 'Tipografia em movimento.',
           text: 'Letras que se comportam como personagens, reforçando a mensagem através do próprio gesto.',
           client: 'Agência 2DA',
@@ -485,6 +503,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'Motion_07',
+          mobileAspect: '16/9',
           heading: 'Consistência multiplataforma.',
           text: 'O mesmo sistema de motion se adapta a formatos verticais, horizontais e quadrados sem perder força.',
           client: 'Box/Trio Produtora',
@@ -518,6 +537,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'Motion_01',
+          mobileAspect: '16/9',
           heading: 'Movement with purpose.',
           text: 'Every transition carries intention: speed, weight and rhythm tell the story just as much as the still image does.',
           client: 'Agência 2DA',
@@ -525,6 +545,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'Motion_02',
+          mobileAspect: '16/9',
           heading: 'From screen to street parade.',
           text: 'A motion system built to live on video, on a parade float stage and on social feeds, without losing identity in any format.',
           client: 'Box / Cantin / Its Shooow Time',
@@ -532,6 +553,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'Motion_04',
+          mobileAspect: '16/9',
           heading: 'Transitions with identity.',
           text: "Cuts and transitions stop being technical tools and become part of the brand's own language.",
           client: 'Prime Produtora',
@@ -539,6 +561,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'Motion_05',
+          mobileAspect: '16/9',
           heading: 'Typography in motion.',
           text: 'Letters behave like characters, reinforcing the message through gesture itself.',
           client: 'Agência 2DA',
@@ -553,6 +576,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'Motion_07',
+          mobileAspect: '16/9',
           heading: 'Cross-platform consistency.',
           text: 'The same motion system adapts to vertical, horizontal and square formats without losing strength.',
           client: 'Box/Trio Produtora',
