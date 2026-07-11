@@ -319,15 +319,11 @@ export default function MovimentoHumano() {
             </p>
           </motion.div>
 
-          <div className="md:col-start-4 md:col-span-9 mt-8 md:mt-10">
-            <FactSheet
-              client="Lobs Brazilian Art"
-              sector={c.lobsSector}
-              year="2025/26"
-              scope={c.lobsScope}
-              ui={ui}
-            />
-          </div>
+          <LiveSiteLink
+            href="https://www.lobs.com.br/"
+            label={ui.viewLive}
+            className="md:col-start-4 md:col-span-9 mt-8 md:mt-10"
+          />
 
           <motion.img
             src={lobsLaptop}
@@ -337,12 +333,6 @@ export default function MovimentoHumano() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-          />
-
-          <LiveSiteLink
-            href="https://www.lobs.com.br/"
-            label={ui.viewLive}
-            className="md:col-start-4 md:col-span-9 mt-8 md:mt-10"
           />
 
           <div className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10">
@@ -374,6 +364,16 @@ export default function MovimentoHumano() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           />
+
+          <div className="md:col-start-4 md:col-span-9 mt-8 md:mt-10">
+            <FactSheet
+              client="Lobs Brazilian Art"
+              sector={c.lobsSector}
+              year="2025/26"
+              scope={c.lobsScope}
+              ui={ui}
+            />
+          </div>
         </div>
       </div>
 
