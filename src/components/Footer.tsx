@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="md:col-span-3 flex flex-wrap gap-4">
           {footerSocials.map((s) => (
             <FooterLink key={s.label} href={s.href}>
-              {s.label} ↗
+              {s.label} ↗︎
             </FooterLink>
           ))}
         </div>
