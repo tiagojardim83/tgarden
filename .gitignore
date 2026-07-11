@@ -27,3 +27,5 @@ dist-ssr
 # not tracked (mostly large source video/gif exports). The numbered
 # files directly in src/assets/videos/ (e.g. 02.mp4) ARE tracked.
 src/assets/videos/*/
+.vercel
+.env*
