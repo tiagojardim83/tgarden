@@ -18,6 +18,13 @@ import velvoImg08b from '../assets/images/08.1_Velvo.jpg'
 import velvoImg09 from '../assets/images/09_Velvo.jpg'
 import velvoImg10 from '../assets/images/10_Velvo.jpg'
 import velvoImg11 from '../assets/images/11_Velvo.jpg'
+import patararaImg01 from '../assets/images/PataRara_Packaging_01.jpg'
+import patararaImg02 from '../assets/images/PataRara_Packaging_02.jpg'
+import patararaImg03 from '../assets/images/PataRara_Packaging_03.jpg'
+import patararaImg04 from '../assets/images/PataRara_Packaging_04.jpg'
+import patararaImg06 from '../assets/images/PataRara_Packaging_06.jpg'
+import biriquimImg01 from '../assets/images/Biriquim_01.jpg'
+import biriquimImg02 from '../assets/images/Biriquim_02.jpg'
 
 // Any file dropped in src/assets/videos/ named "<key>.<ext>" (e.g. "05.mp4")
 // is picked up automatically and matched to the section with that videoKey.
@@ -50,14 +57,31 @@ export interface ProjectDetail {
   en: ProjectDetailCopy
 }
 
+export interface MediaBlock {
+  image?: string
+  /** Renders `image` in a clipped, scroll-driven parallax container instead of a flush full-width image. */
+  parallax?: boolean
+  embedUrl?: string
+  /** Matches a file in src/assets/videos/ the same way section-level videoKey does. */
+  videoKey?: string
+}
+
 interface ProjectSection {
   videoKey: string
   images?: string[]
+  /** Ordered mix of static images and interactive embeds (e.g. Pacdora 3D packaging viewers). Takes priority over `images` when present. */
+  media?: MediaBlock[]
   liveUrl?: string
   heading: string
   text: string
   client: string
   sector: string
+  /** Overrides the project-level factSheetRepeat default for this one section. */
+  showFactSheet?: boolean
+  /** Where the fact sheet sits relative to the section's media. Defaults to 'after'. */
+  factSheetPosition?: 'before' | 'after'
+  /** Each media image animates in on its own as it's scrolled to, instead of the whole block fading in together. */
+  staggerMedia?: boolean
 }
 
 interface ProjectDetailCopy {
@@ -143,7 +167,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: '05',
           heading: 'Lola',
-          text: 'Uma marca premium de autocuidado traduzida em uma linguagem calma e presente — tons suaves, tipografia elegante e um logo que respira junto com a marca.',
+          text: 'Uma marca premium de autocuidado traduzida em uma linguagem calma e presente: tons suaves, tipografia elegante e um logo que respira junto com a marca.',
           client: 'Lola',
           sector: 'Autocuidado & Bem-estar',
         },
@@ -157,27 +181,27 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: '07',
           heading: 'Duck Motorcycle',
-          text: 'Uma marca premium de motocicletas com alma de estrada — inspirada na herança do custom americano, no espírito Harley-Davidson de liberdade e pertencimento, unindo cromados, couro e tipografia robusta em uma identidade que atravessa gerações.',
+          text: 'Uma marca premium de motocicletas com alma de estrada, inspirada na herança do custom americano, no espírito Harley-Davidson de liberdade e pertencimento, unindo cromados, couro e tipografia robusta em uma identidade que atravessa gerações.',
           client: 'Duck Motorcycle',
           sector: 'Motocicletas Customizadas',
         },
         {
           videoKey: '08',
           heading: 'Vanessa Ferreira',
-          text: 'Uma marca premium de beleza e skincare construída como um universo delicado e confiante — cores suaves, tipografia elegante e um símbolo pessoal e aspiracional.',
+          text: 'Uma marca premium de beleza e skincare construída como um universo delicado e confiante: cores suaves, tipografia elegante e um símbolo pessoal e aspiracional.',
           client: 'Vanessa Ferreira',
           sector: 'Beleza & Skincare',
         },
         {
           videoKey: '09',
           heading: 'Mova',
-          text: 'Uma produtora de eventos e ativações de marca que transforma experiências físicas em narrativas visuais — identidade flexível e modular, pronta para se adaptar a qualquer palco, marca ou momento.',
+          text: 'Uma produtora de eventos e ativações de marca que transforma experiências físicas em narrativas visuais: identidade flexível e modular, pronta para se adaptar a qualquer palco, marca ou momento.',
           client: 'Mova',
           sector: 'Produção de Eventos & Ativação de Marca',
         },
       ],
       closing:
-        'UMA IDENTIDADE VISUAL SÓ FUNCIONA QUANDO SOBREVIVE AO MUNDO REAL. NA TGARDEN, CONSTRUÍMOS SISTEMAS QUE ESCALAM DE UM CARTÃO DE VISITA A UMA FACHADA, DE UMA TELA A UM ESPAÇO PÚBLICO — FEITOS PARA SEREM RECONHECIDOS, LEMBRADOS E SENTIDOS.',
+        'UMA IDENTIDADE VISUAL SÓ FUNCIONA QUANDO SOBREVIVE AO MUNDO REAL. NA TGARDEN, CONSTRUÍMOS SISTEMAS QUE ESCALAM DE UM CARTÃO DE VISITA A UMA FACHADA, DE UMA TELA A UM ESPAÇO PÚBLICO, FEITOS PARA SEREM RECONHECIDOS, LEMBRADOS E SENTIDOS.',
     },
     en: {
       category: 'Visual Identity',
@@ -197,7 +221,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: '05',
           heading: 'Lola',
-          text: 'A premium self-care brand translated into a calm yet present language — soft tones, elegant typography and a logo that breathes with the brand.',
+          text: 'A premium self-care brand translated into a calm yet present language: soft tones, elegant typography and a logo that breathes with the brand.',
           client: 'Lola',
           sector: 'Self-Care & Wellness',
         },
@@ -211,27 +235,27 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: '07',
           heading: 'Duck Motorcycle',
-          text: 'A premium motorcycle brand with road-worn soul — inspired by American custom heritage, in the Harley-Davidson spirit of freedom and belonging, blending chrome, leather and bold typography into an identity built to last generations.',
+          text: 'A premium motorcycle brand with road-worn soul, inspired by American custom heritage, in the Harley-Davidson spirit of freedom and belonging, blending chrome, leather and bold typography into an identity built to last generations.',
           client: 'Duck Motorcycle',
           sector: 'Custom Motorcycles',
         },
         {
           videoKey: '08',
           heading: 'Vanessa Ferreira',
-          text: 'A premium beauty and skincare brand built as a delicate but confident universe — soft colors, elegant typography and a symbol that feels personal and aspirational.',
+          text: 'A premium beauty and skincare brand built as a delicate but confident universe: soft colors, elegant typography and a symbol that feels personal and aspirational.',
           client: 'Vanessa Ferreira',
           sector: 'Beauty & Skincare',
         },
         {
           videoKey: '09',
           heading: 'Mova',
-          text: 'An event production and brand activation studio that turns physical experiences into visual narratives — a flexible, modular identity built to adapt to any stage, brand or moment.',
+          text: 'An event production and brand activation studio that turns physical experiences into visual narratives: a flexible, modular identity built to adapt to any stage, brand or moment.',
           client: 'Mova',
           sector: 'Event Production & Brand Activation',
         },
       ],
       closing:
-        'A VISUAL IDENTITY ONLY WORKS WHEN IT SURVIVES THE REAL WORLD. AT TGARDEN, WE BUILD SYSTEMS THAT SCALE FROM A BUSINESS CARD TO A FACADE, FROM A SCREEN TO A PUBLIC SPACE — MADE TO BE RECOGNIZED, REMEMBERED AND FELT.',
+        'A VISUAL IDENTITY ONLY WORKS WHEN IT SURVIVES THE REAL WORLD. AT TGARDEN, WE BUILD SYSTEMS THAT SCALE FROM A BUSINESS CARD TO A FACADE, FROM A SCREEN TO A PUBLIC SPACE, MADE TO BE RECOGNIZED, REMEMBERED AND FELT.',
     },
   },
   {
@@ -248,7 +272,7 @@ export const projectDetails: ProjectDetail[] = [
       title: 'Figa',
       heroStatement: 'Key visual',
       intro: [
-        'Key visuals construídos como sistemas vivos — imagens em movimento que carregam a marca por telas, palcos e ruas.',
+        'Key visuals construídos como sistemas vivos: imagens em movimento que carregam a marca por telas, palcos e ruas.',
       ],
       client: 'Figa, Movida, Rokka',
       sector: 'Eventos & Marcas de Experiência',
@@ -257,14 +281,14 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'figa-02',
           heading: 'Uma imagem que se move, uma marca que respira.',
-          text: 'Key visual é mais do que um cartaz. É uma postura — o jeito que a marca se posiciona, aparece e fala em cada ponto de contato. Cada projeto nasce de um gesto e se desdobra em sistema: tipografia, ritmo, cor e movimento trabalhando como um só.',
+          text: 'Key visual é mais do que um cartaz. É uma postura: o jeito que a marca se posiciona, aparece e fala em cada ponto de contato. Cada projeto nasce de um gesto e se desdobra em sistema: tipografia, ritmo, cor e movimento trabalhando como um só.',
           client: 'Movida',
           sector: 'Eventos & Cultura',
         },
         {
           videoKey: 'figa-03',
           heading: 'Uma composição, muitas histórias.',
-          text: 'A mesma grade visual acomoda peças completamente diferentes sem perder identidade — porque o sistema é a marca, não cada peça individual.',
+          text: 'A mesma grade visual acomoda peças completamente diferentes sem perder identidade, porque o sistema é a marca, não cada peça individual.',
           client: 'Movida',
           sector: 'Eventos & Cultura',
         },
@@ -284,14 +308,14 @@ export const projectDetails: ProjectDetail[] = [
         },
       ],
       closing:
-        'KEY VISUAL COMO COREOGRAFIA — UMA MARCA QUE CHEGA EM MOVIMENTO E FICA NA MEMÓRIA.',
+        'KEY VISUAL COMO COREOGRAFIA: UMA MARCA QUE CHEGA EM MOVIMENTO E FICA NA MEMÓRIA.',
     },
     en: {
       category: 'Key Visual',
       title: 'Figa',
       heroStatement: 'Key visual',
       intro: [
-        'Key visuals built as living systems — moving images that carry the brand across screens, stages and streets.',
+        'Key visuals built as living systems: moving images that carry the brand across screens, stages and streets.',
       ],
       client: 'Figa, Movida, Rokka',
       sector: 'Events & Experience Brands',
@@ -300,14 +324,14 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'figa-02',
           heading: 'An image that moves, a brand that breathes.',
-          text: "Key visual is more than a poster. It's a posture — the way the brand stands, looks and speaks across every touchpoint. Each project starts with a gesture and unfolds into a system: type, rhythm, color and motion working as one.",
+          text: "Key visual is more than a poster. It's a posture: the way the brand stands, looks and speaks across every touchpoint. Each project starts with a gesture and unfolds into a system: type, rhythm, color and motion working as one.",
           client: 'Movida',
           sector: 'Events & Culture',
         },
         {
           videoKey: 'figa-03',
           heading: 'One composition, many stories.',
-          text: 'The same visual grid holds completely different pieces without losing identity — because the system is the brand, not any single piece.',
+          text: 'The same visual grid holds completely different pieces without losing identity, because the system is the brand, not any single piece.',
           client: 'Movida',
           sector: 'Events & Culture',
         },
@@ -327,7 +351,7 @@ export const projectDetails: ProjectDetail[] = [
         },
       ],
       closing:
-        'KEY VISUAL AS CHOREOGRAPHY — A BRAND THAT ARRIVES MOVING AND STAYS IN THE MEMORY.',
+        'KEY VISUAL AS CHOREOGRAPHY: A BRAND THAT ARRIVES MOVING AND STAYS IN THE MEMORY.',
     },
   },
   {
@@ -364,7 +388,7 @@ export const projectDetails: ProjectDetail[] = [
           images: [efetivaImg02, efetivaImg03],
           liveUrl: 'https://www.efetivaeng.com.br/',
           heading: 'Efetiva Engenharia',
-          text: 'Site institucional para uma construtora especializada em reformas de alto padrão — portfólio de obras, diferenciais e um formulário direto de contato para captar novos projetos.',
+          text: 'Site institucional para uma construtora especializada em reformas de alto padrão: portfólio de obras, diferenciais e um formulário direto de contato para captar novos projetos.',
           client: 'Efetiva Engenharia',
           sector: 'Engenharia & Reformas',
         },
@@ -399,7 +423,7 @@ export const projectDetails: ProjectDetail[] = [
           images: [efetivaImg02, efetivaImg03],
           liveUrl: 'https://www.efetivaeng.com.br/',
           heading: 'Efetiva Engenharia',
-          text: 'Institutional website for a high-end renovation contractor — project portfolio, differentiators and a direct contact form to bring in new projects.',
+          text: 'Institutional website for a high-end renovation contractor: project portfolio, differentiators and a direct contact form to bring in new projects.',
           client: 'Efetiva Engenharia',
           sector: 'Engineering & Renovations',
         },
@@ -427,7 +451,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'Motion_01',
           heading: 'Movimento com propósito.',
-          text: 'Cada transição carrega intenção — velocidade, peso e ritmo contam a história tanto quanto a imagem parada.',
+          text: 'Cada transição carrega intenção: velocidade, peso e ritmo contam a história tanto quanto a imagem parada.',
           client: 'Agência 2DA',
           sector: 'Publicidade & Comunicação',
         },
@@ -495,7 +519,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'Motion_01',
           heading: 'Movement with purpose.',
-          text: 'Every transition carries intention — speed, weight and rhythm tell the story just as much as the still image does.',
+          text: 'Every transition carries intention: speed, weight and rhythm tell the story just as much as the still image does.',
           client: 'Agência 2DA',
           sector: 'Advertising & Communication',
         },
@@ -557,7 +581,7 @@ export const projectDetails: ProjectDetail[] = [
     slug: 'velvo',
     categoryId: 'packaging',
     projectNumber: '01',
-    categoryTotal: '01',
+    categoryTotal: '03',
     year: '2025',
     heroImage: velvoImg01,
     factSheetRepeat: false,
@@ -567,7 +591,7 @@ export const projectDetails: ProjectDetail[] = [
       heroStatement: 'A embalagem é o primeiro produto que o cliente realmente sente.',
       intro: [
         'Três segundos. É o tempo que uma embalagem tem pra se destacar antes da mão do cliente ir pra outra marca.',
-        'Textura, peso e acabamento comunicam qualidade antes mesmo da primeira palavra ser lida no rótulo — da paisagem que inspirou a marca ao produto na mão do cliente, cada peça continua a anterior.',
+        'Textura, peso e acabamento comunicam qualidade antes mesmo da primeira palavra ser lida no rótulo: da paisagem que inspirou a marca ao produto na mão do cliente, cada peça continua a anterior.',
       ],
       client: 'Velvo',
       sector: 'Bens de Consumo',
@@ -589,13 +613,47 @@ export const projectDetails: ProjectDetail[] = [
             velvoImg10,
           ],
           heading: 'Um sistema, em sequência.',
-          text: 'Mood board, garrafa, rótulo, identidade e fotografia — uma sequência visual contínua, sem interrupções.',
+          text: 'Mood board, garrafa, rótulo, identidade e fotografia: uma sequência visual contínua, sem interrupções.',
           client: 'Velvo',
           sector: 'Bens de Consumo',
         },
+        {
+          videoKey: 'patarara-sequence',
+          media: [
+            { image: patararaImg01 },
+            { embedUrl: 'https://www.pacdora.com/pt/share?filter_url=ps1of0x7if' },
+            { image: patararaImg02, parallax: true },
+            { image: patararaImg03 },
+            { embedUrl: 'https://www.pacdora.com/pt/share?filter_url=ps9gc4lo1v' },
+            { image: patararaImg06, parallax: true },
+            { image: patararaImg04 },
+            { embedUrl: 'https://www.pacdora.com/pt/share?filter_url=ps9f6hpmac' },
+          ],
+          heading: 'Pata Rara',
+          text: 'Uma marca de petiscos naturais que também precisa fazer o cachorro (e o tutor) sorrir: mascote mordendo a embalagem, cores vibrantes por sabor e uma janela que mostra o produto de verdade. As ilustrações também foram feitas por mim.',
+          client: 'Pata Rara',
+          sector: 'Pet Food',
+          showFactSheet: true,
+          factSheetPosition: 'before',
+        },
+        {
+          videoKey: 'biriquim-sequence',
+          media: [
+            { image: biriquimImg01 },
+            { image: biriquimImg02 },
+            { embedUrl: 'https://www.pacdora.com/pt/share?filter_url=pseh0snxto' },
+            { videoKey: 'biriquim_01' },
+          ],
+          heading: 'Biriquim',
+          text: 'Uma bebida pronta pra beber que também é presença de festa: rótulo vibrante, sabor bem definido (vodka, guaraná, limão e toque de chapéu de couro) e uma lata que já comunica a experiência antes do primeiro gole.',
+          client: 'Biriquim',
+          sector: 'Bebidas',
+          showFactSheet: true,
+          factSheetPosition: 'before',
+        },
       ],
       closing:
-        'UMA BOA EMBALAGEM VENDE NA PRATELEIRA E CONVENCE NA MÃO — DUAS EXPERIÊNCIAS, UM SÓ SISTEMA.',
+        'UMA BOA EMBALAGEM VENDE NA PRATELEIRA E CONVENCE NA MÃO: DUAS EXPERIÊNCIAS, UM SÓ SISTEMA.',
     },
     en: {
       category: 'Packaging Design',
@@ -603,7 +661,7 @@ export const projectDetails: ProjectDetail[] = [
       heroStatement: "Packaging is the first product the customer actually feels.",
       intro: [
         "Three seconds. That's how long a package has to stand out before the customer's hand moves to another brand.",
-        "Texture, weight and finish communicate quality before a single word is read on the label — from the landscape that inspired the brand to the product in the customer's hand, each piece continues the last.",
+        "Texture, weight and finish communicate quality before a single word is read on the label: from the landscape that inspired the brand to the product in the customer's hand, each piece continues the last.",
       ],
       client: 'Velvo',
       sector: 'Consumer Goods',
@@ -625,13 +683,47 @@ export const projectDetails: ProjectDetail[] = [
             velvoImg10,
           ],
           heading: 'One system, in sequence.',
-          text: 'Mood board, bottle, label, identity and photography — one continuous visual sequence, without interruption.',
+          text: 'Mood board, bottle, label, identity and photography: one continuous visual sequence, without interruption.',
           client: 'Velvo',
           sector: 'Consumer Goods',
         },
+        {
+          videoKey: 'patarara-sequence',
+          media: [
+            { image: patararaImg01 },
+            { embedUrl: 'https://www.pacdora.com/pt/share?filter_url=ps1of0x7if' },
+            { image: patararaImg02, parallax: true },
+            { image: patararaImg03 },
+            { embedUrl: 'https://www.pacdora.com/pt/share?filter_url=ps9gc4lo1v' },
+            { image: patararaImg06, parallax: true },
+            { image: patararaImg04 },
+            { embedUrl: 'https://www.pacdora.com/pt/share?filter_url=ps9f6hpmac' },
+          ],
+          heading: 'Pata Rara',
+          text: 'A natural pet-treat brand that also needs to make the dog (and the owner) smile: a mascot biting through the pack, vibrant colors per flavor, and a window that shows the real product. The illustrations were also made by me.',
+          client: 'Pata Rara',
+          sector: 'Pet Food',
+          showFactSheet: true,
+          factSheetPosition: 'before',
+        },
+        {
+          videoKey: 'biriquim-sequence',
+          media: [
+            { image: biriquimImg01 },
+            { image: biriquimImg02 },
+            { embedUrl: 'https://www.pacdora.com/pt/share?filter_url=pseh0snxto' },
+            { videoKey: 'biriquim_01' },
+          ],
+          heading: 'Biriquim',
+          text: "A ready-to-drink can that's also a party statement: a vibrant label, a clear flavor identity (vodka, guaraná, lime and a touch of chapéu-de-couro), and a can that communicates the experience before the first sip.",
+          client: 'Biriquim',
+          sector: 'Beverages',
+          showFactSheet: true,
+          factSheetPosition: 'before',
+        },
       ],
       closing:
-        'GOOD PACKAGING SELLS ON THE SHELF AND CONVINCES IN THE HAND — TWO EXPERIENCES, ONE SYSTEM.',
+        'GOOD PACKAGING SELLS ON THE SHELF AND CONVINCES IN THE HAND: TWO EXPERIENCES, ONE SYSTEM.',
     },
   },
   {
@@ -665,7 +757,7 @@ export const projectDetails: ProjectDetail[] = [
         },
       ],
       closing:
-        'MODA COM IDENTIDADE NÃO SEGUE TENDÊNCIA — CRIA REPERTÓRIO PRÓPRIO E DEIXA A TENDÊNCIA SEGUIR ELA.',
+        'MODA COM IDENTIDADE NÃO SEGUE TENDÊNCIA: CRIA REPERTÓRIO PRÓPRIO E DEIXA A TENDÊNCIA SEGUIR ELA.',
     },
     en: {
       category: 'Fashion Design',
@@ -691,7 +783,7 @@ export const projectDetails: ProjectDetail[] = [
         },
       ],
       closing:
-        "FASHION WITH IDENTITY DOESN'T FOLLOW TRENDS — IT BUILDS ITS OWN REPERTOIRE AND LETS TRENDS FOLLOW IT.",
+        "FASHION WITH IDENTITY DOESN'T FOLLOW TRENDS: IT BUILDS ITS OWN REPERTOIRE AND LETS TRENDS FOLLOW IT.",
     },
   },
 ]

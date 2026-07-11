@@ -30,7 +30,7 @@ function SkillBar({ skill, index }: { skill: (typeof skills)[number]; index: num
         <motion.div className="h-full rounded-full bg-ink" initial={{ width: '0%' }} animate={controls} />
       </div>
       <span className="sr-only">
-        {skill.name} — {skill.value}%
+        {skill.name} / {skill.value}%
       </span>
     </div>
   )

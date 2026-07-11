@@ -1,8 +1,49 @@
+import { useRef, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { motion } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
 import { useLang } from '../lib/lang'
 import { getProjectDetail, getSectionVideo } from '../data/projectDetails'
 import { projects, projectPageCopy } from '../data/content'
+
+function ParallaxImage({ src, alt }: { src: string; alt: string }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%'])
+
+  return (
+    <div ref={ref} className="w-full aspect-[4/3] md:aspect-video overflow-hidden">
+      <motion.img src={src} alt={alt} style={{ y, scale: 2 }} className="w-full h-full object-cover" />
+    </div>
+  )
+}
+
+function EmbedFrame({ src, title, activateLabel }: { src: string; title: string; activateLabel: string }) {
+  const [active, setActive] = useState(false)
+
+  return (
+    <div
+      className="relative w-full aspect-square bg-red flex items-center justify-center"
+      onMouseLeave={() => setActive(false)}
+    >
+      <iframe
+        src={src}
+        title={title}
+        allowFullScreen
+        className="w-full h-full border-none"
+        style={{ pointerEvents: active ? 'auto' : 'none' }}
+      />
+      {!active && (
+        <button
+          type="button"
+          onClick={() => setActive(true)}
+          className="absolute inset-0 flex items-center justify-center bg-ink/0 hover:bg-ink/5 transition-colors"
+        >
+          <span className="label bg-ink text-paper px-4 py-2">{activateLabel}</span>
+        </button>
+      )}
+    </div>
+  )
+}
 
 export function FactSheet({
   client,
@@ -62,7 +103,7 @@ export default function ProjectPage() {
           <p className="label text-ink-soft mb-3">
             {ui.project} {detail.projectNumber} / {detail.categoryTotal}
           </p>
-          <p className="label text-red">{detail.year} — {copy.category}</p>
+          <p className="label text-red">{detail.year} / {copy.category}</p>
         </div>
 
         <motion.h1
@@ -117,6 +158,7 @@ export default function ProjectPage() {
         {copy.sections.map((s, i) => {
           const videoUrl = getSectionVideo(s.videoKey)
           const displayNumber = i === 0 ? null : String(i + 1).padStart(2, '0')
+          const showFactSheet = s.showFactSheet ?? detail.factSheetRepeat !== false
           return (
             <div key={i}>
               <motion.div
@@ -148,6 +190,12 @@ export default function ProjectPage() {
                 )}
               </motion.div>
 
+              {showFactSheet && s.factSheetPosition === 'before' && (
+                <div className="mt-8 md:mt-10">
+                  <FactSheet client={s.client} sector={s.sector} year={detail.year} scope={copy.scope} ui={ui} />
+                </div>
+              )}
+
               {videoUrl && (
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -160,7 +208,43 @@ export default function ProjectPage() {
                 </motion.div>
               )}
 
-              {!videoUrl && s.images && s.images.length > 0 && (
+              {!videoUrl && s.media && s.media.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-col gap-0"
+                >
+                  {s.media.map((block, blockIndex) => {
+                    const blockVideoUrl = block.videoKey ? getSectionVideo(block.videoKey) : undefined
+                    return blockVideoUrl ? (
+                      <video
+                        key={blockIndex}
+                        src={blockVideoUrl}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-auto block"
+                      />
+                    ) : block.embedUrl ? (
+                      <EmbedFrame
+                        key={blockIndex}
+                        src={block.embedUrl}
+                        title={`${s.heading} ${blockIndex + 1}`}
+                        activateLabel={ui.clickToInteract}
+                      />
+                    ) : block.parallax && block.image ? (
+                      <ParallaxImage key={blockIndex} src={block.image} alt={s.heading} />
+                    ) : (
+                      <img key={blockIndex} src={block.image} alt={s.heading} className="w-full h-auto block" />
+                    )
+                  })}
+                </motion.div>
+              )}
+
+              {!videoUrl && !s.media && s.images && s.images.length > 0 && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -174,7 +258,7 @@ export default function ProjectPage() {
                 </motion.div>
               )}
 
-              {detail.factSheetRepeat !== false && (
+              {showFactSheet && s.factSheetPosition !== 'before' && (
                 <div className="mt-8 md:mt-10">
                   <FactSheet client={s.client} sector={s.sector} year={detail.year} scope={copy.scope} ui={ui} />
                 </div>

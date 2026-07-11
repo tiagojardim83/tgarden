@@ -65,7 +65,7 @@ export const featureStrip = [
 
 export const about = {
   pt: {
-    kicker: '01 — About',
+    kicker: '01 / About',
     heading: 'Entre o design e a ideia de fazer junto.',
     paragraphs: [
       'Sou Tiago Jardim, designer e diretor de arte. Transformo ideias em projetos aprovados, começando pela apresentação que dá luz verde a um negócio, seguida da identidade de marca, motion e experiência digital que a colocam em prática.',
@@ -73,7 +73,7 @@ export const about = {
     ],
   },
   en: {
-    kicker: '01 — About',
+    kicker: '01 / About',
     heading: 'Between design, and the idea of making it together.',
     paragraphs: [
       "I'm Tiago Jardim, designer and art director. I turn ideas into approved projects, starting with the presentation that gets a business greenlit, followed by the brand identity, motion and digital experience that bring it to life.",
@@ -94,8 +94,8 @@ export const competencies = [
 ]
 
 export const projectsCopy = {
-  pt: { kicker: '02 — Projects', heading: 'Sete frentes, uma mesma assinatura.', cta: 'Todas as frentes' },
-  en: { kicker: '02 — Projects', heading: 'Seven fronts, one same signature.', cta: 'All fronts' },
+  pt: { kicker: '02 / Projects', heading: 'Sete frentes, uma mesma assinatura.', cta: 'Todas as frentes' },
+  en: { kicker: '02 / Projects', heading: 'Seven fronts, one same signature.', cta: 'All fronts' },
 }
 
 export interface ProjectSummary {
@@ -158,8 +158,8 @@ export const projects: ProjectSummary[] = [
     category: 'UX/UI Design',
     title: 'Movimento Humano',
     year: '2025/26',
-    count: '1 projeto',
-    countEn: '1 project',
+    count: '2 projetos',
+    countEn: '2 projects',
     image: uxuiImg,
   },
   {
@@ -178,8 +178,8 @@ export const projects: ProjectSummary[] = [
     category: 'Packaging Design',
     title: 'Velvo',
     year: '2025/26',
-    count: '1 projeto',
-    countEn: '1 project',
+    count: '3 projetos',
+    countEn: '3 projects',
     image: thumbVelvoImg,
   },
   {
@@ -195,8 +195,8 @@ export const projects: ProjectSummary[] = [
 ]
 
 export const skillsCopy = {
-  pt: { kicker: '03 — Skills', heading: 'Habilidade em desenvolvimento.' },
-  en: { kicker: '03 — Skills', heading: 'Software skill in development.' },
+  pt: { kicker: '03 / Skills', heading: 'Habilidade em desenvolvimento.' },
+  en: { kicker: '03 / Skills', heading: 'Software skill in development.' },
 }
 
 export const skills = [
@@ -211,28 +211,28 @@ export const skills = [
 ]
 
 export const fragmentsCopy = {
-  pt: { kicker: '04 — Fragments', heading: 'Processo, bastidor e ruído.' },
-  en: { kicker: '04 — Fragments', heading: 'Process, backstage and noise.' },
+  pt: { kicker: '04 / Fragments', heading: 'Processo, bastidor e ruído.' },
+  en: { kicker: '04 / Fragments', heading: 'Process, backstage and noise.' },
 }
 
 export const fragments = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6]
 
 export const manifestoCopy = {
   pt: {
-    kicker: '05 — Manifesto',
+    kicker: '05 / Manifesto',
     text: 'Criar é misturar técnica e intuição. Conectar estética, design e negócio sem perder a alma do que é feito.',
-    signature: '— Tiago Jardim',
+    signature: 'Tiago Jardim',
   },
   en: {
-    kicker: '05 — Manifesto',
+    kicker: '05 / Manifesto',
     text: 'To create is to mix technique and intuition. To connect aesthetics, design and business without losing the soul of what is made.',
-    signature: '— Tiago Jardim',
+    signature: 'Tiago Jardim',
   },
 }
 
 export const contactCopy = {
   pt: {
-    kicker: '06 — Contact',
+    kicker: '06 / Contact',
     heading: 'Vamos falar sobre uma ideia.',
     name: 'Nome',
     namePlaceholder: 'Seu nome',
@@ -249,7 +249,7 @@ export const contactCopy = {
     locationLine2: 'Atende Brasil & Exterior',
   },
   en: {
-    kicker: '06 — Contact',
+    kicker: '06 / Contact',
     heading: "Let's talk about an idea.",
     name: 'Name',
     namePlaceholder: 'Your name',
@@ -289,6 +289,7 @@ export const projectPageCopy = {
     moreProjects: 'Mais projetos',
     allProjects: 'Todos os projetos',
     viewLive: 'Ver site ao vivo',
+    clickToInteract: 'Clique para interagir',
   },
   en: {
     back: 'Back',
@@ -300,5 +301,6 @@ export const projectPageCopy = {
     moreProjects: 'More projects',
     allProjects: 'All projects',
     viewLive: 'View live site',
+    clickToInteract: 'Click to interact',
   },
 }
