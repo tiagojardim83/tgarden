@@ -30,7 +30,7 @@ export const hero = {
     roleLine2: 'Designer',
     nameTop: 'TGARDEN',
     nameBottom: 'TIAGO JARDIM',
-    sub: 'Projetos que conectam identidade, imagem e experiência.',
+    sub: 'Transformo ideias em projetos aprovados, do pitch que garante investimento à marca, motion e produto que dão vida a ela.',
     tag: 'TGARDEN STUDIO',
   },
   en: {
@@ -40,7 +40,7 @@ export const hero = {
     roleLine2: 'Designer',
     nameTop: 'TGARDEN',
     nameBottom: 'TIAGO JARDIM',
-    sub: 'Projects that connect identity, image and experience.',
+    sub: 'I turn ideas into approved projects, from the pitch that gets funded to the brand, motion and product that bring it to life.',
     tag: 'TGARDEN STUDIO',
   },
 }
@@ -48,13 +48,13 @@ export const hero = {
 export const featureStrip = [
   {
     number: '01',
-    pt: { kicker: 'Identidade de Marca', heading: 'Identidade Visual + Key Visual' },
-    en: { kicker: 'Brand Identity', heading: 'Visual Identity + Key Visual' },
+    pt: { kicker: 'Design de Apresentação', heading: 'Apresentações de Alto Impacto' },
+    en: { kicker: 'Presentation Design', heading: 'High-Impact Presenta­tions' },
   },
   {
     number: '02',
-    pt: { kicker: 'Design de Apresentação', heading: 'Apresentações de Alto Impacto' },
-    en: { kicker: 'Presentation Design', heading: 'High-Impact Presenta­tions' },
+    pt: { kicker: 'Identidade de Marca', heading: 'Identidade Visual + Key Visual' },
+    en: { kicker: 'Brand Identity', heading: 'Visual Identity + Key Visual' },
   },
   {
     number: '03',
