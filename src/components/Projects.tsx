@@ -58,7 +58,7 @@ function ProjectRow({
           active ? 'text-paper/60' : 'text-ink-soft group-hover:text-red'
         }`}
       >
-        {lang === 'pt' ? project.tag : project.tagEn}
+        {lang === 'pt' ? project.count : project.countEn}
       </span>
       <span
         className={`col-span-4 md:col-span-2 label text-right flex items-center justify-end gap-2 transition-colors ${

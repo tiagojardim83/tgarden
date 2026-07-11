@@ -133,6 +133,19 @@ export default function ProjectPage() {
                 <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
                   {s.text}
                 </p>
+
+                {s.liveUrl && (
+                  <a
+                    href={s.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor="VIEW"
+                    className="group md:col-start-4 md:col-span-9 self-start inline-flex items-center gap-3 bg-ink text-paper px-6 py-3 label hover:bg-red transition-colors duration-300 w-fit"
+                  >
+                    {ui.viewLive}
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </a>
+                )}
               </motion.div>
 
               {videoUrl && (
@@ -144,6 +157,20 @@ export default function ProjectPage() {
                   className="-mx-6 md:-mx-10 mt-8 md:mt-10"
                 >
                   <video src={videoUrl} autoPlay muted loop playsInline className="w-full h-auto block" />
+                </motion.div>
+              )}
+
+              {!videoUrl && s.images && s.images.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-col gap-2"
+                >
+                  {s.images.map((src, imgIndex) => (
+                    <img key={imgIndex} src={src} alt={s.heading} className="w-full h-auto block" />
+                  ))}
                 </motion.div>
               )}
 

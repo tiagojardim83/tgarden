@@ -106,8 +106,6 @@ export interface ProjectSummary {
   year: string
   count: string
   countEn: string
-  tag: string
-  tagEn: string
   image: string
   imageFit?: 'contain'
 }
@@ -119,10 +117,8 @@ export const projects: ProjectSummary[] = [
     category: 'Presentation Design',
     title: 'Presentation Design',
     year: '2025/26',
-    count: '1 projeto',
-    countEn: '1 project',
-    tag: 'Presentation Design',
-    tagEn: 'Presentation Design',
+    count: 'Projetos',
+    countEn: 'Projects',
     image: gallery1,
   },
   {
@@ -133,8 +129,6 @@ export const projects: ProjectSummary[] = [
     year: '2024',
     count: '6 projetos',
     countEn: '6 projects',
-    tag: '6 projetos',
-    tagEn: '6 projects',
     image: maokaImg,
   },
   {
@@ -145,8 +139,6 @@ export const projects: ProjectSummary[] = [
     year: '2025/26',
     count: '5 projetos',
     countEn: '5 projects',
-    tag: '5 projetos',
-    tagEn: '5 projects',
     image: figaImg,
   },
   {
@@ -157,8 +149,6 @@ export const projects: ProjectSummary[] = [
     year: '2025/26',
     count: '1 projeto',
     countEn: '1 project',
-    tag: 'Cidades Invisíveis',
-    tagEn: 'Cidades Invisíveis',
     image: motionImg,
     imageFit: 'contain',
   },
@@ -170,8 +160,6 @@ export const projects: ProjectSummary[] = [
     year: '2025/26',
     count: '1 projeto',
     countEn: '1 project',
-    tag: 'Movimento Humano',
-    tagEn: 'Movimento Humano',
     image: uxuiImg,
   },
   {
@@ -180,10 +168,8 @@ export const projects: ProjectSummary[] = [
     category: 'Web Design & Development',
     title: 'TGarden',
     year: '2025/26',
-    count: '1 projeto',
-    countEn: '1 project',
-    tag: 'TGarden',
-    tagEn: 'TGarden',
+    count: '2 projetos',
+    countEn: '2 projects',
     image: thumbTgardenImg,
   },
   {
@@ -194,8 +180,6 @@ export const projects: ProjectSummary[] = [
     year: '2025/26',
     count: '1 projeto',
     countEn: '1 project',
-    tag: 'Velvo',
-    tagEn: 'Velvo',
     image: thumbVelvoImg,
   },
   {
@@ -206,8 +190,6 @@ export const projects: ProjectSummary[] = [
     year: '2025/26',
     count: '1 projeto',
     countEn: '1 project',
-    tag: 'Lobs Brazilian Art',
-    tagEn: 'Lobs Brazilian Art',
     image: thumbLobsImg,
   },
 ]
@@ -306,6 +288,7 @@ export const projectPageCopy = {
     scope: 'Escopo',
     moreProjects: 'Mais projetos',
     allProjects: 'Todos os projetos',
+    viewLive: 'Ver site ao vivo',
   },
   en: {
     back: 'Back',
@@ -316,5 +299,6 @@ export const projectPageCopy = {
     scope: 'Scope',
     moreProjects: 'More projects',
     allProjects: 'All projects',
+    viewLive: 'View live site',
   },
 }

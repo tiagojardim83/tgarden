@@ -5,6 +5,8 @@ import lobsImg from '../assets/images/project-lobs.jpg'
 import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
 import gallery4 from '../assets/images/gallery-4.jpg'
+import efetivaImg02 from '../assets/images/webdesign_efetiva_02.jpg'
+import efetivaImg03 from '../assets/images/webdesign_efetiva_03.jpg'
 
 // Any file dropped in src/assets/videos/ named "<key>.<ext>" (e.g. "05.mp4")
 // is picked up automatically and matched to the section with that videoKey.
@@ -39,6 +41,8 @@ export interface ProjectDetail {
 
 interface ProjectSection {
   videoKey: string
+  images?: string[]
+  liveUrl?: string
   heading: string
   text: string
   client: string
@@ -319,7 +323,7 @@ export const projectDetails: ProjectDetail[] = [
     slug: 'tgarden-site',
     categoryId: 'web-design',
     projectNumber: '01',
-    categoryTotal: '01',
+    categoryTotal: '02',
     year: '2025',
     heroImage: tgardenImg,
     pt: {
@@ -343,6 +347,15 @@ export const projectDetails: ProjectDetail[] = [
           text: 'Componentes reutilizáveis e conteúdo estruturado significam que o site evolui junto com o estúdio, sem recomeçar do zero a cada mudança.',
           client: 'TGarden',
           sector: 'Design & Desenvolvimento',
+        },
+        {
+          videoKey: 'webdesign-efetiva',
+          images: [efetivaImg02, efetivaImg03],
+          liveUrl: 'https://www.efetivaeng.com.br/',
+          heading: 'Efetiva Engenharia',
+          text: 'Site institucional para uma construtora especializada em reformas de alto padrão — portfólio de obras, diferenciais e um formulário direto de contato para captar novos projetos.',
+          client: 'Efetiva Engenharia',
+          sector: 'Engenharia & Reformas',
         },
       ],
       closing:
@@ -369,6 +382,15 @@ export const projectDetails: ProjectDetail[] = [
           text: 'Reusable components and structured content mean the site evolves alongside the studio, without starting from scratch with every change.',
           client: 'TGarden',
           sector: 'Design & Development',
+        },
+        {
+          videoKey: 'webdesign-efetiva',
+          images: [efetivaImg02, efetivaImg03],
+          liveUrl: 'https://www.efetivaeng.com.br/',
+          heading: 'Efetiva Engenharia',
+          text: 'Institutional website for a high-end renovation contractor — project portfolio, differentiators and a direct contact form to bring in new projects.',
+          client: 'Efetiva Engenharia',
+          sector: 'Engineering & Renovations',
         },
       ],
       closing:
