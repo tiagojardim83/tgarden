@@ -1,24 +1,11 @@
-import { useRef, type ReactNode } from 'react'
-import { useInView } from 'motion/react'
+import type { ReactNode } from 'react'
 import { hero, contactCopy, socials, footerWord } from '../data/content'
 import { useLang } from '../lib/lang'
-import { useCanHover } from '../lib/useCanHover'
 import Marquee from './Marquee'
 
 function FooterLink({ href, children }: { href: string; children: ReactNode }) {
-  const ref = useRef<HTMLAnchorElement>(null)
-  const canHover = useCanHover()
-  const inView = useInView(ref, { margin: '-50% 0px -50% 0px' })
-  const active = !canHover && inView
-
   return (
-    <a
-      ref={ref}
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className={`transition-colors ${active ? 'text-paper' : 'hover:text-paper'}`}
-    >
+    <a href={href} target="_blank" rel="noreferrer" className="transition-colors hover:text-paper">
       {children}
     </a>
   )
