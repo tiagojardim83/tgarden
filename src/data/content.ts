@@ -68,26 +68,27 @@ export const about = {
     kicker: '01 — About',
     heading: 'Entre o design e a ideia de fazer junto.',
     paragraphs: [
-      'Sou Tiago Jardim, designer e diretor criativo. Atuo entre identidade visual, key visuals, motion design, apresentações de alto impacto e experiências digitais, criando projetos que combinam estratégia, estética e funcionalidade.',
-      'Todo projeto nasce para resolver um desafio de comunicação. Da identidade de uma marca ao lançamento de um site, da apresentação de um negócio à construção de uma experiência visual, meu objetivo é transformar ideias em soluções consistentes, relevantes e memoráveis.',
+      'Sou Tiago Jardim, designer e diretor de arte. Transformo ideias em projetos aprovados, começando pela apresentação que dá luz verde a um negócio, seguida da identidade de marca, motion e experiência digital que a colocam em prática.',
+      'Todo projeto existe para resolver o mesmo desafio: tornar uma ideia clara o suficiente para ser aprovada, e consistente o suficiente para ser lembrada. Seja um pitch deck em busca de investimento, uma marca sendo lançada no mundo, ou um produto encontrando sua interface, meu papel é sempre o mesmo: transformar ideias em estrutura.',
     ],
   },
   en: {
     kicker: '01 — About',
     heading: 'Between design, and the idea of making it together.',
     paragraphs: [
-      "I'm Tiago Jardim, designer and creative director. I work across visual identity, key visuals, motion design, high-impact presentations and digital experiences, creating projects that combine strategy, aesthetics and functionality.",
-      'Every project is born to solve a communication challenge. From the identity of a brand to the launch of a website, from the presentation of a business to building a visual experience, my goal is to turn ideas into consistent, relevant and memorable solutions.',
+      "I'm Tiago Jardim, designer and art director. I turn ideas into approved projects, starting with the presentation that gets a business greenlit, followed by the brand identity, motion and digital experience that bring it to life.",
+      "Every project exists to solve the same challenge: making an idea clear enough to be approved, and consistent enough to be remembered. Whether it's a pitch deck seeking investment, a brand launching into the world, or a product finding its interface, my role is always the same: turn ideas into structure.",
     ],
   },
 }
 
 export const competencies = [
+  'Presentation Design',
   'Visual Identity',
   'Key Visual',
+  'Motion Design',
   'UX/UI Design',
   'Web Design & Development',
-  'Motion Design',
   'Packaging Design',
   'Fashion Design',
 ]
