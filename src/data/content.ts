@@ -1,7 +1,7 @@
 import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import uxuiImg from '../assets/images/thumb-ux-ui.jpg'
-import thumbTgardenImg from '../assets/images/thumb-tgarden.jpg'
+import thumbTgardenImg from '../assets/images/Thumb_Web design_development.jpg'
 import motionImg from '../assets/images/Thumb_Site_Motion.webp'
 import thumbLobsImg from '../assets/images/Thumb_Fashion_Design.jpg'
 import gallery1 from '../assets/images/gallery-1.jpg'
