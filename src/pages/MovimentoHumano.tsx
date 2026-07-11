@@ -96,6 +96,7 @@ import showcase01 from '../assets/images/movimento-humano/showcase-01.png'
 import showcase02 from '../assets/images/movimento-humano/showcase-02.png'
 import showcase03 from '../assets/images/movimento-humano/showcase-03.png'
 import lobsUxHero from '../assets/images/ux_ui_design_lobs_02.jpg'
+import lobsLaptop from '../assets/images/ux_ui_design_lobs_04.jpg'
 import lobsScreen01 from '../assets/images/lobsScreen_01.png'
 import lobsScreen02 from '../assets/images/lobsScreen_02.png'
 import lobsScreen03 from '../assets/images/lobsScreen_03.png'
@@ -327,6 +328,27 @@ export default function MovimentoHumano() {
               ui={ui}
             />
           </div>
+
+          <motion.img
+            src={lobsLaptop}
+            alt="Lobs Brazilian Art"
+            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10 h-auto block"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          />
+
+          <a
+            href="https://www.lobs.com.br/"
+            target="_blank"
+            rel="noreferrer"
+            data-cursor="VIEW"
+            className="group md:col-start-4 md:col-span-9 mt-8 md:mt-10 self-start inline-flex items-center gap-3 bg-ink text-paper px-6 py-3 label hover:bg-red transition-colors duration-300 w-fit"
+          >
+            {ui.viewLive}
+            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </a>
 
           <div className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10">
             <LobsBuild center={lobsScreen02} back={lobsScreen03} front={lobsScreen01} />
