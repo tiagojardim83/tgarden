@@ -365,6 +365,8 @@ export default function ProjectPage() {
                       />
                     ) : block.parallax && block.image ? (
                       <ParallaxImage key={blockIndex} src={block.image} alt={s.heading} />
+                    ) : block.mobileCover && block.image ? (
+                      <PanCoverImage key={blockIndex} src={block.image} alt={s.heading} />
                     ) : (
                       <img key={blockIndex} src={block.image} alt={s.heading} className="w-full h-auto block" />
                     )

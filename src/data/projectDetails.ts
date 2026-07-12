@@ -2,6 +2,7 @@ import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import tgardenImg from '../assets/images/Thumb_lobs.jpg'
 import lobsImg from '../assets/images/project-lobs.jpg'
+import lobs01Img from '../assets/images/lobs_01.jpg'
 import presentation01Img from '../assets/images/Presentation_01.jpg'
 import presentation02Img from '../assets/images/Presentation_02.jpg'
 import presentation03Img from '../assets/images/Presentation_03.jpg'
@@ -71,6 +72,8 @@ export interface MediaBlock {
   videoKey?: string
   /** Keeps this block's video at its natural full-width/auto-height size on mobile, instead of the default cropped 18/25 cover treatment. */
   mobileNatural?: boolean
+  /** Renders this block's image like Auditions: cropped 18/25 box with the reveal-pan + drag interaction. Desktop is unaffected. */
+  mobileCover?: boolean
 }
 
 interface ProjectSection {
@@ -154,7 +157,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'presentation-04',
-          media: [{ image: presentation04Img }, { videoKey: 'Presenation_04', mobileNatural: true }],
+          media: [{ image: presentation04Img, mobileCover: true }, { videoKey: 'Presenation_04', mobileNatural: true }],
           heading: 'Um show, uma marca global.',
           text: 'Deck de apresentação para o show internacional de Alicia Keys em Belo Horizonte, associando uma artista global a marcas que buscam visibilidade massiva e posicionamento premium.',
           client: 'Malab',
@@ -198,7 +201,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'presentation-04',
-          media: [{ image: presentation04Img }, { videoKey: 'Presenation_04', mobileNatural: true }],
+          media: [{ image: presentation04Img, mobileCover: true }, { videoKey: 'Presenation_04', mobileNatural: true }],
           heading: 'One show, one global brand.',
           text: "A pitch deck for Alicia Keys' international show in Belo Horizonte, pairing a global artist with brands seeking massive visibility and premium positioning.",
           client: 'Malab',
@@ -830,6 +833,14 @@ export const projectDetails: ProjectDetail[] = [
       scope: 'Fashion Design, Direção Criativa',
       sections: [
         {
+          videoKey: 'lobs-01',
+          media: [{ image: lobs01Img }, { videoKey: 'lobs_02' }],
+          heading: 'Vestido de verdade, não só fotografado.',
+          text: 'Do mar ao dia a dia, as peças da Lobs vivem fora do estúdio — a prova de que a identidade da marca é usada, não só vista.',
+          client: 'Lobs Brazilian Art',
+          sector: 'Moda & Arte Brasileira',
+        },
+        {
           videoKey: 'lobs-02',
           heading: 'Estampa como narrativa.',
           text: 'Cada padronagem carrega referência cultural brasileira traduzida em linguagem contemporânea, sem virar clichê.',
@@ -855,6 +866,14 @@ export const projectDetails: ProjectDetail[] = [
       sector: 'Fashion & Brazilian Art',
       scope: 'Fashion Design, Creative Direction',
       sections: [
+        {
+          videoKey: 'lobs-01',
+          media: [{ image: lobs01Img }, { videoKey: 'lobs_02' }],
+          heading: 'Worn for real, not just photographed.',
+          text: "From the sea to everyday life, Lobs' pieces live outside the studio — proof the brand's identity is worn, not just seen.",
+          client: 'Lobs Brazilian Art',
+          sector: 'Fashion & Brazilian Art',
+        },
         {
           videoKey: 'lobs-02',
           heading: 'Print as narrative.',
