@@ -882,6 +882,13 @@ export const projectDetails: ProjectDetail[] = [
           sector: 'Moda & Concursos Criativos',
           year: '2020',
         },
+        {
+          videoKey: 'Reserva_02',
+          heading: 'Reserva: uma marca que virou movimento.',
+          text: 'Parceria com a Reserva, uma das maiores marcas de moda do Brasil — prova de que streetwear autoral também fala a língua de quem já é gigante.',
+          client: 'Reserva',
+          sector: 'Moda & Grandes Marcas',
+        },
       ],
       closing:
         'MODA COM IDENTIDADE NÃO SEGUE TENDÊNCIA: CRIA REPERTÓRIO PRÓPRIO E DEIXA A TENDÊNCIA SEGUIR ELA.',
@@ -932,6 +939,13 @@ export const projectDetails: ProjectDetail[] = [
           client: 'John John Denim',
           sector: 'Fashion & Creative Contests',
           year: '2020',
+        },
+        {
+          videoKey: 'Reserva_02',
+          heading: 'Reserva: a brand that became a movement.',
+          text: "A partnership with Reserva, one of Brazil's biggest fashion brands — proof that authorial streetwear also speaks the language of those who are already giants.",
+          client: 'Reserva',
+          sector: 'Fashion & Major Brands',
         },
       ],
       closing:

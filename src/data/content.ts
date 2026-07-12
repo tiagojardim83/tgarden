@@ -189,8 +189,8 @@ export const projects: ProjectSummary[] = [
     category: 'Fashion Design',
     title: 'Lobs Brazilian Art',
     year: '2025/26',
-    count: '1 projeto',
-    countEn: '1 project',
+    count: '3 projetos',
+    countEn: '3 projects',
     image: thumbLobsImg,
   },
 ]
