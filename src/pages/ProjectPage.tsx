@@ -79,8 +79,10 @@ function PanCoverImage({ src, alt }: { src: string; alt: string }) {
     return () => ro.disconnect()
   }, [])
 
+  const isInteractive = ready && !canHover && dragLimit > 0
+
   useEffect(() => {
-    if (!ready || canHover || hasPannedRef.current || dragLimit <= 0) return
+    if (!isInteractive || hasPannedRef.current) return
     const container = containerRef.current
     if (!container) return
     const io = new IntersectionObserver(
@@ -94,12 +96,12 @@ function PanCoverImage({ src, alt }: { src: string; alt: string }) {
     )
     io.observe(container)
     return () => io.disconnect()
-  }, [ready, canHover, dragLimit, controls])
+  }, [isInteractive, dragLimit, controls])
 
   const imgClassName =
     'absolute inset-y-0 left-0 h-full w-auto max-w-none object-cover md:static md:h-auto md:w-full md:max-w-full'
 
-  if (!ready || canHover) {
+  if (!isInteractive) {
     return (
       <div ref={containerRef} className="relative overflow-hidden aspect-[18/25] md:aspect-auto">
         <img ref={imgRef} src={src} alt={alt} onLoad={measure} className={imgClassName} />
@@ -117,7 +119,7 @@ function PanCoverImage({ src, alt }: { src: string; alt: string }) {
         drag="x"
         dragConstraints={{ left: -dragLimit, right: 0 }}
         dragElastic={0.05}
-        initial={{ x: 0 }}
+        initial={{ x: -dragLimit / 2 }}
         animate={controls}
         className={`${imgClassName} cursor-grab active:cursor-grabbing`}
       />
