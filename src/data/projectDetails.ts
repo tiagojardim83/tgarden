@@ -3,6 +3,7 @@ import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import tgardenImg from '../assets/images/Thumb_lobs.jpg'
 import lobsImg from '../assets/images/project-lobs.jpg'
 import presentation01Img from '../assets/images/Presentation_01.jpg'
+import presentation02Img from '../assets/images/Presentation_02.jpg'
 import gallery4 from '../assets/images/gallery-4.jpg'
 import efetivaImg02 from '../assets/images/webdesign_efetiva_02.jpg'
 import efetivaImg03 from '../assets/images/webdesign_efetiva_03.jpg'
@@ -122,6 +123,14 @@ export const projectDetails: ProjectDetail[] = [
           client: 'MALAB',
           sector: 'Apresentações de Alto Impacto',
         },
+        {
+          videoKey: 'presentation-02',
+          images: [presentation02Img],
+          heading: 'Uma travessia sensível entre voz e memória.',
+          text: 'Deck de apresentação para "As Vozes de Milton", experiência que convida o público a sentir a obra de Milton Nascimento — não só assistir.',
+          client: 'Its Shooow Time',
+          sector: 'Entretenimento & Vida Noturna',
+        },
       ],
       closing: 'UMA IDEIA SÓ EXISTE DE VERDADE QUANDO ALGUÉM DIZ SIM A ELA.',
     },
@@ -139,6 +148,14 @@ export const projectDetails: ProjectDetail[] = [
           text: "This project's full case study is coming soon.",
           client: 'MALAB',
           sector: 'High-Impact Presentations',
+        },
+        {
+          videoKey: 'presentation-02',
+          images: [presentation02Img],
+          heading: 'A sensitive journey between voice and memory.',
+          text: 'A pitch deck for "As Vozes de Milton," an experience that invites the audience to feel the work of Milton Nascimento — not just watch it.',
+          client: 'Its Shooow Time',
+          sector: 'Entertainment & Nightlife',
         },
       ],
       closing: "AN IDEA ONLY TRULY EXISTS ONCE SOMEONE SAYS YES TO IT.",
