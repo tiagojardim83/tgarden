@@ -2,7 +2,7 @@ import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import tgardenImg from '../assets/images/Thumb_lobs.jpg'
 import lobsImg from '../assets/images/project-lobs.jpg'
-import gallery1 from '../assets/images/gallery-1.jpg'
+import presentation01Img from '../assets/images/Presentation_01.jpg'
 import gallery4 from '../assets/images/gallery-4.jpg'
 import efetivaImg02 from '../assets/images/webdesign_efetiva_02.jpg'
 import efetivaImg03 from '../assets/images/webdesign_efetiva_03.jpg'
@@ -106,12 +106,12 @@ export const projectDetails: ProjectDetail[] = [
     projectNumber: '01',
     categoryTotal: '01',
     year: '2025/26',
-    heroImage: gallery1,
+    heroImage: presentation01Img,
     pt: {
       category: 'Presentation Design',
       title: 'Presentation Design',
       heroStatement: 'Ideias que conseguem investimento.',
-      client: 'Em breve',
+      client: 'MALAB',
       sector: 'Apresentações de Alto Impacto',
       scope: 'Presentation Design, Direção Criativa',
       sections: [
@@ -119,7 +119,7 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'presentation-01',
           heading: 'Conteúdo em breve.',
           text: 'Em breve, o case completo deste projeto.',
-          client: 'Em breve',
+          client: 'MALAB',
           sector: 'Apresentações de Alto Impacto',
         },
       ],
@@ -129,7 +129,7 @@ export const projectDetails: ProjectDetail[] = [
       category: 'Presentation Design',
       title: 'Presentation Design',
       heroStatement: 'Ideas that get funded.',
-      client: 'Coming soon',
+      client: 'MALAB',
       sector: 'High-Impact Presentations',
       scope: 'Presentation Design, Creative Direction',
       sections: [
@@ -137,7 +137,7 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'presentation-01',
           heading: 'Content coming soon.',
           text: "This project's full case study is coming soon.",
-          client: 'Coming soon',
+          client: 'MALAB',
           sector: 'High-Impact Presentations',
         },
       ],
