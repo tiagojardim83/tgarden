@@ -86,7 +86,7 @@ interface ProjectSection {
   staggerMedia?: boolean
   /** Mobile aspect ratio (e.g. '16/9') for this section's video, overriding the site default of 18/25 (1080x1500). */
   mobileAspect?: string
-  /** On mobile, renders `images` at this fixed height (e.g. '1500px') inside a horizontally scrollable strip instead of full-width/auto-height, so wide detailed images stay readable. Desktop is unaffected. */
+  /** On mobile, gives the images block this minimum height (e.g. '1500px') while each image keeps its normal, unstretched size (centered, with empty space around it). Desktop is unaffected. */
   mobileScrollHeight?: string
 }
 
