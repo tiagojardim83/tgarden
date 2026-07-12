@@ -5,6 +5,7 @@ import lobsImg from '../assets/images/project-lobs.jpg'
 import presentation01Img from '../assets/images/Presentation_01.jpg'
 import presentation02Img from '../assets/images/Presentation_02.jpg'
 import presentation03Img from '../assets/images/Presentation_03.jpg'
+import presentation04Img from '../assets/images/Presentation_04.jpg'
 import gallery4 from '../assets/images/gallery-4.jpg'
 import efetivaImg02 from '../assets/images/webdesign_efetiva_02.jpg'
 import efetivaImg03 from '../assets/images/webdesign_efetiva_03.jpg'
@@ -143,6 +144,14 @@ export const projectDetails: ProjectDetail[] = [
           client: 'Anglo Gold Ashanti',
           sector: 'Mineração & Corporativo',
         },
+        {
+          videoKey: 'presentation-04',
+          media: [{ image: presentation04Img }, { videoKey: 'Presenation_04' }],
+          heading: 'Um show, uma marca global.',
+          text: 'Deck de apresentação para o show internacional de Alicia Keys em Belo Horizonte, associando uma artista global a marcas que buscam visibilidade massiva e posicionamento premium.',
+          client: 'Alicia Keys',
+          sector: 'Música & Entretenimento',
+        },
       ],
       closing: 'UMA IDEIA SÓ EXISTE DE VERDADE QUANDO ALGUÉM DIZ SIM A ELA.',
     },
@@ -177,6 +186,14 @@ export const projectDetails: ProjectDetail[] = [
           text: 'A pitch deck for "Auditions," guiding the audience through an experience of perception and the senses.',
           client: 'Anglo Gold Ashanti',
           sector: 'Mining & Corporate',
+        },
+        {
+          videoKey: 'presentation-04',
+          media: [{ image: presentation04Img }, { videoKey: 'Presenation_04' }],
+          heading: 'One show, one global brand.',
+          text: "A pitch deck for Alicia Keys' international show in Belo Horizonte, pairing a global artist with brands seeking massive visibility and premium positioning.",
+          client: 'Alicia Keys',
+          sector: 'Music & Entertainment',
         },
       ],
       closing: "AN IDEA ONLY TRULY EXISTS ONCE SOMEONE SAYS YES TO IT.",
