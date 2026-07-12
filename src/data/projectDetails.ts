@@ -14,6 +14,8 @@ import presentation02Img from '../assets/images/Presentation_02.jpg'
 import presentation03Img from '../assets/images/Presentation_03.jpg'
 import presentation04Img from '../assets/images/Presentation_04.jpg'
 import gallery4 from '../assets/images/gallery-4.jpg'
+import tgardenDesktop02Img from '../assets/images/tgarden_Desktop_02.jpg'
+import tgardenDesktop03Img from '../assets/images/tgarden_Desktop_03.jpg'
 import efetivaImg02 from '../assets/images/webdesign_efetiva_02.jpg'
 import efetivaImg03 from '../assets/images/webdesign_efetiva_03.jpg'
 import velvoImg01 from '../assets/images/01_Velvo.jpg'
@@ -475,6 +477,14 @@ export const projectDetails: ProjectDetail[] = [
           sector: 'Design & Desenvolvimento',
         },
         {
+          videoKey: 'tgarden-site-04',
+          images: [tgardenDesktop02Img, tgardenDesktop03Img],
+          heading: 'Do desktop ao bolso.',
+          text: 'A mesma identidade visual se adapta a qualquer tela, do tablet ao smartphone, sem perder ritmo, hierarquia ou personalidade.',
+          client: 'TGarden',
+          sector: 'Design & Desenvolvimento',
+        },
+        {
           videoKey: 'webdesign-efetiva',
           images: [efetivaImg02, efetivaImg03],
           liveUrl: 'https://www.efetivaeng.com.br/',
@@ -506,6 +516,14 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'tgarden-site-03',
           heading: 'Built to grow.',
           text: 'Reusable components and structured content mean the site evolves alongside the studio, without starting from scratch with every change.',
+          client: 'TGarden',
+          sector: 'Design & Development',
+        },
+        {
+          videoKey: 'tgarden-site-04',
+          images: [tgardenDesktop02Img, tgardenDesktop03Img],
+          heading: 'From desktop to pocket.',
+          text: 'The same visual identity adapts to any screen, from tablet to smartphone, without losing rhythm, hierarchy or personality.',
           client: 'TGarden',
           sector: 'Design & Development',
         },
