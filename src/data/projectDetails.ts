@@ -74,6 +74,8 @@ export interface MediaBlock {
   /** Renders `image` in a clipped, scroll-driven parallax container instead of a flush full-width image. */
   parallax?: boolean
   embedUrl?: string
+  /** Overrides the embed's default square aspect ratio (e.g. '16/9' for a real video, vs. the Pacdora-style square 3D viewer). Drops the red background too. */
+  embedAspect?: string
   /** Matches a file in src/assets/videos/ the same way section-level videoKey does. */
   videoKey?: string
   /** Keeps this block's video at its natural full-width/auto-height size on mobile, instead of the default cropped 18/25 cover treatment. */
@@ -867,7 +869,7 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'lobs-04',
           media: [
             { image: jj01Img },
-            { embedUrl: 'https://player.vimeo.com/video/540778495?h=be5f54999f' },
+            { embedUrl: 'https://player.vimeo.com/video/540778495?h=be5f54999f', embedAspect: '16/9' },
             { image: jj03Img },
             { image: jj04Img },
             { image: jj05Img },
@@ -917,7 +919,7 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'lobs-04',
           media: [
             { image: jj01Img },
-            { embedUrl: 'https://player.vimeo.com/video/540778495?h=be5f54999f' },
+            { embedUrl: 'https://player.vimeo.com/video/540778495?h=be5f54999f', embedAspect: '16/9' },
             { image: jj03Img },
             { image: jj04Img },
             { image: jj05Img },

@@ -125,12 +125,23 @@ function PanCoverImage({ src, alt }: { src: string; alt: string }) {
   )
 }
 
-function EmbedFrame({ src, title, activateLabel }: { src: string; title: string; activateLabel: string }) {
+function EmbedFrame({
+  src,
+  title,
+  activateLabel,
+  aspect,
+}: {
+  src: string
+  title: string
+  activateLabel: string
+  aspect?: string
+}) {
   const [active, setActive] = useState(false)
 
   return (
     <div
-      className="relative w-full aspect-square bg-red flex items-center justify-center"
+      className={`relative w-full flex items-center justify-center ${aspect ? '' : 'aspect-square bg-red'}`}
+      style={aspect ? { aspectRatio: aspect } : undefined}
       onMouseLeave={() => setActive(false)}
     >
       <iframe
@@ -362,6 +373,7 @@ export default function ProjectPage() {
                         src={block.embedUrl}
                         title={`${s.heading} ${blockIndex + 1}`}
                         activateLabel={ui.clickToInteract}
+                        aspect={block.embedAspect}
                       />
                     ) : block.parallax && block.image ? (
                       <ParallaxImage key={blockIndex} src={block.image} alt={s.heading} />
