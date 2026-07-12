@@ -4,7 +4,18 @@ import { featureStrip } from '../data/content'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
 
-function FeatureCard({ item, lang }: { item: (typeof featureStrip)[number]; lang: 'pt' | 'en' }) {
+// Each card scrolls to its matching row inside the Projects list, not just the section start.
+const TARGET_IDS = ['presentation-design', 'visual-identity', 'web-design']
+
+function FeatureCard({
+  item,
+  lang,
+  targetId,
+}: {
+  item: (typeof featureStrip)[number]
+  lang: 'pt' | 'en'
+  targetId: string
+}) {
   const t = item[lang]
   const ref = useRef<HTMLAnchorElement>(null)
   const canHover = useCanHover()
@@ -14,10 +25,10 @@ function FeatureCard({ item, lang }: { item: (typeof featureStrip)[number]; lang
   return (
     <a
       ref={ref}
-      href="#projects"
+      href={`#${targetId}`}
       onClick={(e) => {
         e.preventDefault()
-        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       }}
       data-cursor="VIEW"
       className={`group relative px-6 md:px-10 py-10 md:py-14 min-h-[280px] md:min-h-[380px] flex flex-col justify-between gap-10 border-ink/15 md:border-l first:border-l-0 [border-left-width:0] md:[border-left-width:1px] transition-colors duration-500 ${
@@ -65,7 +76,7 @@ export default function FeatureStrip() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 border-y border-ink/15">
       {featureStrip.map((item, i) => (
-        <FeatureCard key={i} item={item} lang={lang} />
+        <FeatureCard key={i} item={item} lang={lang} targetId={TARGET_IDS[i]} />
       ))}
     </div>
   )

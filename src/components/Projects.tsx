@@ -35,6 +35,7 @@ function ProjectRow({
   return (
     <motion.a
       ref={rowRef}
+      id={project.id}
       href={project.slug ? `/tgarden/projetos/${project.slug}` : `#${project.id}`}
       onClick={onNavigate}
       onMouseEnter={onHoverStart}
