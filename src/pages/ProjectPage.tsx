@@ -349,8 +349,8 @@ export default function ProjectPage() {
                   className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                 />
               </div>
-              <p className="label text-ink-soft mt-3">{p.category}</p>
-              <p className="font-display uppercase text-lg">{p.title}</p>
+              <p className="font-display uppercase text-lg mt-3">{p.category}</p>
+              <p className="label text-ink-soft">{lang === 'pt' ? p.count : p.countEn}</p>
             </Link>
           ))}
         </div>
