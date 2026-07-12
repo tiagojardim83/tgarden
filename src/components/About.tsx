@@ -32,7 +32,7 @@ export default function About() {
   return (
     <section id="about" className="relative px-6 md:px-10 pt-20 md:pt-28">
       {!isMobile && (
-        <Globe className="absolute right-0 top-28 w-48 md:w-80 -translate-x-16 lg:-translate-x-24 z-20 pointer-events-auto" />
+        <Globe className="absolute right-0 top-[400px] w-48 md:w-80 -translate-x-16 lg:-translate-x-24 z-20 pointer-events-auto" />
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-10 md:gap-y-14 md:items-start">
