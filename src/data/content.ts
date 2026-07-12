@@ -118,8 +118,8 @@ export const projects: ProjectSummary[] = [
     category: 'Presentation Design',
     title: 'Presentation Design',
     year: '2025/26',
-    count: 'Projetos',
-    countEn: 'Projects',
+    count: '4 projetos',
+    countEn: '4 projects',
     image: presentationThumbImg,
   },
   {

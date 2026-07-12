@@ -298,7 +298,7 @@ export default function ProjectPage() {
 
               {showFactSheet && s.factSheetPosition === 'before' && (
                 <div className="mt-8 md:mt-10">
-                  <FactSheet client={s.client} sector={s.sector} year={detail.year} scope={copy.scope} ui={ui} />
+                  <FactSheet client={s.client} sector={s.sector} year={s.year ?? detail.year} scope={copy.scope} ui={ui} />
                 </div>
               )}
 
@@ -340,7 +340,11 @@ export default function ProjectPage() {
                         muted
                         loop
                         playsInline
-                        className="w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block"
+                        className={
+                          block.mobileNatural
+                            ? 'w-full h-auto block'
+                            : 'w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block'
+                        }
                       />
                     ) : block.embedUrl ? (
                       <EmbedFrame
@@ -378,7 +382,7 @@ export default function ProjectPage() {
 
               {showFactSheet && s.factSheetPosition !== 'before' && (
                 <div className="mt-8 md:mt-10">
-                  <FactSheet client={s.client} sector={s.sector} year={detail.year} scope={copy.scope} ui={ui} />
+                  <FactSheet client={s.client} sector={s.sector} year={s.year ?? detail.year} scope={copy.scope} ui={ui} />
                 </div>
               )}
             </div>

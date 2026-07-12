@@ -67,6 +67,8 @@ export interface MediaBlock {
   embedUrl?: string
   /** Matches a file in src/assets/videos/ the same way section-level videoKey does. */
   videoKey?: string
+  /** Keeps this block's video at its natural full-width/auto-height size on mobile, instead of the default cropped 18/25 cover treatment. */
+  mobileNatural?: boolean
 }
 
 interface ProjectSection {
@@ -79,6 +81,8 @@ interface ProjectSection {
   text: string
   client: string
   sector: string
+  /** Overrides the project-level year for this one section's fact sheet. */
+  year?: string
   /** Overrides the project-level factSheetRepeat default for this one section. */
   showFactSheet?: boolean
   /** Where the fact sheet sits relative to the section's media. Defaults to 'after'. */
@@ -139,6 +143,7 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'presentation-03',
           images: [presentation03Img],
           mobileImageCover: true,
+          year: '2015',
           heading: 'Auditions: uma jornada sensorial.',
           text: 'Deck de apresentação "Auditions", conduzindo o público por uma experiência de percepção e sentidos.',
           client: 'Anglo Gold Ashanti',
@@ -146,10 +151,10 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'presentation-04',
-          media: [{ image: presentation04Img }, { videoKey: 'Presenation_04' }],
+          media: [{ image: presentation04Img }, { videoKey: 'Presenation_04', mobileNatural: true }],
           heading: 'Um show, uma marca global.',
           text: 'Deck de apresentação para o show internacional de Alicia Keys em Belo Horizonte, associando uma artista global a marcas que buscam visibilidade massiva e posicionamento premium.',
-          client: 'Alicia Keys',
+          client: 'Malab',
           sector: 'Música & Entretenimento',
         },
       ],
@@ -182,6 +187,7 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'presentation-03',
           images: [presentation03Img],
           mobileImageCover: true,
+          year: '2015',
           heading: 'Auditions: a sensorial journey.',
           text: 'A pitch deck for "Auditions," guiding the audience through an experience of perception and the senses.',
           client: 'Anglo Gold Ashanti',
@@ -189,10 +195,10 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'presentation-04',
-          media: [{ image: presentation04Img }, { videoKey: 'Presenation_04' }],
+          media: [{ image: presentation04Img }, { videoKey: 'Presenation_04', mobileNatural: true }],
           heading: 'One show, one global brand.',
           text: "A pitch deck for Alicia Keys' international show in Belo Horizonte, pairing a global artist with brands seeking massive visibility and premium positioning.",
-          client: 'Alicia Keys',
+          client: 'Malab',
           sector: 'Music & Entertainment',
         },
       ],
