@@ -80,6 +80,8 @@ export interface MediaBlock {
   videoKey?: string
   /** Keeps this block's video at its natural full-width/auto-height size on mobile, instead of the default cropped 18/25 cover treatment. */
   mobileNatural?: boolean
+  /** Crops this block's video to this aspect ratio on desktop (e.g. '16/9'), instead of its natural size. Useful for vertical source clips. */
+  desktopAspect?: string
   /** Renders this block's image like Auditions: cropped 18/25 box with the reveal-pan + drag interaction. Desktop is unaffected. */
   mobileCover?: boolean
 }
@@ -851,7 +853,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'lobs-breather',
-          media: [{ image: lobs02Img }, { videoKey: 'lobs_03' }, { image: lobs03Img }],
+          media: [{ image: lobs02Img }, { videoKey: 'lobs_03', desktopAspect: '16/9' }, { image: lobs03Img }],
           showFactSheet: false,
           heading: 'Streetwear é atitude, não só roupa.',
           text: 'Da rua pro estúdio: cada estampa nasce da cultura urbana brasileira, criando peças que carregam identidade antes de qualquer tendência.',
@@ -902,7 +904,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'lobs-breather',
-          media: [{ image: lobs02Img }, { videoKey: 'lobs_03' }, { image: lobs03Img }],
+          media: [{ image: lobs02Img }, { videoKey: 'lobs_03', desktopAspect: '16/9' }, { image: lobs03Img }],
           showFactSheet: false,
           heading: 'Streetwear is attitude, not just clothing.',
           text: "From the street to the studio: every print is born from Brazilian urban culture, creating pieces that carry identity before any trend.",

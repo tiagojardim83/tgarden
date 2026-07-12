@@ -361,10 +361,17 @@ export default function ProjectPage() {
                         muted
                         loop
                         playsInline
+                        style={
+                          block.desktopAspect
+                            ? ({ '--desktop-ar': block.desktopAspect } as CSSProperties)
+                            : undefined
+                        }
                         className={
                           block.mobileNatural
                             ? 'w-full h-auto block'
-                            : 'w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block'
+                            : `w-full aspect-[18/25] object-cover block ${
+                                block.desktopAspect ? 'md:aspect-[var(--desktop-ar)]' : 'md:aspect-auto md:h-auto'
+                              }`
                         }
                       />
                     ) : block.embedUrl ? (
