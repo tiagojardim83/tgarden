@@ -3,6 +3,8 @@ import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import tgardenImg from '../assets/images/Thumb_lobs.jpg'
 import lobsImg from '../assets/images/project-lobs.jpg'
 import lobs01Img from '../assets/images/lobs_01.jpg'
+import lobs02Img from '../assets/images/lobs_02.jpg'
+import lobs03Img from '../assets/images/lobs_03.jpg'
 import presentation01Img from '../assets/images/Presentation_01.jpg'
 import presentation02Img from '../assets/images/Presentation_02.jpg'
 import presentation03Img from '../assets/images/Presentation_03.jpg'
@@ -834,7 +836,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'lobs-01',
-          media: [{ image: lobs01Img }, { videoKey: 'lobs_02' }],
+          media: [{ image: lobs01Img }, { videoKey: 'lobs_02' }, { image: lobs02Img }, { image: lobs03Img }],
           heading: 'Vestido de verdade, não só fotografado.',
           text: 'Do mar ao dia a dia, as peças da Lobs vivem fora do estúdio — a prova de que a identidade da marca é usada, não só vista.',
           client: 'Lobs Brazilian Art',
@@ -868,7 +870,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'lobs-01',
-          media: [{ image: lobs01Img }, { videoKey: 'lobs_02' }],
+          media: [{ image: lobs01Img }, { videoKey: 'lobs_02' }, { image: lobs02Img }, { image: lobs03Img }],
           heading: 'Worn for real, not just photographed.',
           text: "From the sea to everyday life, Lobs' pieces live outside the studio — proof the brand's identity is worn, not just seen.",
           client: 'Lobs Brazilian Art',
