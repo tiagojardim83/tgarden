@@ -1,7 +1,8 @@
-import { useRef, useState, type CSSProperties } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useLang } from '../lib/lang'
+import { useCanHover } from '../lib/useCanHover'
 import { getProjectDetail, getSectionVideo } from '../data/projectDetails'
 import { projects, projectPageCopy } from '../data/content'
 
@@ -47,6 +48,33 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   return (
     <div ref={ref} className="w-full aspect-[4/3] md:aspect-video overflow-hidden">
       <motion.img src={src} alt={alt} style={{ y, scale: 2 }} className="w-full h-full object-cover" />
+    </div>
+  )
+}
+
+function PanCoverImage({ src, alt }: { src: string; alt: string }) {
+  const canHover = useCanHover()
+  const [ready, setReady] = useState(false)
+  useEffect(() => setReady(true), [])
+
+  const imgClassName =
+    'absolute inset-y-0 left-0 h-full w-auto max-w-none object-cover md:static md:h-auto md:w-full md:max-w-full'
+
+  return (
+    <div className="relative overflow-hidden aspect-[18/25] md:aspect-auto">
+      {ready && !canHover ? (
+        <motion.img
+          src={src}
+          alt={alt}
+          initial={{ x: '0%' }}
+          whileInView={{ x: '-55%' }}
+          viewport={{ once: true }}
+          transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+          className={imgClassName}
+        />
+      ) : (
+        <img src={src} alt={alt} className={imgClassName} />
+      )}
     </div>
   )
 }
@@ -292,18 +320,13 @@ export default function ProjectPage() {
                   transition={{ duration: 0.8 }}
                   className={`-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-col gap-0 ${s.mobileImageCover ? 'bg-ink' : ''}`}
                 >
-                  {s.images.map((src, imgIndex) => (
-                    <img
-                      key={imgIndex}
-                      src={src}
-                      alt={s.heading}
-                      className={
-                        s.mobileImageCover
-                          ? 'w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block'
-                          : 'w-full h-auto block'
-                      }
-                    />
-                  ))}
+                  {s.images.map((src, imgIndex) =>
+                    s.mobileImageCover ? (
+                      <PanCoverImage key={imgIndex} src={src} alt={s.heading} />
+                    ) : (
+                      <img key={imgIndex} src={src} alt={s.heading} className="w-full h-auto block" />
+                    ),
+                  )}
                 </motion.div>
               )}
 
