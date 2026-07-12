@@ -65,8 +65,8 @@ export interface ProjectDetail {
   heroVideoKey?: string
   /** Renders heroImage on mobile like a section's mobileImageCover: cropped 18/25 box with the reveal-pan + drag interaction. Desktop is unaffected. */
   heroMobileCover?: boolean
-  /** false = fact sheet renders once, right under the intro. Defaults to true (repeats after every section, as in Maoka). */
-  factSheetRepeat?: boolean
+  /** false = fact sheet renders once, right under the intro. 'end' = fact sheet renders once, right before the closing statement. Defaults to true (repeats after every section, as in Maoka). */
+  factSheetRepeat?: boolean | 'end'
   pt: ProjectDetailCopy
   en: ProjectDetailCopy
 }
@@ -454,6 +454,7 @@ export const projectDetails: ProjectDetail[] = [
     categoryTotal: '02',
     year: '2025',
     heroImage: tgardenImg,
+    factSheetRepeat: 'end',
     pt: {
       category: 'Web Design & Development',
       title: 'TGarden',
@@ -471,6 +472,10 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'tgarden-site-03',
+          images: [tgardenDesktop03Img],
+          mobileImageCover: true,
+          showFactSheet: false,
+          liveUrl: 'https://tiagojardim83.github.io/tgarden/',
           heading: 'Construído pra crescer.',
           text: 'Componentes reutilizáveis e conteúdo estruturado significam que o site evolui junto com o estúdio, sem recomeçar do zero a cada mudança.',
           client: 'TGarden',
@@ -478,7 +483,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'tgarden-site-04',
-          images: [tgardenDesktop02Img, tgardenDesktop03Img],
+          images: [tgardenDesktop02Img],
           heading: 'Do desktop ao bolso.',
           text: 'A mesma identidade visual se adapta a qualquer tela, do tablet ao smartphone, sem perder ritmo, hierarquia ou personalidade.',
           client: 'TGarden',
@@ -514,6 +519,10 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'tgarden-site-03',
+          images: [tgardenDesktop03Img],
+          mobileImageCover: true,
+          showFactSheet: false,
+          liveUrl: 'https://tiagojardim83.github.io/tgarden/',
           heading: 'Built to grow.',
           text: 'Reusable components and structured content mean the site evolves alongside the studio, without starting from scratch with every change.',
           client: 'TGarden',
@@ -521,7 +530,7 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'tgarden-site-04',
-          images: [tgardenDesktop02Img, tgardenDesktop03Img],
+          images: [tgardenDesktop02Img],
           heading: 'From desktop to pocket.',
           text: 'The same visual identity adapts to any screen, from tablet to smartphone, without losing rhythm, hierarchy or personality.',
           client: 'TGarden',

@@ -327,7 +327,8 @@ export default function ProjectPage() {
         {copy.sections.map((s, i) => {
           const videoUrl = getSectionVideo(s.videoKey)
           const displayNumber = i === 0 ? null : String(i + 1).padStart(2, '0')
-          const showFactSheet = s.showFactSheet ?? detail.factSheetRepeat !== false
+          const showFactSheet =
+            s.showFactSheet ?? (detail.factSheetRepeat !== false && detail.factSheetRepeat !== 'end')
           return (
             <div key={i}>
               <motion.div
@@ -344,10 +345,6 @@ export default function ProjectPage() {
                 <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
                   {s.text}
                 </p>
-
-                {s.liveUrl && (
-                  <LiveSiteLink href={s.liveUrl} label={ui.viewLive} className="md:col-start-4 md:col-span-9" />
-                )}
               </motion.div>
 
               {showFactSheet && s.factSheetPosition === 'before' && (
@@ -441,10 +438,22 @@ export default function ProjectPage() {
                   <FactSheet client={s.client} sector={s.sector} year={s.year ?? detail.year} scope={copy.scope} ui={ui} />
                 </div>
               )}
+
+              {s.liveUrl && (
+                <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-12">
+                  <LiveSiteLink href={s.liveUrl} label={ui.viewLive} className="md:col-start-4 md:col-span-9" />
+                </div>
+              )}
             </div>
           )
         })}
       </div>
+
+      {detail.factSheetRepeat === 'end' && (
+        <div className="mt-16 md:mt-24">
+          <FactSheet client={copy.client} sector={copy.sector} year={detail.year} scope={copy.scope} ui={ui} />
+        </div>
+      )}
 
       <motion.div
         initial={{ opacity: 0 }}
