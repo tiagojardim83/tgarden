@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { motion, useScroll, useTransform } from 'motion/react'
+import { motion, useAnimationControls, useScroll, useTransform } from 'motion/react'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
 import { getProjectDetail, getSectionVideo } from '../data/projectDetails'
@@ -57,24 +57,70 @@ function PanCoverImage({ src, alt }: { src: string; alt: string }) {
   const [ready, setReady] = useState(false)
   useEffect(() => setReady(true), [])
 
+  const containerRef = useRef<HTMLDivElement>(null)
+  const imgRef = useRef<HTMLImageElement>(null)
+  const [dragLimit, setDragLimit] = useState(0)
+  const controls = useAnimationControls()
+  const hasPannedRef = useRef(false)
+
+  const measure = () => {
+    const container = containerRef.current
+    const img = imgRef.current
+    if (!container || !img) return
+    setDragLimit(Math.max(0, img.getBoundingClientRect().width - container.getBoundingClientRect().width))
+  }
+
+  useEffect(() => {
+    measure()
+    const container = containerRef.current
+    if (!container) return
+    const ro = new ResizeObserver(measure)
+    ro.observe(container)
+    return () => ro.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!ready || canHover || hasPannedRef.current || dragLimit <= 0) return
+    const container = containerRef.current
+    if (!container) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasPannedRef.current) {
+          hasPannedRef.current = true
+          controls.start({ x: -dragLimit, transition: { duration: 2.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 } })
+        }
+      },
+      { threshold: 0.2 },
+    )
+    io.observe(container)
+    return () => io.disconnect()
+  }, [ready, canHover, dragLimit, controls])
+
   const imgClassName =
     'absolute inset-y-0 left-0 h-full w-auto max-w-none object-cover md:static md:h-auto md:w-full md:max-w-full'
 
+  if (!ready || canHover) {
+    return (
+      <div ref={containerRef} className="relative overflow-hidden aspect-[18/25] md:aspect-auto">
+        <img ref={imgRef} src={src} alt={alt} onLoad={measure} className={imgClassName} />
+      </div>
+    )
+  }
+
   return (
-    <div className="relative overflow-hidden aspect-[18/25] md:aspect-auto">
-      {ready && !canHover ? (
-        <motion.img
-          src={src}
-          alt={alt}
-          initial={{ x: '0%' }}
-          whileInView={{ x: '-55%' }}
-          viewport={{ once: true }}
-          transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-          className={imgClassName}
-        />
-      ) : (
-        <img src={src} alt={alt} className={imgClassName} />
-      )}
+    <div ref={containerRef} className="relative overflow-hidden aspect-[18/25] md:aspect-auto touch-pan-y">
+      <motion.img
+        ref={imgRef}
+        src={src}
+        alt={alt}
+        onLoad={measure}
+        drag="x"
+        dragConstraints={{ left: -dragLimit, right: 0 }}
+        dragElastic={0.05}
+        initial={{ x: 0 }}
+        animate={controls}
+        className={`${imgClassName} cursor-grab active:cursor-grabbing`}
+      />
     </div>
   )
 }
