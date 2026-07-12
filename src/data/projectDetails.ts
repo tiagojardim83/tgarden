@@ -4,6 +4,7 @@ import tgardenImg from '../assets/images/Thumb_lobs.jpg'
 import lobsImg from '../assets/images/project-lobs.jpg'
 import presentation01Img from '../assets/images/Presentation_01.jpg'
 import presentation02Img from '../assets/images/Presentation_02.jpg'
+import presentation03Img from '../assets/images/Presentation_03.jpg'
 import gallery4 from '../assets/images/gallery-4.jpg'
 import efetivaImg02 from '../assets/images/webdesign_efetiva_02.jpg'
 import efetivaImg03 from '../assets/images/webdesign_efetiva_03.jpg'
@@ -131,6 +132,14 @@ export const projectDetails: ProjectDetail[] = [
           client: 'Its Shooow Time',
           sector: 'Entretenimento & Vida Noturna',
         },
+        {
+          videoKey: 'presentation-03',
+          images: [presentation03Img],
+          heading: 'Auditions: uma jornada sensorial.',
+          text: 'Deck de apresentação "Auditions", conduzindo o público por uma experiência de percepção e sentidos.',
+          client: 'Anglo Gold Ashanti',
+          sector: 'Mineração & Corporativo',
+        },
       ],
       closing: 'UMA IDEIA SÓ EXISTE DE VERDADE QUANDO ALGUÉM DIZ SIM A ELA.',
     },
@@ -156,6 +165,14 @@ export const projectDetails: ProjectDetail[] = [
           text: 'A pitch deck for "As Vozes de Milton," an experience that invites the audience to feel the work of Milton Nascimento — not just watch it.',
           client: 'Its Shooow Time',
           sector: 'Entertainment & Nightlife',
+        },
+        {
+          videoKey: 'presentation-03',
+          images: [presentation03Img],
+          heading: 'Auditions: a sensorial journey.',
+          text: 'A pitch deck for "Auditions," guiding the audience through an experience of perception and the senses.',
+          client: 'Anglo Gold Ashanti',
+          sector: 'Mining & Corporate',
         },
       ],
       closing: "AN IDEA ONLY TRULY EXISTS ONCE SOMEONE SAYS YES TO IT.",
