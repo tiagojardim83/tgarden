@@ -257,6 +257,16 @@ export default function ProjectPage() {
             className="w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block"
           />
         </motion.div>
+      ) : detail.heroMobileCover ? (
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="-mx-6 md:-mx-10 mt-12 md:mt-16 bg-ink"
+        >
+          <PanCoverImage src={detail.heroImage} alt={copy.title} />
+        </motion.div>
       ) : (
         <motion.div
           initial={{ opacity: 0 }}

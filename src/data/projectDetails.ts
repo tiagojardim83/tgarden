@@ -54,6 +54,8 @@ export interface ProjectDetail {
   year: string
   heroImage: string
   heroVideoKey?: string
+  /** Renders heroImage on mobile like a section's mobileImageCover: cropped 18/25 box with the reveal-pan + drag interaction. Desktop is unaffected. */
+  heroMobileCover?: boolean
   /** false = fact sheet renders once, right under the intro. Defaults to true (repeats after every section, as in Maoka). */
   factSheetRepeat?: boolean
   pt: ProjectDetailCopy
@@ -116,6 +118,7 @@ export const projectDetails: ProjectDetail[] = [
     categoryTotal: '01',
     year: '2025/26',
     heroImage: presentation01Img,
+    heroMobileCover: true,
     pt: {
       category: 'Presentation Design',
       title: 'Presentation Design',
