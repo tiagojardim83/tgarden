@@ -331,6 +331,12 @@ export default function ProjectPage() {
             s.showFactSheet ?? (detail.factSheetRepeat !== false && detail.factSheetRepeat !== 'end')
           return (
             <div key={i}>
+              {s.precededByProjectFactSheet && (
+                <div className="mb-16 md:mb-24">
+                  <FactSheet client={copy.client} sector={copy.sector} year={detail.year} scope={copy.scope} ui={ui} />
+                </div>
+              )}
+
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -448,12 +454,6 @@ export default function ProjectPage() {
           )
         })}
       </div>
-
-      {detail.factSheetRepeat === 'end' && (
-        <div className="mt-16 md:mt-24">
-          <FactSheet client={copy.client} sector={copy.sector} year={detail.year} scope={copy.scope} ui={ui} />
-        </div>
-      )}
 
       <motion.div
         initial={{ opacity: 0 }}

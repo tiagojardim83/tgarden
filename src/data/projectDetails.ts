@@ -104,6 +104,8 @@ interface ProjectSection {
   showFactSheet?: boolean
   /** Where the fact sheet sits relative to the section's media. Defaults to 'after'. */
   factSheetPosition?: 'before' | 'after'
+  /** Renders the project-level fact sheet (overall client/sector/scope) right before this section. Used when factSheetRepeat is 'end' to close out the main case study right before a different bundled sub-project starts. */
+  precededByProjectFactSheet?: boolean
   /** Each media image animates in on its own as it's scrolled to, instead of the whole block fading in together. */
   staggerMedia?: boolean
   /** Mobile aspect ratio (e.g. '16/9') for this section's video, overriding the site default of 18/25 (1080x1500). */
@@ -493,6 +495,8 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'webdesign-efetiva',
           images: [efetivaImg02, efetivaImg03],
           liveUrl: 'https://www.efetivaeng.com.br/',
+          precededByProjectFactSheet: true,
+          showFactSheet: true,
           heading: 'Efetiva Engenharia',
           text: 'Site institucional para uma construtora especializada em reformas de alto padrão: portfólio de obras, diferenciais e um formulário direto de contato para captar novos projetos.',
           client: 'Efetiva Engenharia',
@@ -540,6 +544,8 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'webdesign-efetiva',
           images: [efetivaImg02, efetivaImg03],
           liveUrl: 'https://www.efetivaeng.com.br/',
+          precededByProjectFactSheet: true,
+          showFactSheet: true,
           heading: 'Efetiva Engenharia',
           text: 'Institutional website for a high-end renovation contractor: project portfolio, differentiators and a direct contact form to bring in new projects.',
           client: 'Efetiva Engenharia',
