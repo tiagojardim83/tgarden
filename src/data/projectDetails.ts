@@ -86,6 +86,8 @@ interface ProjectSection {
   staggerMedia?: boolean
   /** Mobile aspect ratio (e.g. '16/9') for this section's video, overriding the site default of 18/25 (1080x1500). */
   mobileAspect?: string
+  /** Renders `images` on mobile like the site's hero video: cropped to fill an 18/25 black-backed box, instead of full-width/auto-height. Desktop is unaffected. */
+  mobileImageCover?: boolean
 }
 
 interface ProjectDetailCopy {
@@ -135,6 +137,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'presentation-03',
           images: [presentation03Img],
+          mobileImageCover: true,
           heading: 'Auditions: uma jornada sensorial.',
           text: 'Deck de apresentação "Auditions", conduzindo o público por uma experiência de percepção e sentidos.',
           client: 'Anglo Gold Ashanti',
@@ -169,6 +172,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'presentation-03',
           images: [presentation03Img],
+          mobileImageCover: true,
           heading: 'Auditions: a sensorial journey.',
           text: 'A pitch deck for "Auditions," guiding the audience through an experience of perception and the senses.',
           client: 'Anglo Gold Ashanti',

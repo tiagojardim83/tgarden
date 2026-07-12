@@ -290,10 +290,19 @@ export default function ProjectPage() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-col gap-0"
+                  className={`-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-col gap-0 ${s.mobileImageCover ? 'bg-ink' : ''}`}
                 >
                   {s.images.map((src, imgIndex) => (
-                    <img key={imgIndex} src={src} alt={s.heading} className="w-full h-auto block" />
+                    <img
+                      key={imgIndex}
+                      src={src}
+                      alt={s.heading}
+                      className={
+                        s.mobileImageCover
+                          ? 'w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block'
+                          : 'w-full h-auto block'
+                      }
+                    />
                   ))}
                 </motion.div>
               )}
