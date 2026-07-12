@@ -154,6 +154,13 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // Recompute the crop when focalX changes (e.g. switching mobile/desktop framing).
+  useEffect(() => {
+    rectRef.current = null
+    drawClean()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focalX])
+
   // Mobile only: the photo enters cropped to its left edge, then pans in to
   // the resting (centered) crop once, the first time it scrolls into view.
   useEffect(() => {

@@ -57,11 +57,11 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="aspect-[18/25] md:aspect-[21/9] overflow-hidden grayscale contrast-125"
           >
-            <GlitchImage src={tiagoStudio} alt="Tiago Jardim" focalX={0.71} />
+            <GlitchImage src={tiagoStudio} alt="Tiago Jardim" focalX={isMobile ? 0.6 : 0.71} />
           </motion.div>
 
           {isMobile && (
-            <Globe className="absolute z-20 pointer-events-auto right-4 bottom-0 translate-y-1/3 w-48" />
+            <Globe className="absolute z-20 pointer-events-auto right-4 bottom-0 translate-y-1/3 w-56" />
           )}
         </div>
 
