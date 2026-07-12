@@ -888,6 +888,7 @@ export const projectDetails: ProjectDetail[] = [
           text: 'Parceria com a Reserva, uma das maiores marcas de moda do Brasil, prova de que streetwear autoral também fala a língua de quem já é gigante.',
           client: 'Reserva',
           sector: 'Moda & Grandes Marcas',
+          year: '2023',
         },
       ],
       closing:
@@ -946,6 +947,7 @@ export const projectDetails: ProjectDetail[] = [
           text: "A partnership with Reserva, one of Brazil's biggest fashion brands, proof that authorial streetwear also speaks the language of those who are already giants.",
           client: 'Reserva',
           sector: 'Fashion & Major Brands',
+          year: '2023',
         },
       ],
       closing:
