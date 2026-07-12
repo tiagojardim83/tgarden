@@ -290,10 +290,28 @@ export default function ProjectPage() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-col gap-0"
+                  className={
+                    s.mobileScrollHeight
+                      ? '-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-row overflow-x-auto gap-0 md:flex-col md:overflow-visible'
+                      : '-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-col gap-0'
+                  }
+                  style={
+                    s.mobileScrollHeight
+                      ? ({ '--mobile-img-h': s.mobileScrollHeight } as CSSProperties)
+                      : undefined
+                  }
                 >
                   {s.images.map((src, imgIndex) => (
-                    <img key={imgIndex} src={src} alt={s.heading} className="w-full h-auto block" />
+                    <img
+                      key={imgIndex}
+                      src={src}
+                      alt={s.heading}
+                      className={
+                        s.mobileScrollHeight
+                          ? 'h-[var(--mobile-img-h)] w-auto max-w-none shrink-0 block md:h-auto md:w-full md:max-w-full'
+                          : 'w-full h-auto block'
+                      }
+                    />
                   ))}
                 </motion.div>
               )}
