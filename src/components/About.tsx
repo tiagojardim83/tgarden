@@ -5,6 +5,8 @@ import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
 import Globe from './Globe'
 import Marquee from './Marquee'
+import GlitchImage from './GlitchImage'
+import tiagoStudio from '../assets/images/tiago_studio_bw.jpg'
 
 export default function About() {
   const { lang } = useLang()
@@ -31,6 +33,16 @@ export default function About() {
         >
           {t.heading}
         </motion.h2>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="col-span-1 md:col-span-12 -mx-6 md:-mx-10 aspect-[16/9] md:aspect-[21/9] overflow-hidden grayscale contrast-125"
+        >
+          <GlitchImage src={tiagoStudio} alt="Tiago Jardim" />
+        </motion.div>
 
         <ul className="col-span-1 md:col-span-3 flex flex-col gap-2.5">
           {competencies.map((c) => (
