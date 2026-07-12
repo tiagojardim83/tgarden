@@ -830,7 +830,7 @@ export const projectDetails: ProjectDetail[] = [
     categoryId: 'fashion',
     projectNumber: '01',
     categoryTotal: '01',
-    year: '2025',
+    year: 'Est.2006',
     heroImage: lobsImg,
     heroMobileCover: true,
     pt: {
@@ -878,6 +878,7 @@ export const projectDetails: ProjectDetail[] = [
           text: 'Concurso Drawing Contest Brasil da marca John John Denim, que tinha como objetivo criar uma estampa que passasse uma mensagem de reflexão do momento em que estamos vivendo. A ideia foi mostrar um jovem olhando para o céu e pensando: como seres humanos, precisamos evoluir e respeitar muito mais a natureza e o nosso planeta. A estampa ficou em 2º lugar em uma disputa apertada até o final. Todo o valor obtido com a venda das estampas foi destinado ao Projeto Cidades Invisíveis, de Florianópolis.',
           client: 'John John Denim',
           sector: 'Moda & Concursos Criativos',
+          year: '2020',
         },
       ],
       closing:
@@ -928,6 +929,7 @@ export const projectDetails: ProjectDetail[] = [
           text: "Drawing Contest Brazil by the John John Denim brand, which aimed to create a print that conveyed a message of reflection on the moment we're living through. The idea was to show a young man looking at the sky and thinking: as human beings, we need to evolve and respect nature and our planet much more. The print placed 2nd in a contest that was close until the very end. All proceeds from the sale of the prints went to the Invisible Cities Project, from Florianópolis.",
           client: 'John John Denim',
           sector: 'Fashion & Creative Contests',
+          year: '2020',
         },
       ],
       closing:
