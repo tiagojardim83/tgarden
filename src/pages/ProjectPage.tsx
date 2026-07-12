@@ -18,6 +18,41 @@ function WorldIcon({ className }: { className?: string }) {
   )
 }
 
+// Defers fetching the (often 15-25MB) video file until its container is
+// within rootMargin of the viewport, instead of every video on the page
+// downloading at once via autoPlay the moment it mounts.
+function LazyVideo({ src, className, style }: { src: string; className?: string; style?: CSSProperties }) {
+  const ref = useRef<HTMLVideoElement>(null)
+  const [shouldLoad, setShouldLoad] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShouldLoad(true)
+        io.disconnect()
+      }
+    }, { rootMargin: '600px 0px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
+  return (
+    <video
+      ref={ref}
+      src={shouldLoad ? src : undefined}
+      autoPlay={shouldLoad}
+      muted
+      loop
+      playsInline
+      preload="none"
+      className={className}
+      style={style}
+    />
+  )
+}
+
 export function LiveSiteLink({ href, label, className = '' }: { href: string; label: string; className?: string }) {
   return (
     <div className={`grid grid-cols-2 border-y border-ink/15 ${className}`}>
@@ -261,12 +296,8 @@ export default function ProjectPage() {
           transition={{ duration: 0.8 }}
           className="-mx-6 md:-mx-10 mt-12 md:mt-16 bg-ink"
         >
-          <video
+          <LazyVideo
             src={heroVideoUrl}
-            autoPlay
-            muted
-            loop
-            playsInline
             className="w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block"
           />
         </motion.div>
@@ -333,12 +364,8 @@ export default function ProjectPage() {
                   transition={{ duration: 0.8 }}
                   className="-mx-6 md:-mx-10 mt-8 md:mt-10"
                 >
-                  <video
+                  <LazyVideo
                     src={videoUrl}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
                     style={{ '--mobile-ar': s.mobileAspect ?? '18/25' } as CSSProperties}
                     className="w-full aspect-[var(--mobile-ar)] md:aspect-auto md:h-auto object-cover block"
                   />
@@ -356,13 +383,9 @@ export default function ProjectPage() {
                   {s.media.map((block, blockIndex) => {
                     const blockVideoUrl = block.videoKey ? getSectionVideo(block.videoKey) : undefined
                     return blockVideoUrl ? (
-                      <video
+                      <LazyVideo
                         key={blockIndex}
                         src={blockVideoUrl}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
                         style={
                           block.desktopAspect
                             ? ({ '--desktop-ar': block.desktopAspect } as CSSProperties)
