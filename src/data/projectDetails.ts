@@ -5,6 +5,10 @@ import lobsImg from '../assets/images/project-lobs.jpg'
 import lobs01Img from '../assets/images/lobs_01.jpg'
 import lobs02Img from '../assets/images/lobs_02.jpg'
 import lobs03Img from '../assets/images/lobs_03.jpg'
+import jj01Img from '../assets/images/JJ_01.jpg'
+import jj03Img from '../assets/images/JJ_03.jpg'
+import jj04Img from '../assets/images/JJ_04.jpg'
+import jj05Img from '../assets/images/JJ_05.jpg'
 import presentation01Img from '../assets/images/Presentation_01.jpg'
 import presentation02Img from '../assets/images/Presentation_02.jpg'
 import presentation03Img from '../assets/images/Presentation_03.jpg'
@@ -860,11 +864,18 @@ export const projectDetails: ProjectDetail[] = [
           sector: 'Moda & Arte Brasileira',
         },
         {
-          videoKey: 'lobs-03',
-          heading: 'Da tela à passarela.',
-          text: 'Um sistema visual que atravessa lookbook, etiqueta e vitrine mantendo a mesma assinatura em qualquer escala.',
-          client: 'Lobs Brazilian Art',
-          sector: 'Moda & Arte Brasileira',
+          videoKey: 'lobs-04',
+          media: [
+            { image: jj01Img },
+            { embedUrl: 'https://player.vimeo.com/video/540778495?h=be5f54999f' },
+            { image: jj03Img },
+            { image: jj04Img },
+            { image: jj05Img },
+          ],
+          heading: 'John John Denim: the first day after all this.',
+          text: 'Concurso Drawing Contest Brasil da marca John John Denim, que tinha como objetivo criar uma estampa que passasse uma mensagem de reflexão do momento em que estamos vivendo. A ideia foi mostrar um jovem olhando para o céu e pensando: como seres humanos, precisamos evoluir e respeitar muito mais a natureza e o nosso planeta. A estampa ficou em 2º lugar em uma disputa apertada até o final. Todo o valor obtido com a venda das estampas foi destinado ao Projeto Cidades Invisíveis, de Florianópolis.',
+          client: 'John John Denim',
+          sector: 'Moda & Concursos Criativos',
         },
       ],
       closing:
@@ -903,11 +914,18 @@ export const projectDetails: ProjectDetail[] = [
           sector: 'Fashion & Brazilian Art',
         },
         {
-          videoKey: 'lobs-03',
-          heading: 'From screen to runway.',
-          text: 'A visual system that crosses lookbook, label and storefront while keeping the same signature at any scale.',
-          client: 'Lobs Brazilian Art',
-          sector: 'Fashion & Brazilian Art',
+          videoKey: 'lobs-04',
+          media: [
+            { image: jj01Img },
+            { embedUrl: 'https://player.vimeo.com/video/540778495?h=be5f54999f' },
+            { image: jj03Img },
+            { image: jj04Img },
+            { image: jj05Img },
+          ],
+          heading: 'John John Denim: the first day after all this.',
+          text: "Drawing Contest Brazil by the John John Denim brand, which aimed to create a print that conveyed a message of reflection on the moment we're living through. The idea was to show a young man looking at the sky and thinking: as human beings, we need to evolve and respect nature and our planet much more. The print placed 2nd in a contest that was close until the very end. All proceeds from the sale of the prints went to the Invisible Cities Project, from Florianópolis.",
+          client: 'John John Denim',
+          sector: 'Fashion & Creative Contests',
         },
       ],
       closing:
