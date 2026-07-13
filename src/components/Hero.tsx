@@ -50,7 +50,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
               className="hidden md:flex flex-col items-start absolute right-10 top-1/2 -translate-y-1/2 z-10 max-w-[260px]"
             >
               <p className="font-sans text-[11px] md:text-sm font-medium leading-snug normal-case tracking-normal text-ink mb-4">
@@ -92,7 +92,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
+          transition={{ delay: 0.1, duration: 0.4 }}
           className="md:hidden absolute right-6 bottom-10 z-10 flex flex-col items-start max-w-[75%]"
         >
           <p className="text-[11px] font-medium leading-snug normal-case tracking-normal text-ink mb-4">
