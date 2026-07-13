@@ -144,7 +144,8 @@ export default function Globe({ className = '' }: { className?: string }) {
 
   useEffect(() => {
     let destroyed = false
-    let animationId: number
+    let animationId: number | null = null
+    let inView = false
 
     loadLandPoints().then((pts) => {
       if (destroyed) return
@@ -154,7 +155,10 @@ export default function Globe({ className = '' }: { className?: string }) {
 
     const draw = () => {
       const canvas = canvasRef.current
-      if (!canvas || destroyed) return
+      if (!canvas || destroyed || !inView) {
+        animationId = null
+        return
+      }
       const ctx = canvas.getContext('2d')
       if (!ctx) return
 
@@ -232,11 +236,23 @@ export default function Globe({ className = '' }: { className?: string }) {
       animationId = requestAnimationFrame(draw)
     }
 
-    animationId = requestAnimationFrame(draw)
+    const startDrawing = () => {
+      if (animationId === null) animationId = requestAnimationFrame(draw)
+    }
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting
+        if (inView) startDrawing()
+      },
+      { threshold: 0.01 },
+    )
+    if (wrapRef.current) io.observe(wrapRef.current)
 
     return () => {
       destroyed = true
-      cancelAnimationFrame(animationId)
+      io.disconnect()
+      if (animationId !== null) cancelAnimationFrame(animationId)
     }
   }, [])
 
