@@ -94,7 +94,7 @@ export default function Nav() {
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="md:hidden fixed inset-0 z-[100] bg-red flex flex-col items-center px-6 py-14"
+            className="md:hidden fixed inset-0 z-[100] bg-red flex flex-col items-center px-6 pt-20 pb-8"
           >
             <button
               className="absolute top-6 right-6 flex flex-col gap-1.5 w-7"
@@ -105,9 +105,9 @@ export default function Nav() {
               <span className="h-[2px] bg-paper block -rotate-45 -translate-y-[3px]" />
             </button>
 
-            <div className="flex-1 flex flex-col items-center justify-center w-full">
-              <img src={logoMark} alt="TGarden" className="w-48 h-48 mb-5 shrink-0" />
+            <img src={logoMark} alt="TGarden" className="w-40 h-40 shrink-0" />
 
+            <div className="flex-1 flex flex-col items-center justify-center w-full">
               <div className="w-full max-w-sm border-t border-paper/30">
                 {navItems.map((item, i) => (
                   <motion.button
