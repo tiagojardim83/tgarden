@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { useCanHover } from '../lib/useCanHover'
 
 interface CoverRect {
@@ -41,9 +41,86 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
   const canHover = useCanHover()
   const [active, setActive] = useState(false)
 
+  // Mobile only, once the entrance pan has finished: the current drag/breathe
+  // crop position (in source-image px), and the resting point it eases back
+  // toward between drags.
+  const dragSxRef = useRef(0)
+  const breatheCenterRef = useRef(0)
+  const breatheRafRef = useRef<number | null>(null)
+  const isDraggingRef = useRef(false)
+  const dragStartXRef = useRef(0)
+  const dragStartSxRef = useRef(0)
+  const inViewRef = useRef(true)
+
   // Mobile entrance: the image starts cropped to its left edge and pans in
-  // toward the resting (centered) crop as panProgress goes 0 -> 1.
-  const effectiveSx = (rect: CoverRect) => rect.sx * panProgressRef.current
+  // toward the resting (centered) crop as panProgress goes 0 -> 1. After that,
+  // dragSxRef (driven by touch-drag or the idle breathing loop) takes over.
+  const effectiveSx = (rect: CoverRect) => {
+    if (!hasPannedRef.current) return rect.sx * panProgressRef.current
+    const maxSx = Math.max(0, (imgRef.current?.naturalWidth ?? 0) - rect.sWidth)
+    return clamp(dragSxRef.current, 0, maxSx)
+  }
+
+  // Subtle continuous side-to-side drift while idle, hinting the photo can be
+  // dragged to reveal the rest of the scene. Pauses while the user is
+  // actively dragging or the photo is off-screen.
+  const startBreathing = () => {
+    if (breatheRafRef.current || isDraggingRef.current || !inViewRef.current) return
+    const rect = rectRef.current
+    const img = imgRef.current
+    if (!rect || !img) return
+    const maxSx = Math.max(0, img.naturalWidth - rect.sWidth)
+    if (maxSx <= 0) return
+    const amp = Math.min(breatheCenterRef.current, maxSx - breatheCenterRef.current, 26)
+    if (amp <= 1) return
+    const period = 3600
+    const start = performance.now()
+    const tick = (now: number) => {
+      if (isDraggingRef.current || !inViewRef.current) {
+        breatheRafRef.current = null
+        return
+      }
+      const t = ((now - start) % period) / period
+      dragSxRef.current = breatheCenterRef.current + Math.sin(t * Math.PI * 2) * amp
+      drawClean()
+      breatheRafRef.current = requestAnimationFrame(tick)
+    }
+    breatheRafRef.current = requestAnimationFrame(tick)
+  }
+
+  const stopBreathing = () => {
+    if (breatheRafRef.current) {
+      cancelAnimationFrame(breatheRafRef.current)
+      breatheRafRef.current = null
+    }
+  }
+
+  const onPointerDown = (e: ReactPointerEvent) => {
+    if (canHover || !hasPannedRef.current) return
+    isDraggingRef.current = true
+    stopBreathing()
+    dragStartXRef.current = e.clientX
+    dragStartSxRef.current = dragSxRef.current
+    containerRef.current?.setPointerCapture?.(e.pointerId)
+  }
+
+  const onPointerMove = (e: ReactPointerEvent) => {
+    if (!isDraggingRef.current) return
+    const rect = rectRef.current
+    const img = imgRef.current
+    if (!rect || !img) return
+    const maxSx = Math.max(0, img.naturalWidth - rect.sWidth)
+    const dx = e.clientX - dragStartXRef.current
+    dragSxRef.current = clamp(dragStartSxRef.current - dx, 0, maxSx)
+    drawClean()
+  }
+
+  const onPointerEnd = () => {
+    if (!isDraggingRef.current) return
+    isDraggingRef.current = false
+    breatheCenterRef.current = dragSxRef.current
+    startBreathing()
+  }
 
   const drawClean = () => {
     const canvas = canvasRef.current
@@ -187,7 +264,17 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
         const t = Math.min((now - start) / duration, 1)
         panProgressRef.current = ease(t)
         drawClean()
-        panRafRef.current = t < 1 ? requestAnimationFrame(tick) : null
+        if (t < 1) {
+          panRafRef.current = requestAnimationFrame(tick)
+        } else {
+          panRafRef.current = null
+          const rect = rectRef.current
+          if (rect) {
+            dragSxRef.current = rect.sx
+            breatheCenterRef.current = rect.sx
+            startBreathing()
+          }
+        }
       }
       panRafRef.current = requestAnimationFrame(tick)
     }
@@ -249,14 +336,17 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
     const io = new IntersectionObserver(
       ([entry]) => {
         const inView = entry.intersectionRatio >= 0.6
+        inViewRef.current = inView
         if (inView) {
           if (!pulseIntervalRef.current) {
             burst()
             pulseIntervalRef.current = window.setInterval(burst, 2000)
           }
+          startBreathing()
         } else {
           clearPulse()
           setActive(false)
+          stopBreathing()
         }
       },
       { threshold: [0, 0.6, 1] },
@@ -265,15 +355,21 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
     return () => {
       io.disconnect()
       clearPulse()
+      stopBreathing()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [canHover])
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-full"
+      className={`relative w-full h-full ${!canHover ? 'touch-pan-y cursor-grab active:cursor-grabbing' : ''}`}
       onMouseEnter={canHover ? () => setActive(true) : undefined}
       onMouseLeave={canHover ? () => setActive(false) : undefined}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerEnd}
+      onPointerCancel={onPointerEnd}
     >
       <canvas ref={canvasRef} role="img" aria-label={alt} className="block w-full h-full" />
     </div>
