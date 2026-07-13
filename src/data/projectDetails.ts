@@ -911,6 +911,10 @@ export const projectDetails: ProjectDetail[] = [
               text: 'Cada estampa vira conteúdo: peça pensada pra aparecer bem no feed, no story e na vida real, sem perder a mesma identidade em nenhum formato.',
             },
             { videoKey: 'lobs_05' },
+            {
+              heading: 'Keep moving: nunca parar de evoluir.',
+              text: 'Streetwear não é estático, é sobre estar sempre em movimento, testando formatos, cores e ideias sem medo de errar.',
+            },
             { videoKey: 'lobs_03', desktopAspect: '16/9' },
             { image: lobs03Img },
           ],
@@ -980,6 +984,10 @@ export const projectDetails: ProjectDetail[] = [
               text: 'Every print becomes content: pieces designed to look great in the feed, in stories and in real life, without losing the same identity in any format.',
             },
             { videoKey: 'lobs_05' },
+            {
+              heading: 'Keep moving: never stop evolving.',
+              text: "Streetwear isn't static; it's about always being in motion, testing formats, colors and ideas without fear of getting it wrong.",
+            },
             { videoKey: 'lobs_03', desktopAspect: '16/9' },
             { image: lobs03Img },
           ],
