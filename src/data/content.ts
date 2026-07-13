@@ -272,7 +272,7 @@ export const socials = [
   { label: 'Instagram', handle: '@_tgarden', href: 'https://instagram.com/_tgarden' },
   { label: 'LinkedIn', handle: 'tiago-jardim', href: 'https://linkedin.com/in/tiago-jardim-5ab6b3b8' },
   { label: 'Vimeo', handle: 'tiagojardim', href: 'https://vimeo.com/tiagojardim' },
-  { label: 'WhatsApp', handle: 'tgardenstudio', href: 'https://wa.me/tgardenstudio' },
+  { label: 'WhatsApp', handle: '+55 22 99239-6993', href: 'https://wa.me/5522992396993' },
 ]
 
 export const email = 'tiagojardim@tgarden.com.br'
