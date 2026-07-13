@@ -171,7 +171,11 @@ export function PanCoverImage({ src, alt }: { src: string; alt: string }) {
         }}
         onDragEnd={() => {
           isDraggingRef.current = false
-          startLoop()
+          // Let the drag's own momentum/elastic settle before the loop takes
+          // the motion value back over, instead of cutting it off mid-glide.
+          window.setTimeout(() => {
+            if (!isDraggingRef.current) startLoop()
+          }, 200)
         }}
         initial={{ x: -dragLimit / 2 }}
         animate={controls}

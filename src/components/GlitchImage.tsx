@@ -38,6 +38,10 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
   const panProgressRef = useRef(1)
   const panRafRef = useRef<number | null>(null)
   const hasPannedRef = useRef(false)
+  // Distinct from hasPannedRef (which only guards against re-triggering the
+  // entrance IO): flips true once the pan-in tween has actually finished, so
+  // effectiveSx/drag/breathing don't take over mid-tween and stomp on it.
+  const enteredRef = useRef(false)
   const canHover = useCanHover()
   const [active, setActive] = useState(false)
 
@@ -55,7 +59,7 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
   // toward the resting (centered) crop as panProgress goes 0 -> 1. After that,
   // dragSxRef (driven by touch-drag or the idle side-to-side loop) takes over.
   const effectiveSx = (rect: CoverRect) => {
-    if (!hasPannedRef.current) return rect.sx * panProgressRef.current
+    if (!enteredRef.current) return rect.sx * panProgressRef.current
     const maxSx = Math.max(0, (imgRef.current?.naturalWidth ?? 0) - rect.sWidth)
     return clamp(dragSxRef.current, 0, maxSx)
   }
@@ -93,7 +97,7 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
   }
 
   const startBreathing = () => {
-    if (breatheRafRef.current || isDraggingRef.current || !inViewRef.current) return
+    if (!enteredRef.current || breatheRafRef.current || isDraggingRef.current || !inViewRef.current) return
     const rect = rectRef.current
     const img = imgRef.current
     if (!rect || !img) return
@@ -110,7 +114,7 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
   }
 
   const onPointerDown = (e: ReactPointerEvent) => {
-    if (canHover || !hasPannedRef.current) return
+    if (canHover || !enteredRef.current) return
     isDraggingRef.current = true
     stopBreathing()
     dragStartXRef.current = e.clientX
@@ -284,6 +288,7 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
           const rect = rectRef.current
           if (rect) {
             dragSxRef.current = rect.sx
+            enteredRef.current = true
             startBreathing()
           }
         }
@@ -304,6 +309,7 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
         cancelAnimationFrame(panRafRef.current)
         panRafRef.current = null
       }
+      stopBreathing()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [canHover])
