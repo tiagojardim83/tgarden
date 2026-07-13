@@ -157,6 +157,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'presentation-02',
           images: [presentation02Img],
+          mobileImageCover: true,
           heading: 'Uma travessia sensível entre voz e memória.',
           text: 'Deck de apresentação para "As Vozes de Milton", experiência que convida o público a sentir a obra de Milton Nascimento, não só assistir.',
           client: 'Its Shooow Time',
@@ -201,6 +202,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'presentation-02',
           images: [presentation02Img],
+          mobileImageCover: true,
           heading: 'A sensitive journey between voice and memory.',
           text: 'A pitch deck for "As Vozes de Milton," an experience that invites the audience to feel the work of Milton Nascimento, not just watch it.',
           client: 'Its Shooow Time',
@@ -235,6 +237,7 @@ export const projectDetails: ProjectDetail[] = [
     categoryTotal: '06',
     year: '2024',
     heroImage: maokaImg,
+    heroMobileCover: true,
     pt: {
       category: 'Identidade Visual',
       title: 'Maoka',
@@ -503,6 +506,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'tgarden-site-04',
           images: [tgardenDesktop02Img],
+          mobileImageCover: true,
           heading: 'Do desktop ao bolso.',
           text: 'A mesma identidade visual se adapta a qualquer tela, do tablet ao smartphone, sem perder ritmo, hierarquia ou personalidade.',
           client: 'TGarden',
@@ -511,6 +515,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'webdesign-efetiva',
           images: [efetivaImg02, efetivaImg03],
+          mobileImageCover: true,
           liveUrl: 'https://www.efetivaeng.com.br/',
           precededByProjectFactSheet: true,
           showFactSheet: true,
@@ -552,6 +557,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'tgarden-site-04',
           images: [tgardenDesktop02Img],
+          mobileImageCover: true,
           heading: 'From desktop to pocket.',
           text: 'The same visual identity adapts to any screen, from tablet to smartphone, without losing rhythm, hierarchy or personality.',
           client: 'TGarden',
@@ -560,6 +566,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'webdesign-efetiva',
           images: [efetivaImg02, efetivaImg03],
+          mobileImageCover: true,
           liveUrl: 'https://www.efetivaeng.com.br/',
           precededByProjectFactSheet: true,
           showFactSheet: true,
