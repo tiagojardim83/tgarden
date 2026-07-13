@@ -86,6 +86,9 @@ export interface MediaBlock {
   desktopAspect?: string
   /** Renders this block's image like Auditions: cropped 18/25 box with the reveal-pan + drag interaction. Desktop is unaffected. */
   mobileCover?: boolean
+  /** Renders a heading + text breather instead of media, right at this point in the sequence. Takes priority over image/videoKey/embedUrl when present. */
+  heading?: string
+  text?: string
 }
 
 interface ProjectSection {
@@ -242,7 +245,14 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'maoka-intro-media',
-          media: [{ videoKey: '02', mobileNatural: true }, { videoKey: '01' }],
+          media: [
+            { videoKey: '02', mobileNatural: true },
+            {
+              heading: 'Artboards feitos pra rede social.',
+              text: 'Cada artboard nasce pensado pro feed, pro story e pro carrossel, sempre com a mesma consistência de marca, onde quer que apareça. Isso a gente faz muito bem.',
+            },
+            { videoKey: '01' },
+          ],
           heading: 'Identidade antes do logo.',
           text: 'Uma identidade visual não é só um logo, uma cor ou uma fonte. É o sistema operacional de uma marca: o conjunto de sinais, regras e comportamentos que torna uma empresa reconhecível, confiável e memorável antes mesmo de uma palavra ser lida.',
           client: 'Maoka',
@@ -302,7 +312,14 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'maoka-intro-media',
-          media: [{ videoKey: '02', mobileNatural: true }, { videoKey: '01' }],
+          media: [
+            { videoKey: '02', mobileNatural: true },
+            {
+              heading: 'Artboards built for social media.',
+              text: "Every artboard is designed for the feed, the story and the carousel, always with the same brand consistency wherever it shows up. That's something we do very well.",
+            },
+            { videoKey: '01' },
+          ],
           heading: 'Identity before the logo.',
           text: 'A visual identity is not just a logo, a color or a font. It is the operating system of a brand: the set of signs, rules and behaviors that makes a company recognizable, trustworthy and memorable before a single word is read.',
           client: 'Maoka',

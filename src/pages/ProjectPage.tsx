@@ -385,7 +385,21 @@ export default function ProjectPage() {
                 >
                   {s.media.map((block, blockIndex) => {
                     const blockVideoUrl = block.videoKey ? getSectionVideo(block.videoKey) : undefined
-                    return blockVideoUrl ? (
+                    return block.heading ? (
+                      <div
+                        key={blockIndex}
+                        className="px-6 md:px-10 py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4"
+                      >
+                        <h3 className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight">
+                          {block.heading}
+                        </h3>
+                        {block.text && (
+                          <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
+                            {block.text}
+                          </p>
+                        )}
+                      </div>
+                    ) : blockVideoUrl ? (
                       <LazyVideo
                         key={blockIndex}
                         src={blockVideoUrl}
