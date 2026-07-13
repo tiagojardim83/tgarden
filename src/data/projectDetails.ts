@@ -896,6 +896,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'lobs-01',
           media: [{ image: lobs01Img, mobileCover: true }, { videoKey: 'lobs_02' }],
+          showFactSheet: false,
           heading: 'Vestido de verdade, não só fotografado.',
           text: 'Do mar ao dia a dia, as peças da Lobs vivem fora do estúdio, prova de que a identidade da marca é usada, não só vista.',
           client: 'Lobs Brazilian Art',
@@ -903,7 +904,16 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'lobs-breather',
-          media: [{ image: lobs02Img, mobileCover: true }, { videoKey: 'lobs_03', desktopAspect: '16/9' }, { image: lobs03Img }],
+          media: [
+            { image: lobs02Img, mobileCover: true },
+            {
+              heading: 'Feito pra rede social, não só pro closet.',
+              text: 'Cada estampa vira conteúdo: peça pensada pra aparecer bem no feed, no story e na vida real, sem perder a mesma identidade em nenhum formato.',
+            },
+            { videoKey: 'lobs_05' },
+            { videoKey: 'lobs_03', desktopAspect: '16/9' },
+            { image: lobs03Img },
+          ],
           showFactSheet: false,
           heading: 'Streetwear é atitude, não só roupa.',
           text: 'Da rua pro estúdio: cada estampa nasce da cultura urbana brasileira, criando peças que carregam identidade antes de qualquer tendência.',
@@ -955,6 +965,7 @@ export const projectDetails: ProjectDetail[] = [
         {
           videoKey: 'lobs-01',
           media: [{ image: lobs01Img, mobileCover: true }, { videoKey: 'lobs_02' }],
+          showFactSheet: false,
           heading: 'Worn for real, not just photographed.',
           text: "From the sea to everyday life, Lobs' pieces live outside the studio, proof the brand's identity is worn, not just seen.",
           client: 'Lobs Brazilian Art',
@@ -962,7 +973,16 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'lobs-breather',
-          media: [{ image: lobs02Img, mobileCover: true }, { videoKey: 'lobs_03', desktopAspect: '16/9' }, { image: lobs03Img }],
+          media: [
+            { image: lobs02Img, mobileCover: true },
+            {
+              heading: 'Made for social media, not just the closet.',
+              text: 'Every print becomes content: pieces designed to look great in the feed, in stories and in real life, without losing the same identity in any format.',
+            },
+            { videoKey: 'lobs_05' },
+            { videoKey: 'lobs_03', desktopAspect: '16/9' },
+            { image: lobs03Img },
+          ],
           showFactSheet: false,
           heading: 'Streetwear is attitude, not just clothing.',
           text: "From the street to the studio: every print is born from Brazilian urban culture, creating pieces that carry identity before any trend.",
