@@ -242,10 +242,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'maoka-intro-media',
-          media: [
-            { videoKey: '02', mobileNatural: true },
-            { videoKey: '01', mobileNatural: true },
-          ],
+          media: [{ videoKey: '02', mobileNatural: true }, { videoKey: '01' }],
           heading: 'Identidade antes do logo.',
           text: 'Uma identidade visual não é só um logo, uma cor ou uma fonte. É o sistema operacional de uma marca: o conjunto de sinais, regras e comportamentos que torna uma empresa reconhecível, confiável e memorável antes mesmo de uma palavra ser lida.',
           client: 'Maoka',
@@ -305,10 +302,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'maoka-intro-media',
-          media: [
-            { videoKey: '02', mobileNatural: true },
-            { videoKey: '01', mobileNatural: true },
-          ],
+          media: [{ videoKey: '02', mobileNatural: true }, { videoKey: '01' }],
           heading: 'Identity before the logo.',
           text: 'A visual identity is not just a logo, a color or a font. It is the operating system of a brand: the set of signs, rules and behaviors that makes a company recognizable, trustworthy and memorable before a single word is read.',
           client: 'Maoka',
