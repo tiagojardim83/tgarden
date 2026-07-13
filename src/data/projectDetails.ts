@@ -476,6 +476,7 @@ export const projectDetails: ProjectDetail[] = [
     categoryTotal: '02',
     year: '2025',
     heroImage: tgardenImg,
+    heroMobileCover: true,
     factSheetRepeat: 'end',
     pt: {
       category: 'Web Design & Development',
