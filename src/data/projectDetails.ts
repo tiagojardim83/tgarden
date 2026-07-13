@@ -894,7 +894,7 @@ export const projectDetails: ProjectDetail[] = [
           sector: 'Moda & Arte Brasileira',
         },
         {
-          videoKey: 'lobs-02',
+          videoKey: 'lobs_04',
           heading: 'Estampa como narrativa.',
           text: 'Cada padronagem carrega referência cultural brasileira traduzida em linguagem contemporânea, sem virar clichê.',
           client: 'Lobs Brazilian Art',
@@ -953,7 +953,7 @@ export const projectDetails: ProjectDetail[] = [
           sector: 'Fashion & Brazilian Art',
         },
         {
-          videoKey: 'lobs-02',
+          videoKey: 'lobs_04',
           heading: 'Print as narrative.',
           text: 'Every pattern carries a Brazilian cultural reference translated into a contemporary language, without turning into a cliché.',
           client: 'Lobs Brazilian Art',
