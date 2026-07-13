@@ -4,11 +4,17 @@ import { contactCopy, email, socials } from '../data/content'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
 
+// Formspree endpoint: submissions land in the inbox the form was created
+// with (tiagojardim@tgarden.com.br). Manage at formspree.io.
+const FORM_ENDPOINT = 'https://formspree.io/f/xrengbqp'
+
 function FormField({
+  name,
   label,
   placeholder,
   type = 'text',
 }: {
+  name: string
   label: string
   placeholder: string
   type?: string
@@ -20,6 +26,8 @@ function FormField({
     <label className="block py-3 border-b border-ink/25">
       <span className="block label text-ink mb-2">{label}</span>
       <Field
+        name={name}
+        required
         type={!isTextarea ? type : undefined}
         rows={isTextarea ? 3 : undefined}
         placeholder={placeholder}
@@ -58,6 +66,8 @@ export default function Contact() {
   const { lang } = useLang()
   const t = contactCopy[lang]
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
 
   const headingRef = useRef<HTMLHeadingElement>(null)
   const canHover = useCanHover()
@@ -68,9 +78,24 @@ export default function Contact() {
   const emailInView = useInView(emailRef, { margin: '-50% 0px -50% 0px' })
   const emailActive = !canHover && emailInView
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSent(true)
+    const form = e.currentTarget
+    setSending(true)
+    setError(false)
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      })
+      if (!res.ok) throw new Error('request failed')
+      setSent(true)
+    } catch {
+      setError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -103,20 +128,29 @@ export default function Contact() {
           ) : (
             <form onSubmit={onSubmit} className="flex flex-col">
               <div className="grid md:grid-cols-2 gap-x-6">
-                <FormField label={t.name} placeholder={t.namePlaceholder} />
-                <FormField label={t.email} placeholder={t.emailPlaceholder} type="email" />
+                <FormField name="name" label={t.name} placeholder={t.namePlaceholder} />
+                <FormField name="email" label={t.email} placeholder={t.emailPlaceholder} type="email" />
               </div>
-              <FormField label={t.subject} placeholder={t.subjectPlaceholder} />
-              <FormField label={t.message} placeholder={t.messagePlaceholder} type="textarea" />
+              <FormField name="subject" label={t.subject} placeholder={t.subjectPlaceholder} />
+              <FormField name="message" label={t.message} placeholder={t.messagePlaceholder} type="textarea" />
 
               <button
                 type="submit"
+                disabled={sending}
                 data-cursor="SEND"
-                className="group mt-8 self-start inline-flex items-center gap-3 bg-ink text-paper px-6 py-3 label hover:bg-red transition-colors duration-300"
+                className="group mt-8 self-start inline-flex items-center gap-3 bg-ink text-paper px-6 py-3 label hover:bg-red transition-colors duration-300 disabled:opacity-50"
               >
-                {t.send}
+                {sending ? (lang === 'pt' ? 'Enviando...' : 'Sending...') : t.send}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>
+
+              {error && (
+                <p className="mt-3 text-sm text-red">
+                  {lang === 'pt'
+                    ? 'Não foi possível enviar. Tente novamente ou use o e-mail direto ao lado.'
+                    : "Couldn't send. Please try again or use the direct email instead."}
+                </p>
+              )}
             </form>
           )}
         </div>
