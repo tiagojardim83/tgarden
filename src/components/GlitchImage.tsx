@@ -45,7 +45,6 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
   // crop position (in source-image px), and the resting point it eases back
   // toward between drags.
   const dragSxRef = useRef(0)
-  const breatheCenterRef = useRef(0)
   const breatheRafRef = useRef<number | null>(null)
   const isDraggingRef = useRef(false)
   const dragStartXRef = useRef(0)
@@ -54,38 +53,53 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
 
   // Mobile entrance: the image starts cropped to its left edge and pans in
   // toward the resting (centered) crop as panProgress goes 0 -> 1. After that,
-  // dragSxRef (driven by touch-drag or the idle breathing loop) takes over.
+  // dragSxRef (driven by touch-drag or the idle side-to-side loop) takes over.
   const effectiveSx = (rect: CoverRect) => {
     if (!hasPannedRef.current) return rect.sx * panProgressRef.current
     const maxSx = Math.max(0, (imgRef.current?.naturalWidth ?? 0) - rect.sWidth)
     return clamp(dragSxRef.current, 0, maxSx)
   }
 
-  // Subtle continuous side-to-side drift while idle, hinting the photo can be
-  // dragged to reveal the rest of the scene. Pauses while the user is
-  // actively dragging or the photo is off-screen.
+  // Continuous slow side-to-side loop, hinting the photo can be dragged to
+  // reveal the rest of the scene. Pauses while the user drags or the photo
+  // is off-screen; resumes from wherever it was left, easing toward
+  // whichever edge is farther away.
+  const runLeg = (target: number) => {
+    const rect = rectRef.current
+    const img = imgRef.current
+    if (!rect || !img) return
+    const maxSx = Math.max(0, img.naturalWidth - rect.sWidth)
+    if (maxSx <= 1) return
+    const from = dragSxRef.current
+    const duration = Math.max(2500, (Math.abs(target - from) / maxSx) * 14000)
+    const start = performance.now()
+    const ease = (t: number) => -(Math.cos(Math.PI * t) - 1) / 2
+    const tick = (now: number) => {
+      if (isDraggingRef.current || !inViewRef.current) {
+        breatheRafRef.current = null
+        return
+      }
+      const t = Math.min((now - start) / duration, 1)
+      dragSxRef.current = from + (target - from) * ease(t)
+      drawClean()
+      if (t < 1) {
+        breatheRafRef.current = requestAnimationFrame(tick)
+      } else {
+        breatheRafRef.current = null
+        runLeg(target === maxSx ? 0 : maxSx)
+      }
+    }
+    breatheRafRef.current = requestAnimationFrame(tick)
+  }
+
   const startBreathing = () => {
     if (breatheRafRef.current || isDraggingRef.current || !inViewRef.current) return
     const rect = rectRef.current
     const img = imgRef.current
     if (!rect || !img) return
     const maxSx = Math.max(0, img.naturalWidth - rect.sWidth)
-    if (maxSx <= 0) return
-    const amp = Math.min(breatheCenterRef.current, maxSx - breatheCenterRef.current, 26)
-    if (amp <= 1) return
-    const period = 3600
-    const start = performance.now()
-    const tick = (now: number) => {
-      if (isDraggingRef.current || !inViewRef.current) {
-        breatheRafRef.current = null
-        return
-      }
-      const t = ((now - start) % period) / period
-      dragSxRef.current = breatheCenterRef.current + Math.sin(t * Math.PI * 2) * amp
-      drawClean()
-      breatheRafRef.current = requestAnimationFrame(tick)
-    }
-    breatheRafRef.current = requestAnimationFrame(tick)
+    if (maxSx <= 1) return
+    runLeg(dragSxRef.current < maxSx / 2 ? maxSx : 0)
   }
 
   const stopBreathing = () => {
@@ -118,7 +132,6 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
   const onPointerEnd = () => {
     if (!isDraggingRef.current) return
     isDraggingRef.current = false
-    breatheCenterRef.current = dragSxRef.current
     startBreathing()
   }
 
@@ -271,7 +284,6 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
           const rect = rectRef.current
           if (rect) {
             dragSxRef.current = rect.sx
-            breatheCenterRef.current = rect.sx
             startBreathing()
           }
         }

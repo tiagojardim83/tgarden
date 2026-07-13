@@ -96,7 +96,7 @@ function PanCoverImage({ src, alt }: { src: string; alt: string }) {
   const imgRef = useRef<HTMLImageElement>(null)
   const [dragLimit, setDragLimit] = useState(0)
   const controls = useAnimationControls()
-  const hasPannedRef = useRef(false)
+  const isDraggingRef = useRef(false)
 
   const measure = () => {
     const container = containerRef.current
@@ -116,21 +116,32 @@ function PanCoverImage({ src, alt }: { src: string; alt: string }) {
 
   const isInteractive = ready && !canHover && dragLimit > 0
 
+  // Continuous slow side-to-side loop, hinting the photo can be dragged to
+  // reveal the rest of the scene. Paused while the user drags or the photo
+  // is off-screen; resumes seamlessly from wherever it was left (the `null`
+  // keyframe animates from the motion value's current position).
+  const startLoop = () => {
+    if (isDraggingRef.current || dragLimit <= 0) return
+    controls.start({
+      x: [null, 0, -dragLimit, -dragLimit / 2],
+      transition: { duration: 14, times: [0, 0.35, 0.75, 1], ease: 'easeInOut', repeat: Infinity, repeatType: 'loop' },
+    })
+  }
+
   useEffect(() => {
-    if (!isInteractive || hasPannedRef.current) return
+    if (!isInteractive) return
     const container = containerRef.current
     if (!container) return
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasPannedRef.current) {
-          hasPannedRef.current = true
-          controls.start({ x: -dragLimit, transition: { duration: 2.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 } })
-        }
+        if (entry.isIntersecting) startLoop()
+        else controls.stop()
       },
       { threshold: 0.2 },
     )
     io.observe(container)
     return () => io.disconnect()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInteractive, dragLimit, controls])
 
   const imgClassName =
@@ -154,6 +165,14 @@ function PanCoverImage({ src, alt }: { src: string; alt: string }) {
         drag="x"
         dragConstraints={{ left: -dragLimit, right: 0 }}
         dragElastic={0.05}
+        onDragStart={() => {
+          isDraggingRef.current = true
+          controls.stop()
+        }}
+        onDragEnd={() => {
+          isDraggingRef.current = false
+          startLoop()
+        }}
         initial={{ x: -dragLimit / 2 }}
         animate={controls}
         className={`${imgClassName} cursor-grab active:cursor-grabbing`}
