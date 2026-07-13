@@ -87,7 +87,7 @@ function ParallaxImage({ src, alt }: { src: string; alt: string }) {
   )
 }
 
-function PanCoverImage({ src, alt }: { src: string; alt: string }) {
+export function PanCoverImage({ src, alt }: { src: string; alt: string }) {
   const canHover = useCanHover()
   const [ready, setReady] = useState(false)
   useEffect(() => setReady(true), [])

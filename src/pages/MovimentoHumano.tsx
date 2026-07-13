@@ -4,7 +4,7 @@ import { motion, useInView, useScroll, useSpring, useTransform } from 'motion/re
 import { useLang } from '../lib/lang'
 import { projects, projectPageCopy } from '../data/content'
 import { useCanHover } from '../lib/useCanHover'
-import { FactSheet, LiveSiteLink } from './ProjectPage'
+import { FactSheet, LiveSiteLink, PanCoverImage } from './ProjectPage'
 
 const spring = { stiffness: 220, damping: 32, mass: 0.6 }
 
@@ -266,7 +266,7 @@ export default function MovimentoHumano() {
               transition={{ duration: 0.8 }}
               className="-mx-6 md:-mx-10 mt-8 md:mt-10 bg-ink/5"
             >
-              <img src={s.image} alt={s.heading} className="w-full h-auto block" />
+              <PanCoverImage src={s.image} alt={s.heading} />
             </motion.div>
           </div>
         ))}
@@ -325,15 +325,15 @@ export default function MovimentoHumano() {
             className="md:col-start-4 md:col-span-9 mt-8 md:mt-10"
           />
 
-          <motion.img
-            src={lobsLaptop}
-            alt="Lobs Brazilian Art"
-            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10 h-auto block"
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-          />
+            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10"
+          >
+            <PanCoverImage src={lobsLaptop} alt="Lobs Brazilian Art" />
+          </motion.div>
 
           <div className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10">
             <LobsBuild center={lobsScreen02} back={lobsScreen03} front={lobsScreen01} />
@@ -355,15 +355,15 @@ export default function MovimentoHumano() {
             </p>
           </motion.div>
 
-          <motion.img
-            src={lobsUxHero}
-            alt="Lobs Brazilian Art"
-            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10 h-auto block"
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-          />
+            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10"
+          >
+            <PanCoverImage src={lobsUxHero} alt="Lobs Brazilian Art" />
+          </motion.div>
 
           <div className="md:col-start-4 md:col-span-9 mt-8 md:mt-10">
             <FactSheet
