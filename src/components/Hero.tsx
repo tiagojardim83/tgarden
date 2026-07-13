@@ -1,8 +1,13 @@
+import { lazy, Suspense } from 'react'
 import { motion } from 'motion/react'
 import { hero } from '../data/content'
 import { useLang } from '../lib/lang'
 import Marquee from './Marquee'
-import GlassLogo3D from './GlassLogo3D'
+
+// Deferred to its own chunk: pulls in three.js/@react-three plus a 1.6MB HDR
+// environment map, which would otherwise block the initial page load for a
+// purely decorative hero flourish.
+const GlassLogo3D = lazy(() => import('./GlassLogo3D'))
 
 const dot = <span className="block w-3 h-3 md:w-4 md:h-4 bg-red" />
 
@@ -79,7 +84,9 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
         >
-          <GlassLogo3D className="w-[390vw] h-[390vw] md:w-[94vw] md:h-[94vw] max-w-[1560px] max-h-[1560px]" />
+          <Suspense fallback={null}>
+            <GlassLogo3D className="w-[390vw] h-[390vw] md:w-[94vw] md:h-[94vw] max-w-[1560px] max-h-[1560px]" />
+          </Suspense>
         </motion.div>
 
         <motion.div
