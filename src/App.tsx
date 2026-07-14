@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { MotionConfig } from 'motion/react'
 import { LangProvider } from './lib/lang'
 import Cursor from './components/Cursor'
@@ -20,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projetos/movimento-humano" element={<MovimentoHumano />} />
           <Route path="/projetos/:slug" element={<ProjectPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
       </LangProvider>
