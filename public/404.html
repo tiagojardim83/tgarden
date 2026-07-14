@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <title>TGarden Studio | Tiago Jardim</title>
-    <!-- GitHub Pages has no server-side routing, so a direct hit on a route like
-         /tgarden/projetos/maoka 404s here. This redirects to index.html, encoding
-         the original path in the query string so the app can restore it. -->
+    <!-- Neither GitHub Pages nor Vercel's static hosting do server-side SPA
+         routing, so a direct hit on a route like /projetos/maoka 404s here.
+         This redirects to index.html, encoding the original path in the
+         query string so the app can restore it.
+
+         GitHub Pages serves this app under a '/tgarden' subpath, so that
+         segment must be preserved; the custom domain (Vercel) serves it at
+         the root, with no such segment. Hardcoding pathSegmentsToKeep to 1
+         broke the custom domain: every deep link 404'd here, redirected to
+         a still-404ing URL, and re-ran this script, snowballing '~and~'
+         junk onto the query string on every hop (an infinite loop). -->
     <script type="text/javascript">
-      var pathSegmentsToKeep = 1 // keep the '/tgarden' base segment
+      var pathSegmentsToKeep = window.location.hostname === 'tiagojardim83.github.io' ? 1 : 0
 
       var l = window.location
       l.replace(
