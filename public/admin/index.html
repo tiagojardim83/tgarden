@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>TGarden — Painel de mídia</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="mark"></span>
+      <span>TGARDEN — PAINEL DE MÍDIA</span>
+    </header>
+
+    <main id="app" class="wrap">
+      <section id="login-screen" class="card">
+        <h1>Entrar</h1>
+        <p class="hint">Digite a senha que o TGarden te passou.</p>
+        <form id="login-form">
+          <input id="password" type="password" placeholder="Senha" autocomplete="current-password" required />
+          <button type="submit">Entrar</button>
+        </form>
+        <p id="login-error" class="error" hidden></p>
+      </section>
+
+      <section id="panel-screen" class="panel" hidden>
+        <div class="panel-head">
+          <h1>Trocar fotos e vídeos</h1>
+          <p class="hint">
+            Escolha um item da lista e envie o arquivo novo. O site atualiza sozinho em alguns minutos.
+          </p>
+        </div>
+        <div id="groups"></div>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

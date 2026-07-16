@@ -1,0 +1,19 @@
+[
+  { "label": "Foto de destaque — Presentation Design", "path": "src/assets/images/Presentation_01.jpg", "type": "image", "project": "Presentation Design" },
+  { "label": "Foto de destaque — Maoka", "path": "src/assets/images/maoka-hover.jpg", "type": "image", "project": "Maoka" },
+  { "label": "Foto de destaque — Figa", "path": "src/assets/images/figa-keyvisual-hover.jpg", "type": "image", "project": "Figa" },
+  { "label": "Foto de destaque — TGarden", "path": "src/assets/images/Thumb_lobs.jpg", "type": "image", "project": "TGarden" },
+  { "label": "Foto de destaque — Cidades Invisíveis", "path": "src/assets/images/gallery-4.jpg", "type": "image", "project": "Cidades Invisíveis" },
+  { "label": "Foto de destaque — Velvo", "path": "src/assets/images/01_Velvo.jpg", "type": "image", "project": "Velvo" },
+  { "label": "Foto de destaque — Lobs Brazilian Art", "path": "src/assets/images/project-lobs.jpg", "type": "image", "project": "Lobs Brazilian Art" },
+  { "label": "Vídeo — Maoka (fachada/billboard)", "path": "src/assets/videos/01. Maoka.mp4", "type": "video", "project": "Maoka" },
+  { "label": "Vídeo — Maoka (artboards)", "path": "src/assets/videos/02.mp4", "type": "video", "project": "Maoka" },
+  { "label": "Vídeo — Figa (destaque)", "path": "src/assets/videos/figa-01.mp4", "type": "video", "project": "Figa" },
+  { "label": "Vídeo — Cidades Invisíveis (destaque)", "path": "src/assets/videos/Motion_03.mp4", "type": "video", "project": "Cidades Invisíveis" },
+  { "label": "Vídeo — Cidades Invisíveis (transições)", "path": "src/assets/videos/Motion_04.mp4", "type": "video", "project": "Cidades Invisíveis" },
+  { "label": "Vídeo — Lobs (streetwear)", "path": "src/assets/videos/lobs_02.mp4", "type": "video", "project": "Lobs Brazilian Art" },
+  { "label": "Vídeo — Lobs (redes sociais)", "path": "src/assets/videos/lobs_05.mp4", "type": "video", "project": "Lobs Brazilian Art" },
+  { "label": "Vídeo — Reserva", "path": "src/assets/videos/Reserva_02.mp4", "type": "video", "project": "Lobs Brazilian Art" },
+  { "label": "Vídeo — Presentation (Alicia Keys)", "path": "src/assets/videos/Presenation_04.mp4", "type": "video", "project": "Presentation Design" },
+  { "label": "Vídeo — Velvo (Biriquim)", "path": "src/assets/videos/biriquim_01.mp4", "type": "video", "project": "Velvo" }
+]

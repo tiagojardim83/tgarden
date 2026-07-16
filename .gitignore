@@ -29,3 +29,4 @@ dist-ssr
 src/assets/videos/*/
 .vercel
 .env*
+!.env.example
