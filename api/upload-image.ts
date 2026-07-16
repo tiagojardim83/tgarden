@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { isAuthenticated } from './_lib/session'
-import { mintInstallationToken, GITHUB_OWNER, GITHUB_REPO, GITHUB_BRANCH } from './_lib/githubApp'
+import { isAuthenticated } from './_lib/session.js'
+import { mintInstallationToken, GITHUB_OWNER, GITHUB_REPO, GITHUB_BRANCH } from './_lib/githubApp.js'
 import assets from '../public/admin/assets.json'
 
 // Photos only (always well under Vercel's 4.5MB function body limit). Unlike

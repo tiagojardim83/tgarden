@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import { isAuthenticated } from './_lib/session'
-import { mintInstallationToken } from './_lib/githubApp'
+import { isAuthenticated } from './_lib/session.js'
+import { mintInstallationToken } from './_lib/githubApp.js'
 
 // Mints a short-lived (1h) GitHub App installation token, scoped only to
 // this repo with contents:write. Used by the browser to commit VIDEO files
