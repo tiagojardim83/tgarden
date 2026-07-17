@@ -6,10 +6,16 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>TGarden — Painel de mídia</title>
     <!-- Without this, visiting /admin (no trailing slash) makes the browser
-         resolve admin.css/admin.js against the domain root instead of
-         /admin/, 404ing both — this page is Vercel-only (root-served)
-         regardless, so a fixed root-relative base is safe here. -->
-    <base href="/admin/" />
+         resolve admin.css/admin.js against the parent directory instead of
+         /admin/, 404ing both. Computed instead of hardcoded because this
+         page is served from different base paths depending on target:
+         domain root on Vercel (production), but under /tgarden/ on GitHub
+         Pages and local dev (matches vite.config.ts's base). -->
+    <script>
+      document.write(
+        '<base href="' + location.pathname.slice(0, location.pathname.indexOf('/admin') + 6) + '/">',
+      )
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
