@@ -40,7 +40,7 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.mark {
+.dot {
   width: 8px;
   height: 8px;
   background: var(--ink);
@@ -66,6 +66,13 @@ h1 {
 .login {
   max-width: 380px;
   margin: 60px auto;
+}
+
+.login-mark {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 28px;
+  display: block;
 }
 
 .hint {
@@ -250,4 +257,25 @@ button:disabled {
     margin-left: 60px;
     margin-top: 10px;
   }
+
+  .closing p {
+    font-size: 22px;
+  }
+}
+
+.closing {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 56px 24px;
+  margin-top: 40px;
+}
+
+.closing p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-size: 28px;
+  line-height: 1.2;
 }
