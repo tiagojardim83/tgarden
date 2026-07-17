@@ -15,5 +15,12 @@
   { "label": "Vídeo — Lobs (redes sociais)", "path": "src/assets/videos/lobs_05.mp4", "type": "video", "project": "Lobs Brazilian Art" },
   { "label": "Vídeo — Reserva", "path": "src/assets/videos/Reserva_02.mp4", "type": "video", "project": "Lobs Brazilian Art" },
   { "label": "Vídeo — Presentation (Alicia Keys)", "path": "src/assets/videos/Presenation_04.mp4", "type": "video", "project": "Presentation Design" },
-  { "label": "Vídeo — Velvo (Biriquim)", "path": "src/assets/videos/biriquim_01.mp4", "type": "video", "project": "Velvo" }
+  { "label": "Vídeo — Velvo (Biriquim)", "path": "src/assets/videos/biriquim_01.mp4", "type": "video", "project": "Velvo" },
+  { "label": "Frase de destaque — Presentation Design", "type": "text", "project": "Presentation Design", "slug": "presentation-design" },
+  { "label": "Frase de destaque — Maoka", "type": "text", "project": "Maoka", "slug": "maoka" },
+  { "label": "Frase de destaque — Figa", "type": "text", "project": "Figa", "slug": "figa" },
+  { "label": "Frase de destaque — TGarden", "type": "text", "project": "TGarden", "slug": "tgarden-site" },
+  { "label": "Frase de destaque — Cidades Invisíveis", "type": "text", "project": "Cidades Invisíveis", "slug": "cidades-invisiveis" },
+  { "label": "Frase de destaque — Velvo", "type": "text", "project": "Velvo", "slug": "velvo" },
+  { "label": "Frase de destaque — Lobs Brazilian Art", "type": "text", "project": "Lobs Brazilian Art", "slug": "lobs-brazilian-art" }
 ]

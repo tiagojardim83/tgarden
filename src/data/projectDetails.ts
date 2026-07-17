@@ -1,3 +1,4 @@
+import editableCopy from './editableCopy.json'
 import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import tgardenImg from '../assets/images/Thumb_lobs.jpg'
@@ -142,7 +143,7 @@ export const projectDetails: ProjectDetail[] = [
     pt: {
       category: 'Presentation Design',
       title: 'Presentation Design',
-      heroStatement: 'Ideias que conseguem investimento.',
+      heroStatement: editableCopy['presentation-design'].pt,
       client: 'MALAB',
       sector: 'Apresentações de Alto Impacto',
       scope: 'Presentation Design, Direção Criativa',
@@ -187,7 +188,7 @@ export const projectDetails: ProjectDetail[] = [
     en: {
       category: 'Presentation Design',
       title: 'Presentation Design',
-      heroStatement: 'Ideas that get funded.',
+      heroStatement: editableCopy['presentation-design'].en,
       client: 'MALAB',
       sector: 'High-Impact Presentations',
       scope: 'Presentation Design, Creative Direction',
@@ -241,7 +242,7 @@ export const projectDetails: ProjectDetail[] = [
     pt: {
       category: 'Identidade Visual',
       title: 'Maoka',
-      heroStatement: 'A marca não é um logo. É a forma de uma memória.',
+      heroStatement: editableCopy.maoka.pt,
       client: 'Maoka',
       sector: 'Cenografia & Experiência',
       scope: 'Branding, Identidade Visual',
@@ -308,7 +309,7 @@ export const projectDetails: ProjectDetail[] = [
     en: {
       category: 'Visual Identity',
       title: 'Maoka',
-      heroStatement: "A brand is not a logo. It's the shape of a memory.",
+      heroStatement: editableCopy.maoka.en,
       client: 'Maoka',
       sector: 'Scenography & Experience',
       scope: 'Branding, Visual Identity',
@@ -385,7 +386,7 @@ export const projectDetails: ProjectDetail[] = [
     pt: {
       category: 'Key Visual',
       title: 'Figa',
-      heroStatement: 'Key visual',
+      heroStatement: editableCopy.figa.pt,
       intro: [
         'Key visuals construídos como sistemas vivos: imagens em movimento que carregam a marca por telas, palcos e ruas.',
       ],
@@ -428,7 +429,7 @@ export const projectDetails: ProjectDetail[] = [
     en: {
       category: 'Key Visual',
       title: 'Figa',
-      heroStatement: 'Key visual',
+      heroStatement: editableCopy.figa.en,
       intro: [
         'Key visuals built as living systems: moving images that carry the brand across screens, stages and streets.',
       ],
@@ -481,7 +482,7 @@ export const projectDetails: ProjectDetail[] = [
     pt: {
       category: 'Web Design & Development',
       title: 'TGarden',
-      heroStatement: 'Um site não é um cartão de visitas. É a primeira reunião.',
+      heroStatement: editableCopy['tgarden-site'].pt,
       client: 'TGarden',
       sector: 'Design & Desenvolvimento',
       scope: 'Web Design, Desenvolvimento Front-end',
@@ -532,7 +533,7 @@ export const projectDetails: ProjectDetail[] = [
     en: {
       category: 'Web Design & Development',
       title: 'TGarden',
-      heroStatement: "A website isn't a business card. It's the first meeting.",
+      heroStatement: editableCopy['tgarden-site'].en,
       client: 'TGarden',
       sector: 'Design & Development',
       scope: 'Web Design, Front-end Development',
@@ -592,7 +593,7 @@ export const projectDetails: ProjectDetail[] = [
     pt: {
       category: 'Motion Design',
       title: 'Cidades Invisíveis',
-      heroStatement: 'Motion não inventa histórias. Dá visibilidade às que a gente insiste em não ver.',
+      heroStatement: editableCopy['cidades-invisiveis'].pt,
       client: 'Cidades Invisíveis',
       sector: 'Fotografia & Responsabilidade Social',
       scope: 'Motion Design, Edição de Vídeo',
@@ -665,7 +666,7 @@ export const projectDetails: ProjectDetail[] = [
     en: {
       category: 'Motion Design',
       title: 'Cidades Invisíveis',
-      heroStatement: "Motion doesn't invent stories. It gives visibility to the ones we insist on not seeing.",
+      heroStatement: editableCopy['cidades-invisiveis'].en,
       client: 'Cidades Invisíveis',
       sector: 'Photography & Social Responsibility',
       scope: 'Motion Design, Video Editing',
@@ -747,7 +748,7 @@ export const projectDetails: ProjectDetail[] = [
     pt: {
       category: 'Packaging Design',
       title: 'Velvo',
-      heroStatement: 'A embalagem é o primeiro produto que o cliente realmente sente.',
+      heroStatement: editableCopy.velvo.pt,
       intro: [
         'Três segundos. É o tempo que uma embalagem tem pra se destacar antes da mão do cliente ir pra outra marca.',
         'Textura, peso e acabamento comunicam qualidade antes mesmo da primeira palavra ser lida no rótulo: da paisagem que inspirou a marca ao produto na mão do cliente, cada peça continua a anterior.',
@@ -817,7 +818,7 @@ export const projectDetails: ProjectDetail[] = [
     en: {
       category: 'Packaging Design',
       title: 'Velvo',
-      heroStatement: "Packaging is the first product the customer actually feels.",
+      heroStatement: editableCopy.velvo.en,
       intro: [
         "Three seconds. That's how long a package has to stand out before the customer's hand moves to another brand.",
         "Texture, weight and finish communicate quality before a single word is read on the label: from the landscape that inspired the brand to the product in the customer's hand, each piece continues the last.",
@@ -896,7 +897,7 @@ export const projectDetails: ProjectDetail[] = [
     pt: {
       category: 'Fashion Design',
       title: 'Lobs Brazilian Art',
-      heroStatement: 'Moda é identidade que se veste.',
+      heroStatement: editableCopy['lobs-brazilian-art'].pt,
       client: 'Lobs Brazilian Art',
       sector: 'Moda & Arte Brasileira',
       scope: 'Fashion Design, Direção Criativa',
@@ -969,7 +970,7 @@ export const projectDetails: ProjectDetail[] = [
     en: {
       category: 'Fashion Design',
       title: 'Lobs Brazilian Art',
-      heroStatement: 'Fashion is identity you wear.',
+      heroStatement: editableCopy['lobs-brazilian-art'].en,
       client: 'Lobs Brazilian Art',
       sector: 'Fashion & Brazilian Art',
       scope: 'Fashion Design, Creative Direction',

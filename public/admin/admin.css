@@ -233,6 +233,47 @@ button:disabled {
   cursor: pointer;
 }
 
+.item-text {
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+.item-text .item-icon {
+  margin-top: 2px;
+}
+
+.text-field {
+  display: block;
+  margin-top: 12px;
+}
+
+.text-field .label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--ink-soft);
+}
+
+.text-field textarea {
+  width: 100%;
+  min-height: 52px;
+  resize: vertical;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  padding: 8px 10px;
+  outline: none;
+}
+
+.text-field textarea:focus {
+  border-color: var(--ink);
+}
+
+.save-btn {
+  margin-top: 14px;
+}
+
 @media (max-width: 640px) {
   h1 {
     font-size: 32px;
