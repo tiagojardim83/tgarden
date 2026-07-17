@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>TGarden — Painel de mídia</title>
+    <!-- Without this, visiting /admin (no trailing slash) makes the browser
+         resolve admin.css/admin.js against the domain root instead of
+         /admin/, 404ing both — this page is Vercel-only (root-served)
+         regardless, so a fixed root-relative base is safe here. -->
+    <base href="/admin/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
