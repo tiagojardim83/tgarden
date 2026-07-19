@@ -70,7 +70,7 @@ h1 {
 
 .login-mark {
   width: 192px;
-  height: 192px;
+  height: auto;
   margin: 0 0 28px;
   display: block;
 }
