@@ -362,5 +362,305 @@
   "lobs-brazilian-art:s4:text": {
     "pt": "Parceria com a Reserva, uma das maiores marcas de moda do Brasil, prova de que streetwear autoral também fala a língua de quem já é gigante.",
     "en": "A partnership with Reserva, one of Brazil's biggest fashion brands, proof that authorial streetwear also speaks the language of those who are already giants."
+  },
+  "home:hero:name": {
+    "pt": "Tiago Jardim",
+    "en": "Tiago Jardim"
+  },
+  "home:hero:location": {
+    "pt": "Búzios / RJ",
+    "en": "Búzios / RJ"
+  },
+  "home:hero:roleLine1": {
+    "pt": "Diretor Criativo",
+    "en": "Creative Director"
+  },
+  "home:hero:roleLine2": {
+    "pt": "Designer",
+    "en": "Designer"
+  },
+  "home:hero:nameTop": {
+    "pt": "TGARDEN",
+    "en": "TGARDEN"
+  },
+  "home:hero:nameBottom": {
+    "pt": "TIAGO JARDIM",
+    "en": "TIAGO JARDIM"
+  },
+  "home:hero:sub": {
+    "pt": "Transformo ideias em projetos aprovados, do pitch que garante investimento à marca, motion e produto que dão vida a ela.",
+    "en": "I turn ideas into approved projects, from the pitch that gets funded to the brand, motion and product that bring it to life."
+  },
+  "home:hero:tag": {
+    "pt": "TGARDEN STUDIO",
+    "en": "TGARDEN STUDIO"
+  },
+  "home:projects:kicker": {
+    "pt": "02 / Projects",
+    "en": "02 / Projects"
+  },
+  "home:projects:heading": {
+    "pt": "Oito frentes, uma mesma assinatura.",
+    "en": "Eight fronts, one same signature."
+  },
+  "home:projects:cta": {
+    "pt": "Todas as frentes",
+    "en": "All fronts"
+  },
+  "home:skills:kicker": {
+    "pt": "03 / Skills",
+    "en": "03 / Skills"
+  },
+  "home:skills:heading": {
+    "pt": "Habilidade em desenvolvimento.",
+    "en": "Software skill in development."
+  },
+  "home:skills:trending": {
+    "pt": "em alta",
+    "en": "trending"
+  },
+  "home:fragments:kicker": {
+    "pt": "04 / Fragments",
+    "en": "04 / Fragments"
+  },
+  "home:fragments:heading": {
+    "pt": "Processo, bastidor e ruído.",
+    "en": "Process, backstage and noise."
+  },
+  "home:manifesto:kicker": {
+    "pt": "05 / Manifesto",
+    "en": "05 / Manifesto"
+  },
+  "home:manifesto:text": {
+    "pt": "Criar é misturar técnica e intuição. Conectar estética, design e negócio sem perder a alma do que é feito.",
+    "en": "To create is to mix technique and intuition. To connect aesthetics, design and business without losing the soul of what is made."
+  },
+  "home:manifesto:signature": {
+    "pt": "Tiago Jardim",
+    "en": "Tiago Jardim"
+  },
+  "home:contact:kicker": {
+    "pt": "06 / Contact",
+    "en": "06 / Contact"
+  },
+  "home:contact:heading": {
+    "pt": "Vamos falar sobre uma ideia.",
+    "en": "Let's talk about an idea."
+  },
+  "home:contact:name": {
+    "pt": "Nome",
+    "en": "Name"
+  },
+  "home:contact:namePlaceholder": {
+    "pt": "Seu nome",
+    "en": "Your name"
+  },
+  "home:contact:email": {
+    "pt": "E-mail",
+    "en": "E-mail"
+  },
+  "home:contact:emailPlaceholder": {
+    "pt": "voce@email.com",
+    "en": "you@email.com"
+  },
+  "home:contact:subject": {
+    "pt": "Assunto",
+    "en": "Subject"
+  },
+  "home:contact:subjectPlaceholder": {
+    "pt": "Sobre o que é?",
+    "en": "What's it about?"
+  },
+  "home:contact:message": {
+    "pt": "Mensagem",
+    "en": "Message"
+  },
+  "home:contact:messagePlaceholder": {
+    "pt": "Conte um pouco sobre sua ideia, projeto ou convite.",
+    "en": "Tell me a bit about your idea, project or invitation."
+  },
+  "home:contact:send": {
+    "pt": "Enviar mensagem",
+    "en": "Send message"
+  },
+  "home:contact:direct": {
+    "pt": "Direto",
+    "en": "Direct"
+  },
+  "home:contact:social": {
+    "pt": "Redes",
+    "en": "Social"
+  },
+  "home:contact:locationLine1": {
+    "pt": "Armação dos Búzios | RJ/BR",
+    "en": "Armação dos Búzios | RJ/BR"
+  },
+  "home:contact:locationLine2": {
+    "pt": "Atende Brasil & Exterior",
+    "en": "Serving Brazil & abroad"
+  },
+  "home:about:kicker": {
+    "pt": "01 / About",
+    "en": "01 / About"
+  },
+  "home:about:heading": {
+    "pt": "Entre o design e a ideia de fazer junto.",
+    "en": "Between design, and the idea of making it together."
+  },
+  "home:about:paragraph0": {
+    "pt": "Sou Tiago Jardim, designer e diretor de arte. Transformo ideias em projetos aprovados, começando pela apresentação que dá luz verde a um negócio, seguida da identidade de marca, motion e experiência digital que a colocam em prática.",
+    "en": "I'm Tiago Jardim, designer and art director. I turn ideas into approved projects, starting with the presentation that gets a business greenlit, followed by the brand identity, motion and digital experience that bring it to life."
+  },
+  "home:about:paragraph1": {
+    "pt": "Todo projeto existe para resolver o mesmo desafio: tornar uma ideia clara o suficiente para ser aprovada, e consistente o suficiente para ser lembrada. Seja um pitch deck em busca de investimento, uma marca sendo lançada no mundo, ou um produto encontrando sua interface, meu papel é sempre o mesmo: transformar ideias em estrutura.",
+    "en": "Every project exists to solve the same challenge: making an idea clear enough to be approved, and consistent enough to be remembered. Whether it's a pitch deck seeking investment, a brand launching into the world, or a product finding its interface, my role is always the same: turn ideas into structure."
+  },
+  "home:featureStrip0:kicker": {
+    "pt": "Design de Apresentação",
+    "en": "Presentation Design"
+  },
+  "home:featureStrip0:heading": {
+    "pt": "Apresentações de Alto Impacto",
+    "en": "High-Impact Presenta­tions"
+  },
+  "home:featureStrip1:kicker": {
+    "pt": "Identidade de Marca",
+    "en": "Brand Identity"
+  },
+  "home:featureStrip1:heading": {
+    "pt": "Identidade Visual + Key Visual",
+    "en": "Visual Identity + Key Visual"
+  },
+  "home:featureStrip2:kicker": {
+    "pt": "Experiências Digitais",
+    "en": "Digital Experiences"
+  },
+  "home:featureStrip2:heading": {
+    "pt": "UX/UI • Web Dev • Motion",
+    "en": "UX/UI • Web Dev • Motion"
+  },
+  "movimento-humano:prototypeKicker": {
+    "pt": "Protótipo Interativo",
+    "en": "Interactive Prototype"
+  },
+  "movimento-humano:prototypeCaption": {
+    "pt": "Navegue pelo fluxo completo, do onboarding ao treino.",
+    "en": "Navigate the full flow, from onboarding to training."
+  },
+  "movimento-humano:closing": {
+    "pt": "UMA INTERFACE HUMANA PARA UMA PRÁTICA HUMANA, FEITA PRA PARECER UM GESTO, NÃO UMA TELA.",
+    "en": "A HUMAN INTERFACE FOR A HUMAN PRACTICE, DESIGNED TO FEEL LIKE A GESTURE, NOT A SCREEN."
+  },
+  "movimento-humano:lobsKicker": {
+    "pt": "04 / Lobs Brazilian Art",
+    "en": "04 / Lobs Brazilian Art"
+  },
+  "movimento-humano:lobsHeading": {
+    "pt": "Uma loja com a mesma atitude da marca.",
+    "en": "A store with the same attitude as the brand."
+  },
+  "movimento-humano:lobsText": {
+    "pt": "O e-commerce da Lobs Brazilian Art precisava traduzir a mesma atitude da marca pro digital: navegação simples, produto em primeiro plano e uma experiência de compra que funciona igual em qualquer tela.",
+    "en": "Lobs Brazilian Art's e-commerce needed to translate the brand's attitude into digital: simple navigation, product front and center, and a shopping experience that works the same on any screen."
+  },
+  "movimento-humano:lobsSector": {
+    "pt": "E-commerce & Moda",
+    "en": "E-commerce & Fashion"
+  },
+  "movimento-humano:lobsScope": {
+    "pt": "UX/UI Design, E-commerce",
+    "en": "UX/UI Design, E-commerce"
+  },
+  "movimento-humano:mobileKicker": {
+    "pt": "05 / Mobile",
+    "en": "05 / Mobile"
+  },
+  "movimento-humano:mobileHeading": {
+    "pt": "Mobile em primeiro lugar.",
+    "en": "Mobile first."
+  },
+  "movimento-humano:mobileText": {
+    "pt": "A experiência precisava funcionar igual na tela pequena: a mesma loja, a mesma atitude, sem perder nada no caminho.",
+    "en": "The experience needed to work just as well on the small screen: the same store, the same attitude, without losing anything along the way."
+  },
+  "movimento-humano:intro0": {
+    "pt": "Movimento Humano é um ecossistema de bem-estar construído em torno de treino, comunidade e autocuidado. O produto é organizado em três estágios de prática: Semente, Fruto e Movimento, mapeados em uma interface coerente e calma que guia o usuário sem ruído.",
+    "en": "Movimento Humano is a wellness ecosystem built around training, community and self-care. The product is organized into three stages of practice: Semente, Fruto and Movimento, mapped into a coherent, calm interface that guides the user without noise."
+  },
+  "movimento-humano:intro1": {
+    "pt": "Cada tela é um momento de intenção: hierarquia suave, tipografia editorial e espaço generoso para que o conteúdo permaneça em foco.",
+    "en": "Every screen is a moment of intention: soft hierarchy, editorial typography and generous space so the content stays in focus."
+  },
+  "movimento-humano:s0:kicker": {
+    "pt": "Conceito",
+    "en": "Concept"
+  },
+  "movimento-humano:s0:heading": {
+    "pt": "Um app que respira com você.",
+    "en": "An app that breathes with you."
+  },
+  "movimento-humano:s0:text": {
+    "pt": "Antes de desenhar telas, desenhamos o ritmo: onboarding, treino e loja precisam parecer parte do mesmo corpo, não três produtos costurados um no outro.",
+    "en": "Before drawing screens, we drew the rhythm: onboarding, training and store need to feel like the same body, not three products stitched together."
+  },
+  "movimento-humano:s1:kicker": {
+    "pt": "Fluxo",
+    "en": "Flow"
+  },
+  "movimento-humano:s1:heading": {
+    "pt": "Fluxo antes de tela.",
+    "en": "Flow before screen."
+  },
+  "movimento-humano:s1:text": {
+    "pt": "Cada tela existe pra resolver uma decisão do usuário. Antes de desenhar um pixel, mapeamos a jornada inteira: onde trava, onde flui, onde perde.",
+    "en": "Every screen exists to resolve a user decision. Before drawing a single pixel, we map the entire journey: where it stalls, where it flows, where it loses people."
+  },
+  "movimento-humano:s2:kicker": {
+    "pt": "Sistema",
+    "en": "System"
+  },
+  "movimento-humano:s2:heading": {
+    "pt": "Consistência é confiança.",
+    "en": "Consistency is trust."
+  },
+  "movimento-humano:s2:text": {
+    "pt": "Um sistema de componentes coerente faz o produto parecer maior do que é, e mais fácil de usar do que qualquer concorrente.",
+    "en": "A coherent component system makes the product feel bigger than it is, and easier to use than any competitor."
+  },
+  "home:contact:sentMessage": {
+    "pt": "Mensagem enviada. Obrigado!",
+    "en": "Message sent. Thank you!"
+  },
+  "home:contact:sendingLabel": {
+    "pt": "Enviando...",
+    "en": "Sending..."
+  },
+  "home:contact:errorMessage": {
+    "pt": "Não foi possível enviar. Tente novamente ou use o e-mail direto ao lado.",
+    "en": "Couldn't send. Please try again or use the direct email instead."
+  },
+  "home:footer:talkToMe": {
+    "pt": "Falar comigo",
+    "en": "Talk to me"
+  },
+  "home:footer:word": {
+    "pt": "© DESIGN & IMPACTO",
+    "en": "© DESIGN & IMPACTO"
+  },
+  "movimento-humano:titleLine1": {
+    "pt": "Movimento",
+    "en": "Movimento"
+  },
+  "movimento-humano:titleLine2": {
+    "pt": "Humano",
+    "en": "Humano"
+  },
+  "movimento-humano:sector": {
+    "pt": "Saúde & Bem-estar Digital",
+    "en": "Digital Health & Wellness"
+  },
+  "movimento-humano:scope": {
+    "pt": "UX/UI Design, Produto Digital",
+    "en": "UX/UI Design, Digital Product"
   }
 }

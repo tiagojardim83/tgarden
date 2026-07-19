@@ -1,6 +1,7 @@
 import { useRef, useState, type FormEvent } from 'react'
 import { motion, useInView } from 'motion/react'
 import { contactCopy, email, socials } from '../data/content'
+import editableCopy from '../data/editableCopy.json'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
 
@@ -13,18 +14,22 @@ function FormField({
   label,
   placeholder,
   type = 'text',
+  adminId,
 }: {
   name: string
   label: string
   placeholder: string
   type?: string
+  adminId?: string
 }) {
   const isTextarea = type === 'textarea'
   const Field = isTextarea ? 'textarea' : 'input'
 
   return (
     <label className="block py-3 border-b border-ink/25">
-      <span className="block label text-ink mb-2">{label}</span>
+      <span className="block label text-ink mb-2" data-admin-id={adminId}>
+        {label}
+      </span>
       <Field
         name={name}
         required
@@ -101,7 +106,9 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mb-14">
-        <p className="label text-ink-soft md:col-span-3">{t.kicker}</p>
+        <p className="label text-ink-soft md:col-span-3" data-admin-id="text:home:contact:kicker">
+          {t.kicker}
+        </p>
         <motion.h2
           ref={headingRef}
           initial={{ opacity: 0, y: 16 }}
@@ -109,6 +116,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           data-cursor=""
+          data-admin-id="text:home:contact:heading"
           className={`md:col-span-9 font-display uppercase text-5xl md:text-8xl leading-[0.9] md:leading-none tracking-tightest transition-colors duration-300 hover:text-red ${headingActive ? 'text-red' : ''}`}
         >
           {t.heading}
@@ -122,17 +130,35 @@ export default function Contact() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               className="font-display text-2xl"
+              data-admin-id="text:home:contact:sentMessage"
             >
-              ✓ {lang === 'pt' ? 'Mensagem enviada. Obrigado!' : 'Message sent. Thank you!'}
+              ✓ {editableCopy['home:contact:sentMessage'][lang]}
             </motion.p>
           ) : (
             <form onSubmit={onSubmit} className="flex flex-col">
               <div className="grid md:grid-cols-2 gap-x-6">
-                <FormField name="name" label={t.name} placeholder={t.namePlaceholder} />
-                <FormField name="email" label={t.email} placeholder={t.emailPlaceholder} type="email" />
+                <FormField name="name" label={t.name} placeholder={t.namePlaceholder} adminId="text:home:contact:name" />
+                <FormField
+                  name="email"
+                  label={t.email}
+                  placeholder={t.emailPlaceholder}
+                  type="email"
+                  adminId="text:home:contact:email"
+                />
               </div>
-              <FormField name="subject" label={t.subject} placeholder={t.subjectPlaceholder} />
-              <FormField name="message" label={t.message} placeholder={t.messagePlaceholder} type="textarea" />
+              <FormField
+                name="subject"
+                label={t.subject}
+                placeholder={t.subjectPlaceholder}
+                adminId="text:home:contact:subject"
+              />
+              <FormField
+                name="message"
+                label={t.message}
+                placeholder={t.messagePlaceholder}
+                type="textarea"
+                adminId="text:home:contact:message"
+              />
 
               <button
                 type="submit"
@@ -140,15 +166,13 @@ export default function Contact() {
                 data-cursor="SEND"
                 className="group mt-8 self-start inline-flex items-center gap-3 bg-ink text-paper px-6 py-3 label hover:bg-red transition-colors duration-300 disabled:opacity-50"
               >
-                {sending ? (lang === 'pt' ? 'Enviando...' : 'Sending...') : t.send}
+                {sending ? editableCopy['home:contact:sendingLabel'][lang] : t.send}
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </button>
 
               {error && (
-                <p className="mt-3 text-sm text-red">
-                  {lang === 'pt'
-                    ? 'Não foi possível enviar. Tente novamente ou use o e-mail direto ao lado.'
-                    : "Couldn't send. Please try again or use the direct email instead."}
+                <p className="mt-3 text-sm text-red" data-admin-id="text:home:contact:errorMessage">
+                  {editableCopy['home:contact:errorMessage'][lang]}
                 </p>
               )}
             </form>
@@ -157,7 +181,9 @@ export default function Contact() {
 
         <div className="md:col-span-4 md:col-start-9 md:border-l border-ink/15 md:pl-10 flex flex-col gap-10">
           <div>
-            <p className="label text-ink-soft mb-3">{t.direct}</p>
+            <p className="label text-ink-soft mb-3" data-admin-id="text:home:contact:direct">
+              {t.direct}
+            </p>
             <a
               ref={emailRef}
               href={`mailto:${email}`}
@@ -172,7 +198,9 @@ export default function Contact() {
           </div>
 
           <div>
-            <p className="label text-ink-soft mb-3">{t.social}</p>
+            <p className="label text-ink-soft mb-3" data-admin-id="text:home:contact:social">
+              {t.social}
+            </p>
             <div className="flex flex-col">
               {socials.map((s) => (
                 <SocialLink key={s.label} label={s.label} href={s.href} />
@@ -181,8 +209,8 @@ export default function Contact() {
           </div>
 
           <div className="label text-ink-soft leading-relaxed">
-            <p>{t.locationLine1}</p>
-            <p>{t.locationLine2}</p>
+            <p data-admin-id="text:home:contact:locationLine1">{t.locationLine1}</p>
+            <p data-admin-id="text:home:contact:locationLine2">{t.locationLine2}</p>
           </div>
         </div>
       </div>

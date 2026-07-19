@@ -1,3 +1,4 @@
+import editableCopy from './editableCopy.json'
 import maokaImg from '../assets/images/maoka-hover.jpg'
 import figaImg from '../assets/images/figa-keyvisual-hover.jpg'
 import uxuiImg from '../assets/images/thumb-ux-ui.jpg'
@@ -25,60 +26,60 @@ export const navItems = [
 
 export const hero = {
   pt: {
-    name: 'Tiago Jardim',
-    location: 'Búzios / RJ',
-    roleLine1: 'Diretor Criativo',
-    roleLine2: 'Designer',
-    nameTop: 'TGARDEN',
-    nameBottom: 'TIAGO JARDIM',
-    sub: 'Transformo ideias em projetos aprovados, do pitch que garante investimento à marca, motion e produto que dão vida a ela.',
-    tag: 'TGARDEN STUDIO',
+    name: editableCopy['home:hero:name'].pt,
+    location: editableCopy['home:hero:location'].pt,
+    roleLine1: editableCopy['home:hero:roleLine1'].pt,
+    roleLine2: editableCopy['home:hero:roleLine2'].pt,
+    nameTop: editableCopy['home:hero:nameTop'].pt,
+    nameBottom: editableCopy['home:hero:nameBottom'].pt,
+    sub: editableCopy['home:hero:sub'].pt,
+    tag: editableCopy['home:hero:tag'].pt,
   },
   en: {
-    name: 'Tiago Jardim',
-    location: 'Búzios / RJ',
-    roleLine1: 'Creative Director',
-    roleLine2: 'Designer',
-    nameTop: 'TGARDEN',
-    nameBottom: 'TIAGO JARDIM',
-    sub: 'I turn ideas into approved projects, from the pitch that gets funded to the brand, motion and product that bring it to life.',
-    tag: 'TGARDEN STUDIO',
+    name: editableCopy['home:hero:name'].en,
+    location: editableCopy['home:hero:location'].en,
+    roleLine1: editableCopy['home:hero:roleLine1'].en,
+    roleLine2: editableCopy['home:hero:roleLine2'].en,
+    nameTop: editableCopy['home:hero:nameTop'].en,
+    nameBottom: editableCopy['home:hero:nameBottom'].en,
+    sub: editableCopy['home:hero:sub'].en,
+    tag: editableCopy['home:hero:tag'].en,
   },
 }
 
 export const featureStrip = [
   {
     number: '01',
-    pt: { kicker: 'Design de Apresentação', heading: 'Apresentações de Alto Impacto' },
-    en: { kicker: 'Presentation Design', heading: 'High-Impact Presenta­tions' },
+    pt: { kicker: editableCopy['home:featureStrip0:kicker'].pt, heading: editableCopy['home:featureStrip0:heading'].pt },
+    en: { kicker: editableCopy['home:featureStrip0:kicker'].en, heading: editableCopy['home:featureStrip0:heading'].en },
   },
   {
     number: '02',
-    pt: { kicker: 'Identidade de Marca', heading: 'Identidade Visual + Key Visual' },
-    en: { kicker: 'Brand Identity', heading: 'Visual Identity + Key Visual' },
+    pt: { kicker: editableCopy['home:featureStrip1:kicker'].pt, heading: editableCopy['home:featureStrip1:heading'].pt },
+    en: { kicker: editableCopy['home:featureStrip1:kicker'].en, heading: editableCopy['home:featureStrip1:heading'].en },
   },
   {
     number: '03',
-    pt: { kicker: 'Experiências Digitais', heading: 'UX/UI • Web Dev • Motion' },
-    en: { kicker: 'Digital Experiences', heading: 'UX/UI • Web Dev • Motion' },
+    pt: { kicker: editableCopy['home:featureStrip2:kicker'].pt, heading: editableCopy['home:featureStrip2:heading'].pt },
+    en: { kicker: editableCopy['home:featureStrip2:kicker'].en, heading: editableCopy['home:featureStrip2:heading'].en },
   },
 ]
 
 export const about = {
   pt: {
-    kicker: '01 / About',
-    heading: 'Entre o design e a ideia de fazer junto.',
+    kicker: editableCopy['home:about:kicker'].pt,
+    heading: editableCopy['home:about:heading'].pt,
     paragraphs: [
-      'Sou Tiago Jardim, designer e diretor de arte. Transformo ideias em projetos aprovados, começando pela apresentação que dá luz verde a um negócio, seguida da identidade de marca, motion e experiência digital que a colocam em prática.',
-      'Todo projeto existe para resolver o mesmo desafio: tornar uma ideia clara o suficiente para ser aprovada, e consistente o suficiente para ser lembrada. Seja um pitch deck em busca de investimento, uma marca sendo lançada no mundo, ou um produto encontrando sua interface, meu papel é sempre o mesmo: transformar ideias em estrutura.',
+      editableCopy['home:about:paragraph0'].pt,
+      editableCopy['home:about:paragraph1'].pt,
     ],
   },
   en: {
-    kicker: '01 / About',
-    heading: 'Between design, and the idea of making it together.',
+    kicker: editableCopy['home:about:kicker'].en,
+    heading: editableCopy['home:about:heading'].en,
     paragraphs: [
-      "I'm Tiago Jardim, designer and art director. I turn ideas into approved projects, starting with the presentation that gets a business greenlit, followed by the brand identity, motion and digital experience that bring it to life.",
-      "Every project exists to solve the same challenge: making an idea clear enough to be approved, and consistent enough to be remembered. Whether it's a pitch deck seeking investment, a brand launching into the world, or a product finding its interface, my role is always the same: turn ideas into structure.",
+      editableCopy['home:about:paragraph0'].en,
+      editableCopy['home:about:paragraph1'].en,
     ],
   },
 }
@@ -95,8 +96,8 @@ export const competencies = [
 ]
 
 export const projectsCopy = {
-  pt: { kicker: '02 / Projects', heading: 'Oito frentes, uma mesma assinatura.', cta: 'Todas as frentes' },
-  en: { kicker: '02 / Projects', heading: 'Eight fronts, one same signature.', cta: 'All fronts' },
+  pt: { kicker: editableCopy['home:projects:kicker'].pt, heading: editableCopy['home:projects:heading'].pt, cta: editableCopy['home:projects:cta'].pt },
+  en: { kicker: editableCopy['home:projects:kicker'].en, heading: editableCopy['home:projects:heading'].en, cta: editableCopy['home:projects:cta'].en },
 }
 
 export interface ProjectSummary {
@@ -196,8 +197,8 @@ export const projects: ProjectSummary[] = [
 ]
 
 export const skillsCopy = {
-  pt: { kicker: '03 / Skills', heading: 'Habilidade em desenvolvimento.', trending: 'em alta' },
-  en: { kicker: '03 / Skills', heading: 'Software skill in development.', trending: 'trending' },
+  pt: { kicker: editableCopy['home:skills:kicker'].pt, heading: editableCopy['home:skills:heading'].pt, trending: editableCopy['home:skills:trending'].pt },
+  en: { kicker: editableCopy['home:skills:kicker'].en, heading: editableCopy['home:skills:heading'].en, trending: editableCopy['home:skills:trending'].en },
 }
 
 export const skills = [
@@ -212,59 +213,59 @@ export const skills = [
 ]
 
 export const fragmentsCopy = {
-  pt: { kicker: '04 / Fragments', heading: 'Processo, bastidor e ruído.' },
-  en: { kicker: '04 / Fragments', heading: 'Process, backstage and noise.' },
+  pt: { kicker: editableCopy['home:fragments:kicker'].pt, heading: editableCopy['home:fragments:heading'].pt },
+  en: { kicker: editableCopy['home:fragments:kicker'].en, heading: editableCopy['home:fragments:heading'].en },
 }
 
 export const fragments = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6]
 
 export const manifestoCopy = {
   pt: {
-    kicker: '05 / Manifesto',
-    text: 'Criar é misturar técnica e intuição. Conectar estética, design e negócio sem perder a alma do que é feito.',
-    signature: 'Tiago Jardim',
+    kicker: editableCopy['home:manifesto:kicker'].pt,
+    text: editableCopy['home:manifesto:text'].pt,
+    signature: editableCopy['home:manifesto:signature'].pt,
   },
   en: {
-    kicker: '05 / Manifesto',
-    text: 'To create is to mix technique and intuition. To connect aesthetics, design and business without losing the soul of what is made.',
-    signature: 'Tiago Jardim',
+    kicker: editableCopy['home:manifesto:kicker'].en,
+    text: editableCopy['home:manifesto:text'].en,
+    signature: editableCopy['home:manifesto:signature'].en,
   },
 }
 
 export const contactCopy = {
   pt: {
-    kicker: '06 / Contact',
-    heading: 'Vamos falar sobre uma ideia.',
-    name: 'Nome',
-    namePlaceholder: 'Seu nome',
-    email: 'E-mail',
-    emailPlaceholder: 'voce@email.com',
-    subject: 'Assunto',
-    subjectPlaceholder: 'Sobre o que é?',
-    message: 'Mensagem',
-    messagePlaceholder: 'Conte um pouco sobre sua ideia, projeto ou convite.',
-    send: 'Enviar mensagem',
-    direct: 'Direto',
-    social: 'Redes',
-    locationLine1: 'Armação dos Búzios | RJ/BR',
-    locationLine2: 'Atende Brasil & Exterior',
+    kicker: editableCopy['home:contact:kicker'].pt,
+    heading: editableCopy['home:contact:heading'].pt,
+    name: editableCopy['home:contact:name'].pt,
+    namePlaceholder: editableCopy['home:contact:namePlaceholder'].pt,
+    email: editableCopy['home:contact:email'].pt,
+    emailPlaceholder: editableCopy['home:contact:emailPlaceholder'].pt,
+    subject: editableCopy['home:contact:subject'].pt,
+    subjectPlaceholder: editableCopy['home:contact:subjectPlaceholder'].pt,
+    message: editableCopy['home:contact:message'].pt,
+    messagePlaceholder: editableCopy['home:contact:messagePlaceholder'].pt,
+    send: editableCopy['home:contact:send'].pt,
+    direct: editableCopy['home:contact:direct'].pt,
+    social: editableCopy['home:contact:social'].pt,
+    locationLine1: editableCopy['home:contact:locationLine1'].pt,
+    locationLine2: editableCopy['home:contact:locationLine2'].pt,
   },
   en: {
-    kicker: '06 / Contact',
-    heading: "Let's talk about an idea.",
-    name: 'Name',
-    namePlaceholder: 'Your name',
-    email: 'E-mail',
-    emailPlaceholder: 'you@email.com',
-    subject: 'Subject',
-    subjectPlaceholder: "What's it about?",
-    message: 'Message',
-    messagePlaceholder: 'Tell me a bit about your idea, project or invitation.',
-    send: 'Send message',
-    direct: 'Direct',
-    social: 'Social',
-    locationLine1: 'Armação dos Búzios | RJ/BR',
-    locationLine2: 'Serving Brazil & abroad',
+    kicker: editableCopy['home:contact:kicker'].en,
+    heading: editableCopy['home:contact:heading'].en,
+    name: editableCopy['home:contact:name'].en,
+    namePlaceholder: editableCopy['home:contact:namePlaceholder'].en,
+    email: editableCopy['home:contact:email'].en,
+    emailPlaceholder: editableCopy['home:contact:emailPlaceholder'].en,
+    subject: editableCopy['home:contact:subject'].en,
+    subjectPlaceholder: editableCopy['home:contact:subjectPlaceholder'].en,
+    message: editableCopy['home:contact:message'].en,
+    messagePlaceholder: editableCopy['home:contact:messagePlaceholder'].en,
+    send: editableCopy['home:contact:send'].en,
+    direct: editableCopy['home:contact:direct'].en,
+    social: editableCopy['home:contact:social'].en,
+    locationLine1: editableCopy['home:contact:locationLine1'].en,
+    locationLine2: editableCopy['home:contact:locationLine2'].en,
   },
 }
 

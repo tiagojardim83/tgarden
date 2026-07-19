@@ -1645,5 +1645,931 @@
     "type": "image",
     "project": "Lobs Brazilian Art",
     "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:home:hero:name",
+    "label": {
+      "pt": "Home — Topo (Hero) — Nome",
+      "en": "Home — Top (Hero) — Name"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:hero:location",
+    "label": {
+      "pt": "Home — Topo (Hero) — Localização",
+      "en": "Home — Top (Hero) — Location"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:hero:roleLine1",
+    "label": {
+      "pt": "Home — Topo (Hero) — Cargo, linha 1",
+      "en": "Home — Top (Hero) — Role, line 1"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:hero:roleLine2",
+    "label": {
+      "pt": "Home — Topo (Hero) — Cargo, linha 2",
+      "en": "Home — Top (Hero) — Role, line 2"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:hero:nameTop",
+    "label": {
+      "pt": "Home — Topo (Hero) — Nome (topo grande)",
+      "en": "Home — Top (Hero) — Name (top, large)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:hero:nameBottom",
+    "label": {
+      "pt": "Home — Topo (Hero) — Nome (rodapé grande)",
+      "en": "Home — Top (Hero) — Name (bottom, large)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:hero:sub",
+    "label": {
+      "pt": "Home — Topo (Hero) — Subtítulo",
+      "en": "Home — Top (Hero) — Subtitle"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:hero:tag",
+    "label": {
+      "pt": "Home — Topo (Hero) — Etiqueta",
+      "en": "Home — Top (Hero) — Tag"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:projects:kicker",
+    "label": {
+      "pt": "Home — Seção Projetos — Kicker (categoria pequena)",
+      "en": "Home — Projects section — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:projects:heading",
+    "label": {
+      "pt": "Home — Seção Projetos — Título",
+      "en": "Home — Projects section — Heading"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:projects:cta",
+    "label": {
+      "pt": "Home — Seção Projetos — Botão de chamada",
+      "en": "Home — Projects section — Call-to-action button"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:skills:kicker",
+    "label": {
+      "pt": "Home — Seção Skills — Kicker (categoria pequena)",
+      "en": "Home — Skills section — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:skills:heading",
+    "label": {
+      "pt": "Home — Seção Skills — Título",
+      "en": "Home — Skills section — Heading"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:skills:trending",
+    "label": {
+      "pt": "Home — Seção Skills — Texto \"em alta\"",
+      "en": "Home — Skills section — \"Trending\" text"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:fragments:kicker",
+    "label": {
+      "pt": "Home — Seção Fragments — Kicker (categoria pequena)",
+      "en": "Home — Fragments section — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:fragments:heading",
+    "label": {
+      "pt": "Home — Seção Fragments — Título",
+      "en": "Home — Fragments section — Heading"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:manifesto:kicker",
+    "label": {
+      "pt": "Home — Seção Manifesto — Kicker (categoria pequena)",
+      "en": "Home — Manifesto section — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:manifesto:text",
+    "label": {
+      "pt": "Home — Seção Manifesto — Texto",
+      "en": "Home — Manifesto section — Text"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:manifesto:signature",
+    "label": {
+      "pt": "Home — Seção Manifesto — Assinatura",
+      "en": "Home — Manifesto section — Signature"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:kicker",
+    "label": {
+      "pt": "Home — Seção Contato — Kicker (categoria pequena)",
+      "en": "Home — Contact section — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:heading",
+    "label": {
+      "pt": "Home — Seção Contato — Título",
+      "en": "Home — Contact section — Heading"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:name",
+    "label": {
+      "pt": "Home — Seção Contato — Nome",
+      "en": "Home — Contact section — Name"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:namePlaceholder",
+    "label": {
+      "pt": "Home — Seção Contato — Placeholder do campo nome",
+      "en": "Home — Contact section — Name field placeholder"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:email",
+    "label": {
+      "pt": "Home — Seção Contato — Rótulo do campo e-mail",
+      "en": "Home — Contact section — Email field label"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:emailPlaceholder",
+    "label": {
+      "pt": "Home — Seção Contato — Placeholder do campo e-mail",
+      "en": "Home — Contact section — Email field placeholder"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:subject",
+    "label": {
+      "pt": "Home — Seção Contato — Rótulo do campo assunto",
+      "en": "Home — Contact section — Subject field label"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:subjectPlaceholder",
+    "label": {
+      "pt": "Home — Seção Contato — Placeholder do campo assunto",
+      "en": "Home — Contact section — Subject field placeholder"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:message",
+    "label": {
+      "pt": "Home — Seção Contato — Rótulo do campo mensagem",
+      "en": "Home — Contact section — Message field label"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:messagePlaceholder",
+    "label": {
+      "pt": "Home — Seção Contato — Placeholder do campo mensagem",
+      "en": "Home — Contact section — Message field placeholder"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:send",
+    "label": {
+      "pt": "Home — Seção Contato — Botão enviar",
+      "en": "Home — Contact section — Send button"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:direct",
+    "label": {
+      "pt": "Home — Seção Contato — Rótulo \"Direto\"",
+      "en": "Home — Contact section — \"Direct\" label"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:social",
+    "label": {
+      "pt": "Home — Seção Contato — Rótulo \"Redes\"",
+      "en": "Home — Contact section — \"Social\" label"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:locationLine1",
+    "label": {
+      "pt": "Home — Seção Contato — Localização, linha 1",
+      "en": "Home — Contact section — Location, line 1"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:locationLine2",
+    "label": {
+      "pt": "Home — Seção Contato — Localização, linha 2",
+      "en": "Home — Contact section — Location, line 2"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:about:kicker",
+    "label": {
+      "pt": "Home — Seção About — Kicker (categoria pequena)",
+      "en": "Home — About section — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:about:heading",
+    "label": {
+      "pt": "Home — Seção About — Título",
+      "en": "Home — About section — Heading"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:about:paragraph0",
+    "label": {
+      "pt": "Home — Seção About, parágrafo 1",
+      "en": "Home — About section, paragraph 1"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:about:paragraph1",
+    "label": {
+      "pt": "Home — Seção About, parágrafo 2",
+      "en": "Home — About section, paragraph 2"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:featureStrip0:kicker",
+    "label": {
+      "pt": "home:featureStrip0 — Kicker (categoria pequena)",
+      "en": "home:featureStrip0 — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:featureStrip0:heading",
+    "label": {
+      "pt": "home:featureStrip0 — Título",
+      "en": "home:featureStrip0 — Heading"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:featureStrip1:kicker",
+    "label": {
+      "pt": "home:featureStrip1 — Kicker (categoria pequena)",
+      "en": "home:featureStrip1 — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:featureStrip1:heading",
+    "label": {
+      "pt": "home:featureStrip1 — Título",
+      "en": "home:featureStrip1 — Heading"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:featureStrip2:kicker",
+    "label": {
+      "pt": "home:featureStrip2 — Kicker (categoria pequena)",
+      "en": "home:featureStrip2 — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:featureStrip2:heading",
+    "label": {
+      "pt": "home:featureStrip2 — Título",
+      "en": "home:featureStrip2 — Heading"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:movimento-humano:prototypeKicker",
+    "label": {
+      "pt": "Movimento Humano — Kicker do protótipo",
+      "en": "Movimento Humano — Prototype kicker"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:prototypeCaption",
+    "label": {
+      "pt": "Movimento Humano — Legenda do protótipo",
+      "en": "Movimento Humano — Prototype caption"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:closing",
+    "label": {
+      "pt": "Movimento Humano — Frase de fechamento",
+      "en": "Movimento Humano — Closing statement"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:lobsKicker",
+    "label": {
+      "pt": "Movimento Humano — Kicker (seção Lobs)",
+      "en": "Movimento Humano — Kicker (Lobs section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:lobsHeading",
+    "label": {
+      "pt": "Movimento Humano — Título (seção Lobs)",
+      "en": "Movimento Humano — Heading (Lobs section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:lobsText",
+    "label": {
+      "pt": "Movimento Humano — Texto (seção Lobs)",
+      "en": "Movimento Humano — Text (Lobs section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:lobsSector",
+    "label": {
+      "pt": "Movimento Humano — lobsSector",
+      "en": "Movimento Humano — lobsSector"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:lobsScope",
+    "label": {
+      "pt": "Movimento Humano — lobsScope",
+      "en": "Movimento Humano — lobsScope"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:mobileKicker",
+    "label": {
+      "pt": "Movimento Humano — Kicker (seção Mobile)",
+      "en": "Movimento Humano — Kicker (Mobile section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:mobileHeading",
+    "label": {
+      "pt": "Movimento Humano — Título (seção Mobile)",
+      "en": "Movimento Humano — Heading (Mobile section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:mobileText",
+    "label": {
+      "pt": "Movimento Humano — Texto (seção Mobile)",
+      "en": "Movimento Humano — Text (Mobile section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:intro0",
+    "label": {
+      "pt": "Movimento Humano — Introdução 1",
+      "en": "Movimento Humano — Intro 1"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:intro1",
+    "label": {
+      "pt": "Movimento Humano — Introdução 2",
+      "en": "Movimento Humano — Intro 2"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:s0:kicker",
+    "label": {
+      "pt": "Movimento Humano — Seção 1 — Kicker (categoria pequena)",
+      "en": "Movimento Humano — Section 1 — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:s0:heading",
+    "label": {
+      "pt": "Movimento Humano — Seção 1 — Título",
+      "en": "Movimento Humano — Section 1 — Heading"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:s0:text",
+    "label": {
+      "pt": "Movimento Humano — Seção 1 — Texto",
+      "en": "Movimento Humano — Section 1 — Text"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:s1:kicker",
+    "label": {
+      "pt": "Movimento Humano — Seção 2 — Kicker (categoria pequena)",
+      "en": "Movimento Humano — Section 2 — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:s1:heading",
+    "label": {
+      "pt": "Movimento Humano — Seção 2 — Título",
+      "en": "Movimento Humano — Section 2 — Heading"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:s1:text",
+    "label": {
+      "pt": "Movimento Humano — Seção 2 — Texto",
+      "en": "Movimento Humano — Section 2 — Text"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:s2:kicker",
+    "label": {
+      "pt": "Movimento Humano — Seção 3 — Kicker (categoria pequena)",
+      "en": "Movimento Humano — Section 3 — Kicker (small category label)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:s2:heading",
+    "label": {
+      "pt": "Movimento Humano — Seção 3 — Título",
+      "en": "Movimento Humano — Section 3 — Heading"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:s2:text",
+    "label": {
+      "pt": "Movimento Humano — Seção 3 — Texto",
+      "en": "Movimento Humano — Section 3 — Text"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:home:contact:sentMessage",
+    "label": {
+      "pt": "Home — Contato — Mensagem de sucesso",
+      "en": "Home — Contact — Success message"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:sendingLabel",
+    "label": {
+      "pt": "Home — Contato — Texto \"enviando\"",
+      "en": "Home — Contact — \"Sending\" text"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:contact:errorMessage",
+    "label": {
+      "pt": "Home — Contato — Mensagem de erro",
+      "en": "Home — Contact — Error message"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:footer:talkToMe",
+    "label": {
+      "pt": "Rodapé — \"Falar comigo\"",
+      "en": "Footer — \"Talk to me\""
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:home:footer:word",
+    "label": {
+      "pt": "Rodapé — Faixa animada",
+      "en": "Footer — Animated marquee banner"
+    },
+    "type": "text",
+    "project": "Home",
+    "slug": "home"
+  },
+  {
+    "adminId": "text:movimento-humano:titleLine1",
+    "label": {
+      "pt": "Movimento Humano — Título, linha 1",
+      "en": "Movimento Humano — Title, line 1"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:titleLine2",
+    "label": {
+      "pt": "Movimento Humano — Título, linha 2",
+      "en": "Movimento Humano — Title, line 2"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:sector",
+    "label": {
+      "pt": "Movimento Humano — Setor (ficha técnica)",
+      "en": "Movimento Humano — Sector (fact sheet)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:scope",
+    "label": {
+      "pt": "Movimento Humano — Escopo (ficha técnica)",
+      "en": "Movimento Humano — Scope (fact sheet)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "image:home:about",
+    "label": {
+      "pt": "Home — Foto da seção About",
+      "en": "Home — About section photo"
+    },
+    "path": "src/assets/images/tiago_studio_bw.jpg",
+    "project": "Home",
+    "slug": "home",
+    "type": "image"
+  },
+  {
+    "adminId": "image:home:fragment0",
+    "label": {
+      "pt": "Home — Fragments, foto 1",
+      "en": "Home — Fragments, photo 1"
+    },
+    "path": "src/assets/images/gallery-1.jpg",
+    "project": "Home",
+    "slug": "home",
+    "type": "image"
+  },
+  {
+    "adminId": "image:home:fragment1",
+    "label": {
+      "pt": "Home — Fragments, foto 2",
+      "en": "Home — Fragments, photo 2"
+    },
+    "path": "src/assets/images/gallery-2.jpg",
+    "project": "Home",
+    "slug": "home",
+    "type": "image"
+  },
+  {
+    "adminId": "image:home:fragment2",
+    "label": {
+      "pt": "Home — Fragments, foto 3",
+      "en": "Home — Fragments, photo 3"
+    },
+    "path": "src/assets/images/gallery-3.jpg",
+    "project": "Home",
+    "slug": "home",
+    "type": "image"
+  },
+  {
+    "adminId": "image:home:fragment3",
+    "label": {
+      "pt": "Home — Fragments, foto 4",
+      "en": "Home — Fragments, photo 4"
+    },
+    "path": "src/assets/images/gallery-4.jpg",
+    "project": "Home",
+    "slug": "home",
+    "type": "image"
+  },
+  {
+    "adminId": "image:home:fragment4",
+    "label": {
+      "pt": "Home — Fragments, foto 5",
+      "en": "Home — Fragments, photo 5"
+    },
+    "path": "src/assets/images/gallery-5.jpg",
+    "project": "Home",
+    "slug": "home",
+    "type": "image"
+  },
+  {
+    "adminId": "image:home:fragment5",
+    "label": {
+      "pt": "Home — Fragments, foto 6",
+      "en": "Home — Fragments, photo 6"
+    },
+    "path": "src/assets/images/gallery-6.jpg",
+    "project": "Home",
+    "slug": "home",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:thumb",
+    "label": {
+      "pt": "Movimento Humano — Miniatura na Home",
+      "en": "Movimento Humano — Home thumbnail"
+    },
+    "path": "src/assets/images/thumb-ux-ui.jpg",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:s0",
+    "label": {
+      "pt": "Movimento Humano — Seção 1, foto",
+      "en": "Movimento Humano — Section 1, photo"
+    },
+    "path": "src/assets/images/movimento-humano/showcase-01.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:s1",
+    "label": {
+      "pt": "Movimento Humano — Seção 2, foto",
+      "en": "Movimento Humano — Section 2, photo"
+    },
+    "path": "src/assets/images/movimento-humano/showcase-02.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:s2",
+    "label": {
+      "pt": "Movimento Humano — Seção 3, foto",
+      "en": "Movimento Humano — Section 3, photo"
+    },
+    "path": "src/assets/images/movimento-humano/showcase-03.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:lobsLaptop",
+    "label": {
+      "pt": "Movimento Humano — Lobs, laptop",
+      "en": "Movimento Humano — Lobs, laptop"
+    },
+    "path": "src/assets/images/ux_ui_design_lobs_04.jpg",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:lobsUxHero",
+    "label": {
+      "pt": "Movimento Humano — Lobs, foto mobile",
+      "en": "Movimento Humano — Lobs, mobile photo"
+    },
+    "path": "src/assets/images/ux_ui_design_lobs_02.jpg",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:lobsScreen01",
+    "label": {
+      "pt": "Movimento Humano — Lobs, tela 1",
+      "en": "Movimento Humano — Lobs, screen 1"
+    },
+    "path": "src/assets/images/lobsScreen_01.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:lobsScreen02",
+    "label": {
+      "pt": "Movimento Humano — Lobs, tela 2",
+      "en": "Movimento Humano — Lobs, screen 2"
+    },
+    "path": "src/assets/images/lobsScreen_02.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:lobsScreen03",
+    "label": {
+      "pt": "Movimento Humano — Lobs, tela 3",
+      "en": "Movimento Humano — Lobs, screen 3"
+    },
+    "path": "src/assets/images/lobsScreen_03.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
   }
 ]

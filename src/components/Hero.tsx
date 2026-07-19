@@ -19,12 +19,12 @@ export default function Hero() {
     <section id="hero" className="relative min-h-screen flex flex-col pt-4 md:pt-6">
       <div className="flex items-start justify-between gap-6 px-6 md:px-10 py-4 md:py-5 border-b border-ink/15 text-[10px] leading-[15px] tracking-[0.18em] uppercase">
         <div>
-          <p className="font-light">{t.name}</p>
-          <p className="font-bold text-ink-soft mt-0.5">{t.location}</p>
+          <p className="font-light" data-admin-id="text:home:hero:name">{t.name}</p>
+          <p className="font-bold text-ink-soft mt-0.5" data-admin-id="text:home:hero:location">{t.location}</p>
         </div>
         <div className="text-right">
-          <p className="font-light">{t.roleLine1}</p>
-          <p className="font-bold">{t.roleLine2}</p>
+          <p className="font-light" data-admin-id="text:home:hero:roleLine1">{t.roleLine1}</p>
+          <p className="font-bold" data-admin-id="text:home:hero:roleLine2">{t.roleLine2}</p>
         </div>
       </div>
 
@@ -42,6 +42,7 @@ export default function Hero() {
                 duration={14}
                 separator={dot}
                 className="text-red text-[24vw] tracking-tightest"
+                adminId="text:home:hero:nameTop"
               />
             </motion.div>
           </span>
@@ -53,11 +54,16 @@ export default function Hero() {
               transition={{ delay: 0.1, duration: 0.4 }}
               className="hidden md:flex flex-col items-start absolute right-10 top-1/2 -translate-y-1/2 z-10 max-w-[260px]"
             >
-              <p className="font-sans text-[11px] md:text-sm font-medium leading-snug normal-case tracking-normal text-ink mb-4">
+              <p
+                className="font-sans text-[11px] md:text-sm font-medium leading-snug normal-case tracking-normal text-ink mb-4"
+                data-admin-id="text:home:hero:sub"
+              >
                 {t.sub}
               </p>
               <div className="w-10 h-px bg-ink mb-3" />
-              <p className="font-sans label text-ink">{t.tag}</p>
+              <p className="font-sans label text-ink" data-admin-id="text:home:hero:tag">
+                {t.tag}
+              </p>
             </motion.div>
 
             <span className="block overflow-hidden">
@@ -72,6 +78,7 @@ export default function Hero() {
                   duration={16}
                   separator={dot}
                   className="text-red text-[24vw] tracking-tightest"
+                  adminId="text:home:hero:nameBottom"
                 />
               </motion.div>
             </span>

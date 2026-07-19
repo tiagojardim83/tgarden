@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
-import { hero, contactCopy, socials, footerWord } from '../data/content'
+import { hero, contactCopy, socials } from '../data/content'
+import editableCopy from '../data/editableCopy.json'
 import { useLang } from '../lib/lang'
 import Marquee from './Marquee'
 
@@ -21,9 +22,9 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-ink/15 bg-ink text-paper overflow-hidden">
-      <div className="px-4 md:px-8 pt-12 pb-4">
+      <div className="px-4 md:px-8 pt-12 pb-4" data-admin-id="text:home:footer:word">
         <Marquee
-          text={footerWord}
+          text={editableCopy['home:footer:word'][lang]}
           direction="left"
           duration={12}
           className="font-display text-[22vw] leading-[0.8] uppercase tracking-tightest"
@@ -51,8 +52,8 @@ export default function Footer() {
         </div>
 
         {whatsapp && (
-          <div className="md:col-span-3 md:text-right">
-            <FooterLink href={whatsapp.href}>{lang === 'pt' ? 'Falar comigo' : 'Talk to me'} →</FooterLink>
+          <div className="md:col-span-3 md:text-right" data-admin-id="text:home:footer:talkToMe">
+            <FooterLink href={whatsapp.href}>{editableCopy['home:footer:talkToMe'][lang]} →</FooterLink>
           </div>
         )}
       </div>

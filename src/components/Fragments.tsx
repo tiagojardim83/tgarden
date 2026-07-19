@@ -13,7 +13,7 @@ const CELLS = [
   'md:col-span-3 md:row-start-3 aspect-[4/5] md:aspect-[3/1]',
 ]
 
-function FragmentCell({ src, i }: { src: string; i: number }) {
+function FragmentCell({ src, i, adminId }: { src: string; i: number; adminId: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const canHover = useCanHover()
   const inView = useInView(ref, { margin: '-50% 0px -50% 0px' })
@@ -32,6 +32,7 @@ function FragmentCell({ src, i }: { src: string; i: number }) {
           src={src}
           alt=""
           data-cursor="+"
+          data-admin-id={adminId}
           className={`w-full h-full object-cover transition-all duration-700 ease-out ${
             active ? 'scale-105 grayscale-0' : 'grayscale group-hover:scale-105 group-hover:grayscale-0'
           }`}
@@ -52,7 +53,9 @@ export default function Fragments() {
   return (
     <section id="fragments" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mb-14">
-        <p className="label text-ink-soft md:col-span-3">{t.kicker}</p>
+        <p className="label text-ink-soft md:col-span-3" data-admin-id="text:home:fragments:kicker">
+          {t.kicker}
+        </p>
         <motion.h2
           ref={headingRef}
           initial={{ opacity: 0, y: 16 }}
@@ -60,6 +63,7 @@ export default function Fragments() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           data-cursor=""
+          data-admin-id="text:home:fragments:heading"
           className={`md:col-span-9 font-display uppercase text-5xl md:text-8xl leading-[0.9] md:leading-none tracking-tightest transition-colors duration-300 hover:text-red ${headingActive ? 'text-red' : ''}`}
         >
           {t.heading}
@@ -68,7 +72,7 @@ export default function Fragments() {
 
       <div className="grid grid-cols-2 md:grid-cols-3 md:grid-rows-[repeat(2,1fr)_auto] gap-3 md:gap-4">
         {fragments.map((src, i) => (
-          <FragmentCell key={i} src={src} i={i} />
+          <FragmentCell key={i} src={src} i={i} adminId={`image:home:fragment${i}`} />
         ))}
       </div>
     </section>

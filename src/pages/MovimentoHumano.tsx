@@ -3,12 +3,27 @@ import { Link } from 'react-router-dom'
 import { motion, useInView, useScroll, useSpring, useTransform } from 'motion/react'
 import { useLang } from '../lib/lang'
 import { projects, projectPageCopy } from '../data/content'
+import editableCopy from '../data/editableCopy.json'
 import { useCanHover } from '../lib/useCanHover'
 import { FactSheet, LiveSiteLink, PanCoverImage } from './ProjectPage'
 
 const spring = { stiffness: 220, damping: 32, mass: 0.6 }
 
-function LobsBuild({ center, back, front }: { center: string; back: string; front: string }) {
+function LobsBuild({
+  center,
+  back,
+  front,
+  centerAdminId,
+  backAdminId,
+  frontAdminId,
+}: {
+  center: string
+  back: string
+  front: string
+  centerAdminId?: string
+  backAdminId?: string
+  frontAdminId?: string
+}) {
   const ref = useRef<HTMLDivElement>(null)
   const canHover = useCanHover()
   const [hovered, setHovered] = useState(false)
@@ -53,6 +68,7 @@ function LobsBuild({ center, back, front }: { center: string; back: string; fron
         <motion.img
           src={back}
           alt=""
+          data-admin-id={backAdminId}
           className="w-full h-auto block"
           animate={{ x: active ? '-6%' : '0%', y: active ? '-5%' : '0%', scale: active ? 1.04 : 1 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -71,6 +87,7 @@ function LobsBuild({ center, back, front }: { center: string; back: string; fron
         <motion.img
           src={front}
           alt=""
+          data-admin-id={frontAdminId}
           className="w-full h-auto block"
           animate={{ x: active ? '6%' : '0%', y: active ? '-5%' : '0%', scale: active ? 1.04 : 1 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -83,6 +100,7 @@ function LobsBuild({ center, back, front }: { center: string; back: string; fron
         <motion.img
           src={center}
           alt=""
+          data-admin-id={centerAdminId}
           className="w-full h-auto block"
           animate={{ y: active ? '-3%' : '0%', scale: active ? 1.03 : 1 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
@@ -104,89 +122,89 @@ import lobsScreen03 from '../assets/images/lobsScreen_03.png'
 const copy = {
   pt: {
     intro: [
-      'Movimento Humano é um ecossistema de bem-estar construído em torno de treino, comunidade e autocuidado. O produto é organizado em três estágios de prática: Semente, Fruto e Movimento, mapeados em uma interface coerente e calma que guia o usuário sem ruído.',
-      'Cada tela é um momento de intenção: hierarquia suave, tipografia editorial e espaço generoso para que o conteúdo permaneça em foco.',
+      editableCopy['movimento-humano:intro0'].pt,
+      editableCopy['movimento-humano:intro1'].pt,
     ],
     sections: [
       {
         number: '01',
-        kicker: 'Conceito',
-        heading: 'Um app que respira com você.',
-        text: 'Antes de desenhar telas, desenhamos o ritmo: onboarding, treino e loja precisam parecer parte do mesmo corpo, não três produtos costurados um no outro.',
+        kicker: editableCopy['movimento-humano:s0:kicker'].pt,
+        heading: editableCopy['movimento-humano:s0:heading'].pt,
+        text: editableCopy['movimento-humano:s0:text'].pt,
         image: showcase01,
       },
       {
         number: '02',
-        kicker: 'Fluxo',
-        heading: 'Fluxo antes de tela.',
-        text: 'Cada tela existe pra resolver uma decisão do usuário. Antes de desenhar um pixel, mapeamos a jornada inteira: onde trava, onde flui, onde perde.',
+        kicker: editableCopy['movimento-humano:s1:kicker'].pt,
+        heading: editableCopy['movimento-humano:s1:heading'].pt,
+        text: editableCopy['movimento-humano:s1:text'].pt,
         image: showcase02,
       },
       {
         number: '03',
-        kicker: 'Sistema',
-        heading: 'Consistência é confiança.',
-        text: 'Um sistema de componentes coerente faz o produto parecer maior do que é, e mais fácil de usar do que qualquer concorrente.',
+        kicker: editableCopy['movimento-humano:s2:kicker'].pt,
+        heading: editableCopy['movimento-humano:s2:heading'].pt,
+        text: editableCopy['movimento-humano:s2:text'].pt,
         image: showcase03,
       },
     ],
-    prototypeKicker: 'Protótipo Interativo',
-    prototypeCaption: 'Navegue pelo fluxo completo, do onboarding ao treino.',
+    prototypeKicker: editableCopy['movimento-humano:prototypeKicker'].pt,
+    prototypeCaption: editableCopy['movimento-humano:prototypeCaption'].pt,
     closing:
-      'UMA INTERFACE HUMANA PARA UMA PRÁTICA HUMANA, FEITA PRA PARECER UM GESTO, NÃO UMA TELA.',
-    lobsKicker: '04 / Lobs Brazilian Art',
-    lobsHeading: 'Uma loja com a mesma atitude da marca.',
+      editableCopy['movimento-humano:closing'].pt,
+    lobsKicker: editableCopy['movimento-humano:lobsKicker'].pt,
+    lobsHeading: editableCopy['movimento-humano:lobsHeading'].pt,
     lobsText:
-      'O e-commerce da Lobs Brazilian Art precisava traduzir a mesma atitude da marca pro digital: navegação simples, produto em primeiro plano e uma experiência de compra que funciona igual em qualquer tela.',
-    lobsSector: 'E-commerce & Moda',
-    lobsScope: 'UX/UI Design, E-commerce',
-    mobileKicker: '05 / Mobile',
-    mobileHeading: 'Mobile em primeiro lugar.',
+      editableCopy['movimento-humano:lobsText'].pt,
+    lobsSector: editableCopy['movimento-humano:lobsSector'].pt,
+    lobsScope: editableCopy['movimento-humano:lobsScope'].pt,
+    mobileKicker: editableCopy['movimento-humano:mobileKicker'].pt,
+    mobileHeading: editableCopy['movimento-humano:mobileHeading'].pt,
     mobileText:
-      'A experiência precisava funcionar igual na tela pequena: a mesma loja, a mesma atitude, sem perder nada no caminho.',
+      editableCopy['movimento-humano:mobileText'].pt,
   },
   en: {
     intro: [
-      'Movimento Humano is a wellness ecosystem built around training, community and self-care. The product is organized into three stages of practice: Semente, Fruto and Movimento, mapped into a coherent, calm interface that guides the user without noise.',
-      'Every screen is a moment of intention: soft hierarchy, editorial typography and generous space so the content stays in focus.',
+      editableCopy['movimento-humano:intro0'].en,
+      editableCopy['movimento-humano:intro1'].en,
     ],
     sections: [
       {
         number: '01',
-        kicker: 'Concept',
-        heading: 'An app that breathes with you.',
-        text: 'Before drawing screens, we drew the rhythm: onboarding, training and store need to feel like the same body, not three products stitched together.',
+        kicker: editableCopy['movimento-humano:s0:kicker'].en,
+        heading: editableCopy['movimento-humano:s0:heading'].en,
+        text: editableCopy['movimento-humano:s0:text'].en,
         image: showcase01,
       },
       {
         number: '02',
-        kicker: 'Flow',
-        heading: 'Flow before screen.',
-        text: 'Every screen exists to resolve a user decision. Before drawing a single pixel, we map the entire journey: where it stalls, where it flows, where it loses people.',
+        kicker: editableCopy['movimento-humano:s1:kicker'].en,
+        heading: editableCopy['movimento-humano:s1:heading'].en,
+        text: editableCopy['movimento-humano:s1:text'].en,
         image: showcase02,
       },
       {
         number: '03',
-        kicker: 'System',
-        heading: 'Consistency is trust.',
-        text: 'A coherent component system makes the product feel bigger than it is, and easier to use than any competitor.',
+        kicker: editableCopy['movimento-humano:s2:kicker'].en,
+        heading: editableCopy['movimento-humano:s2:heading'].en,
+        text: editableCopy['movimento-humano:s2:text'].en,
         image: showcase03,
       },
     ],
-    prototypeKicker: 'Interactive Prototype',
-    prototypeCaption: 'Navigate the full flow, from onboarding to training.',
+    prototypeKicker: editableCopy['movimento-humano:prototypeKicker'].en,
+    prototypeCaption: editableCopy['movimento-humano:prototypeCaption'].en,
     closing:
-      'A HUMAN INTERFACE FOR A HUMAN PRACTICE, DESIGNED TO FEEL LIKE A GESTURE, NOT A SCREEN.',
-    lobsKicker: '04 / Lobs Brazilian Art',
-    lobsHeading: 'A store with the same attitude as the brand.',
+      editableCopy['movimento-humano:closing'].en,
+    lobsKicker: editableCopy['movimento-humano:lobsKicker'].en,
+    lobsHeading: editableCopy['movimento-humano:lobsHeading'].en,
     lobsText:
-      "Lobs Brazilian Art's e-commerce needed to translate the brand's attitude into digital: simple navigation, product front and center, and a shopping experience that works the same on any screen.",
-    lobsSector: 'E-commerce & Fashion',
-    lobsScope: 'UX/UI Design, E-commerce',
-    mobileKicker: '05 / Mobile',
-    mobileHeading: 'Mobile first.',
+      editableCopy['movimento-humano:lobsText'].en,
+    lobsSector: editableCopy['movimento-humano:lobsSector'].en,
+    lobsScope: editableCopy['movimento-humano:lobsScope'].en,
+    mobileKicker: editableCopy['movimento-humano:mobileKicker'].en,
+    mobileHeading: editableCopy['movimento-humano:mobileHeading'].en,
     mobileText:
-      "The experience needed to work just as well on the small screen: the same store, the same attitude, without losing anything along the way.",
+      editableCopy['movimento-humano:mobileText'].en,
   },
 }
 
@@ -214,14 +232,18 @@ export default function MovimentoHumano() {
           transition={{ duration: 0.7 }}
           className="md:col-start-4 md:col-span-9 font-display uppercase text-4xl md:text-7xl leading-[0.95]"
         >
-          Movimento
+          <span data-admin-id="text:movimento-humano:titleLine1">{editableCopy['movimento-humano:titleLine1'][lang]}</span>
           <br />
-          Humano
+          <span data-admin-id="text:movimento-humano:titleLine2">{editableCopy['movimento-humano:titleLine2'][lang]}</span>
         </motion.h1>
 
         <div className="md:col-start-4 md:col-span-9 flex flex-col gap-4">
           {c.intro.map((p, i) => (
-            <p key={i} className="text-sm md:text-base leading-relaxed text-ink-soft font-sans">
+            <p
+              key={i}
+              data-admin-id={`text:movimento-humano:intro${i}`}
+              className="text-sm md:text-base leading-relaxed text-ink-soft font-sans"
+            >
               {p}
             </p>
           ))}
@@ -230,16 +252,16 @@ export default function MovimentoHumano() {
         <div className="md:col-start-4 md:col-span-9">
           <FactSheet
             client="Movimento Humano"
-            sector={lang === 'pt' ? 'Saúde & Bem-estar Digital' : 'Digital Health & Wellness'}
+            sector={editableCopy['movimento-humano:sector'][lang]}
             year="2025"
-            scope={lang === 'pt' ? 'UX/UI Design, Produto Digital' : 'UX/UI Design, Digital Product'}
+            scope={editableCopy['movimento-humano:scope'][lang]}
             ui={ui}
           />
         </div>
       </div>
 
       <div className="flex flex-col gap-16 md:gap-24 mt-16 md:mt-24">
-        {c.sections.map((s) => (
+        {c.sections.map((s, i) => (
           <div key={s.number}>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -248,13 +270,19 @@ export default function MovimentoHumano() {
               transition={{ duration: 0.7 }}
               className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
             >
-              <p className="label text-ink-soft md:col-span-3">
+              <p className="label text-ink-soft md:col-span-3" data-admin-id={`text:movimento-humano:s${i}:kicker`}>
                 {s.number} / {s.kicker}
               </p>
-              <h2 className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight">
+              <h2
+                data-admin-id={`text:movimento-humano:s${i}:heading`}
+                className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+              >
                 {s.heading}
               </h2>
-              <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
+              <p
+                data-admin-id={`text:movimento-humano:s${i}:text`}
+                className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+              >
                 {s.text}
               </p>
             </motion.div>
@@ -266,7 +294,7 @@ export default function MovimentoHumano() {
               transition={{ duration: 0.8 }}
               className="-mx-6 md:-mx-10 mt-8 md:mt-10 bg-ink/5"
             >
-              <PanCoverImage src={s.image} alt={s.heading} />
+              <PanCoverImage src={s.image} alt={s.heading} adminId={`image:movimento-humano:s${i}`} />
             </motion.div>
           </div>
         ))}
@@ -279,10 +307,16 @@ export default function MovimentoHumano() {
             transition={{ duration: 0.7 }}
             className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
           >
-            <h2 className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight">
+            <h2
+              data-admin-id="text:movimento-humano:prototypeKicker"
+              className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+            >
               {c.prototypeKicker}
             </h2>
-            <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
+            <p
+              data-admin-id="text:movimento-humano:prototypeCaption"
+              className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+            >
               {c.prototypeCaption}
             </p>
           </motion.div>
@@ -310,11 +344,19 @@ export default function MovimentoHumano() {
             transition={{ duration: 0.7 }}
             className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
           >
-            <p className="label text-ink-soft md:col-span-3">{c.lobsKicker}</p>
-            <h2 className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight">
+            <p className="label text-ink-soft md:col-span-3" data-admin-id="text:movimento-humano:lobsKicker">
+              {c.lobsKicker}
+            </p>
+            <h2
+              data-admin-id="text:movimento-humano:lobsHeading"
+              className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+            >
               {c.lobsHeading}
             </h2>
-            <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
+            <p
+              data-admin-id="text:movimento-humano:lobsText"
+              className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+            >
               {c.lobsText}
             </p>
           </motion.div>
@@ -332,11 +374,18 @@ export default function MovimentoHumano() {
             transition={{ duration: 0.8 }}
             className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10"
           >
-            <PanCoverImage src={lobsLaptop} alt="Lobs Brazilian Art" />
+            <PanCoverImage src={lobsLaptop} alt="Lobs Brazilian Art" adminId="image:movimento-humano:lobsLaptop" />
           </motion.div>
 
           <div className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10">
-            <LobsBuild center={lobsScreen02} back={lobsScreen03} front={lobsScreen01} />
+            <LobsBuild
+              center={lobsScreen02}
+              back={lobsScreen03}
+              front={lobsScreen01}
+              centerAdminId="image:movimento-humano:lobsScreen02"
+              backAdminId="image:movimento-humano:lobsScreen03"
+              frontAdminId="image:movimento-humano:lobsScreen01"
+            />
           </div>
 
           <motion.div
@@ -346,11 +395,19 @@ export default function MovimentoHumano() {
             transition={{ duration: 0.7 }}
             className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mt-8 md:mt-10"
           >
-            <p className="label text-ink-soft md:col-span-3">{c.mobileKicker}</p>
-            <h2 className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight">
+            <p className="label text-ink-soft md:col-span-3" data-admin-id="text:movimento-humano:mobileKicker">
+              {c.mobileKicker}
+            </p>
+            <h2
+              data-admin-id="text:movimento-humano:mobileHeading"
+              className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+            >
               {c.mobileHeading}
             </h2>
-            <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
+            <p
+              data-admin-id="text:movimento-humano:mobileText"
+              className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+            >
               {c.mobileText}
             </p>
           </motion.div>
@@ -362,7 +419,7 @@ export default function MovimentoHumano() {
             transition={{ duration: 0.8 }}
             className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10"
           >
-            <PanCoverImage src={lobsUxHero} alt="Lobs Brazilian Art" />
+            <PanCoverImage src={lobsUxHero} alt="Lobs Brazilian Art" adminId="image:movimento-humano:lobsUxHero" />
           </motion.div>
 
           <div className="md:col-start-4 md:col-span-9 mt-8 md:mt-10">
@@ -384,7 +441,12 @@ export default function MovimentoHumano() {
         transition={{ duration: 0.8 }}
         className="-mx-6 md:-mx-10 mt-16 md:mt-24 bg-ink text-paper py-20 md:py-28 px-6 md:px-10"
       >
-        <p className="font-display uppercase text-2xl md:text-4xl leading-[1.15] max-w-4xl">{c.closing}</p>
+        <p
+          data-admin-id="text:movimento-humano:closing"
+          className="font-display uppercase text-2xl md:text-4xl leading-[1.15] max-w-4xl"
+        >
+          {c.closing}
+        </p>
       </motion.div>
 
       <div className="mt-16 md:mt-24 mb-20 md:mb-28">

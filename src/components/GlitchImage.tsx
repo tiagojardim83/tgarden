@@ -26,7 +26,17 @@ function computeCoverRect(imgW: number, imgH: number, boxW: number, boxH: number
   return { sx: 0, sy: (imgH - sHeight) / 2, sWidth, sHeight }
 }
 
-export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: string; alt?: string; focalX?: number }) {
+export default function GlitchImage({
+  src,
+  alt = '',
+  focalX = 0.5,
+  adminId,
+}: {
+  src: string
+  alt?: string
+  focalX?: number
+  adminId?: string
+}) {
   const containerRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const imgRef = useRef<HTMLImageElement | null>(null)
@@ -381,6 +391,7 @@ export default function GlitchImage({ src, alt = '', focalX = 0.5 }: { src: stri
   return (
     <div
       ref={containerRef}
+      data-admin-id={adminId}
       className={`relative w-full h-full ${!canHover ? 'touch-pan-y cursor-grab active:cursor-grabbing' : ''}`}
       onMouseEnter={canHover ? () => setActive(true) : undefined}
       onMouseLeave={canHover ? () => setActive(false) : undefined}

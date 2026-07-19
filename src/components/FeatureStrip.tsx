@@ -11,10 +11,12 @@ function FeatureCard({
   item,
   lang,
   targetId,
+  index,
 }: {
   item: (typeof featureStrip)[number]
   lang: 'pt' | 'en'
   targetId: string
+  index: number
 }) {
   const t = item[lang]
   const ref = useRef<HTMLAnchorElement>(null)
@@ -36,6 +38,7 @@ function FeatureCard({
       }`}
     >
       <p
+        data-admin-id={`text:home:featureStrip${index}:kicker`}
         className={`label transition-colors duration-500 ${
           active ? 'text-paper/50' : 'text-ink-soft group-hover:text-paper/50'
         }`}
@@ -48,6 +51,7 @@ function FeatureCard({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
+        data-admin-id={`text:home:featureStrip${index}:heading`}
         className={`font-display uppercase text-3xl md:text-5xl tracking-tightest transition-colors duration-500 ${
           active ? 'text-paper' : 'text-ink group-hover:text-paper'
         }`}
@@ -76,7 +80,7 @@ export default function FeatureStrip() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 border-y border-ink/15">
       {featureStrip.map((item, i) => (
-        <FeatureCard key={i} item={item} lang={lang} targetId={TARGET_IDS[i]} />
+        <FeatureCard key={i} item={item} lang={lang} targetId={TARGET_IDS[i]} index={i} />
       ))}
     </div>
   )

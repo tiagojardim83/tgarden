@@ -36,7 +36,9 @@ export default function About() {
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-10 md:gap-y-14 md:items-start">
-        <p className="label text-ink-soft col-span-1 md:col-span-3">{t.kicker}</p>
+        <p className="label text-ink-soft col-span-1 md:col-span-3" data-admin-id="text:home:about:kicker">
+          {t.kicker}
+        </p>
         <motion.h2
           ref={headingRef}
           initial={{ opacity: 0, y: 16 }}
@@ -44,6 +46,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           data-cursor=""
+          data-admin-id="text:home:about:heading"
           className={`relative z-10 col-span-1 md:col-span-9 font-display uppercase text-5xl md:text-8xl leading-[0.9] md:leading-none tracking-tightest transition-colors duration-300 hover:text-red ${headingActive ? 'text-red' : ''}`}
         >
           {t.heading}
@@ -57,7 +60,12 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="aspect-[18/25] md:aspect-[21/9] overflow-hidden grayscale contrast-125"
           >
-            <GlitchImage src={tiagoStudio} alt="Tiago Jardim" focalX={isMobile ? 0.6 : 0.71} />
+            <GlitchImage
+              src={tiagoStudio}
+              alt="Tiago Jardim"
+              focalX={isMobile ? 0.6 : 0.71}
+              adminId="image:home:about"
+            />
           </motion.div>
 
           {isMobile && (
@@ -83,6 +91,7 @@ export default function About() {
           {t.paragraphs.map((p, i) => (
             <p
               key={i}
+              data-admin-id={`text:home:about:paragraph${i}`}
               className={`text-lg md:text-xl leading-relaxed md:leading-[1.4] text-ink-soft ${i === 0 ? 'font-bold' : 'font-normal'}`}
             >
               {p}

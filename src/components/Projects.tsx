@@ -79,6 +79,7 @@ function ProjectRow({
         <img
           src={project.image}
           alt=""
+          data-admin-id={`image:${project.slug === 'movimento-humano' ? 'movimento-humano:thumb' : project.slug}`}
           className={`w-full h-full ${project.imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
         />
       </motion.div>
@@ -112,7 +113,9 @@ export default function Projects() {
   return (
     <section id="projects" className="px-6 md:px-10 py-20 md:py-28 border-b border-ink/15">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mb-14">
-        <p className="label text-ink-soft md:col-span-3">{t.kicker}</p>
+        <p className="label text-ink-soft md:col-span-3" data-admin-id="text:home:projects:kicker">
+          {t.kicker}
+        </p>
         <motion.h2
           ref={headingRef}
           initial={{ opacity: 0, y: 16 }}
@@ -120,6 +123,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           data-cursor=""
+          data-admin-id="text:home:projects:heading"
           className={`md:col-span-9 font-display uppercase text-5xl md:text-7xl lg:text-8xl leading-[0.9] text-balance tracking-tightest transition-colors duration-300 hover:text-red ${headingActive ? 'text-red' : ''}`}
         >
           {t.heading}
@@ -163,7 +167,12 @@ export default function Projects() {
       </div>
 
       <div className="flex justify-end mt-6">
-        <a href="#fragments" data-cursor="GO" className="label hover:text-red transition-colors">
+        <a
+          href="#fragments"
+          data-cursor="GO"
+          data-admin-id="text:home:projects:cta"
+          className="label hover:text-red transition-colors"
+        >
           {t.cta} →
         </a>
       </div>

@@ -9,6 +9,7 @@ export default function Marquee({
   className = '',
   gapClassName = 'pr-10 md:pr-16',
   separator,
+  adminId,
 }: {
   text?: string
   children?: ReactNode
@@ -17,13 +18,19 @@ export default function Marquee({
   className?: string
   gapClassName?: string
   separator?: ReactNode
+  /** Only applied to the visible copy — Marquee renders its content twice
+   * (once aria-hidden) for the seamless loop, and a duplicate data-admin-id
+   * would show two edit pencils for the same field. */
+  adminId?: string
 }) {
   const animate = direction === 'left' ? { x: ['0%', '-50%'] } : { x: ['-50%', '0%'] }
   const content = children ?? text
 
   const item = (hidden: boolean) => (
     <span className="flex items-center whitespace-nowrap" aria-hidden={hidden || undefined}>
-      <span className={className}>{content}</span>
+      <span className={className} data-admin-id={hidden ? undefined : adminId}>
+        {content}
+      </span>
       {separator ? (
         <span className="shrink-0 mx-6 md:mx-10">{separator}</span>
       ) : (
