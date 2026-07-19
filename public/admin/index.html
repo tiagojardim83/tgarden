@@ -52,9 +52,22 @@
           <h1 id="panel-heading"></h1>
           <p id="panel-hint" class="hint"></p>
         </div>
-        <div id="groups"></div>
+
+        <div class="view-tabs">
+          <button id="tab-preview" type="button" class="view-tab active"></button>
+          <button id="tab-list" type="button" class="view-tab"></button>
+        </div>
+
+        <div id="preview-view">
+          <iframe id="site-preview" title="Site preview"></iframe>
+        </div>
+
+        <div id="groups" hidden></div>
       </section>
     </main>
+
+    <div id="edit-overlay" hidden></div>
+    <div id="edit-panel" class="edit-panel" hidden></div>
 
     <footer class="closing">
       <p id="closing-text"></p>

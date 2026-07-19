@@ -2,6 +2,12 @@ const GITHUB_OWNER = 'tiagojardim83'
 const GITHUB_REPO = 'tgarden'
 const GITHUB_BRANCH = 'main'
 
+// Same computation as the <base> tag in index.html: this admin page can be
+// served at the domain root (Vercel/production) or under /tgarden/ (GitHub
+// Pages, local dev) — the site itself lives one level above wherever /admin
+// is mounted.
+const SITE_ROOT = location.pathname.slice(0, location.pathname.indexOf('/admin')) + '/'
+
 // Clients accessing this panel are Brazilian and American, so the panel
 // itself (not just the site content) needs both languages. Defaults to
 // English, same convention as the main site's own lang toggle
@@ -17,8 +23,10 @@ const STRINGS = {
     loginButton: 'Entrar →',
     loginErrorFallback: 'Não foi possível entrar',
     panelKicker: 'Conteúdo do site',
-    panelHeading: 'Trocar fotos e vídeos',
-    panelHint: 'Escolha um item da lista e envie o arquivo novo. O site atualiza sozinho em alguns minutos.',
+    panelHeading: 'Trocar fotos, vídeos e textos',
+    panelHint: 'Navegue pelo site abaixo e clique no ✏️ que aparece em cima de cada foto, vídeo ou texto que dá pra trocar.',
+    tabPreview: 'Pré-visualização',
+    tabList: 'Ver como lista',
     expectedFile: (ext) => `Arquivo esperado: .${ext}`,
     replaceFile: 'Trocar arquivo',
     wrongExt: (expected, got) => `O arquivo precisa ser .${expected} (você enviou .${got})`,
@@ -36,6 +44,9 @@ const STRINGS = {
     genericVideoNotFound: 'Não achei o vídeo atual no GitHub',
     genericUploadVideoFail: 'Falha ao enviar o vídeo',
     genericTextSaveFail: 'Falha ao salvar o texto',
+    refreshPreview: '🔄 Atualizar pré-visualização',
+    closePanel: 'Fechar',
+    editingLabel: (label) => `Editando: ${label}`,
   },
   en: {
     topbarLabel: '©TGarden — Media Panel',
@@ -45,8 +56,10 @@ const STRINGS = {
     loginButton: 'Log in →',
     loginErrorFallback: 'Could not log in',
     panelKicker: 'Site content',
-    panelHeading: 'Swap photos and videos',
-    panelHint: 'Choose an item from the list and upload the new file. The site updates itself within a few minutes.',
+    panelHeading: 'Swap photos, videos and text',
+    panelHint: 'Browse the site below and click the ✏️ that appears over any photo, video or text you can swap.',
+    tabPreview: 'Preview',
+    tabList: 'View as list',
     expectedFile: (ext) => `Expected file: .${ext}`,
     replaceFile: 'Replace file',
     wrongExt: (expected, got) => `The file needs to be .${expected} (you uploaded .${got})`,
@@ -64,6 +77,9 @@ const STRINGS = {
     genericVideoNotFound: 'Could not find the current video on GitHub',
     genericUploadVideoFail: 'Failed to upload the video',
     genericTextSaveFail: 'Failed to save the text',
+    refreshPreview: '🔄 Refresh preview',
+    closePanel: 'Close',
+    editingLabel: (label) => `Editing: ${label}`,
   },
 }
 
@@ -100,9 +116,16 @@ const loginForm = document.getElementById('login-form')
 const loginError = document.getElementById('login-error')
 const groupsEl = document.getElementById('groups')
 const langToggle = document.getElementById('lang-toggle')
+const previewFrame = document.getElementById('site-preview')
+const previewView = document.getElementById('preview-view')
+const tabPreviewBtn = document.getElementById('tab-preview')
+const tabListBtn = document.getElementById('tab-list')
+const editOverlay = document.getElementById('edit-overlay')
+const editPanel = document.getElementById('edit-panel')
 
 let cachedAssets = null
 let cachedEditableCopy = null
+const decorated = new WeakSet()
 
 function extOf(path) {
   const dot = path.lastIndexOf('.')
@@ -147,6 +170,8 @@ function applyStaticText() {
   document.getElementById('panel-heading').textContent = s.panelHeading
   document.getElementById('panel-hint').textContent = s.panelHint
   document.getElementById('closing-text').textContent = s.closing
+  tabPreviewBtn.textContent = s.tabPreview
+  tabListBtn.textContent = s.tabList
   langToggle.textContent = lang === 'pt' ? 'EN' : 'PT'
 }
 
@@ -156,9 +181,20 @@ langToggle.addEventListener('click', () => {
   if (cachedAssets) renderGroups(cachedAssets, cachedEditableCopy || {})
 })
 
+tabPreviewBtn.addEventListener('click', () => showView('preview'))
+tabListBtn.addEventListener('click', () => showView('list'))
+
+function showView(view) {
+  previewView.hidden = view !== 'preview'
+  groupsEl.hidden = view !== 'list'
+  tabPreviewBtn.classList.toggle('active', view === 'preview')
+  tabListBtn.classList.toggle('active', view === 'list')
+}
+
 async function showPanel() {
   loginScreen.hidden = true
   panelScreen.hidden = false
+  document.getElementById('app').classList.add('wide')
   const [assets, editableCopy] = await Promise.all([
     fetch('assets.json').then((r) => r.json()),
     fetchEditableCopy(),
@@ -166,12 +202,17 @@ async function showPanel() {
   cachedAssets = assets
   cachedEditableCopy = editableCopy
   renderGroups(assets, editableCopy)
+  showView('preview')
+  if (!previewFrame.src) previewFrame.src = SITE_ROOT
 }
 
 function showLogin() {
   loginScreen.hidden = false
   panelScreen.hidden = true
+  document.getElementById('app').classList.remove('wide')
 }
+
+// ---------- List view (unchanged form-list, kept as a fallback tab) ----------
 
 function renderGroups(assets, editableCopy) {
   const byProject = new Map()
@@ -260,8 +301,7 @@ function renderTextItem(item, current) {
         const data = await res.json().catch(() => ({}))
         throw new Error(serverMessage(data.error) || t().genericTextSaveFail)
       }
-      status.textContent = t().saved
-      status.className = 'item-status ok'
+      showSaved(status)
     } catch (err) {
       status.textContent = t().failed(err && err.message ? err.message : String(err))
       status.className = 'item-status error'
@@ -347,8 +387,7 @@ function renderItem(item) {
       } else {
         await uploadVideo(item.path, file)
       }
-      status.textContent = t().uploaded
-      status.className = 'item-status ok'
+      showSaved(status)
     } catch (err) {
       status.textContent = t().failed(err && err.message ? err.message : String(err))
       status.className = 'item-status error'
@@ -359,6 +398,25 @@ function renderItem(item) {
   })
 
   return row
+}
+
+// After a successful save, show the usual confirmation plus a button to
+// reload the preview iframe — the underlying site still takes its normal
+// ~20-60s to rebuild/redeploy, so we don't reload automatically (that would
+// just show the same pre-edit content and read as broken).
+function showSaved(status) {
+  status.innerHTML = ''
+  status.className = 'item-status ok'
+  status.appendChild(document.createTextNode(t().saved))
+  const refreshBtn = document.createElement('button')
+  refreshBtn.type = 'button'
+  refreshBtn.className = 'refresh-btn'
+  refreshBtn.textContent = t().refreshPreview
+  refreshBtn.addEventListener('click', () => {
+    previewFrame.contentWindow.location.reload()
+  })
+  status.appendChild(document.createElement('br'))
+  status.appendChild(refreshBtn)
 }
 
 async function uploadImage(path, file) {
@@ -407,6 +465,129 @@ async function uploadVideo(path, file) {
     throw new Error(data.message || t().genericUploadVideoFail)
   }
 }
+
+// ---------- Preview view: live site in an iframe, click-to-edit overlay ----------
+
+function findAsset(adminId) {
+  return cachedAssets && cachedAssets.find((a) => a.adminId === adminId)
+}
+
+previewFrame.addEventListener('load', () => {
+  injectBadgeStyles()
+  scanForEditables()
+  observeFrame()
+})
+
+let frameObserver = null
+function observeFrame() {
+  const doc = previewFrame.contentDocument
+  if (!doc || !doc.body) return
+  if (frameObserver) frameObserver.disconnect()
+  frameObserver = new MutationObserver(debounce(scanForEditables, 150))
+  // childList only — NOT attributes — so we don't re-scan on every frame of
+  // the site's own looping animations (PanCoverImage/GlitchImage mutate
+  // inline styles ~60x/sec; only real navigation adds/removes DOM nodes).
+  frameObserver.observe(doc.body, { childList: true, subtree: true })
+}
+
+function debounce(fn, ms) {
+  let timer = null
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => fn(...args), ms)
+  }
+}
+
+function injectBadgeStyles() {
+  const doc = previewFrame.contentDocument
+  if (!doc || doc.getElementById('admin-badge-styles')) return
+  const style = doc.createElement('style')
+  style.id = 'admin-badge-styles'
+  style.textContent = `
+    .admin-edit-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 999999;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: hsl(0, 85%, 49%);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      border: 2px solid #fff;
+    }
+    .admin-edit-badge:hover { transform: scale(1.08); }
+  `
+  doc.head.appendChild(style)
+}
+
+function scanForEditables() {
+  const doc = previewFrame.contentDocument
+  if (!doc) return
+  const nodes = doc.querySelectorAll('[data-admin-id]')
+  for (const node of nodes) {
+    const adminId = node.getAttribute('data-admin-id')
+    if (!adminId || decorated.has(node)) continue
+    const asset = findAsset(adminId)
+    if (!asset) continue // not one of the curated items — ignore
+
+    decorated.add(node)
+    const computedPosition = doc.defaultView.getComputedStyle(node).position
+    if (computedPosition === 'static') node.style.position = 'relative'
+
+    const badge = doc.createElement('button')
+    badge.type = 'button'
+    badge.className = 'admin-edit-badge'
+    badge.textContent = '✏️'
+    badge.setAttribute('aria-label', asset.label[lang])
+    badge.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      openEditPanel(asset)
+    })
+    node.appendChild(badge)
+  }
+}
+
+function openEditPanel(item) {
+  editPanel.innerHTML = ''
+
+  const head = document.createElement('div')
+  head.className = 'edit-panel-head'
+  const title = document.createElement('span')
+  title.textContent = t().editingLabel(item.label[lang])
+  const closeBtn = document.createElement('button')
+  closeBtn.type = 'button'
+  closeBtn.className = 'edit-panel-close'
+  closeBtn.textContent = '✕'
+  closeBtn.setAttribute('aria-label', t().closePanel)
+  closeBtn.addEventListener('click', closeEditPanel)
+  head.appendChild(title)
+  head.appendChild(closeBtn)
+  editPanel.appendChild(head)
+
+  const row = item.type === 'text' ? renderTextItem(item, cachedEditableCopy[item.slug]) : renderItem(item)
+  row.classList.add('edit-panel-row')
+  editPanel.appendChild(row)
+
+  editOverlay.hidden = false
+  editPanel.hidden = false
+}
+
+function closeEditPanel() {
+  editOverlay.hidden = true
+  editPanel.hidden = true
+}
+
+editOverlay.addEventListener('click', closeEditPanel)
+
+// ---------- Login ----------
 
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault()

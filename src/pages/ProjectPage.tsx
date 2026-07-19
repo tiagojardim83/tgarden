@@ -21,7 +21,19 @@ function WorldIcon({ className }: { className?: string }) {
 // Defers fetching the (often 15-25MB) video file until its container is
 // within rootMargin of the viewport, instead of every video on the page
 // downloading at once via autoPlay the moment it mounts.
-function LazyVideo({ src, className, style }: { src: string; className?: string; style?: CSSProperties }) {
+function LazyVideo({
+  src,
+  className,
+  style,
+  adminId,
+}: {
+  src: string
+  className?: string
+  style?: CSSProperties
+  /** Matches an id in public/admin/assets.json — lets the admin panel's
+   * preview overlay find and label this element. No effect for visitors. */
+  adminId?: string
+}) {
   const ref = useRef<HTMLVideoElement>(null)
   const [shouldLoad, setShouldLoad] = useState(false)
 
@@ -49,6 +61,7 @@ function LazyVideo({ src, className, style }: { src: string; className?: string;
       preload="none"
       className={className}
       style={style}
+      data-admin-id={adminId}
     />
   )
 }
@@ -289,6 +302,7 @@ export default function ProjectPage() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
+          data-admin-id={`text:${detail.slug}`}
           className="md:col-start-4 md:col-span-9 font-display uppercase text-3xl md:text-6xl leading-[1.05]"
         >
           {copy.heroStatement}
@@ -317,6 +331,7 @@ export default function ProjectPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          data-admin-id={`video:${detail.slug}:${detail.heroVideoKey}`}
           className="-mx-6 md:-mx-10 mt-12 md:mt-16 bg-ink"
         >
           <LazyVideo
@@ -330,6 +345,7 @@ export default function ProjectPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          data-admin-id={`image:${detail.slug}`}
           className="-mx-6 md:-mx-10 mt-12 md:mt-16 bg-ink"
         >
           <PanCoverImage src={detail.heroImage} alt={copy.title} />
@@ -340,6 +356,7 @@ export default function ProjectPage() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          data-admin-id={`image:${detail.slug}`}
           className="mt-12 md:mt-16 aspect-[16/9] overflow-hidden bg-ink/5"
         >
           <img src={detail.heroImage} alt={copy.title} className="w-full h-full object-cover" />
@@ -388,6 +405,7 @@ export default function ProjectPage() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
+                  data-admin-id={`video:${detail.slug}:${s.videoKey}`}
                   className="-mx-6 md:-mx-10 mt-8 md:mt-10"
                 >
                   <LazyVideo
@@ -426,6 +444,7 @@ export default function ProjectPage() {
                       <LazyVideo
                         key={blockIndex}
                         src={blockVideoUrl}
+                        adminId={`video:${detail.slug}:${block.videoKey}`}
                         style={
                           block.desktopAspect
                             ? ({ '--desktop-ar': block.desktopAspect } as CSSProperties)
