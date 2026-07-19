@@ -40,13 +40,13 @@ function FeatureCard({
       <p
         data-admin-id={`text:home:featureStrip${index}:kicker`}
         className={`label transition-colors duration-500 ${
-          active ? 'text-paper/50' : 'text-ink-soft group-hover:text-paper/50'
+          active ? 'text-paper/55' : 'text-ink-soft group-hover:text-paper/55'
         }`}
       >
         {item.number} / {t.kicker}
       </p>
 
-      <motion.h3
+      <motion.h2
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -57,7 +57,7 @@ function FeatureCard({
         }`}
       >
         {t.heading}
-      </motion.h3>
+      </motion.h2>
 
       <span
         className={`w-11 h-11 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-colors duration-500 ${

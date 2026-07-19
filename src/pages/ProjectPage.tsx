@@ -295,7 +295,7 @@ export default function ProjectPage() {
           <p className="label text-ink-soft mb-3">
             {ui.project} {detail.projectNumber} / {detail.categoryTotal}
           </p>
-          <p className="label text-red">{detail.year} / {copy.category}</p>
+          <p className="label text-red-label">{detail.year} / {copy.category}</p>
         </div>
 
         <motion.h1

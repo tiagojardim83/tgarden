@@ -9,6 +9,9 @@ export default {
         ink: 'hsl(0 0% 5%)',
         'ink-soft': 'hsl(0 0% 18%)',
         red: 'hsl(0 85% 49%)',
+        /** Same hue as `red`, darkened for small bold uppercase labels on the
+         * paper background, where the brighter red falls short of 4.5:1 contrast. */
+        'red-label': 'hsl(0 85% 42%)',
       },
       fontFamily: {
         display: ['"Archivo Black"', 'sans-serif'],

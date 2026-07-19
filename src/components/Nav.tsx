@@ -61,7 +61,7 @@ export default function Nav() {
           <button
             onClick={toggle}
             className="label border border-ink px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-300"
-            aria-label="Toggle language"
+            aria-label={lang === 'pt' ? 'EN — switch language to English' : 'PT — mudar idioma para português'}
           >
             {lang === 'pt' ? 'EN' : 'PT'}
           </button>

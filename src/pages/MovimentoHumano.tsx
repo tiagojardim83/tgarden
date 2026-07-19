@@ -223,7 +223,7 @@ export default function MovimentoHumano() {
       <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-6 md:items-start">
         <div className="md:col-span-3">
           <p className="label text-ink-soft mb-3">{ui.project} 01 / 02</p>
-          <p className="label text-red">2025 / UX/UI Design</p>
+          <p className="label text-red-label">2025 / UX/UI Design</p>
         </div>
 
         <motion.h1
@@ -330,6 +330,7 @@ export default function MovimentoHumano() {
           >
             <iframe
               className="w-full h-full"
+              title={c.prototypeKicker}
               src="https://embed.figma.com/proto/A359K834znCzDXpKtlNCML/MOVIMENTO-HUMANO?node-id=14-55&starting-point-node-id=14%3A28&embed-host=share"
               allowFullScreen
             />

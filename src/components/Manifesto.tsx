@@ -9,7 +9,7 @@ export default function Manifesto() {
   return (
     <section id="manifesto" className="bg-ink text-paper py-20 md:py-28 px-6 md:px-10">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-6 md:items-start">
-        <p className="label text-paper/50 md:col-span-3">{t.kicker}</p>
+        <p className="label text-paper/55 md:col-span-3">{t.kicker}</p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export default function Manifesto() {
           ))}
         </motion.p>
 
-        <p className="md:col-start-4 md:col-span-9 label text-paper/50">{t.signature}</p>
+        <p className="md:col-start-4 md:col-span-9 label text-paper/55">{t.signature}</p>
       </div>
     </section>
   )

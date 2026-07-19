@@ -33,7 +33,7 @@ function SkillBar({
 
   return (
     <div ref={ref} onMouseEnter={play} className="cursor-default">
-      <span className={`font-display text-sm block mb-2 ${skill.trending ? 'text-red' : ''}`}>{skill.short}</span>
+      <span className={`font-display text-sm block mb-2 ${skill.trending ? 'text-red-label' : ''}`}>{skill.short}</span>
       <div className="h-2 rounded-full bg-ink/10 overflow-hidden">
         <motion.div
           className={`h-full rounded-full ${skill.trending ? 'bg-red' : 'bg-ink'}`}
@@ -46,7 +46,7 @@ function SkillBar({
           initial={{ opacity: 0, y: -6 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -6 }}
           transition={{ duration: 0.5, delay: 0.3 + index * 0.04, ease: [0.22, 1, 0.36, 1] }}
-          className="label text-red mt-2 block"
+          className="label text-red-label mt-2 block"
         >
           {trendingLabel}
         </motion.span>

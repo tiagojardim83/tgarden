@@ -35,12 +35,12 @@ export default function Footer() {
       <div className="border-t border-paper/20 px-4 md:px-8 py-6 grid md:grid-cols-12 gap-6 label text-paper/70">
         <div className="md:col-span-3">
           <p>{hero[lang].name}</p>
-          <p className="text-paper/50">© {year}</p>
+          <p className="text-paper/55">© {year}</p>
         </div>
 
         <div className="md:col-span-3">
           <p>{t.locationLine1}</p>
-          <p className="text-paper/50">{t.locationLine2}</p>
+          <p className="text-paper/55">{t.locationLine2}</p>
         </div>
 
         <div className="md:col-span-3 flex flex-wrap gap-4">

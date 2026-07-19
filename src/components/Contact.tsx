@@ -56,7 +56,7 @@ function SocialLink({ label, href }: { label: string; href: string }) {
       rel="noreferrer"
       data-cursor={label}
       className={`group flex items-center justify-between py-2.5 border-b border-ink/15 label transition-colors ${
-        active ? 'text-red' : 'hover:text-red'
+        active ? 'text-red-label' : 'hover:text-red'
       }`}
     >
       {label}
@@ -171,7 +171,7 @@ export default function Contact() {
               </button>
 
               {error && (
-                <p className="mt-3 text-sm text-red" data-admin-id="text:home:contact:errorMessage">
+                <p className="mt-3 text-sm text-red-label" data-admin-id="text:home:contact:errorMessage">
                   {editableCopy['home:contact:errorMessage'][lang]}
                 </p>
               )}
