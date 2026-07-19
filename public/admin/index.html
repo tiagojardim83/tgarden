@@ -27,38 +27,37 @@
   <body>
     <header class="topbar">
       <span class="dot"></span>
-      <span class="label">©TGarden — Painel de mídia</span>
+      <span id="topbar-label" class="label"></span>
+      <button id="lang-toggle" type="button" class="lang-toggle" aria-label="Toggle language"></button>
     </header>
 
     <main id="app" class="wrap">
       <section id="login-screen" class="login">
         <img src="tgarden-mark.svg" alt="TGarden" class="login-mark" />
-        <h1>Entrar</h1>
-        <p class="hint">Digite a senha que o TGarden te passou.</p>
+        <h1 id="login-heading"></h1>
+        <p id="login-hint" class="hint"></p>
         <form id="login-form">
           <label class="field">
-            <span class="label">Senha</span>
+            <span id="password-label" class="label"></span>
             <input id="password" type="password" autocomplete="current-password" required />
           </label>
-          <button type="submit">Entrar →</button>
+          <button type="submit"></button>
         </form>
         <p id="login-error" class="error" hidden></p>
       </section>
 
       <section id="panel-screen" class="panel" hidden>
         <div class="panel-head">
-          <p class="label text-soft">Conteúdo do site</p>
-          <h1>Trocar fotos e vídeos</h1>
-          <p class="hint">
-            Escolha um item da lista e envie o arquivo novo. O site atualiza sozinho em alguns minutos.
-          </p>
+          <p id="panel-kicker" class="label text-soft"></p>
+          <h1 id="panel-heading"></h1>
+          <p id="panel-hint" class="hint"></p>
         </div>
         <div id="groups"></div>
       </section>
     </main>
 
     <footer class="closing">
-      <p>You don't need anyone to swap a photo. Here, you do it yourself.</p>
+      <p id="closing-text"></p>
     </footer>
 
     <script src="admin.js"></script>

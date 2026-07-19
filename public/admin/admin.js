@@ -2,11 +2,107 @@ const GITHUB_OWNER = 'tiagojardim83'
 const GITHUB_REPO = 'tgarden'
 const GITHUB_BRANCH = 'main'
 
+// Clients accessing this panel are Brazilian and American, so the panel
+// itself (not just the site content) needs both languages. Defaults to
+// English, same convention as the main site's own lang toggle
+// (src/lib/lang.tsx), with no persistence — just an in-memory toggle.
+let lang = 'en'
+
+const STRINGS = {
+  pt: {
+    topbarLabel: '©TGarden — Painel de mídia',
+    loginHeading: 'Entrar',
+    loginHint: 'Digite a senha que o TGarden te passou.',
+    passwordLabel: 'Senha',
+    loginButton: 'Entrar →',
+    loginErrorFallback: 'Não foi possível entrar',
+    panelKicker: 'Conteúdo do site',
+    panelHeading: 'Trocar fotos e vídeos',
+    panelHint: 'Escolha um item da lista e envie o arquivo novo. O site atualiza sozinho em alguns minutos.',
+    expectedFile: (ext) => `Arquivo esperado: .${ext}`,
+    replaceFile: 'Trocar arquivo',
+    wrongExt: (expected, got) => `O arquivo precisa ser .${expected} (você enviou .${got})`,
+    tooLarge: (mb) => `Arquivo muito grande (${mb}MB). Máximo: 70MB.`,
+    uploading: 'Enviando...',
+    uploaded: 'Enviado! O site atualiza sozinho em alguns minutos.',
+    failed: (msg) => `Não deu certo: ${msg}`,
+    save: 'Salvar',
+    fillBoth: 'Preencha os dois campos (PT e EN).',
+    saving: 'Salvando...',
+    saved: 'Salvo! O site atualiza sozinho em alguns minutos.',
+    closing: 'Você não precisa de ninguém pra trocar uma foto. Aqui, você faz sozinho.',
+    genericUploadImageFail: 'Falha ao enviar a foto',
+    genericAuthFail: 'Falha ao autenticar com o GitHub',
+    genericVideoNotFound: 'Não achei o vídeo atual no GitHub',
+    genericUploadVideoFail: 'Falha ao enviar o vídeo',
+    genericTextSaveFail: 'Falha ao salvar o texto',
+  },
+  en: {
+    topbarLabel: '©TGarden — Media Panel',
+    loginHeading: 'Log in',
+    loginHint: 'Enter the password TGarden gave you.',
+    passwordLabel: 'Password',
+    loginButton: 'Log in →',
+    loginErrorFallback: 'Could not log in',
+    panelKicker: 'Site content',
+    panelHeading: 'Swap photos and videos',
+    panelHint: 'Choose an item from the list and upload the new file. The site updates itself within a few minutes.',
+    expectedFile: (ext) => `Expected file: .${ext}`,
+    replaceFile: 'Replace file',
+    wrongExt: (expected, got) => `The file needs to be .${expected} (you uploaded .${got})`,
+    tooLarge: (mb) => `File too large (${mb}MB). Maximum: 70MB.`,
+    uploading: 'Uploading...',
+    uploaded: 'Uploaded! The site updates itself within a few minutes.',
+    failed: (msg) => `Something went wrong: ${msg}`,
+    save: 'Save',
+    fillBoth: 'Fill in both fields (PT and EN).',
+    saving: 'Saving...',
+    saved: 'Saved! The site updates itself within a few minutes.',
+    closing: "You don't need anyone to swap a photo. Here, you do it yourself.",
+    genericUploadImageFail: 'Failed to upload the photo',
+    genericAuthFail: 'Failed to authenticate with GitHub',
+    genericVideoNotFound: 'Could not find the current video on GitHub',
+    genericUploadVideoFail: 'Failed to upload the video',
+    genericTextSaveFail: 'Failed to save the text',
+  },
+}
+
+// Only server error strings actually need translating (client-side fallback
+// strings above already have their own pt/en pair) — the API responds in
+// Portuguese by default, so this maps the exact known strings to English.
+const SERVER_ERROR_EN = {
+  'Não autenticado': 'Not authenticated',
+  'Requisição inválida': 'Invalid request',
+  'Senha incorreta': 'Incorrect password',
+  'Esse arquivo não está na lista de itens editáveis': 'This file is not in the list of editable items',
+  'Não achei o arquivo atual no GitHub': "Couldn't find the current file on GitHub",
+  'Falha ao salvar no GitHub': 'Failed to save on GitHub',
+  'Falha inesperada': 'Unexpected failure',
+  'Os dois campos (PT e EN) precisam de texto': 'Both fields (PT and EN) need text',
+  'Texto muito longo (máximo 300 caracteres)': 'Text too long (maximum 300 characters)',
+  'Esse texto não está na lista de itens editáveis': 'This text is not in the list of editable items',
+  'Não achei o arquivo de textos no GitHub': "Couldn't find the text file on GitHub",
+  'Falha ao gerar token do GitHub': 'Failed to generate GitHub token',
+}
+
+function t() {
+  return STRINGS[lang]
+}
+
+function serverMessage(msg) {
+  if (lang === 'en' && SERVER_ERROR_EN[msg]) return SERVER_ERROR_EN[msg]
+  return msg
+}
+
 const loginScreen = document.getElementById('login-screen')
 const panelScreen = document.getElementById('panel-screen')
 const loginForm = document.getElementById('login-form')
 const loginError = document.getElementById('login-error')
 const groupsEl = document.getElementById('groups')
+const langToggle = document.getElementById('lang-toggle')
+
+let cachedAssets = null
+let cachedEditableCopy = null
 
 function extOf(path) {
   const dot = path.lastIndexOf('.')
@@ -40,6 +136,26 @@ async function fetchEditableCopy() {
   }
 }
 
+function applyStaticText() {
+  const s = t()
+  document.getElementById('topbar-label').textContent = s.topbarLabel
+  document.getElementById('login-heading').textContent = s.loginHeading
+  document.getElementById('login-hint').textContent = s.loginHint
+  document.getElementById('password-label').textContent = s.passwordLabel
+  loginForm.querySelector('button').textContent = s.loginButton
+  document.getElementById('panel-kicker').textContent = s.panelKicker
+  document.getElementById('panel-heading').textContent = s.panelHeading
+  document.getElementById('panel-hint').textContent = s.panelHint
+  document.getElementById('closing-text').textContent = s.closing
+  langToggle.textContent = lang === 'pt' ? 'EN' : 'PT'
+}
+
+langToggle.addEventListener('click', () => {
+  lang = lang === 'pt' ? 'en' : 'pt'
+  applyStaticText()
+  if (cachedAssets) renderGroups(cachedAssets, cachedEditableCopy || {})
+})
+
 async function showPanel() {
   loginScreen.hidden = true
   panelScreen.hidden = false
@@ -47,6 +163,8 @@ async function showPanel() {
     fetch('assets.json').then((r) => r.json()),
     fetchEditableCopy(),
   ])
+  cachedAssets = assets
+  cachedEditableCopy = editableCopy
   renderGroups(assets, editableCopy)
 }
 
@@ -79,6 +197,7 @@ function renderGroups(assets, editableCopy) {
 }
 
 function renderTextItem(item, current) {
+  const s = t()
   const row = document.createElement('div')
   row.className = 'item item-text'
 
@@ -91,7 +210,7 @@ function renderTextItem(item, current) {
   body.className = 'item-body'
   const label = document.createElement('div')
   label.className = 'item-label'
-  label.textContent = item.label
+  label.textContent = item.label[lang]
   body.appendChild(label)
 
   const ptField = document.createElement('label')
@@ -116,19 +235,19 @@ function renderTextItem(item, current) {
 
   const saveBtn = document.createElement('button')
   saveBtn.type = 'button'
-  saveBtn.textContent = 'Salvar'
+  saveBtn.textContent = s.save
   saveBtn.className = 'save-btn'
   saveBtn.addEventListener('click', async () => {
     const pt = ptArea.value.trim()
     const en = enArea.value.trim()
     if (!pt || !en) {
-      status.textContent = 'Preencha os dois campos (PT e EN).'
+      status.textContent = t().fillBoth
       status.className = 'item-status error'
       return
     }
 
     saveBtn.disabled = true
-    status.textContent = 'Salvando...'
+    status.textContent = t().saving
     status.className = 'item-status'
 
     try {
@@ -139,12 +258,12 @@ function renderTextItem(item, current) {
       })
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
-        throw new Error(data.error || 'Falha ao salvar o texto')
+        throw new Error(serverMessage(data.error) || t().genericTextSaveFail)
       }
-      status.textContent = 'Salvo! O site atualiza sozinho em alguns minutos.'
+      status.textContent = t().saved
       status.className = 'item-status ok'
     } catch (err) {
-      status.textContent = 'Não deu certo: ' + (err && err.message ? err.message : String(err))
+      status.textContent = t().failed(err && err.message ? err.message : String(err))
       status.className = 'item-status error'
     } finally {
       saveBtn.disabled = false
@@ -169,10 +288,10 @@ function renderItem(item) {
   body.className = 'item-body'
   const label = document.createElement('div')
   label.className = 'item-label'
-  label.textContent = item.label
+  label.textContent = item.label[lang]
   const status = document.createElement('div')
   status.className = 'item-status'
-  status.textContent = `Arquivo esperado: .${extOf(item.path)}`
+  status.textContent = t().expectedFile(extOf(item.path))
   body.appendChild(label)
   body.appendChild(status)
   row.appendChild(body)
@@ -181,7 +300,7 @@ function renderItem(item) {
   uploadBtn.className = 'upload-btn'
   const btn = document.createElement('button')
   btn.type = 'button'
-  btn.textContent = 'Trocar arquivo'
+  btn.textContent = t().replaceFile
   const input = document.createElement('input')
   input.type = 'file'
   input.accept = item.type === 'video' ? 'video/*' : 'image/*'
@@ -196,7 +315,7 @@ function renderItem(item) {
     const expectedExt = extOf(item.path)
     const gotExt = extOf(file.name)
     if (gotExt !== expectedExt) {
-      status.textContent = `O arquivo precisa ser .${expectedExt} (você enviou .${gotExt})`
+      status.textContent = t().wrongExt(expectedExt, gotExt)
       status.className = 'item-status error'
       input.value = ''
       return
@@ -208,7 +327,7 @@ function renderItem(item) {
     // fails right at the end.
     const MAX_FILE_BYTES = 70 * 1024 * 1024
     if (file.size > MAX_FILE_BYTES) {
-      status.textContent = `Arquivo muito grande (${(file.size / 1024 / 1024).toFixed(0)}MB). Máximo: 70MB.`
+      status.textContent = t().tooLarge((file.size / 1024 / 1024).toFixed(0))
       status.className = 'item-status error'
       input.value = ''
       return
@@ -219,7 +338,7 @@ function renderItem(item) {
     const preview = document.createElement(item.type === 'video' ? 'video' : 'img')
     preview.src = URL.createObjectURL(file)
     icon.appendChild(preview)
-    status.textContent = 'Enviando...'
+    status.textContent = t().uploading
     status.className = 'item-status'
 
     try {
@@ -228,10 +347,10 @@ function renderItem(item) {
       } else {
         await uploadVideo(item.path, file)
       }
-      status.textContent = 'Enviado! O site atualiza sozinho em alguns minutos.'
+      status.textContent = t().uploaded
       status.className = 'item-status ok'
     } catch (err) {
-      status.textContent = 'Não deu certo: ' + (err && err.message ? err.message : String(err))
+      status.textContent = t().failed(err && err.message ? err.message : String(err))
       status.className = 'item-status error'
     } finally {
       btn.disabled = false
@@ -251,13 +370,13 @@ async function uploadImage(path, file) {
   })
   if (!res.ok) {
     const data = await res.json().catch(() => ({}))
-    throw new Error(data.error || 'Falha ao enviar a foto')
+    throw new Error(serverMessage(data.error) || t().genericUploadImageFail)
   }
 }
 
 async function uploadVideo(path, file) {
   const tokenRes = await fetch('/api/github-token', { method: 'POST' })
-  if (!tokenRes.ok) throw new Error('Falha ao autenticar com o GitHub')
+  if (!tokenRes.ok) throw new Error(t().genericAuthFail)
   const { token } = await tokenRes.json()
 
   const contentsUrl = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${encodedPath(path)}`
@@ -265,7 +384,7 @@ async function uploadVideo(path, file) {
   const currentRes = await fetch(`${contentsUrl}?ref=${GITHUB_BRANCH}`, {
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' },
   })
-  if (!currentRes.ok) throw new Error('Não achei o vídeo atual no GitHub')
+  if (!currentRes.ok) throw new Error(t().genericVideoNotFound)
   const current = await currentRes.json()
 
   const contentBase64 = await fileToBase64(file)
@@ -285,7 +404,7 @@ async function uploadVideo(path, file) {
   })
   if (!putRes.ok) {
     const data = await putRes.json().catch(() => ({}))
-    throw new Error(data.message || 'Falha ao enviar o vídeo')
+    throw new Error(data.message || t().genericUploadVideoFail)
   }
 }
 
@@ -301,16 +420,20 @@ loginForm.addEventListener('submit', async (e) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password }),
     })
-    if (!res.ok) throw new Error('Senha incorreta')
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}))
+      throw new Error(serverMessage(data.error) || t().loginErrorFallback)
+    }
     await showPanel()
   } catch (err) {
-    loginError.textContent = err.message || 'Não foi possível entrar'
+    loginError.textContent = err.message || t().loginErrorFallback
     loginError.hidden = false
   } finally {
     submitBtn.disabled = false
   }
 })
 ;(async function init() {
+  applyStaticText()
   try {
     const res = await fetch('/api/session')
     const data = await res.json()

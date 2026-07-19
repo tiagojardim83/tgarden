@@ -40,6 +40,19 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.lang-toggle {
+  margin-left: auto;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 6px 12px;
+}
+
+.lang-toggle:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
 .dot {
   width: 8px;
   height: 8px;
