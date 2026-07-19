@@ -95,7 +95,7 @@ const SERVER_ERROR_EN = {
   'Falha ao salvar no GitHub': 'Failed to save on GitHub',
   'Falha inesperada': 'Unexpected failure',
   'Os dois campos (PT e EN) precisam de texto': 'Both fields (PT and EN) need text',
-  'Texto muito longo (máximo 300 caracteres)': 'Text too long (maximum 300 characters)',
+  'Texto muito longo (máximo 1000 caracteres)': 'Text too long (maximum 1000 characters)',
   'Esse texto não está na lista de itens editáveis': 'This text is not in the list of editable items',
   'Não achei o arquivo de textos no GitHub': "Couldn't find the text file on GitHub",
   'Falha ao gerar token do GitHub': 'Failed to generate GitHub token',
@@ -231,7 +231,7 @@ function renderGroups(assets, editableCopy) {
     group.appendChild(h2)
 
     for (const item of items) {
-      group.appendChild(item.type === 'text' ? renderTextItem(item, editableCopy[item.slug]) : renderItem(item))
+      group.appendChild(item.type === 'text' ? renderTextItem(item, editableCopy[textKey(item)]) : renderItem(item))
     }
     groupsEl.appendChild(group)
   }
@@ -295,7 +295,7 @@ function renderTextItem(item, current) {
       const res = await fetch('/api/upload-text', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug: item.slug, pt, en }),
+        body: JSON.stringify({ id: item.adminId, pt, en }),
       })
       if (!res.ok) {
         const data = await res.json().catch(() => ({}))
@@ -472,6 +472,14 @@ function findAsset(adminId) {
   return cachedAssets && cachedAssets.find((a) => a.adminId === adminId)
 }
 
+// A text asset's editableCopy.json key is its adminId with the "text:" prefix
+// stripped (e.g. "text:maoka:s0:heading" -> "maoka:s0:heading"), so many
+// distinct text fields per project can share the same `project`/`slug`
+// grouping metadata while still saving to their own JSON entry.
+function textKey(item) {
+  return item.adminId.replace(/^text:/, '')
+}
+
 previewFrame.addEventListener('load', () => {
   injectBadgeStyles()
   scanForEditables()
@@ -572,7 +580,7 @@ function openEditPanel(item) {
   head.appendChild(closeBtn)
   editPanel.appendChild(head)
 
-  const row = item.type === 'text' ? renderTextItem(item, cachedEditableCopy[item.slug]) : renderItem(item)
+  const row = item.type === 'text' ? renderTextItem(item, cachedEditableCopy[textKey(item)]) : renderItem(item)
   row.classList.add('edit-panel-row')
   editPanel.appendChild(row)
 

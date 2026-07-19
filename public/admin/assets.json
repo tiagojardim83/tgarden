@@ -1,26 +1,1649 @@
 [
-  { "adminId": "image:presentation-design", "label": { "pt": "Foto de destaque — Presentation Design", "en": "Hero photo — Presentation Design" }, "path": "src/assets/images/Presentation_01.jpg", "type": "image", "project": "Presentation Design", "slug": "presentation-design" },
-  { "adminId": "image:maoka", "label": { "pt": "Foto de destaque — Maoka", "en": "Hero photo — Maoka" }, "path": "src/assets/images/maoka-hover.jpg", "type": "image", "project": "Maoka", "slug": "maoka" },
-  { "adminId": "image:figa", "label": { "pt": "Foto de destaque — Figa", "en": "Hero photo — Figa" }, "path": "src/assets/images/figa-keyvisual-hover.jpg", "type": "image", "project": "Figa", "slug": "figa" },
-  { "adminId": "image:tgarden-site", "label": { "pt": "Foto de destaque — TGarden", "en": "Hero photo — TGarden" }, "path": "src/assets/images/Thumb_lobs.jpg", "type": "image", "project": "TGarden", "slug": "tgarden-site" },
-  { "adminId": "image:cidades-invisiveis", "label": { "pt": "Foto de destaque — Cidades Invisíveis", "en": "Hero photo — Cidades Invisíveis" }, "path": "src/assets/images/gallery-4.jpg", "type": "image", "project": "Cidades Invisíveis", "slug": "cidades-invisiveis" },
-  { "adminId": "image:velvo", "label": { "pt": "Foto de destaque — Velvo", "en": "Hero photo — Velvo" }, "path": "src/assets/images/01_Velvo.jpg", "type": "image", "project": "Velvo", "slug": "velvo" },
-  { "adminId": "image:lobs-brazilian-art", "label": { "pt": "Foto de destaque — Lobs Brazilian Art", "en": "Hero photo — Lobs Brazilian Art" }, "path": "src/assets/images/project-lobs.jpg", "type": "image", "project": "Lobs Brazilian Art", "slug": "lobs-brazilian-art" },
-  { "adminId": "video:maoka:01", "label": { "pt": "Vídeo — Maoka (fachada/billboard)", "en": "Video — Maoka (facade/billboard)" }, "path": "src/assets/videos/01. Maoka.mp4", "type": "video", "project": "Maoka", "slug": "maoka" },
-  { "adminId": "video:maoka:02", "label": { "pt": "Vídeo — Maoka (artboards)", "en": "Video — Maoka (artboards)" }, "path": "src/assets/videos/02.mp4", "type": "video", "project": "Maoka", "slug": "maoka" },
-  { "adminId": "video:figa:figa-01", "label": { "pt": "Vídeo — Figa (destaque)", "en": "Video — Figa (hero)" }, "path": "src/assets/videos/figa-01.mp4", "type": "video", "project": "Figa", "slug": "figa" },
-  { "adminId": "video:cidades-invisiveis:Motion_03", "label": { "pt": "Vídeo — Cidades Invisíveis (destaque)", "en": "Video — Cidades Invisíveis (hero)" }, "path": "src/assets/videos/Motion_03.mp4", "type": "video", "project": "Cidades Invisíveis", "slug": "cidades-invisiveis" },
-  { "adminId": "video:cidades-invisiveis:Motion_04", "label": { "pt": "Vídeo — Cidades Invisíveis (transições)", "en": "Video — Cidades Invisíveis (transitions)" }, "path": "src/assets/videos/Motion_04.mp4", "type": "video", "project": "Cidades Invisíveis", "slug": "cidades-invisiveis" },
-  { "adminId": "video:lobs-brazilian-art:lobs_02", "label": { "pt": "Vídeo — Lobs (streetwear)", "en": "Video — Lobs (streetwear)" }, "path": "src/assets/videos/lobs_02.mp4", "type": "video", "project": "Lobs Brazilian Art", "slug": "lobs-brazilian-art" },
-  { "adminId": "video:lobs-brazilian-art:lobs_05", "label": { "pt": "Vídeo — Lobs (redes sociais)", "en": "Video — Lobs (social media)" }, "path": "src/assets/videos/lobs_05.mp4", "type": "video", "project": "Lobs Brazilian Art", "slug": "lobs-brazilian-art" },
-  { "adminId": "video:lobs-brazilian-art:Reserva_02", "label": { "pt": "Vídeo — Reserva", "en": "Video — Reserva" }, "path": "src/assets/videos/Reserva_02.mp4", "type": "video", "project": "Lobs Brazilian Art", "slug": "lobs-brazilian-art" },
-  { "adminId": "video:presentation-design:Presenation_04", "label": { "pt": "Vídeo — Presentation (Alicia Keys)", "en": "Video — Presentation (Alicia Keys)" }, "path": "src/assets/videos/Presenation_04.mp4", "type": "video", "project": "Presentation Design", "slug": "presentation-design" },
-  { "adminId": "video:velvo:biriquim_01", "label": { "pt": "Vídeo — Velvo (Biriquim)", "en": "Video — Velvo (Biriquim)" }, "path": "src/assets/videos/biriquim_01.mp4", "type": "video", "project": "Velvo", "slug": "velvo" },
-  { "adminId": "text:presentation-design", "label": { "pt": "Frase de destaque — Presentation Design", "en": "Hero statement — Presentation Design" }, "type": "text", "project": "Presentation Design", "slug": "presentation-design" },
-  { "adminId": "text:maoka", "label": { "pt": "Frase de destaque — Maoka", "en": "Hero statement — Maoka" }, "type": "text", "project": "Maoka", "slug": "maoka" },
-  { "adminId": "text:figa", "label": { "pt": "Frase de destaque — Figa", "en": "Hero statement — Figa" }, "type": "text", "project": "Figa", "slug": "figa" },
-  { "adminId": "text:tgarden-site", "label": { "pt": "Frase de destaque — TGarden", "en": "Hero statement — TGarden" }, "type": "text", "project": "TGarden", "slug": "tgarden-site" },
-  { "adminId": "text:cidades-invisiveis", "label": { "pt": "Frase de destaque — Cidades Invisíveis", "en": "Hero statement — Cidades Invisíveis" }, "type": "text", "project": "Cidades Invisíveis", "slug": "cidades-invisiveis" },
-  { "adminId": "text:velvo", "label": { "pt": "Frase de destaque — Velvo", "en": "Hero statement — Velvo" }, "type": "text", "project": "Velvo", "slug": "velvo" },
-  { "adminId": "text:lobs-brazilian-art", "label": { "pt": "Frase de destaque — Lobs Brazilian Art", "en": "Hero statement — Lobs Brazilian Art" }, "type": "text", "project": "Lobs Brazilian Art", "slug": "lobs-brazilian-art" }
+  {
+    "adminId": "image:presentation-design",
+    "label": {
+      "pt": "Foto de destaque — Presentation Design",
+      "en": "Hero photo — Presentation Design"
+    },
+    "path": "src/assets/images/Presentation_01.jpg",
+    "type": "image",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "image:maoka",
+    "label": {
+      "pt": "Foto de destaque — Maoka",
+      "en": "Hero photo — Maoka"
+    },
+    "path": "src/assets/images/maoka-hover.jpg",
+    "type": "image",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "image:figa",
+    "label": {
+      "pt": "Foto de destaque — Figa",
+      "en": "Hero photo — Figa"
+    },
+    "path": "src/assets/images/figa-keyvisual-hover.jpg",
+    "type": "image",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "image:tgarden-site",
+    "label": {
+      "pt": "Foto de destaque — TGarden",
+      "en": "Hero photo — TGarden"
+    },
+    "path": "src/assets/images/Thumb_lobs.jpg",
+    "type": "image",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "image:cidades-invisiveis",
+    "label": {
+      "pt": "Foto de destaque — Cidades Invisíveis",
+      "en": "Hero photo — Cidades Invisíveis"
+    },
+    "path": "src/assets/images/gallery-4.jpg",
+    "type": "image",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "image:velvo",
+    "label": {
+      "pt": "Foto de destaque — Velvo",
+      "en": "Hero photo — Velvo"
+    },
+    "path": "src/assets/images/01_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:lobs-brazilian-art",
+    "label": {
+      "pt": "Foto de destaque — Lobs Brazilian Art",
+      "en": "Hero photo — Lobs Brazilian Art"
+    },
+    "path": "src/assets/images/project-lobs.jpg",
+    "type": "image",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "video:maoka:01",
+    "label": {
+      "pt": "Vídeo — Maoka (fachada/billboard)",
+      "en": "Video — Maoka (facade/billboard)"
+    },
+    "path": "src/assets/videos/01. Maoka.mp4",
+    "type": "video",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "video:maoka:02",
+    "label": {
+      "pt": "Vídeo — Maoka (artboards)",
+      "en": "Video — Maoka (artboards)"
+    },
+    "path": "src/assets/videos/02.mp4",
+    "type": "video",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "video:figa:figa-01",
+    "label": {
+      "pt": "Vídeo — Figa (destaque)",
+      "en": "Video — Figa (hero)"
+    },
+    "path": "src/assets/videos/figa-01.mp4",
+    "type": "video",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "video:cidades-invisiveis:Motion_03",
+    "label": {
+      "pt": "Vídeo — Cidades Invisíveis (destaque)",
+      "en": "Video — Cidades Invisíveis (hero)"
+    },
+    "path": "src/assets/videos/Motion_03.mp4",
+    "type": "video",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "video:cidades-invisiveis:Motion_04",
+    "label": {
+      "pt": "Vídeo — Cidades Invisíveis (transições)",
+      "en": "Video — Cidades Invisíveis (transitions)"
+    },
+    "path": "src/assets/videos/Motion_04.mp4",
+    "type": "video",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "video:lobs-brazilian-art:lobs_02",
+    "label": {
+      "pt": "Vídeo — Lobs (streetwear)",
+      "en": "Video — Lobs (streetwear)"
+    },
+    "path": "src/assets/videos/lobs_02.mp4",
+    "type": "video",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "video:lobs-brazilian-art:lobs_05",
+    "label": {
+      "pt": "Vídeo — Lobs (redes sociais)",
+      "en": "Video — Lobs (social media)"
+    },
+    "path": "src/assets/videos/lobs_05.mp4",
+    "type": "video",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "video:lobs-brazilian-art:Reserva_02",
+    "label": {
+      "pt": "Vídeo — Reserva",
+      "en": "Video — Reserva"
+    },
+    "path": "src/assets/videos/Reserva_02.mp4",
+    "type": "video",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "video:presentation-design:Presenation_04",
+    "label": {
+      "pt": "Vídeo — Presentation (Alicia Keys)",
+      "en": "Video — Presentation (Alicia Keys)"
+    },
+    "path": "src/assets/videos/Presenation_04.mp4",
+    "type": "video",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "video:velvo:biriquim_01",
+    "label": {
+      "pt": "Vídeo — Velvo (Biriquim)",
+      "en": "Video — Velvo (Biriquim)"
+    },
+    "path": "src/assets/videos/biriquim_01.mp4",
+    "type": "video",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:presentation-design",
+    "label": {
+      "pt": "Frase de destaque — Presentation Design",
+      "en": "Hero statement — Presentation Design"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:maoka",
+    "label": {
+      "pt": "Frase de destaque — Maoka",
+      "en": "Hero statement — Maoka"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:figa",
+    "label": {
+      "pt": "Frase de destaque — Figa",
+      "en": "Hero statement — Figa"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:tgarden-site",
+    "label": {
+      "pt": "Frase de destaque — TGarden",
+      "en": "Hero statement — TGarden"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:cidades-invisiveis",
+    "label": {
+      "pt": "Frase de destaque — Cidades Invisíveis",
+      "en": "Hero statement — Cidades Invisíveis"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:velvo",
+    "label": {
+      "pt": "Frase de destaque — Velvo",
+      "en": "Hero statement — Velvo"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art",
+    "label": {
+      "pt": "Frase de destaque — Lobs Brazilian Art",
+      "en": "Hero statement — Lobs Brazilian Art"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:presentation-design:closing",
+    "label": {
+      "pt": "Presentation Design — Frase de fechamento",
+      "en": "Presentation Design — Closing statement"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:presentation-design:s0:heading",
+    "label": {
+      "pt": "Presentation Design — Seção 1, título",
+      "en": "Presentation Design — Section 1, heading"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:presentation-design:s0:text",
+    "label": {
+      "pt": "Presentation Design — Seção 1, texto",
+      "en": "Presentation Design — Section 1, text"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:presentation-design:s1:heading",
+    "label": {
+      "pt": "Presentation Design — Seção 2, título",
+      "en": "Presentation Design — Section 2, heading"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:presentation-design:s1:text",
+    "label": {
+      "pt": "Presentation Design — Seção 2, texto",
+      "en": "Presentation Design — Section 2, text"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:presentation-design:s2:heading",
+    "label": {
+      "pt": "Presentation Design — Seção 3, título",
+      "en": "Presentation Design — Section 3, heading"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:presentation-design:s2:text",
+    "label": {
+      "pt": "Presentation Design — Seção 3, texto",
+      "en": "Presentation Design — Section 3, text"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:presentation-design:s3:heading",
+    "label": {
+      "pt": "Presentation Design — Seção 4, título",
+      "en": "Presentation Design — Section 4, heading"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:presentation-design:s3:text",
+    "label": {
+      "pt": "Presentation Design — Seção 4, texto",
+      "en": "Presentation Design — Section 4, text"
+    },
+    "type": "text",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "image:presentation-design:s1:img0",
+    "label": {
+      "pt": "Presentation Design — Foto, seção 2",
+      "en": "Presentation Design — Photo, section 2"
+    },
+    "path": "src/assets/images/Presentation_02.jpg",
+    "type": "image",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "image:presentation-design:s2:img0",
+    "label": {
+      "pt": "Presentation Design — Foto, seção 3",
+      "en": "Presentation Design — Photo, section 3"
+    },
+    "path": "src/assets/images/Presentation_03.jpg",
+    "type": "image",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "image:presentation-design:s3:m0",
+    "label": {
+      "pt": "Presentation Design — Foto, seção 4 bloco 1",
+      "en": "Presentation Design — Photo, section 4 block 1"
+    },
+    "path": "src/assets/images/Presentation_04.jpg",
+    "type": "image",
+    "project": "Presentation Design",
+    "slug": "presentation-design"
+  },
+  {
+    "adminId": "text:maoka:closing",
+    "label": {
+      "pt": "Maoka — Frase de fechamento",
+      "en": "Maoka — Closing statement"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s0:heading",
+    "label": {
+      "pt": "Maoka — Seção 1, título",
+      "en": "Maoka — Section 1, heading"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s0:text",
+    "label": {
+      "pt": "Maoka — Seção 1, texto",
+      "en": "Maoka — Section 1, text"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s0:m1:heading",
+    "label": {
+      "pt": "Maoka — Seção 1, bloco 2, título",
+      "en": "Maoka — Section 1, block 2, heading"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s0:m1:text",
+    "label": {
+      "pt": "Maoka — Seção 1, bloco 2, texto",
+      "en": "Maoka — Section 1, block 2, text"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s1:heading",
+    "label": {
+      "pt": "Maoka — Seção 2, título",
+      "en": "Maoka — Section 2, heading"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s1:text",
+    "label": {
+      "pt": "Maoka — Seção 2, texto",
+      "en": "Maoka — Section 2, text"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s2:heading",
+    "label": {
+      "pt": "Maoka — Seção 3, título",
+      "en": "Maoka — Section 3, heading"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s2:text",
+    "label": {
+      "pt": "Maoka — Seção 3, texto",
+      "en": "Maoka — Section 3, text"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s3:heading",
+    "label": {
+      "pt": "Maoka — Seção 4, título",
+      "en": "Maoka — Section 4, heading"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s3:text",
+    "label": {
+      "pt": "Maoka — Seção 4, texto",
+      "en": "Maoka — Section 4, text"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s4:heading",
+    "label": {
+      "pt": "Maoka — Seção 5, título",
+      "en": "Maoka — Section 5, heading"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s4:text",
+    "label": {
+      "pt": "Maoka — Seção 5, texto",
+      "en": "Maoka — Section 5, text"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s5:heading",
+    "label": {
+      "pt": "Maoka — Seção 6, título",
+      "en": "Maoka — Section 6, heading"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:maoka:s5:text",
+    "label": {
+      "pt": "Maoka — Seção 6, texto",
+      "en": "Maoka — Section 6, text"
+    },
+    "type": "text",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "video:maoka:05",
+    "label": {
+      "pt": "Maoka — Vídeo, seção 2",
+      "en": "Maoka — Video, section 2"
+    },
+    "path": "src/assets/videos/05.mp4",
+    "type": "video",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "video:maoka:06",
+    "label": {
+      "pt": "Maoka — Vídeo, seção 3",
+      "en": "Maoka — Video, section 3"
+    },
+    "path": "src/assets/videos/06.mp4",
+    "type": "video",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "video:maoka:07",
+    "label": {
+      "pt": "Maoka — Vídeo, seção 4",
+      "en": "Maoka — Video, section 4"
+    },
+    "path": "src/assets/videos/07.mp4",
+    "type": "video",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "video:maoka:08",
+    "label": {
+      "pt": "Maoka — Vídeo, seção 5",
+      "en": "Maoka — Video, section 5"
+    },
+    "path": "src/assets/videos/08.mp4",
+    "type": "video",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "video:maoka:09",
+    "label": {
+      "pt": "Maoka — Vídeo, seção 6",
+      "en": "Maoka — Video, section 6"
+    },
+    "path": "src/assets/videos/09.mp4",
+    "type": "video",
+    "project": "Maoka",
+    "slug": "maoka"
+  },
+  {
+    "adminId": "text:figa:closing",
+    "label": {
+      "pt": "Figa — Frase de fechamento",
+      "en": "Figa — Closing statement"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:figa:intro0",
+    "label": {
+      "pt": "Figa — Introdução 1",
+      "en": "Figa — Intro 1"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:figa:s0:heading",
+    "label": {
+      "pt": "Figa — Seção 1, título",
+      "en": "Figa — Section 1, heading"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:figa:s0:text",
+    "label": {
+      "pt": "Figa — Seção 1, texto",
+      "en": "Figa — Section 1, text"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:figa:s1:heading",
+    "label": {
+      "pt": "Figa — Seção 2, título",
+      "en": "Figa — Section 2, heading"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:figa:s1:text",
+    "label": {
+      "pt": "Figa — Seção 2, texto",
+      "en": "Figa — Section 2, text"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:figa:s2:heading",
+    "label": {
+      "pt": "Figa — Seção 3, título",
+      "en": "Figa — Section 3, heading"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:figa:s2:text",
+    "label": {
+      "pt": "Figa — Seção 3, texto",
+      "en": "Figa — Section 3, text"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:figa:s3:heading",
+    "label": {
+      "pt": "Figa — Seção 4, título",
+      "en": "Figa — Section 4, heading"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:figa:s3:text",
+    "label": {
+      "pt": "Figa — Seção 4, texto",
+      "en": "Figa — Section 4, text"
+    },
+    "type": "text",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "video:figa:figa-02",
+    "label": {
+      "pt": "Figa — Vídeo, seção 1",
+      "en": "Figa — Video, section 1"
+    },
+    "path": "src/assets/videos/figa-02.mp4",
+    "type": "video",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "video:figa:figa-03",
+    "label": {
+      "pt": "Figa — Vídeo, seção 2",
+      "en": "Figa — Video, section 2"
+    },
+    "path": "src/assets/videos/figa-03.mp4",
+    "type": "video",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "video:figa:figa-04",
+    "label": {
+      "pt": "Figa — Vídeo, seção 3",
+      "en": "Figa — Video, section 3"
+    },
+    "path": "src/assets/videos/figa-04.mp4",
+    "type": "video",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "video:figa:figa-05",
+    "label": {
+      "pt": "Figa — Vídeo, seção 4",
+      "en": "Figa — Video, section 4"
+    },
+    "path": "src/assets/videos/figa-05.mp4",
+    "type": "video",
+    "project": "Figa",
+    "slug": "figa"
+  },
+  {
+    "adminId": "text:tgarden-site:closing",
+    "label": {
+      "pt": "TGarden — Frase de fechamento",
+      "en": "TGarden — Closing statement"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s0:heading",
+    "label": {
+      "pt": "TGarden — Seção 1, título",
+      "en": "TGarden — Section 1, heading"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s0:text",
+    "label": {
+      "pt": "TGarden — Seção 1, texto",
+      "en": "TGarden — Section 1, text"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s1:heading",
+    "label": {
+      "pt": "TGarden — Seção 2, título",
+      "en": "TGarden — Section 2, heading"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s1:text",
+    "label": {
+      "pt": "TGarden — Seção 2, texto",
+      "en": "TGarden — Section 2, text"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s2:heading",
+    "label": {
+      "pt": "TGarden — Seção 3, título",
+      "en": "TGarden — Section 3, heading"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s2:text",
+    "label": {
+      "pt": "TGarden — Seção 3, texto",
+      "en": "TGarden — Section 3, text"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s3:heading",
+    "label": {
+      "pt": "TGarden — Seção 4, título",
+      "en": "TGarden — Section 4, heading"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s3:text",
+    "label": {
+      "pt": "TGarden — Seção 4, texto",
+      "en": "TGarden — Section 4, text"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "image:tgarden-site:s1:img0",
+    "label": {
+      "pt": "TGarden — Foto, seção 2",
+      "en": "TGarden — Photo, section 2"
+    },
+    "path": "src/assets/images/tgarden_Desktop_03.jpg",
+    "type": "image",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "image:tgarden-site:s2:img0",
+    "label": {
+      "pt": "TGarden — Foto, seção 3",
+      "en": "TGarden — Photo, section 3"
+    },
+    "path": "src/assets/images/tgarden_Desktop_02.jpg",
+    "type": "image",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "image:tgarden-site:s3:img0",
+    "label": {
+      "pt": "TGarden — Foto, seção 4, 1",
+      "en": "TGarden — Photo, section 4, 1"
+    },
+    "path": "src/assets/images/webdesign_efetiva_02.jpg",
+    "type": "image",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "image:tgarden-site:s3:img1",
+    "label": {
+      "pt": "TGarden — Foto, seção 4, 2",
+      "en": "TGarden — Photo, section 4, 2"
+    },
+    "path": "src/assets/images/webdesign_efetiva_03.jpg",
+    "type": "image",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:closing",
+    "label": {
+      "pt": "Cidades Invisíveis — Frase de fechamento",
+      "en": "Cidades Invisíveis — Closing statement"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s0:heading",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 1, título",
+      "en": "Cidades Invisíveis — Section 1, heading"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s0:text",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 1, texto",
+      "en": "Cidades Invisíveis — Section 1, text"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s1:heading",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 2, título",
+      "en": "Cidades Invisíveis — Section 2, heading"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s1:text",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 2, texto",
+      "en": "Cidades Invisíveis — Section 2, text"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s2:heading",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 3, título",
+      "en": "Cidades Invisíveis — Section 3, heading"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s2:text",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 3, texto",
+      "en": "Cidades Invisíveis — Section 3, text"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s3:heading",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 4, título",
+      "en": "Cidades Invisíveis — Section 4, heading"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s3:text",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 4, texto",
+      "en": "Cidades Invisíveis — Section 4, text"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s4:heading",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 5, título",
+      "en": "Cidades Invisíveis — Section 5, heading"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s4:text",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 5, texto",
+      "en": "Cidades Invisíveis — Section 5, text"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s5:heading",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 6, título",
+      "en": "Cidades Invisíveis — Section 6, heading"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s5:text",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 6, texto",
+      "en": "Cidades Invisíveis — Section 6, text"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s6:heading",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 7, título",
+      "en": "Cidades Invisíveis — Section 7, heading"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s6:text",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 7, texto",
+      "en": "Cidades Invisíveis — Section 7, text"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s7:heading",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 8, título",
+      "en": "Cidades Invisíveis — Section 8, heading"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:cidades-invisiveis:s7:text",
+    "label": {
+      "pt": "Cidades Invisíveis — Seção 8, texto",
+      "en": "Cidades Invisíveis — Section 8, text"
+    },
+    "type": "text",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "video:cidades-invisiveis:Motion_01",
+    "label": {
+      "pt": "Cidades Invisíveis — Vídeo, seção 1",
+      "en": "Cidades Invisíveis — Video, section 1"
+    },
+    "path": "src/assets/videos/Motion_01.mp4",
+    "type": "video",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "video:cidades-invisiveis:Motion_02",
+    "label": {
+      "pt": "Cidades Invisíveis — Vídeo, seção 2",
+      "en": "Cidades Invisíveis — Video, section 2"
+    },
+    "path": "src/assets/videos/Motion_02.mp4",
+    "type": "video",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "video:cidades-invisiveis:Motion_05",
+    "label": {
+      "pt": "Cidades Invisíveis — Vídeo, seção 4",
+      "en": "Cidades Invisíveis — Video, section 4"
+    },
+    "path": "src/assets/videos/Motion_05.mp4",
+    "type": "video",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "video:cidades-invisiveis:Motion_06",
+    "label": {
+      "pt": "Cidades Invisíveis — Vídeo, seção 5",
+      "en": "Cidades Invisíveis — Video, section 5"
+    },
+    "path": "src/assets/videos/Motion_06.mp4",
+    "type": "video",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "video:cidades-invisiveis:Motion_07",
+    "label": {
+      "pt": "Cidades Invisíveis — Vídeo, seção 6",
+      "en": "Cidades Invisíveis — Video, section 6"
+    },
+    "path": "src/assets/videos/Motion_07.mp4",
+    "type": "video",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "video:cidades-invisiveis:Motion_08",
+    "label": {
+      "pt": "Cidades Invisíveis — Vídeo, seção 7",
+      "en": "Cidades Invisíveis — Video, section 7"
+    },
+    "path": "src/assets/videos/Motion_08.mp4",
+    "type": "video",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "video:cidades-invisiveis:Motion_09",
+    "label": {
+      "pt": "Cidades Invisíveis — Vídeo, seção 8",
+      "en": "Cidades Invisíveis — Video, section 8"
+    },
+    "path": "src/assets/videos/Motion_09.mp4",
+    "type": "video",
+    "project": "Cidades Invisíveis",
+    "slug": "cidades-invisiveis"
+  },
+  {
+    "adminId": "text:velvo:closing",
+    "label": {
+      "pt": "Velvo — Frase de fechamento",
+      "en": "Velvo — Closing statement"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:velvo:intro0",
+    "label": {
+      "pt": "Velvo — Introdução 1",
+      "en": "Velvo — Intro 1"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:velvo:intro1",
+    "label": {
+      "pt": "Velvo — Introdução 2",
+      "en": "Velvo — Intro 2"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:velvo:s0:heading",
+    "label": {
+      "pt": "Velvo — Seção 1, título",
+      "en": "Velvo — Section 1, heading"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:velvo:s0:text",
+    "label": {
+      "pt": "Velvo — Seção 1, texto",
+      "en": "Velvo — Section 1, text"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:velvo:s1:heading",
+    "label": {
+      "pt": "Velvo — Seção 2, título",
+      "en": "Velvo — Section 2, heading"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:velvo:s1:text",
+    "label": {
+      "pt": "Velvo — Seção 2, texto",
+      "en": "Velvo — Section 2, text"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:velvo:s2:heading",
+    "label": {
+      "pt": "Velvo — Seção 3, título",
+      "en": "Velvo — Section 3, heading"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:velvo:s2:text",
+    "label": {
+      "pt": "Velvo — Seção 3, texto",
+      "en": "Velvo — Section 3, text"
+    },
+    "type": "text",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img0",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 1",
+      "en": "Velvo — Photo, section 1, 1"
+    },
+    "path": "src/assets/images/02_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img1",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 2",
+      "en": "Velvo — Photo, section 1, 2"
+    },
+    "path": "src/assets/images/03_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img2",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 3",
+      "en": "Velvo — Photo, section 1, 3"
+    },
+    "path": "src/assets/images/04_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img3",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 4",
+      "en": "Velvo — Photo, section 1, 4"
+    },
+    "path": "src/assets/images/05_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img4",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 5",
+      "en": "Velvo — Photo, section 1, 5"
+    },
+    "path": "src/assets/images/06_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img5",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 6",
+      "en": "Velvo — Photo, section 1, 6"
+    },
+    "path": "src/assets/images/07_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img6",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 7",
+      "en": "Velvo — Photo, section 1, 7"
+    },
+    "path": "src/assets/images/08_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img7",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 8",
+      "en": "Velvo — Photo, section 1, 8"
+    },
+    "path": "src/assets/images/08.1_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img8",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 9",
+      "en": "Velvo — Photo, section 1, 9"
+    },
+    "path": "src/assets/images/09_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img9",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 10",
+      "en": "Velvo — Photo, section 1, 10"
+    },
+    "path": "src/assets/images/11_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s0:img10",
+    "label": {
+      "pt": "Velvo — Foto, seção 1, 11",
+      "en": "Velvo — Photo, section 1, 11"
+    },
+    "path": "src/assets/images/10_Velvo.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s1:m0",
+    "label": {
+      "pt": "Velvo — Foto, seção 2 bloco 1",
+      "en": "Velvo — Photo, section 2 block 1"
+    },
+    "path": "src/assets/images/PataRara_Packaging_01.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s1:m2",
+    "label": {
+      "pt": "Velvo — Foto, seção 2 bloco 3",
+      "en": "Velvo — Photo, section 2 block 3"
+    },
+    "path": "src/assets/images/PataRara_Packaging_02.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s1:m3",
+    "label": {
+      "pt": "Velvo — Foto, seção 2 bloco 4",
+      "en": "Velvo — Photo, section 2 block 4"
+    },
+    "path": "src/assets/images/PataRara_Packaging_03.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s1:m5",
+    "label": {
+      "pt": "Velvo — Foto, seção 2 bloco 6",
+      "en": "Velvo — Photo, section 2 block 6"
+    },
+    "path": "src/assets/images/PataRara_Packaging_06.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s1:m6",
+    "label": {
+      "pt": "Velvo — Foto, seção 2 bloco 7",
+      "en": "Velvo — Photo, section 2 block 7"
+    },
+    "path": "src/assets/images/PataRara_Packaging_04.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s2:m0",
+    "label": {
+      "pt": "Velvo — Foto, seção 3 bloco 1",
+      "en": "Velvo — Photo, section 3 block 1"
+    },
+    "path": "src/assets/images/Biriquim_01.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "image:velvo:s2:m1",
+    "label": {
+      "pt": "Velvo — Foto, seção 3 bloco 2",
+      "en": "Velvo — Photo, section 3 block 2"
+    },
+    "path": "src/assets/images/Biriquim_02.jpg",
+    "type": "image",
+    "project": "Velvo",
+    "slug": "velvo"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:closing",
+    "label": {
+      "pt": "Lobs Brazilian Art — Frase de fechamento",
+      "en": "Lobs Brazilian Art — Closing statement"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s0:heading",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 1, título",
+      "en": "Lobs Brazilian Art — Section 1, heading"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s0:text",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 1, texto",
+      "en": "Lobs Brazilian Art — Section 1, text"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s1:heading",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 2, título",
+      "en": "Lobs Brazilian Art — Section 2, heading"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s1:text",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 2, texto",
+      "en": "Lobs Brazilian Art — Section 2, text"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s1:m1:heading",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 2, bloco 2, título",
+      "en": "Lobs Brazilian Art — Section 2, block 2, heading"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s1:m1:text",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 2, bloco 2, texto",
+      "en": "Lobs Brazilian Art — Section 2, block 2, text"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s1:m3:heading",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 2, bloco 4, título",
+      "en": "Lobs Brazilian Art — Section 2, block 4, heading"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s1:m3:text",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 2, bloco 4, texto",
+      "en": "Lobs Brazilian Art — Section 2, block 4, text"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s2:heading",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 3, título",
+      "en": "Lobs Brazilian Art — Section 3, heading"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s2:text",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 3, texto",
+      "en": "Lobs Brazilian Art — Section 3, text"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s3:heading",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 4, título",
+      "en": "Lobs Brazilian Art — Section 4, heading"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s3:text",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 4, texto",
+      "en": "Lobs Brazilian Art — Section 4, text"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s4:heading",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 5, título",
+      "en": "Lobs Brazilian Art — Section 5, heading"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "text:lobs-brazilian-art:s4:text",
+    "label": {
+      "pt": "Lobs Brazilian Art — Seção 5, texto",
+      "en": "Lobs Brazilian Art — Section 5, text"
+    },
+    "type": "text",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "image:lobs-brazilian-art:s0:m0",
+    "label": {
+      "pt": "Lobs Brazilian Art — Foto, seção 1 bloco 1",
+      "en": "Lobs Brazilian Art — Photo, section 1 block 1"
+    },
+    "path": "src/assets/images/lobs_01.jpg",
+    "type": "image",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "image:lobs-brazilian-art:s1:m0",
+    "label": {
+      "pt": "Lobs Brazilian Art — Foto, seção 2 bloco 1",
+      "en": "Lobs Brazilian Art — Photo, section 2 block 1"
+    },
+    "path": "src/assets/images/lobs_02.jpg",
+    "type": "image",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "video:lobs-brazilian-art:lobs_03",
+    "label": {
+      "pt": "Lobs Brazilian Art — Vídeo, seção 2 bloco 5",
+      "en": "Lobs Brazilian Art — Video, section 2 block 5"
+    },
+    "path": "src/assets/videos/lobs_03.mp4",
+    "type": "video",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "image:lobs-brazilian-art:s1:m5",
+    "label": {
+      "pt": "Lobs Brazilian Art — Foto, seção 2 bloco 6",
+      "en": "Lobs Brazilian Art — Photo, section 2 block 6"
+    },
+    "path": "src/assets/images/lobs_03.jpg",
+    "type": "image",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "video:lobs-brazilian-art:lobs_04",
+    "label": {
+      "pt": "Lobs Brazilian Art — Vídeo, seção 3",
+      "en": "Lobs Brazilian Art — Video, section 3"
+    },
+    "path": "src/assets/videos/lobs_04.mp4",
+    "type": "video",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "image:lobs-brazilian-art:s3:m0",
+    "label": {
+      "pt": "Lobs Brazilian Art — Foto, seção 4 bloco 1",
+      "en": "Lobs Brazilian Art — Photo, section 4 block 1"
+    },
+    "path": "src/assets/images/JJ_01.jpg",
+    "type": "image",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "image:lobs-brazilian-art:s3:m2",
+    "label": {
+      "pt": "Lobs Brazilian Art — Foto, seção 4 bloco 3",
+      "en": "Lobs Brazilian Art — Photo, section 4 block 3"
+    },
+    "path": "src/assets/images/JJ_03.jpg",
+    "type": "image",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "image:lobs-brazilian-art:s3:m3",
+    "label": {
+      "pt": "Lobs Brazilian Art — Foto, seção 4 bloco 4",
+      "en": "Lobs Brazilian Art — Photo, section 4 block 4"
+    },
+    "path": "src/assets/images/JJ_04.jpg",
+    "type": "image",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  },
+  {
+    "adminId": "image:lobs-brazilian-art:s3:m4",
+    "label": {
+      "pt": "Lobs Brazilian Art — Foto, seção 4 bloco 5",
+      "en": "Lobs Brazilian Art — Photo, section 4 block 5"
+    },
+    "path": "src/assets/images/JJ_05.jpg",
+    "type": "image",
+    "project": "Lobs Brazilian Art",
+    "slug": "lobs-brazilian-art"
+  }
 ]

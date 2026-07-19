@@ -88,19 +88,19 @@ export function LiveSiteLink({ href, label, className = '' }: { href: string; la
   )
 }
 
-function ParallaxImage({ src, alt }: { src: string; alt: string }) {
+function ParallaxImage({ src, alt, adminId }: { src: string; alt: string; adminId?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['-20%', '20%'])
 
   return (
-    <div ref={ref} className="w-full aspect-[4/3] md:aspect-video overflow-hidden">
+    <div ref={ref} data-admin-id={adminId} className="w-full aspect-[4/3] md:aspect-video overflow-hidden">
       <motion.img src={src} alt={alt} style={{ y, scale: 2 }} className="w-full h-full object-cover" />
     </div>
   )
 }
 
-export function PanCoverImage({ src, alt }: { src: string; alt: string }) {
+export function PanCoverImage({ src, alt, adminId }: { src: string; alt: string; adminId?: string }) {
   const canHover = useCanHover()
   const [ready, setReady] = useState(false)
   useEffect(() => setReady(true), [])
@@ -162,14 +162,14 @@ export function PanCoverImage({ src, alt }: { src: string; alt: string }) {
 
   if (!isInteractive) {
     return (
-      <div ref={containerRef} className="relative overflow-hidden aspect-[18/25] md:aspect-auto">
+      <div ref={containerRef} data-admin-id={adminId} className="relative overflow-hidden aspect-[18/25] md:aspect-auto">
         <img ref={imgRef} src={src} alt={alt} onLoad={measure} className={imgClassName} />
       </div>
     )
   }
 
   return (
-    <div ref={containerRef} className="relative overflow-hidden aspect-[18/25] md:aspect-auto touch-pan-y">
+    <div ref={containerRef} data-admin-id={adminId} className="relative overflow-hidden aspect-[18/25] md:aspect-auto touch-pan-y">
       <motion.img
         ref={imgRef}
         src={src}
@@ -311,7 +311,11 @@ export default function ProjectPage() {
         {copy.intro && (
           <div className="md:col-start-4 md:col-span-9 flex flex-col gap-4">
             {copy.intro.map((p, i) => (
-              <p key={i} className="text-sm md:text-base leading-relaxed text-ink-soft">
+              <p
+                key={i}
+                data-admin-id={`text:${detail.slug}:intro${i}`}
+                className="text-sm md:text-base leading-relaxed text-ink-soft"
+              >
                 {p}
               </p>
             ))}
@@ -385,10 +389,16 @@ export default function ProjectPage() {
                 className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
               >
                 {displayNumber && <p className="label text-ink-soft md:col-span-3">{displayNumber}</p>}
-                <h2 className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight">
+                <h2
+                  data-admin-id={`text:${detail.slug}:s${i}:heading`}
+                  className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+                >
                   {s.heading}
                 </h2>
-                <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
+                <p
+                  data-admin-id={`text:${detail.slug}:s${i}:text`}
+                  className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+                >
                   {s.text}
                 </p>
               </motion.div>
@@ -431,11 +441,17 @@ export default function ProjectPage() {
                         key={blockIndex}
                         className="px-6 md:px-10 py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4"
                       >
-                        <h3 className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight">
+                        <h3
+                          data-admin-id={`text:${detail.slug}:s${i}:m${blockIndex}:heading`}
+                          className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+                        >
                           {block.heading}
                         </h3>
                         {block.text && (
-                          <p className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft">
+                          <p
+                            data-admin-id={`text:${detail.slug}:s${i}:m${blockIndex}:text`}
+                            className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+                          >
                             {block.text}
                           </p>
                         )}
@@ -467,11 +483,27 @@ export default function ProjectPage() {
                         aspect={block.embedAspect}
                       />
                     ) : block.parallax && block.image ? (
-                      <ParallaxImage key={blockIndex} src={block.image} alt={s.heading} />
+                      <ParallaxImage
+                        key={blockIndex}
+                        src={block.image}
+                        alt={s.heading}
+                        adminId={`image:${detail.slug}:s${i}:m${blockIndex}`}
+                      />
                     ) : block.mobileCover && block.image ? (
-                      <PanCoverImage key={blockIndex} src={block.image} alt={s.heading} />
+                      <PanCoverImage
+                        key={blockIndex}
+                        src={block.image}
+                        alt={s.heading}
+                        adminId={`image:${detail.slug}:s${i}:m${blockIndex}`}
+                      />
                     ) : (
-                      <img key={blockIndex} src={block.image} alt={s.heading} className="w-full h-auto block" />
+                      <img
+                        key={blockIndex}
+                        src={block.image}
+                        alt={s.heading}
+                        data-admin-id={`image:${detail.slug}:s${i}:m${blockIndex}`}
+                        className="w-full h-auto block"
+                      />
                     )
                   })}
                 </motion.div>
@@ -487,9 +519,20 @@ export default function ProjectPage() {
                 >
                   {s.images.map((src, imgIndex) =>
                     s.mobileImageCover ? (
-                      <PanCoverImage key={imgIndex} src={src} alt={s.heading} />
+                      <PanCoverImage
+                        key={imgIndex}
+                        src={src}
+                        alt={s.heading}
+                        adminId={`image:${detail.slug}:s${i}:img${imgIndex}`}
+                      />
                     ) : (
-                      <img key={imgIndex} src={src} alt={s.heading} className="w-full h-auto block" />
+                      <img
+                        key={imgIndex}
+                        src={src}
+                        alt={s.heading}
+                        data-admin-id={`image:${detail.slug}:s${i}:img${imgIndex}`}
+                        className="w-full h-auto block"
+                      />
                     ),
                   )}
                 </motion.div>
@@ -518,7 +561,12 @@ export default function ProjectPage() {
         transition={{ duration: 0.8 }}
         className="-mx-6 md:-mx-10 mt-16 md:mt-24 bg-ink text-paper py-20 md:py-28 px-6 md:px-10"
       >
-        <p className="font-display uppercase text-2xl md:text-4xl leading-[1.15] max-w-4xl">{copy.closing}</p>
+        <p
+          data-admin-id={`text:${detail.slug}:closing`}
+          className="font-display uppercase text-2xl md:text-4xl leading-[1.15] max-w-4xl"
+        >
+          {copy.closing}
+        </p>
       </motion.div>
 
       <div className="mt-16 md:mt-24 mb-20 md:mb-28">

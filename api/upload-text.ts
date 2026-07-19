@@ -4,12 +4,14 @@ import { mintInstallationToken, GITHUB_OWNER, GITHUB_REPO, GITHUB_BRANCH } from 
 import assets from '../public/admin/assets.json'
 
 const COPY_PATH = 'src/data/editableCopy.json'
-const MAX_LENGTH = 300
+const MAX_LENGTH = 1000
 
-// Text edits (hero statement per project, pt+en). Same allowlist-then-commit
-// shape as api/upload-image.ts, but the target is always the single
-// src/data/editableCopy.json file — this endpoint reads it, updates one
-// slug's entry, and writes the whole file back.
+// Text edits (any heading/paragraph/closing statement tagged as an editable
+// field, pt+en). Same allowlist-then-commit shape as api/upload-image.ts, but
+// the target is always the single src/data/editableCopy.json file — this
+// endpoint reads it, updates one field's entry, and writes the whole file
+// back. `id` is the asset's adminId (e.g. "text:maoka:s0:heading") with the
+// "text:" prefix stripped to get the JSON key (e.g. "maoka:s0:heading").
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method not allowed' })
@@ -21,9 +23,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  const { slug, pt, en } = (req.body ?? {}) as { slug?: string; pt?: string; en?: string }
+  const { id, pt, en } = (req.body ?? {}) as { id?: string; pt?: string; en?: string }
 
-  if (typeof slug !== 'string' || typeof pt !== 'string' || typeof en !== 'string') {
+  if (typeof id !== 'string' || typeof pt !== 'string' || typeof en !== 'string') {
     res.status(400).json({ error: 'Requisição inválida' })
     return
   }
@@ -39,13 +41,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return
   }
 
-  const slot = (assets as { slug?: string; type: string }[]).find(
-    (a) => a.slug === slug && a.type === 'text',
+  const slot = (assets as { adminId: string; type: string }[]).find(
+    (a) => a.adminId === id && a.type === 'text',
   )
   if (!slot) {
     res.status(403).json({ error: 'Esse texto não está na lista de itens editáveis' })
     return
   }
+  const key = id.replace(/^text:/, '')
 
   try {
     const token = await mintInstallationToken()
@@ -65,7 +68,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       { pt: string; en: string }
     >
 
-    parsed[slug] = { pt: trimmedPt, en: trimmedEn }
+    parsed[key] = { pt: trimmedPt, en: trimmedEn }
     const newContent = Buffer.from(JSON.stringify(parsed, null, 2) + '\n', 'utf-8').toString('base64')
 
     const putRes = await fetch(contentsUrl, {
@@ -76,7 +79,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        message: `Admin: atualizar texto de ${slug}`,
+        message: `Admin: atualizar texto ${key}`,
         content: newContent,
         sha: current.sha,
         branch: GITHUB_BRANCH,

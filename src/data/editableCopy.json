@@ -26,5 +26,341 @@
   "lobs-brazilian-art": {
     "pt": "Moda é identidade que se veste.",
     "en": "Fashion is identity you wear."
+  },
+  "presentation-design:closing": {
+    "pt": "UMA IDEIA SÓ EXISTE DE VERDADE QUANDO ALGUÉM DIZ SIM A ELA.",
+    "en": "AN IDEA ONLY TRULY EXISTS ONCE SOMEONE SAYS YES TO IT."
+  },
+  "presentation-design:s0:heading": {
+    "pt": "Conteúdo em breve.",
+    "en": "Content coming soon."
+  },
+  "presentation-design:s0:text": {
+    "pt": "Em breve, o case completo deste projeto.",
+    "en": "This project's full case study is coming soon."
+  },
+  "presentation-design:s1:heading": {
+    "pt": "Uma travessia sensível entre voz e memória.",
+    "en": "A sensitive journey between voice and memory."
+  },
+  "presentation-design:s1:text": {
+    "pt": "Deck de apresentação para \"As Vozes de Milton\", experiência que convida o público a sentir a obra de Milton Nascimento, não só assistir.",
+    "en": "A pitch deck for \"As Vozes de Milton,\" an experience that invites the audience to feel the work of Milton Nascimento, not just watch it."
+  },
+  "presentation-design:s2:heading": {
+    "pt": "Auditions: uma jornada sensorial.",
+    "en": "Auditions: a sensorial journey."
+  },
+  "presentation-design:s2:text": {
+    "pt": "Deck de apresentação \"Auditions\", conduzindo o público por uma experiência de percepção e sentidos.",
+    "en": "A pitch deck for \"Auditions,\" guiding the audience through an experience of perception and the senses."
+  },
+  "presentation-design:s3:heading": {
+    "pt": "Um show, uma marca global.",
+    "en": "One show, one global brand."
+  },
+  "presentation-design:s3:text": {
+    "pt": "Deck de apresentação para o show internacional de Alicia Keys em Belo Horizonte, associando uma artista global a marcas que buscam visibilidade massiva e posicionamento premium.",
+    "en": "A pitch deck for Alicia Keys' international show in Belo Horizonte, pairing a global artist with brands seeking massive visibility and premium positioning."
+  },
+  "maoka:closing": {
+    "pt": "UMA IDENTIDADE VISUAL SÓ FUNCIONA QUANDO SOBREVIVE AO MUNDO REAL. NA TGARDEN, CONSTRUÍMOS SISTEMAS QUE ESCALAM DE UM CARTÃO DE VISITA A UMA FACHADA, DE UMA TELA A UM ESPAÇO PÚBLICO, FEITOS PARA SEREM RECONHECIDOS, LEMBRADOS E SENTIDOS.",
+    "en": "A VISUAL IDENTITY ONLY WORKS WHEN IT SURVIVES THE REAL WORLD. AT TGARDEN, WE BUILD SYSTEMS THAT SCALE FROM A BUSINESS CARD TO A FACADE, FROM A SCREEN TO A PUBLIC SPACE, MADE TO BE RECOGNIZED, REMEMBERED AND FELT."
+  },
+  "maoka:s0:heading": {
+    "pt": "Identidade antes do logo.",
+    "en": "Identity before the logo."
+  },
+  "maoka:s0:text": {
+    "pt": "Uma identidade visual não é só um logo, uma cor ou uma fonte. É o sistema operacional de uma marca: o conjunto de sinais, regras e comportamentos que torna uma empresa reconhecível, confiável e memorável antes mesmo de uma palavra ser lida.",
+    "en": "A visual identity is not just a logo, a color or a font. It is the operating system of a brand: the set of signs, rules and behaviors that makes a company recognizable, trustworthy and memorable before a single word is read."
+  },
+  "maoka:s0:m1:heading": {
+    "pt": "Artboards feitos pra rede social.",
+    "en": "Artboards built for social media."
+  },
+  "maoka:s0:m1:text": {
+    "pt": "Cada artboard nasce pensado pro feed, pro story e pro carrossel, sempre com a mesma consistência de marca, onde quer que apareça. Isso a gente faz muito bem.",
+    "en": "Every artboard is designed for the feed, the story and the carousel, always with the same brand consistency wherever it shows up. That's something we do very well."
+  },
+  "maoka:s1:heading": {
+    "pt": "Lola",
+    "en": "Lola"
+  },
+  "maoka:s1:text": {
+    "pt": "Uma marca premium de autocuidado traduzida em uma linguagem calma e presente: tons suaves, tipografia elegante e um logo que respira junto com a marca.",
+    "en": "A premium self-care brand translated into a calm yet present language: soft tones, elegant typography and a logo that breathes with the brand."
+  },
+  "maoka:s2:heading": {
+    "pt": "Fazenda Santa Mônica",
+    "en": "Fazenda Santa Mônica"
+  },
+  "maoka:s2:text": {
+    "pt": "Alimentos de alto padrão e experiências rurais reunidos em um sistema visual autêntico, refinado e atemporal.",
+    "en": "High-end food and rural experiences brought together in a visual system that feels authentic, refined and timeless."
+  },
+  "maoka:s3:heading": {
+    "pt": "Duck Motorcycle",
+    "en": "Duck Motorcycle"
+  },
+  "maoka:s3:text": {
+    "pt": "Uma marca premium de motocicletas com alma de estrada, inspirada na herança do custom americano, no espírito Harley-Davidson de liberdade e pertencimento, unindo cromados, couro e tipografia robusta em uma identidade que atravessa gerações.",
+    "en": "A premium motorcycle brand with road-worn soul, inspired by American custom heritage, in the Harley-Davidson spirit of freedom and belonging, blending chrome, leather and bold typography into an identity built to last generations."
+  },
+  "maoka:s4:heading": {
+    "pt": "Vanessa Ferreira",
+    "en": "Vanessa Ferreira"
+  },
+  "maoka:s4:text": {
+    "pt": "Uma marca premium de beleza e skincare construída como um universo delicado e confiante: cores suaves, tipografia elegante e um símbolo pessoal e aspiracional.",
+    "en": "A premium beauty and skincare brand built as a delicate but confident universe: soft colors, elegant typography and a symbol that feels personal and aspirational."
+  },
+  "maoka:s5:heading": {
+    "pt": "Mova",
+    "en": "Mova"
+  },
+  "maoka:s5:text": {
+    "pt": "Uma produtora de eventos e ativações de marca que transforma experiências físicas em narrativas visuais: identidade flexível e modular, pronta para se adaptar a qualquer palco, marca ou momento.",
+    "en": "An event production and brand activation studio that turns physical experiences into visual narratives: a flexible, modular identity built to adapt to any stage, brand or moment."
+  },
+  "figa:closing": {
+    "pt": "KEY VISUAL COMO COREOGRAFIA: UMA MARCA QUE CHEGA EM MOVIMENTO E FICA NA MEMÓRIA.",
+    "en": "KEY VISUAL AS CHOREOGRAPHY: A BRAND THAT ARRIVES MOVING AND STAYS IN THE MEMORY."
+  },
+  "figa:intro0": {
+    "pt": "Key visuals construídos como sistemas vivos: imagens em movimento que carregam a marca por telas, palcos e ruas.",
+    "en": "Key visuals built as living systems: moving images that carry the brand across screens, stages and streets."
+  },
+  "figa:s0:heading": {
+    "pt": "Uma imagem que se move, uma marca que respira.",
+    "en": "An image that moves, a brand that breathes."
+  },
+  "figa:s0:text": {
+    "pt": "Key visual é mais do que um cartaz. É uma postura: o jeito que a marca se posiciona, aparece e fala em cada ponto de contato. Cada projeto nasce de um gesto e se desdobra em sistema: tipografia, ritmo, cor e movimento trabalhando como um só.",
+    "en": "Key visual is more than a poster. It's a posture: the way the brand stands, looks and speaks across every touchpoint. Each project starts with a gesture and unfolds into a system: type, rhythm, color and motion working as one."
+  },
+  "figa:s1:heading": {
+    "pt": "Uma composição, muitas histórias.",
+    "en": "One composition, many stories."
+  },
+  "figa:s1:text": {
+    "pt": "A mesma grade visual acomoda peças completamente diferentes sem perder identidade, porque o sistema é a marca, não cada peça individual.",
+    "en": "The same visual grid holds completely different pieces without losing identity, because the system is the brand, not any single piece."
+  },
+  "figa:s2:heading": {
+    "pt": "Frames como linguagem de marca.",
+    "en": "Frames as brand language."
+  },
+  "figa:s2:text": {
+    "pt": "Movimento é editorial. Corte, cadência e textura definem a voz da marca tanto quanto tipografia ou cor. De aberturas de evento a loops para redes sociais, cada peça nasce pra viver em movimento antes de virar impresso.",
+    "en": "Movement is editorial. Cuts, pacing and texture define the voice as much as type or color do. From event openers to social loops, each piece is built to live in motion first and translate into print second."
+  },
+  "figa:s3:heading": {
+    "pt": "Um sistema, muitas superfícies.",
+    "en": "One system, many surfaces."
+  },
+  "figa:s3:text": {
+    "pt": "A mesma key visual escala de uma tela de celular a um painel de rua sem perder tensão ou clareza. Modularidade, contenção e um gesto central forte: é isso que segura tudo junto em qualquer formato.",
+    "en": "The same key visual scales from a phone screen to a stage backdrop without losing tension or clarity. Modularity, restraint and a strong central gesture: that's what holds it together across formats."
+  },
+  "tgarden-site:closing": {
+    "pt": "UM SITE BOM NÃO GRITA PRA SER NOTADO. ELE CONVENCE EM SILÊNCIO, NA VELOCIDADE DE UM CLIQUE.",
+    "en": "A GOOD WEBSITE DOESN'T SHOUT TO BE NOTICED. IT CONVINCES QUIETLY, AT THE SPEED OF A CLICK."
+  },
+  "tgarden-site:s0:heading": {
+    "pt": "Performance é parte do design.",
+    "en": "Performance is part of design."
+  },
+  "tgarden-site:s0:text": {
+    "pt": "Uma animação linda que trava não é design, é ruído. Cada interação foi construída pra ser rápida antes de ser bonita.",
+    "en": "A beautiful animation that stutters isn't design, it's noise. Every interaction was built to be fast before it was built to be pretty."
+  },
+  "tgarden-site:s1:heading": {
+    "pt": "Construído pra crescer.",
+    "en": "Built to grow."
+  },
+  "tgarden-site:s1:text": {
+    "pt": "Componentes reutilizáveis e conteúdo estruturado significam que o site evolui junto com o estúdio, sem recomeçar do zero a cada mudança.",
+    "en": "Reusable components and structured content mean the site evolves alongside the studio, without starting from scratch with every change."
+  },
+  "tgarden-site:s2:heading": {
+    "pt": "Do desktop ao bolso.",
+    "en": "From desktop to pocket."
+  },
+  "tgarden-site:s2:text": {
+    "pt": "A mesma identidade visual se adapta a qualquer tela, do tablet ao smartphone, sem perder ritmo, hierarquia ou personalidade.",
+    "en": "The same visual identity adapts to any screen, from tablet to smartphone, without losing rhythm, hierarchy or personality."
+  },
+  "tgarden-site:s3:heading": {
+    "pt": "Efetiva Engenharia",
+    "en": "Efetiva Engenharia"
+  },
+  "tgarden-site:s3:text": {
+    "pt": "Site institucional para uma construtora especializada em reformas de alto padrão: portfólio de obras, diferenciais e um formulário direto de contato para captar novos projetos.",
+    "en": "Institutional website for a high-end renovation contractor: project portfolio, differentiators and a direct contact form to bring in new projects."
+  },
+  "cidades-invisiveis:closing": {
+    "pt": "CIDADES INVISÍVEIS SÓ EXISTEM PRA QUEM NUNCA PRECISOU OLHAR PRA ELAS.",
+    "en": "INVISIBLE CITIES ONLY EXIST FOR THOSE WHO NEVER HAD TO LOOK."
+  },
+  "cidades-invisiveis:s0:heading": {
+    "pt": "Movimento com propósito.",
+    "en": "Movement with purpose."
+  },
+  "cidades-invisiveis:s0:text": {
+    "pt": "Cada transição carrega intenção: velocidade, peso e ritmo contam a história tanto quanto a imagem parada.",
+    "en": "Every transition carries intention: speed, weight and rhythm tell the story just as much as the still image does."
+  },
+  "cidades-invisiveis:s1:heading": {
+    "pt": "Da tela ao bloco de rua.",
+    "en": "From screen to street parade."
+  },
+  "cidades-invisiveis:s1:text": {
+    "pt": "Um sistema de motion pensado pra viver em vídeo, palco de trio elétrico e redes sociais, sem perder identidade em nenhum formato.",
+    "en": "A motion system built to live on video, on a parade float stage and on social feeds, without losing identity in any format."
+  },
+  "cidades-invisiveis:s2:heading": {
+    "pt": "Transições com identidade.",
+    "en": "Transitions with identity."
+  },
+  "cidades-invisiveis:s2:text": {
+    "pt": "Cortes e transições deixam de ser recursos técnicos e passam a fazer parte da linguagem da marca.",
+    "en": "Cuts and transitions stop being technical tools and become part of the brand's own language."
+  },
+  "cidades-invisiveis:s3:heading": {
+    "pt": "Tipografia em movimento.",
+    "en": "Typography in motion."
+  },
+  "cidades-invisiveis:s3:text": {
+    "pt": "Letras que se comportam como personagens, reforçando a mensagem através do próprio gesto.",
+    "en": "Letters behave like characters, reinforcing the message through gesture itself."
+  },
+  "cidades-invisiveis:s4:heading": {
+    "pt": "Cor e energia.",
+    "en": "Color and energy."
+  },
+  "cidades-invisiveis:s4:text": {
+    "pt": "Paletas dinâmicas acompanham o compasso da trilha, traduzindo emoção em movimento.",
+    "en": "Dynamic palettes follow the beat of the soundtrack, translating emotion into movement."
+  },
+  "cidades-invisiveis:s5:heading": {
+    "pt": "Consistência multiplataforma.",
+    "en": "Cross-platform consistency."
+  },
+  "cidades-invisiveis:s5:text": {
+    "pt": "O mesmo sistema de motion se adapta a formatos verticais, horizontais e quadrados sem perder força.",
+    "en": "The same motion system adapts to vertical, horizontal and square formats without losing strength."
+  },
+  "cidades-invisiveis:s6:heading": {
+    "pt": "Detalhes que constroem escala.",
+    "en": "Details that build scale."
+  },
+  "cidades-invisiveis:s6:text": {
+    "pt": "Pequenas variações de timing e easing dão sofisticação a uma peça que parece simples à primeira vista.",
+    "en": "Small variations in timing and easing add sophistication to a piece that looks simple at first glance."
+  },
+  "cidades-invisiveis:s7:heading": {
+    "pt": "Motion como narrativa.",
+    "en": "Motion as narrative."
+  },
+  "cidades-invisiveis:s7:text": {
+    "pt": "Cada peça conta uma história curta, com começo, clímax e desfecho dentro de poucos segundos.",
+    "en": "Each piece tells a short story, with a beginning, climax and resolution within a few seconds."
+  },
+  "velvo:closing": {
+    "pt": "UMA BOA EMBALAGEM VENDE NA PRATELEIRA E CONVENCE NA MÃO: DUAS EXPERIÊNCIAS, UM SÓ SISTEMA.",
+    "en": "GOOD PACKAGING SELLS ON THE SHELF AND CONVINCES IN THE HAND: TWO EXPERIENCES, ONE SYSTEM."
+  },
+  "velvo:intro0": {
+    "pt": "Três segundos. É o tempo que uma embalagem tem pra se destacar antes da mão do cliente ir pra outra marca.",
+    "en": "Three seconds. That's how long a package has to stand out before the customer's hand moves to another brand."
+  },
+  "velvo:intro1": {
+    "pt": "Textura, peso e acabamento comunicam qualidade antes mesmo da primeira palavra ser lida no rótulo: da paisagem que inspirou a marca ao produto na mão do cliente, cada peça continua a anterior.",
+    "en": "Texture, weight and finish communicate quality before a single word is read on the label: from the landscape that inspired the brand to the product in the customer's hand, each piece continues the last."
+  },
+  "velvo:s0:heading": {
+    "pt": "Um sistema, em sequência.",
+    "en": "One system, in sequence."
+  },
+  "velvo:s0:text": {
+    "pt": "Mood board, garrafa, rótulo, identidade e fotografia: uma sequência visual contínua, sem interrupções.",
+    "en": "Mood board, bottle, label, identity and photography: one continuous visual sequence, without interruption."
+  },
+  "velvo:s1:heading": {
+    "pt": "Pata Rara",
+    "en": "Pata Rara"
+  },
+  "velvo:s1:text": {
+    "pt": "Uma marca de petiscos naturais que também precisa fazer o cachorro (e o tutor) sorrir: mascote mordendo a embalagem, cores vibrantes por sabor e uma janela que mostra o produto de verdade. As ilustrações também foram feitas por mim.",
+    "en": "A natural pet-treat brand that also needs to make the dog (and the owner) smile: a mascot biting through the pack, vibrant colors per flavor, and a window that shows the real product. The illustrations were also made by me."
+  },
+  "velvo:s2:heading": {
+    "pt": "Biriquim",
+    "en": "Biriquim"
+  },
+  "velvo:s2:text": {
+    "pt": "Uma bebida pronta pra beber que também é presença de festa: rótulo vibrante, sabor bem definido (vodka, guaraná, limão e toque de chapéu de couro) e uma lata que já comunica a experiência antes do primeiro gole.",
+    "en": "A ready-to-drink can that's also a party statement: a vibrant label, a clear flavor identity (vodka, guaraná, lime and a touch of chapéu-de-couro), and a can that communicates the experience before the first sip."
+  },
+  "lobs-brazilian-art:closing": {
+    "pt": "MODA COM IDENTIDADE NÃO SEGUE TENDÊNCIA: CRIA REPERTÓRIO PRÓPRIO E DEIXA A TENDÊNCIA SEGUIR ELA.",
+    "en": "FASHION WITH IDENTITY DOESN'T FOLLOW TRENDS: IT BUILDS ITS OWN REPERTOIRE AND LETS TRENDS FOLLOW IT."
+  },
+  "lobs-brazilian-art:s0:heading": {
+    "pt": "Vestido de verdade, não só fotografado.",
+    "en": "Worn for real, not just photographed."
+  },
+  "lobs-brazilian-art:s0:text": {
+    "pt": "Do mar ao dia a dia, as peças da Lobs vivem fora do estúdio, prova de que a identidade da marca é usada, não só vista.",
+    "en": "From the sea to everyday life, Lobs' pieces live outside the studio, proof the brand's identity is worn, not just seen."
+  },
+  "lobs-brazilian-art:s1:heading": {
+    "pt": "Streetwear é atitude, não só roupa.",
+    "en": "Streetwear is attitude, not just clothing."
+  },
+  "lobs-brazilian-art:s1:text": {
+    "pt": "Da rua pro estúdio: cada estampa nasce da cultura urbana brasileira, criando peças que carregam identidade antes de qualquer tendência.",
+    "en": "From the street to the studio: every print is born from Brazilian urban culture, creating pieces that carry identity before any trend."
+  },
+  "lobs-brazilian-art:s1:m1:heading": {
+    "pt": "Feito pra rede social, não só pro closet.",
+    "en": "Made for social media, not just the closet."
+  },
+  "lobs-brazilian-art:s1:m1:text": {
+    "pt": "Cada estampa vira conteúdo: peça pensada pra aparecer bem no feed, no story e na vida real, sem perder a mesma identidade em nenhum formato.",
+    "en": "Every print becomes content: pieces designed to look great in the feed, in stories and in real life, without losing the same identity in any format."
+  },
+  "lobs-brazilian-art:s1:m3:heading": {
+    "pt": "Keep moving: nunca parar de evoluir.",
+    "en": "Keep moving: never stop evolving."
+  },
+  "lobs-brazilian-art:s1:m3:text": {
+    "pt": "Streetwear não é estático, é sobre estar sempre em movimento, testando formatos, cores e ideias sem medo de errar.",
+    "en": "Streetwear isn't static; it's about always being in motion, testing formats, colors and ideas without fear of getting it wrong."
+  },
+  "lobs-brazilian-art:s2:heading": {
+    "pt": "Estampa como narrativa.",
+    "en": "Print as narrative."
+  },
+  "lobs-brazilian-art:s2:text": {
+    "pt": "Cada padronagem carrega referência cultural brasileira traduzida em linguagem contemporânea, sem virar clichê.",
+    "en": "Every pattern carries a Brazilian cultural reference translated into a contemporary language, without turning into a cliché."
+  },
+  "lobs-brazilian-art:s3:heading": {
+    "pt": "John John Denim: the first day after all this.",
+    "en": "John John Denim: the first day after all this."
+  },
+  "lobs-brazilian-art:s3:text": {
+    "pt": "Concurso Drawing Contest Brasil da marca John John Denim, que tinha como objetivo criar uma estampa que passasse uma mensagem de reflexão do momento em que estamos vivendo. A ideia foi mostrar um jovem olhando para o céu e pensando: como seres humanos, precisamos evoluir e respeitar muito mais a natureza e o nosso planeta. A estampa ficou em 2º lugar em uma disputa apertada até o final. Todo o valor obtido com a venda das estampas foi destinado ao Projeto Cidades Invisíveis, de Florianópolis.",
+    "en": "Drawing Contest Brazil by the John John Denim brand, which aimed to create a print that conveyed a message of reflection on the moment we're living through. The idea was to show a young man looking at the sky and thinking: as human beings, we need to evolve and respect nature and our planet much more. The print placed 2nd in a contest that was close until the very end. All proceeds from the sale of the prints went to the Invisible Cities Project, from Florianópolis."
+  },
+  "lobs-brazilian-art:s4:heading": {
+    "pt": "Reserva: uma marca que virou movimento.",
+    "en": "Reserva: a brand that became a movement."
+  },
+  "lobs-brazilian-art:s4:text": {
+    "pt": "Parceria com a Reserva, uma das maiores marcas de moda do Brasil, prova de que streetwear autoral também fala a língua de quem já é gigante.",
+    "en": "A partnership with Reserva, one of Brazil's biggest fashion brands, proof that authorial streetwear also speaks the language of those who are already giants."
   }
 }
