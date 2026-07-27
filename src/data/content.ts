@@ -274,6 +274,7 @@ export const socials = [
   { label: 'LinkedIn', handle: 'tiago-jardim', href: 'https://linkedin.com/in/tiago-jardim-5ab6b3b8' },
   { label: 'Vimeo', handle: 'tiagojardim', href: 'https://vimeo.com/tiagojardim' },
   { label: 'Dribbble', handle: 'tgarden', href: 'https://dribbble.com/tgarden' },
+  { label: 'Behance', handle: 'tiagojardim', href: 'https://www.behance.net/tiagojardim' },
   { label: 'WhatsApp', handle: '+55 22 99239-6993', href: 'https://wa.me/5522992396993' },
 ]
 
