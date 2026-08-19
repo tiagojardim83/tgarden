@@ -19,6 +19,8 @@ import tgardenDesktop02Img from '../assets/images/tgarden_Desktop_02.jpg'
 import tgardenDesktop03Img from '../assets/images/tgarden_Desktop_03.jpg'
 import efetivaImg02 from '../assets/images/webdesign_efetiva_02.jpg'
 import efetivaImg03 from '../assets/images/webdesign_efetiva_03.jpg'
+import maokaCenografiaImg04 from '../assets/images/Maoka Mockup_04.jpg'
+import maokaCenografiaImg05 from '../assets/images/Maoka Mockup_05.jpg'
 import velvoImg01 from '../assets/images/01_Velvo.jpg'
 import velvoImg02 from '../assets/images/02_Velvo.jpg'
 import velvoImg03 from '../assets/images/03_Velvo.jpg'
@@ -48,12 +50,26 @@ const videoFiles = import.meta.glob('../assets/videos/*.{mp4,webm,mov,MP4,MOV,WE
   import: 'default',
 }) as Record<string, string>
 
-export function getSectionVideo(videoKey: string): string | undefined {
-  const match = Object.entries(videoFiles).find(([path]) => {
+const mobileVideoFiles = import.meta.glob('../assets/videos/mobile/*.{mp4,webm,mov,MP4,MOV,WEBM}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+}) as Record<string, string>
+
+function findVideo(files: Record<string, string>, videoKey: string): string | undefined {
+  const match = Object.entries(files).find(([path]) => {
     const name = path.split('/').pop()?.split('.')[0]
     return name === videoKey
   })
   return match?.[1]
+}
+
+export function getSectionVideo(videoKey: string): string | undefined {
+  return findVideo(videoFiles, videoKey)
+}
+
+export function getSectionMobileVideo(videoKey: string): string | undefined {
+  return findVideo(mobileVideoFiles, videoKey)
 }
 
 export interface ProjectDetail {
@@ -95,6 +111,8 @@ export interface MediaBlock {
 interface ProjectSection {
   videoKey: string
   images?: string[]
+  /** Keeps the section media in the sequence without rendering its heading and body copy. */
+  hideCopy?: boolean
   /** Ordered mix of static images and interactive embeds (e.g. Pacdora 3D packaging viewers). Takes priority over `images` when present. */
   media?: MediaBlock[]
   liveUrl?: string
@@ -474,7 +492,7 @@ export const projectDetails: ProjectDetail[] = [
     slug: 'tgarden-site',
     categoryId: 'web-design',
     projectNumber: '01',
-    categoryTotal: '02',
+    categoryTotal: '03',
     year: '2025',
     heroImage: tgardenImg,
     heroMobileCover: true,
@@ -489,6 +507,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'tgarden-site-02',
+          hideCopy: true,
           heading: editableCopy['tgarden-site:s0:heading'].pt,
           text: editableCopy['tgarden-site:s0:text'].pt,
           client: 'TGarden',
@@ -499,7 +518,6 @@ export const projectDetails: ProjectDetail[] = [
           images: [tgardenDesktop03Img],
           mobileImageCover: true,
           showFactSheet: false,
-          liveUrl: 'https://tiagojardim83.github.io/tgarden/',
           heading: editableCopy['tgarden-site:s1:heading'].pt,
           text: editableCopy['tgarden-site:s1:text'].pt,
           client: 'TGarden',
@@ -509,6 +527,7 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'tgarden-site-04',
           images: [tgardenDesktop02Img],
           mobileImageCover: true,
+          liveUrl: 'https://tiagojardim83.github.io/tgarden/',
           heading: editableCopy['tgarden-site:s2:heading'].pt,
           text: editableCopy['tgarden-site:s2:text'].pt,
           client: 'TGarden',
@@ -516,15 +535,37 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'webdesign-efetiva',
-          images: [efetivaImg02, efetivaImg03],
+          images: [efetivaImg02],
           mobileImageCover: true,
-          liveUrl: 'https://www.efetivaeng.com.br/',
-          precededByProjectFactSheet: true,
-          showFactSheet: true,
           heading: editableCopy['tgarden-site:s3:heading'].pt,
           text: editableCopy['tgarden-site:s3:text'].pt,
           client: 'Efetiva Engenharia',
           sector: 'Engenharia & Reformas',
+        },
+        {
+          videoKey: 'webdesign-efetiva-02',
+          images: [efetivaImg03],
+          mobileImageCover: true,
+          liveUrl: 'https://www.efetivaeng.com.br/',
+          showFactSheet: true,
+          heading: editableCopy['tgarden-site:s4:heading'].pt,
+          text: editableCopy['tgarden-site:s4:text'].pt,
+          client: 'Efetiva Engenharia',
+          sector: 'Engenharia & Reformas',
+        },
+        {
+          videoKey: 'maoka-cenografia',
+          media: [
+            { image: maokaCenografiaImg05, mobileCover: true },
+            { videoKey: 'Maoka Mockup_02', mobileNatural: true },
+            { image: maokaCenografiaImg04, mobileCover: true },
+          ],
+          liveUrl: 'https://maokacenografia.com.br/',
+          showFactSheet: true,
+          heading: editableCopy['tgarden-site:s5:heading'].pt,
+          text: editableCopy['tgarden-site:s5:text'].pt,
+          client: 'Maoka Cenografia',
+          sector: 'Cenografia & Experiência',
         },
       ],
       closing:
@@ -540,6 +581,7 @@ export const projectDetails: ProjectDetail[] = [
       sections: [
         {
           videoKey: 'tgarden-site-02',
+          hideCopy: true,
           heading: editableCopy['tgarden-site:s0:heading'].en,
           text: editableCopy['tgarden-site:s0:text'].en,
           client: 'TGarden',
@@ -550,7 +592,6 @@ export const projectDetails: ProjectDetail[] = [
           images: [tgardenDesktop03Img],
           mobileImageCover: true,
           showFactSheet: false,
-          liveUrl: 'https://tiagojardim83.github.io/tgarden/',
           heading: editableCopy['tgarden-site:s1:heading'].en,
           text: editableCopy['tgarden-site:s1:text'].en,
           client: 'TGarden',
@@ -560,6 +601,7 @@ export const projectDetails: ProjectDetail[] = [
           videoKey: 'tgarden-site-04',
           images: [tgardenDesktop02Img],
           mobileImageCover: true,
+          liveUrl: 'https://tiagojardim83.github.io/tgarden/',
           heading: editableCopy['tgarden-site:s2:heading'].en,
           text: editableCopy['tgarden-site:s2:text'].en,
           client: 'TGarden',
@@ -567,15 +609,37 @@ export const projectDetails: ProjectDetail[] = [
         },
         {
           videoKey: 'webdesign-efetiva',
-          images: [efetivaImg02, efetivaImg03],
+          images: [efetivaImg02],
           mobileImageCover: true,
-          liveUrl: 'https://www.efetivaeng.com.br/',
-          precededByProjectFactSheet: true,
-          showFactSheet: true,
           heading: editableCopy['tgarden-site:s3:heading'].en,
           text: editableCopy['tgarden-site:s3:text'].en,
           client: 'Efetiva Engenharia',
           sector: 'Engineering & Renovations',
+        },
+        {
+          videoKey: 'webdesign-efetiva-02',
+          images: [efetivaImg03],
+          mobileImageCover: true,
+          liveUrl: 'https://www.efetivaeng.com.br/',
+          showFactSheet: true,
+          heading: editableCopy['tgarden-site:s4:heading'].en,
+          text: editableCopy['tgarden-site:s4:text'].en,
+          client: 'Efetiva Engenharia',
+          sector: 'Engineering & Renovations',
+        },
+        {
+          videoKey: 'maoka-cenografia',
+          media: [
+            { image: maokaCenografiaImg05, mobileCover: true },
+            { videoKey: 'Maoka Mockup_02', mobileNatural: true },
+            { image: maokaCenografiaImg04, mobileCover: true },
+          ],
+          liveUrl: 'https://maokacenografia.com.br/',
+          showFactSheet: true,
+          heading: editableCopy['tgarden-site:s5:heading'].en,
+          text: editableCopy['tgarden-site:s5:text'].en,
+          client: 'Maoka Cenografia',
+          sector: 'Scenography & Experience',
         },
       ],
       closing:

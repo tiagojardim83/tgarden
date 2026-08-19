@@ -819,6 +819,46 @@
     "slug": "tgarden-site"
   },
   {
+    "adminId": "text:tgarden-site:s4:heading",
+    "label": {
+      "pt": "TGarden — Seção 5, título",
+      "en": "TGarden — Section 5, heading"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s4:text",
+    "label": {
+      "pt": "TGarden — Seção 5, texto",
+      "en": "TGarden — Section 5, text"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s5:heading",
+    "label": {
+      "pt": "TGarden — Seção 6, título",
+      "en": "TGarden — Section 6, heading"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "text:tgarden-site:s5:text",
+    "label": {
+      "pt": "TGarden — Seção 6, texto",
+      "en": "TGarden — Section 6, text"
+    },
+    "type": "text",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
     "adminId": "image:tgarden-site:s1:img0",
     "label": {
       "pt": "TGarden — Foto, seção 2",
@@ -843,8 +883,8 @@
   {
     "adminId": "image:tgarden-site:s3:img0",
     "label": {
-      "pt": "TGarden — Foto, seção 4, 1",
-      "en": "TGarden — Photo, section 4, 1"
+      "pt": "TGarden — Foto, seção 4",
+      "en": "TGarden — Photo, section 4"
     },
     "path": "src/assets/images/webdesign_efetiva_02.jpg",
     "type": "image",
@@ -852,12 +892,45 @@
     "slug": "tgarden-site"
   },
   {
-    "adminId": "image:tgarden-site:s3:img1",
+    "adminId": "image:tgarden-site:s4:img0",
     "label": {
-      "pt": "TGarden — Foto, seção 4, 2",
-      "en": "TGarden — Photo, section 4, 2"
+      "pt": "TGarden — Foto, seção 5",
+      "en": "TGarden — Photo, section 5"
     },
     "path": "src/assets/images/webdesign_efetiva_03.jpg",
+    "type": "image",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "video:tgarden-site:Maoka Mockup_02",
+    "label": {
+      "pt": "Vídeo — TGarden (Maoka Cenografia, mockup)",
+      "en": "Video — TGarden (Maoka Cenografia, mockup)"
+    },
+    "path": "src/assets/videos/Maoka Mockup_02.mp4",
+    "type": "video",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "image:tgarden-site:s5:m0",
+    "label": {
+      "pt": "TGarden — Foto, seção 6, 1",
+      "en": "TGarden — Photo, section 6, 1"
+    },
+    "path": "src/assets/images/Maoka Mockup_05.jpg",
+    "type": "image",
+    "project": "TGarden",
+    "slug": "tgarden-site"
+  },
+  {
+    "adminId": "image:tgarden-site:s5:m2",
+    "label": {
+      "pt": "TGarden — Foto, seção 6, 2",
+      "en": "TGarden — Photo, section 6, 2"
+    },
+    "path": "src/assets/images/Maoka Mockup_04.jpg",
     "type": "image",
     "project": "TGarden",
     "slug": "tgarden-site"
