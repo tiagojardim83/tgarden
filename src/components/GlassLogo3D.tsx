@@ -162,7 +162,7 @@ export default function GlassLogo3D({ className = '' }: { className?: string }) 
         <directionalLight position={[-4, -2, 3]} intensity={0.5} />
         <Suspense fallback={null}>
           <LogoMesh dragging={dragging} last={last} rotation={rotation} velocity={velocity} lightweight={isMobile} />
-          <DesktopEnvironment />
+          <DesktopEnvironment lightweight={isMobile} />
           <SceneReady onReady={onSceneReady} />
         </Suspense>
       </Canvas>

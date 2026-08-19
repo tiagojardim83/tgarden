@@ -1,6 +1,7 @@
 import { Environment, MeshTransmissionMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 import studioEnvironment from '../assets/environment/studio-small.hdr?url'
+import studioEnvironmentMobile from '../assets/environment/studio-small-mobile.hdr?url'
 
 const blackBackground = new THREE.Color('#0a0a0a')
 
@@ -30,6 +31,6 @@ export function DesktopGlassMaterial({ lightweight = false }: { lightweight?: bo
   )
 }
 
-export function DesktopEnvironment() {
-  return <Environment files={studioEnvironment} />
+export function DesktopEnvironment({ lightweight = false }: { lightweight?: boolean }) {
+  return <Environment files={lightweight ? studioEnvironmentMobile : studioEnvironment} />
 }
