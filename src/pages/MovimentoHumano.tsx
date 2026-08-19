@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useInView, useScroll, useSpring, useTransform } from 'motion/react'
+import { m as motion, useInView, useScroll, useSpring, useTransform } from 'motion/react'
 import { useLang } from '../lib/lang'
 import { projects, projectPageCopy } from '../data/content'
 import editableCopy from '../data/editableCopy.json'

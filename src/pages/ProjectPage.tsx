@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { motion, useAnimationControls, useScroll, useTransform } from 'motion/react'
+import { m as motion, useAnimationControls, useScroll, useTransform } from 'motion/react'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
-import { getProjectDetail, getSectionVideo } from '../data/projectDetails'
+import { getProjectDetail, getSectionMobileVideo, getSectionVideo } from '../data/projectDetails'
 import { projects, projectPageCopy } from '../data/content'
 
 function WorldIcon({ className }: { className?: string }) {
@@ -23,11 +23,13 @@ function WorldIcon({ className }: { className?: string }) {
 // downloading at once via autoPlay the moment it mounts.
 function LazyVideo({
   src,
+  mobileSrc,
   className,
   style,
   adminId,
 }: {
   src: string
+  mobileSrc?: string
   className?: string
   style?: CSSProperties
   /** Matches an id in public/admin/assets.json — lets the admin panel's
@@ -36,6 +38,15 @@ function LazyVideo({
 }) {
   const ref = useRef<HTMLVideoElement>(null)
   const [shouldLoad, setShouldLoad] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 767px)').matches)
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 767px)')
+    const onChange = () => setIsMobile(query.matches)
+    query.addEventListener('change', onChange)
+    return () => query.removeEventListener('change', onChange)
+  }, [])
 
   useEffect(() => {
     const el = ref.current
@@ -45,20 +56,51 @@ function LazyVideo({
         setShouldLoad(true)
         io.disconnect()
       }
-    }, { rootMargin: '600px 0px' })
+    }, { rootMargin: isMobile ? '160px 0px' : '600px 0px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [isMobile])
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(([entry]) => {
+      setIsVisible(entry.isIntersecting && entry.intersectionRatio >= 0.1)
+    }, { threshold: [0, 0.1] })
     io.observe(el)
     return () => io.disconnect()
   }, [])
 
+  useEffect(() => {
+    const el = ref.current
+    if (!el || !shouldLoad) return
+
+    const syncPlayback = () => {
+      if (isVisible && document.visibilityState === 'visible') {
+        void el.play().catch(() => undefined)
+      } else {
+        el.pause()
+      }
+    }
+
+    syncPlayback()
+    document.addEventListener('visibilitychange', syncPlayback)
+    return () => {
+      document.removeEventListener('visibilitychange', syncPlayback)
+      el.pause()
+    }
+  }, [isMobile, isVisible, mobileSrc, shouldLoad, src])
+
+  const activeSrc = shouldLoad ? (isMobile && mobileSrc ? mobileSrc : src) : undefined
+
   return (
     <video
       ref={ref}
-      src={shouldLoad ? src : undefined}
-      autoPlay={shouldLoad}
+      src={activeSrc}
       muted
       loop
       playsInline
-      preload="none"
+      preload={shouldLoad ? 'metadata' : 'none'}
       className={className}
       style={style}
       data-admin-id={adminId}
@@ -283,6 +325,7 @@ export default function ProjectPage() {
   const copy = detail[lang]
   const otherProjects = projects.filter((p) => p.id !== detail.categoryId)
   const heroVideoUrl = detail.heroVideoKey ? getSectionVideo(detail.heroVideoKey) : undefined
+  const heroMobileVideoUrl = detail.heroVideoKey ? getSectionMobileVideo(detail.heroVideoKey) : undefined
 
   return (
     <main className="px-6 md:px-10 pt-8 md:pt-10">
@@ -340,6 +383,7 @@ export default function ProjectPage() {
         >
           <LazyVideo
             src={heroVideoUrl}
+            mobileSrc={heroMobileVideoUrl}
             className="w-full aspect-[18/25] md:aspect-auto md:h-auto object-cover block"
           />
         </motion.div>
@@ -367,10 +411,12 @@ export default function ProjectPage() {
         </motion.div>
       )}
 
-      <div className="flex flex-col gap-16 md:gap-24 mt-16 md:mt-24">
+      <div className="flex flex-col gap-8 md:gap-10 mt-8 md:mt-10">
         {copy.sections.map((s, i) => {
           const videoUrl = getSectionVideo(s.videoKey)
+          const mobileVideoUrl = getSectionMobileVideo(s.videoKey)
           const displayNumber = i === 0 ? null : String(i + 1).padStart(2, '0')
+          const mediaTopMargin = s.hideCopy ? '' : 'mt-8 md:mt-10'
           const showFactSheet =
             s.showFactSheet ?? (detail.factSheetRepeat !== false && detail.factSheetRepeat !== 'end')
           return (
@@ -381,27 +427,29 @@ export default function ProjectPage() {
                 </div>
               )}
 
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
-              >
-                {displayNumber && <p className="label text-ink-soft md:col-span-3">{displayNumber}</p>}
-                <h2
-                  data-admin-id={`text:${detail.slug}:s${i}:heading`}
-                  className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+              {!s.hideCopy && (
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
                 >
-                  {s.heading}
-                </h2>
-                <p
-                  data-admin-id={`text:${detail.slug}:s${i}:text`}
-                  className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
-                >
-                  {s.text}
-                </p>
-              </motion.div>
+                  {displayNumber && <p className="label text-ink-soft md:col-span-3">{displayNumber}</p>}
+                  <h2
+                    data-admin-id={`text:${detail.slug}:s${i}:heading`}
+                    className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+                  >
+                    {s.heading}
+                  </h2>
+                  <p
+                    data-admin-id={`text:${detail.slug}:s${i}:text`}
+                    className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+                  >
+                    {s.text}
+                  </p>
+                </motion.div>
+              )}
 
               {showFactSheet && s.factSheetPosition === 'before' && (
                 <div className="mt-8 md:mt-10">
@@ -416,10 +464,11 @@ export default function ProjectPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
                   data-admin-id={`video:${detail.slug}:${s.videoKey}`}
-                  className="-mx-6 md:-mx-10 mt-8 md:mt-10"
+                  className={`-mx-6 md:-mx-10 ${mediaTopMargin}`}
                 >
                   <LazyVideo
                     src={videoUrl}
+                    mobileSrc={mobileVideoUrl}
                     style={{ '--mobile-ar': s.mobileAspect ?? '18/25' } as CSSProperties}
                     className="w-full aspect-[var(--mobile-ar)] md:aspect-auto md:h-auto object-cover block"
                   />
@@ -432,10 +481,11 @@ export default function ProjectPage() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-col gap-0"
+                  className={`-mx-6 md:-mx-10 ${mediaTopMargin} flex flex-col gap-0`}
                 >
                   {s.media.map((block, blockIndex) => {
                     const blockVideoUrl = block.videoKey ? getSectionVideo(block.videoKey) : undefined
+                    const blockMobileVideoUrl = block.videoKey ? getSectionMobileVideo(block.videoKey) : undefined
                     return block.heading ? (
                       <div
                         key={blockIndex}
@@ -460,6 +510,7 @@ export default function ProjectPage() {
                       <LazyVideo
                         key={blockIndex}
                         src={blockVideoUrl}
+                        mobileSrc={blockMobileVideoUrl}
                         adminId={`video:${detail.slug}:${block.videoKey}`}
                         style={
                           block.desktopAspect
@@ -515,7 +566,7 @@ export default function ProjectPage() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className={`-mx-6 md:-mx-10 mt-8 md:mt-10 flex flex-col gap-0 ${s.mobileImageCover ? 'bg-ink' : ''}`}
+                  className={`-mx-6 md:-mx-10 ${mediaTopMargin} flex flex-col gap-0 ${s.mobileImageCover ? 'bg-ink' : ''}`}
                 >
                   {s.images.map((src, imgIndex) =>
                     s.mobileImageCover ? (
@@ -545,8 +596,8 @@ export default function ProjectPage() {
               )}
 
               {s.liveUrl && (
-                <div className="mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-12">
-                  <LiveSiteLink href={s.liveUrl} label={ui.viewLive} className="md:col-start-4 md:col-span-9" />
+                <div className="mt-8 md:mt-10">
+                  <LiveSiteLink href={s.liveUrl} label={ui.viewLive} />
                 </div>
               )}
             </div>

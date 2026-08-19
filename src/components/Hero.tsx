@@ -1,6 +1,7 @@
-import { lazy, Suspense } from 'react'
-import { motion } from 'motion/react'
+import { lazy, Suspense, useEffect, useState } from 'react'
+import { m as motion } from 'motion/react'
 import { hero } from '../data/content'
+import logoMark from '../assets/tgarden-mark.svg'
 import { useLang } from '../lib/lang'
 import Marquee from './Marquee'
 
@@ -14,6 +15,23 @@ const dot = <span className="block w-3 h-3 md:w-4 md:h-4 bg-red" />
 export default function Hero() {
   const { lang } = useLang()
   const t = hero[lang]
+  const [enable3D, setEnable3D] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() =>
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  )
+
+  useEffect(() => {
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const onChange = () => {
+      setPrefersReducedMotion(query.matches)
+      // Keep the 3D bundle split from the initial page, but start loading it as
+      // soon as the first paint is done instead of adding an artificial delay.
+      setEnable3D(!query.matches)
+    }
+    onChange()
+    query.addEventListener('change', onChange)
+    return () => query.removeEventListener('change', onChange)
+  }, [])
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col pt-4 md:pt-6">
@@ -88,12 +106,22 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ delay: 0.1, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
         >
-          <Suspense fallback={null}>
-            <GlassLogo3D className="w-[390vw] h-[390vw] md:w-[94vw] md:h-[94vw] max-w-[1560px] max-h-[1560px]" />
-          </Suspense>
+          {enable3D ? (
+            <Suspense fallback={null}>
+              <GlassLogo3D className="w-[390vw] h-[390vw] md:w-[100vw] md:h-[100vw] max-w-[1680px] max-h-[1680px]" />
+            </Suspense>
+          ) : prefersReducedMotion ? (
+            <img
+              src={logoMark}
+              alt=""
+              aria-hidden="true"
+              fetchPriority="high"
+              className="w-[390vw] h-[390vw] md:w-[72vw] md:h-[72vw] max-w-none opacity-20"
+            />
+          ) : null}
         </motion.div>
 
         <motion.div

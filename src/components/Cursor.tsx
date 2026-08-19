@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion, useMotionValue, useSpring, AnimatePresence } from 'motion/react'
+import { m as motion, useMotionValue, useSpring, AnimatePresence } from 'motion/react'
 import { prefersReducedMotion } from '../lib/reducedMotion'
 
 export default function Cursor() {

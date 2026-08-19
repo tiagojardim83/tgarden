@@ -1,6 +1,6 @@
 import { useRef, useState, type MouseEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { motion, useMotionValue, useSpring, useScroll, useTransform, useInView } from 'motion/react'
+import { m as motion, useMotionValue, useSpring, useScroll, useTransform, useInView } from 'motion/react'
 import { projects, projectsCopy, type ProjectSummary, type Lang } from '../data/content'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
@@ -79,6 +79,8 @@ function ProjectRow({
         <img
           src={project.image}
           alt=""
+          loading="lazy"
+          decoding="async"
           data-admin-id={`image:${project.slug === 'movimento-humano' ? 'movimento-humano:thumb' : project.slug}`}
           className={`w-full h-full ${project.imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
         />
@@ -160,6 +162,7 @@ export default function Projects() {
             <img
               src={projects[hovered].image}
               alt=""
+              decoding="async"
               className={`w-full h-full ${projects[hovered].imageFit === 'contain' ? 'object-contain' : 'object-cover'}`}
             />
           )}

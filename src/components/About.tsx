@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { motion, useInView } from 'motion/react'
+import { m as motion, useInView } from 'motion/react'
 import { about, competencies } from '../data/content'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'

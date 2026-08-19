@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { motion, useInView } from 'motion/react'
+import { m as motion, useInView } from 'motion/react'
 import { fragments, fragmentsCopy } from '../data/content'
 import { useLang } from '../lib/lang'
 import { useCanHover } from '../lib/useCanHover'
@@ -31,6 +31,8 @@ function FragmentCell({ src, i, adminId }: { src: string; i: number; adminId: st
         <img
           src={src}
           alt=""
+          loading="lazy"
+          decoding="async"
           data-cursor="+"
           data-admin-id={adminId}
           className={`w-full h-full object-cover transition-all duration-700 ease-out ${

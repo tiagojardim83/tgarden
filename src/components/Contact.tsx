@@ -1,5 +1,5 @@
 import { useRef, useState, type FormEvent } from 'react'
-import { motion, useInView } from 'motion/react'
+import { m as motion, useInView } from 'motion/react'
 import { contactCopy, email, socials } from '../data/content'
 import editableCopy from '../data/editableCopy.json'
 import { useLang } from '../lib/lang'

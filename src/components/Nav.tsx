@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { motion, AnimatePresence } from 'motion/react'
+import { m as motion, AnimatePresence } from 'motion/react'
 import { navItems, socials } from '../data/content'
 import { useLang } from '../lib/lang'
 import logoMark from '../assets/tgarden-mark.svg'

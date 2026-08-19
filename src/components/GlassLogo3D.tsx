@@ -1,19 +1,20 @@
 import {
+  useCallback,
   Suspense,
   useEffect,
   useMemo,
   useRef,
+  useState,
   type MutableRefObject,
   type PointerEvent as ReactPointerEvent,
 } from 'react'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
-import { Environment, MeshTransmissionMaterial } from '@react-three/drei'
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js'
 import * as THREE from 'three'
 import logoUrl from '../assets/tgarden-mark.svg'
 import { useCanHover } from '../lib/useCanHover'
+import { DesktopEnvironment, DesktopGlassMaterial } from './DesktopGlassEffects'
 
-const blackBackground = new THREE.Color('#0a0a0a')
 const MAX_TILT = 1.1
 const AUTO_SPIN_SPEED = 0.35
 
@@ -24,7 +25,19 @@ type DragRefs = {
   velocity: MutableRefObject<{ x: number; y: number }>
 }
 
-function LogoMesh({ dragging, rotation, velocity }: DragRefs) {
+function SceneReady({ onReady }: { onReady: () => void }) {
+  const renderedFrames = useRef(0)
+
+  useFrame(() => {
+    if (renderedFrames.current >= 3) return
+    renderedFrames.current += 1
+    if (renderedFrames.current === 3) onReady()
+  })
+
+  return null
+}
+
+function LogoMesh({ dragging, rotation, velocity, lightweight }: DragRefs & { lightweight: boolean }) {
   const data = useLoader(SVGLoader, logoUrl)
   const meshRef = useRef<THREE.Mesh>(null)
 
@@ -35,13 +48,13 @@ function LogoMesh({ dragging, rotation, velocity }: DragRefs) {
       bevelEnabled: true,
       bevelThickness: 3,
       bevelSize: 2.5,
-      bevelSegments: 12,
-      curveSegments: 24,
+      bevelSegments: lightweight ? 4 : 12,
+      curveSegments: lightweight ? 12 : 24,
     })
     geo.center()
     geo.computeVertexNormals()
     return geo
-  }, [data])
+  }, [data, lightweight])
 
   useFrame((_, delta) => {
     const mesh = meshRef.current
@@ -65,27 +78,7 @@ function LogoMesh({ dragging, rotation, velocity }: DragRefs) {
   return (
     <group scale={[0.013, -0.013, 0.013]}>
       <mesh ref={meshRef} geometry={geometry}>
-        <MeshTransmissionMaterial
-          background={blackBackground}
-          backside
-          backsideThickness={1.2}
-          samples={8}
-          resolution={512}
-          thickness={0.6}
-          chromaticAberration={0.9}
-          anisotropy={0.5}
-          distortion={0.08}
-          distortionScale={0.2}
-          temporalDistortion={0.1}
-          roughness={0.02}
-          ior={1.6}
-          clearcoat={1}
-          clearcoatRoughness={0.05}
-          envMapIntensity={1.6}
-          attenuationDistance={0.5}
-          attenuationColor="#ffffff"
-          color="#ffffff"
-        />
+        <DesktopGlassMaterial lightweight={lightweight} />
       </mesh>
     </group>
   )
@@ -93,10 +86,30 @@ function LogoMesh({ dragging, rotation, velocity }: DragRefs) {
 
 export default function GlassLogo3D({ className = '' }: { className?: string }) {
   const canHover = useCanHover()
+  const containerRef = useRef<HTMLDivElement>(null)
   const dragging = useRef(false)
   const last = useRef({ x: 0, y: 0 })
   const rotation = useRef({ x: 0, y: 0 })
   const velocity = useRef({ x: 0, y: 0 })
+  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 767px)').matches)
+  const [isVisible, setIsVisible] = useState(true)
+  const [isSceneReady, setIsSceneReady] = useState(false)
+  const onSceneReady = useCallback(() => setIsSceneReady(true), [])
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 767px)')
+    const onChange = () => setIsMobile(query.matches)
+    query.addEventListener('change', onChange)
+    return () => query.removeEventListener('change', onChange)
+  }, [])
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+    const io = new IntersectionObserver(([entry]) => setIsVisible(entry.isIntersecting))
+    io.observe(container)
+    return () => io.disconnect()
+  }, [])
 
   useEffect(() => {
     const onMove = (e: PointerEvent) => {
@@ -128,10 +141,19 @@ export default function GlassLogo3D({ className = '' }: { className?: string }) 
   }
 
   return (
-    <div className={`${className} relative pointer-events-none`}>
+    <div
+      ref={containerRef}
+      className={`${className} relative pointer-events-none`}
+      data-3d-ready={isSceneReady}
+      style={{
+        opacity: isSceneReady ? 1 : 0,
+        transition: 'opacity 220ms cubic-bezier(0.22, 1, 0.36, 1)',
+      }}
+    >
       <Canvas
-        dpr={[1, 2]}
-        gl={{ alpha: true, antialias: true }}
+        dpr={isMobile ? 1.25 : [1, 2]}
+        frameloop={isVisible ? 'always' : 'never'}
+        gl={{ alpha: true, antialias: true, powerPreference: isMobile ? 'low-power' : 'high-performance' }}
         camera={{ position: [0, 0, 30], fov: 30 }}
         style={{ pointerEvents: 'none' }}
       >
@@ -139,14 +161,15 @@ export default function GlassLogo3D({ className = '' }: { className?: string }) 
         <directionalLight position={[3, 4, 5]} intensity={1.2} />
         <directionalLight position={[-4, -2, 3]} intensity={0.5} />
         <Suspense fallback={null}>
-          <LogoMesh dragging={dragging} last={last} rotation={rotation} velocity={velocity} />
-          <Environment preset="studio" />
+          <LogoMesh dragging={dragging} last={last} rotation={rotation} velocity={velocity} lightweight={isMobile} />
+          <DesktopEnvironment />
+          <SceneReady onReady={onSceneReady} />
         </Suspense>
       </Canvas>
       {/* Interactive hitbox stays centered and modestly sized so the oversized
           bleed canvas doesn't swallow clicks meant for content behind/around it.
           Desktop only — on touch devices the logo just auto-spins. */}
-      {canHover && (
+      {canHover && isSceneReady && (
         <div
           className="absolute inset-[18%] pointer-events-auto cursor-grab active:cursor-grabbing"
           data-cursor="DRAG"

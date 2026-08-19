@@ -54,6 +54,7 @@ export default function GlitchImage({
   const enteredRef = useRef(false)
   const canHover = useCanHover()
   const [active, setActive] = useState(false)
+  const [shouldLoad, setShouldLoad] = useState(false)
 
   // Mobile only, once the entrance pan has finished: the current drag/breathe
   // crop position (in source-image px), and the resting point it eases back
@@ -217,9 +218,26 @@ export default function GlitchImage({
     ctx.globalAlpha = 1
   }
 
+  // Keep the large source image off the initial network path until this
+  // below-the-fold canvas is close to entering the viewport.
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShouldLoad(true)
+        io.disconnect()
+      }
+    }, { rootMargin: '300px 0px' })
+    io.observe(container)
+    return () => io.disconnect()
+  }, [])
+
   // Load the source image once.
   useEffect(() => {
+    if (!shouldLoad) return
     const img = new Image()
+    img.decoding = 'async'
     img.src = src
     img.onload = () => {
       imgRef.current = img
@@ -230,7 +248,7 @@ export default function GlitchImage({
       img.onload = null
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [src])
+  }, [shouldLoad, src])
 
   // Keep the canvas's backing store matched to its displayed size.
   useEffect(() => {
