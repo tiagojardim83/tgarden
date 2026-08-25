@@ -415,7 +415,11 @@ export default function ProjectPage() {
         {copy.sections.map((s, i) => {
           const videoUrl = getSectionVideo(s.videoKey)
           const mobileVideoUrl = getSectionMobileVideo(s.videoKey)
-          const displayNumber = i === 0 ? null : String(i + 1).padStart(2, '0')
+          const displayNumber = detail.numberFirstSection
+            ? String(i + 2).padStart(2, '0')
+            : i === 0
+              ? null
+              : String(i + 1).padStart(2, '0')
           const mediaTopMargin = s.hideCopy ? '' : 'mt-8 md:mt-10'
           const showFactSheet =
             s.showFactSheet ?? (detail.factSheetRepeat !== false && detail.factSheetRepeat !== 'end')

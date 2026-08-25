@@ -84,6 +84,8 @@ export interface ProjectDetail {
   heroMobileCover?: boolean
   /** false = fact sheet renders once, right under the intro. 'end' = fact sheet renders once, right before the closing statement. Defaults to true (repeats after every section, as in Maoka). */
   factSheetRepeat?: boolean | 'end'
+  /** Numbers every section starting at 02, including the first. Most projects leave the first section (typically an unlabeled intro) unnumbered — use this when the first section is real, numbered content instead. */
+  numberFirstSection?: boolean
   pt: ProjectDetailCopy
   en: ProjectDetailCopy
 }
@@ -157,6 +159,7 @@ export const projectDetails: ProjectDetail[] = [
     year: '2025/26',
     heroImage: presentation01Img,
     heroMobileCover: true,
+    numberFirstSection: true,
     pt: {
       category: 'Presentation Design',
       title: 'Presentation Design',
