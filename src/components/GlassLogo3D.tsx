@@ -13,7 +13,6 @@ import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js'
 import * as THREE from 'three'
 import logoUrl from '../assets/tgarden-mark.svg'
 import { useCanHover } from '../lib/useCanHover'
-import { DesktopEnvironment, DesktopGlassMaterial } from './DesktopGlassEffects'
 
 const MAX_TILT = 1.1
 const AUTO_SPIN_SPEED = 0.35
@@ -39,12 +38,12 @@ function SceneReady({ onReady }: { onReady: () => void }) {
 
 function LogoMesh({ dragging, rotation, velocity, lightweight }: DragRefs & { lightweight: boolean }) {
   const data = useLoader(SVGLoader, logoUrl)
-  const meshRef = useRef<THREE.Mesh>(null)
+  const meshRef = useRef<THREE.LineSegments>(null)
 
   const geometry = useMemo(() => {
     const shapes = data.paths.flatMap((path) => SVGLoader.createShapes(path))
     const geo = new THREE.ExtrudeGeometry(shapes, {
-      depth: 14,
+      depth: 30,
       bevelEnabled: true,
       bevelThickness: 3,
       bevelSize: 2.5,
@@ -56,9 +55,11 @@ function LogoMesh({ dragging, rotation, velocity, lightweight }: DragRefs & { li
     return geo
   }, [data, lightweight])
 
+  const edges = useMemo(() => new THREE.EdgesGeometry(geometry, 1), [geometry])
+
   useFrame((_, delta) => {
-    const mesh = meshRef.current
-    if (!mesh) return
+    const obj = meshRef.current
+    if (!obj) return
 
     // continuous loop — always spinning, drag/momentum layers on top
     rotation.current.y += delta * AUTO_SPIN_SPEED
@@ -70,16 +71,16 @@ function LogoMesh({ dragging, rotation, velocity, lightweight }: DragRefs & { li
       velocity.current.y *= 0.94
     }
 
-    mesh.rotation.y = rotation.current.y
-    mesh.rotation.x = rotation.current.x
-    mesh.rotation.z = -rotation.current.x * 0.3
+    obj.rotation.y = rotation.current.y
+    obj.rotation.x = rotation.current.x
+    obj.rotation.z = -rotation.current.x * 0.3
   })
 
   return (
     <group scale={[0.013, -0.013, 0.013]}>
-      <mesh ref={meshRef} geometry={geometry}>
-        <DesktopGlassMaterial lightweight={lightweight} />
-      </mesh>
+      <lineSegments ref={meshRef} geometry={edges}>
+        <lineBasicMaterial color="#0d0d0d" />
+      </lineSegments>
     </group>
   )
 }
@@ -162,7 +163,6 @@ export default function GlassLogo3D({ className = '' }: { className?: string }) 
         <directionalLight position={[-4, -2, 3]} intensity={0.5} />
         <Suspense fallback={null}>
           <LogoMesh dragging={dragging} last={last} rotation={rotation} velocity={velocity} lightweight={isMobile} />
-          <DesktopEnvironment lightweight={isMobile} />
           <SceneReady onReady={onSceneReady} />
         </Suspense>
       </Canvas>

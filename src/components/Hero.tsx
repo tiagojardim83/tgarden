@@ -111,7 +111,7 @@ export default function Hero() {
         >
           {enable3D ? (
             <Suspense fallback={null}>
-              <GlassLogo3D className="w-[390vw] h-[390vw] md:w-[100vw] md:h-[100vw] max-w-[1680px] max-h-[1680px]" />
+              <GlassLogo3D className="w-[390vw] h-[390vw] md:w-[130vw] md:h-[130vw] max-w-[1680px] md:max-w-[2200px] max-h-[1680px] md:max-h-[2200px]" />
             </Suspense>
           ) : prefersReducedMotion ? (
             <img
