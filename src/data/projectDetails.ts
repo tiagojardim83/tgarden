@@ -152,7 +152,7 @@ interface ProjectDetailCopy {
 
 export const projectDetails: ProjectDetail[] = [
   {
-    slug: 'presentation-design',
+    slug: 'presentationdesign',
     categoryId: 'presentation-design',
     projectNumber: '01',
     categoryTotal: '01',
@@ -238,7 +238,7 @@ export const projectDetails: ProjectDetail[] = [
     },
   },
   {
-    slug: 'maoka',
+    slug: 'visualidentity',
     categoryId: 'visual-identity',
     projectNumber: '01',
     categoryTotal: '06',
@@ -381,7 +381,7 @@ export const projectDetails: ProjectDetail[] = [
     },
   },
   {
-    slug: 'figa',
+    slug: 'keyvisual',
     categoryId: 'key-visual',
     projectNumber: '01',
     categoryTotal: '05',
@@ -477,7 +477,7 @@ export const projectDetails: ProjectDetail[] = [
     },
   },
   {
-    slug: 'tgarden-site',
+    slug: 'webdesign',
     categoryId: 'web-design',
     projectNumber: '01',
     categoryTotal: '03',
@@ -635,7 +635,7 @@ export const projectDetails: ProjectDetail[] = [
     },
   },
   {
-    slug: 'cidades-invisiveis',
+    slug: 'motiondesign',
     categoryId: 'motion-design',
     projectNumber: '01',
     categoryTotal: '08',
@@ -790,13 +790,12 @@ export const projectDetails: ProjectDetail[] = [
     },
   },
   {
-    slug: 'velvo',
+    slug: 'packaging',
     categoryId: 'packaging',
     projectNumber: '01',
     categoryTotal: '03',
     year: '2025',
     heroImage: velvoImg01,
-    factSheetRepeat: false,
     pt: {
       category: 'Packaging Design',
       title: 'Velvo',
@@ -846,7 +845,6 @@ export const projectDetails: ProjectDetail[] = [
           client: 'Pata Rara',
           sector: 'Pet Food',
           showFactSheet: true,
-          factSheetPosition: 'before',
         },
         {
           videoKey: 'biriquim-sequence',
@@ -861,7 +859,6 @@ export const projectDetails: ProjectDetail[] = [
           client: 'Biriquim',
           sector: 'Bebidas',
           showFactSheet: true,
-          factSheetPosition: 'before',
         },
       ],
       closing:
@@ -916,7 +913,6 @@ export const projectDetails: ProjectDetail[] = [
           client: 'Pata Rara',
           sector: 'Pet Food',
           showFactSheet: true,
-          factSheetPosition: 'before',
         },
         {
           videoKey: 'biriquim-sequence',
@@ -931,7 +927,6 @@ export const projectDetails: ProjectDetail[] = [
           client: 'Biriquim',
           sector: 'Beverages',
           showFactSheet: true,
-          factSheetPosition: 'before',
         },
       ],
       closing:
@@ -939,7 +934,7 @@ export const projectDetails: ProjectDetail[] = [
     },
   },
   {
-    slug: 'lobs-brazilian-art',
+    slug: 'fashion',
     categoryId: 'fashion',
     projectNumber: '01',
     categoryTotal: '01',

@@ -115,7 +115,7 @@ export interface ProjectSummary {
 export const projects: ProjectSummary[] = [
   {
     id: 'presentation-design',
-    slug: 'presentation-design',
+    slug: 'presentationdesign',
     category: 'Presentation Design',
     title: 'Presentation Design',
     year: '2025/26',
@@ -125,7 +125,7 @@ export const projects: ProjectSummary[] = [
   },
   {
     id: 'visual-identity',
-    slug: 'maoka',
+    slug: 'visualidentity',
     category: 'Visual Identity',
     title: 'Maoka',
     year: '2024',
@@ -135,7 +135,7 @@ export const projects: ProjectSummary[] = [
   },
   {
     id: 'key-visual',
-    slug: 'figa',
+    slug: 'keyvisual',
     category: 'Key Visual',
     title: 'Figa',
     year: '2025/26',
@@ -145,7 +145,7 @@ export const projects: ProjectSummary[] = [
   },
   {
     id: 'motion-design',
-    slug: 'cidades-invisiveis',
+    slug: 'motiondesign',
     category: 'Motion Design',
     title: 'Cidades Invisíveis',
     year: '2025/26',
@@ -156,7 +156,7 @@ export const projects: ProjectSummary[] = [
   },
   {
     id: 'ux-ui',
-    slug: 'movimento-humano',
+    slug: 'uxui',
     category: 'UX/UI Design',
     title: 'Movimento Humano',
     year: '2025/26',
@@ -166,7 +166,7 @@ export const projects: ProjectSummary[] = [
   },
   {
     id: 'web-design',
-    slug: 'tgarden-site',
+    slug: 'webdesign',
     category: 'Web Design & Development',
     title: 'TGarden',
     year: '2025/26',
@@ -176,7 +176,7 @@ export const projects: ProjectSummary[] = [
   },
   {
     id: 'packaging',
-    slug: 'velvo',
+    slug: 'packaging',
     category: 'Packaging Design',
     title: 'Velvo',
     year: '2025/26',
@@ -186,7 +186,7 @@ export const projects: ProjectSummary[] = [
   },
   {
     id: 'fashion',
-    slug: 'lobs-brazilian-art',
+    slug: 'fashion',
     category: 'Fashion Design',
     title: 'Lobs Brazilian Art',
     year: '2025/26',

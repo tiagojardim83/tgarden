@@ -22,7 +22,7 @@ function App() {
           <Suspense fallback={<main className="min-h-screen" aria-busy="true" />}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/projetos/movimento-humano" element={<MovimentoHumano />} />
+              <Route path="/projetos/uxui" element={<MovimentoHumano />} />
               <Route path="/projetos/:slug" element={<ProjectPage />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
