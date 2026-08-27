@@ -796,6 +796,7 @@ export const projectDetails: ProjectDetail[] = [
     categoryTotal: '03',
     year: '2025',
     heroImage: velvoImg01,
+    numberFirstSection: true,
     pt: {
       category: 'Packaging Design',
       title: 'Velvo',
