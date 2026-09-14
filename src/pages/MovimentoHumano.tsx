@@ -534,12 +534,7 @@ export default function MovimentoHumano() {
             transition={{ duration: 0.8 }}
             className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10"
           >
-            <img
-              src={paddleHero}
-              alt="Va'a Paddle"
-              data-admin-id="image:movimento-humano:paddleHero"
-              className="w-full h-auto block"
-            />
+            <PanCoverImage src={paddleHero} alt="Va'a Paddle" adminId="image:movimento-humano:paddleHero" />
           </motion.div>
 
           <motion.div
@@ -547,7 +542,7 @@ export default function MovimentoHumano() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-8 md:mt-10 bg-ink py-10 md:py-16"
+            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10 bg-ink py-10 md:py-16"
           >
             <Marquee duration={70}>
               <div className="flex items-center gap-4 md:gap-6 pl-4 md:pl-6">
@@ -610,11 +605,10 @@ export default function MovimentoHumano() {
             transition={{ duration: 0.8 }}
             className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10"
           >
-            <img
+            <PanCoverImage
               src={paddleLandingMockup}
               alt="Va'a Paddle — Landing Page"
-              data-admin-id="image:movimento-humano:paddleLandingMockup"
-              className="w-full h-auto block"
+              adminId="image:movimento-humano:paddleLandingMockup"
             />
           </motion.div>
 
