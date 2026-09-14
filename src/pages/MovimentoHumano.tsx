@@ -362,12 +362,6 @@ export default function MovimentoHumano() {
             </p>
           </motion.div>
 
-          <LiveSiteLink
-            href="https://www.lobs.com.br/"
-            label={ui.viewLive}
-            className="md:col-start-4 md:col-span-9 mt-8 md:mt-10"
-          />
-
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -432,6 +426,12 @@ export default function MovimentoHumano() {
               ui={ui}
             />
           </div>
+
+          <LiveSiteLink
+            href="https://www.lobs.com.br/"
+            label={ui.viewLive}
+            className="md:col-start-4 md:col-span-9 mt-8 md:mt-10"
+          />
         </div>
       </div>
 
