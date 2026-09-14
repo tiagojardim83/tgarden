@@ -290,7 +290,7 @@ export default function MovimentoHumano() {
 
       <div className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-6 md:items-start">
         <div className="md:col-span-3">
-          <p className="label text-ink-soft mb-3">{ui.project} 01 / 02</p>
+          <p className="label text-ink-soft mb-3">{ui.project} 01 / 03</p>
           <p className="label text-red-label">2025 / UX/UI Design</p>
         </div>
 
@@ -627,6 +627,12 @@ export default function MovimentoHumano() {
               ui={ui}
             />
           </div>
+
+          <LiveSiteLink
+            href="https://vaapaddle.com.br/"
+            label={ui.viewLive}
+            className="md:col-start-4 md:col-span-9 mt-8 md:mt-10"
+          />
         </div>
       </div>
 

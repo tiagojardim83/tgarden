@@ -160,8 +160,8 @@ export const projects: ProjectSummary[] = [
     category: 'UX/UI Design',
     title: 'Movimento Humano',
     year: '2025/26',
-    count: '2 projetos',
-    countEn: '2 projects',
+    count: '3 projetos',
+    countEn: '3 projects',
     image: uxuiImg,
   },
   {
