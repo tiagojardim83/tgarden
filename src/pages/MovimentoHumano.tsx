@@ -248,16 +248,6 @@ export default function MovimentoHumano() {
             </p>
           ))}
         </div>
-
-        <div className="md:col-start-4 md:col-span-9">
-          <FactSheet
-            client="Movimento Humano"
-            sector={editableCopy['movimento-humano:sector'][lang]}
-            year="2025"
-            scope={editableCopy['movimento-humano:scope'][lang]}
-            ui={ui}
-          />
-        </div>
       </div>
 
       <div className="flex flex-col gap-16 md:gap-24 mt-16 md:mt-24">
@@ -335,6 +325,16 @@ export default function MovimentoHumano() {
               allowFullScreen
             />
           </motion.div>
+
+          <div className="md:col-start-4 md:col-span-9 mt-8 md:mt-10">
+            <FactSheet
+              client="Movimento Humano"
+              sector={editableCopy['movimento-humano:sector'][lang]}
+              year="2025"
+              scope={editableCopy['movimento-humano:scope'][lang]}
+              ui={ui}
+            />
+          </div>
         </div>
 
         <div>
