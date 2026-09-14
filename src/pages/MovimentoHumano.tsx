@@ -141,6 +141,7 @@ import paddleScreen17 from '../assets/images/17_central-de-seguranca.png'
 import paddleScreen18 from '../assets/images/18_plano-de-remada.png'
 import paddleScreen19 from '../assets/images/19_sos-nautico.png'
 import paddleScreen20 from '../assets/images/20_perfil-e-dispositivos.png'
+import paddleLandingMockup from '../assets/images/mockup-desktop.png'
 
 const paddleScreens = [
   paddleScreen01,
@@ -600,6 +601,21 @@ export default function MovimentoHumano() {
             >
               {c.paddleLandingText}
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10"
+          >
+            <img
+              src={paddleLandingMockup}
+              alt="Va'a Paddle — Landing Page"
+              data-admin-id="image:movimento-humano:paddleLandingMockup"
+              className="w-full h-auto block"
+            />
           </motion.div>
 
           <div className="md:col-start-4 md:col-span-9 mt-8 md:mt-10">
