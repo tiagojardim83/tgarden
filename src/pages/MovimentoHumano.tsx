@@ -6,6 +6,7 @@ import { projects, projectPageCopy } from '../data/content'
 import editableCopy from '../data/editableCopy.json'
 import { useCanHover } from '../lib/useCanHover'
 import { FactSheet, LiveSiteLink, PanCoverImage } from './ProjectPage'
+import Marquee from '../components/Marquee'
 
 const spring = { stiffness: 220, damping: 32, mass: 0.6 }
 
@@ -118,6 +119,52 @@ import lobsLaptop from '../assets/images/ux_ui_design_lobs_04.jpg'
 import lobsScreen01 from '../assets/images/lobsScreen_01.png'
 import lobsScreen02 from '../assets/images/lobsScreen_02.png'
 import lobsScreen03 from '../assets/images/lobsScreen_03.png'
+import paddleHero from '../assets/images/01_AppPaddle_finale-product-design.png'
+import paddleScreen01 from '../assets/images/01_boas-vindas.png'
+import paddleScreen02 from '../assets/images/02_perfil-inicial-e-modalidades.png'
+import paddleScreen03 from '../assets/images/03_conectar-sensor.png'
+import paddleScreen04 from '../assets/images/04_permissoes-essenciais.png'
+import paddleScreen05 from '../assets/images/05_inicio.png'
+import paddleScreen06 from '../assets/images/06_preparar-remada.png'
+import paddleScreen07 from '../assets/images/07_contagem-regressiva.png'
+import paddleScreen08 from '../assets/images/08_remada-ao-vivo.png'
+import paddleScreen09 from '../assets/images/09_treino-pausado.png'
+import paddleScreen10 from '../assets/images/10_confirmar-encerramento.png'
+import paddleScreen11 from '../assets/images/11_salvando-atividade.png'
+import paddleScreen12 from '../assets/images/12_resumo-da-remada.png'
+import paddleScreen13 from '../assets/images/13_analise-e-graficos.png'
+import paddleScreen13b from '../assets/images/13B_voltas-do-treino.png'
+import paddleScreen14 from '../assets/images/14_historico.png'
+import paddleScreen15 from '../assets/images/15_comparar-treinos.png'
+import paddleScreen16 from '../assets/images/16_progresso.png'
+import paddleScreen17 from '../assets/images/17_central-de-seguranca.png'
+import paddleScreen18 from '../assets/images/18_plano-de-remada.png'
+import paddleScreen19 from '../assets/images/19_sos-nautico.png'
+import paddleScreen20 from '../assets/images/20_perfil-e-dispositivos.png'
+
+const paddleScreens = [
+  paddleScreen01,
+  paddleScreen02,
+  paddleScreen03,
+  paddleScreen04,
+  paddleScreen05,
+  paddleScreen06,
+  paddleScreen07,
+  paddleScreen08,
+  paddleScreen09,
+  paddleScreen10,
+  paddleScreen11,
+  paddleScreen12,
+  paddleScreen13,
+  paddleScreen13b,
+  paddleScreen14,
+  paddleScreen15,
+  paddleScreen16,
+  paddleScreen17,
+  paddleScreen18,
+  paddleScreen19,
+  paddleScreen20,
+]
 
 const copy = {
   pt: {
@@ -162,6 +209,16 @@ const copy = {
     mobileHeading: editableCopy['movimento-humano:mobileHeading'].pt,
     mobileText:
       editableCopy['movimento-humano:mobileText'].pt,
+    paddleKicker: editableCopy['movimento-humano:paddleKicker'].pt,
+    paddleHeading: editableCopy['movimento-humano:paddleHeading'].pt,
+    paddleText:
+      editableCopy['movimento-humano:paddleText'].pt,
+    paddleSector: editableCopy['movimento-humano:paddleSector'].pt,
+    paddleScope: editableCopy['movimento-humano:paddleScope'].pt,
+    paddleLandingKicker: editableCopy['movimento-humano:paddleLandingKicker'].pt,
+    paddleLandingHeading: editableCopy['movimento-humano:paddleLandingHeading'].pt,
+    paddleLandingText:
+      editableCopy['movimento-humano:paddleLandingText'].pt,
   },
   en: {
     intro: [
@@ -205,6 +262,16 @@ const copy = {
     mobileHeading: editableCopy['movimento-humano:mobileHeading'].en,
     mobileText:
       editableCopy['movimento-humano:mobileText'].en,
+    paddleKicker: editableCopy['movimento-humano:paddleKicker'].en,
+    paddleHeading: editableCopy['movimento-humano:paddleHeading'].en,
+    paddleText:
+      editableCopy['movimento-humano:paddleText'].en,
+    paddleSector: editableCopy['movimento-humano:paddleSector'].en,
+    paddleScope: editableCopy['movimento-humano:paddleScope'].en,
+    paddleLandingKicker: editableCopy['movimento-humano:paddleLandingKicker'].en,
+    paddleLandingHeading: editableCopy['movimento-humano:paddleLandingHeading'].en,
+    paddleLandingText:
+      editableCopy['movimento-humano:paddleLandingText'].en,
   },
 }
 
@@ -432,6 +499,118 @@ export default function MovimentoHumano() {
             label={ui.viewLive}
             className="md:col-start-4 md:col-span-9 mt-8 md:mt-10"
           />
+        </div>
+
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
+          >
+            <p className="label text-ink-soft md:col-span-3" data-admin-id="text:movimento-humano:paddleKicker">
+              {c.paddleKicker}
+            </p>
+            <h2
+              data-admin-id="text:movimento-humano:paddleHeading"
+              className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+            >
+              {c.paddleHeading}
+            </h2>
+            <p
+              data-admin-id="text:movimento-humano:paddleText"
+              className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+            >
+              {c.paddleText}
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10"
+          >
+            <img
+              src={paddleHero}
+              alt="Va'a Paddle"
+              data-admin-id="image:movimento-humano:paddleHero"
+              className="w-full h-auto block"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-8 md:mt-10 bg-ink py-10 md:py-16"
+          >
+            <Marquee duration={70}>
+              <div className="flex items-center gap-4 md:gap-6 pl-4 md:pl-6">
+                {paddleScreens.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt=""
+                    data-admin-id={`image:movimento-humano:paddleScreen${i}`}
+                    className="h-[360px] md:h-[560px] w-auto rounded-2xl shrink-0"
+                  />
+                ))}
+              </div>
+            </Marquee>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-8 md:mt-10 aspect-[3/5] md:aspect-video bg-ink"
+          >
+            <iframe
+              className="w-full h-full"
+              title="Va'a Paddle — Interactive Prototype"
+              src="https://app-paddle-prototipo.vercel.app/"
+              allowFullScreen
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mt-8 md:mt-10"
+          >
+            <p className="label text-ink-soft md:col-span-3" data-admin-id="text:movimento-humano:paddleLandingKicker">
+              {c.paddleLandingKicker}
+            </p>
+            <h2
+              data-admin-id="text:movimento-humano:paddleLandingHeading"
+              className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+            >
+              {c.paddleLandingHeading}
+            </h2>
+            <p
+              data-admin-id="text:movimento-humano:paddleLandingText"
+              className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+            >
+              {c.paddleLandingText}
+            </p>
+          </motion.div>
+
+          <div className="md:col-start-4 md:col-span-9 mt-8 md:mt-10">
+            <FactSheet
+              client="Clube Canoa Havaiana Búzios"
+              sector={c.paddleSector}
+              year="2026/2027"
+              scope={c.paddleScope}
+              ui={ui}
+            />
+          </div>
         </div>
       </div>
 

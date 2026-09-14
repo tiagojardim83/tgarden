@@ -591,6 +591,38 @@
     "pt": "A experiência precisava funcionar igual na tela pequena: a mesma loja, a mesma atitude, sem perder nada no caminho.",
     "en": "The experience needed to work just as well on the small screen: the same store, the same attitude, without losing anything along the way."
   },
+  "movimento-humano:paddleKicker": {
+    "pt": "06 / Va'a Paddle",
+    "en": "06 / Va'a Paddle"
+  },
+  "movimento-humano:paddleHeading": {
+    "pt": "Construído remada a remada, com quem rema.",
+    "en": "Built stroke by stroke, with the people who row."
+  },
+  "movimento-humano:paddleText": {
+    "pt": "Antes de qualquer tela, um mergulho profundo no esporte: desk research e entrevistas diretas com atletas e remadores reais moldaram cada métrica e cada fluxo do Va'a Paddle, do primeiro treino ao resgate de emergência em alto mar.",
+    "en": "Before any screen, a deep dive into the sport itself: desk research and direct interviews with real athletes and paddlers shaped every metric and flow in Va'a Paddle, from the first training session to an emergency rescue at sea."
+  },
+  "movimento-humano:paddleSector": {
+    "pt": "App & Performance",
+    "en": "App & Performance"
+  },
+  "movimento-humano:paddleScope": {
+    "pt": "UX/UI Design",
+    "en": "UX/UI Design"
+  },
+  "movimento-humano:paddleLandingKicker": {
+    "pt": "07 / Landing Page",
+    "en": "07 / Landing Page"
+  },
+  "movimento-humano:paddleLandingHeading": {
+    "pt": "A primeira parada antes da primeira remada.",
+    "en": "The first stop before the first stroke."
+  },
+  "movimento-humano:paddleLandingText": {
+    "pt": "Uma landing page de pré-lançamento apresenta o app antes do dia 1: a proposta de valor, as métricas em destaque e um convite direto pra quem quer remar com mais dados desde a primeira saída.",
+    "en": "A pre-launch landing page introduces the app before day one: the value proposition, the metrics front and center, and a direct invite for anyone who wants to row with more data from their very first outing."
+  },
   "movimento-humano:intro0": {
     "pt": "Movimento Humano é um ecossistema de bem-estar construído em torno de treino, comunidade e autocuidado. O produto é organizado em três estágios de prática: Semente, Fruto e Movimento, mapeados em uma interface coerente e calma que guia o usuário sem ruído.",
     "en": "Movimento Humano is a wellness ecosystem built around training, community and self-care. The product is organized into three stages of practice: Semente, Fruto and Movimento, mapped into a coherent, calm interface that guides the user without noise."
