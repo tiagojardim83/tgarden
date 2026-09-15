@@ -2624,5 +2624,398 @@
     "project": "Movimento Humano",
     "slug": "movimento-humano",
     "type": "image"
+  },
+  {
+    "adminId": "text:movimento-humano:titleKicker",
+    "label": {
+      "pt": "Movimento Humano — Kicker do título",
+      "en": "Movimento Humano — Title kicker"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:prototypeSectionKicker",
+    "label": {
+      "pt": "Movimento Humano — Kicker (seção Protótipo)",
+      "en": "Movimento Humano — Kicker (Prototype section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddleKicker",
+    "label": {
+      "pt": "Movimento Humano — Kicker (seção Va'a Paddle)",
+      "en": "Movimento Humano — Kicker (Va'a Paddle section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddleHeading",
+    "label": {
+      "pt": "Movimento Humano — Título (seção Va'a Paddle)",
+      "en": "Movimento Humano — Heading (Va'a Paddle section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddleText",
+    "label": {
+      "pt": "Movimento Humano — Texto (seção Va'a Paddle)",
+      "en": "Movimento Humano — Text (Va'a Paddle section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddleScreensKicker",
+    "label": {
+      "pt": "Movimento Humano — Kicker (carrossel de telas)",
+      "en": "Movimento Humano — Kicker (screens carousel)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddleScreensHeading",
+    "label": {
+      "pt": "Movimento Humano — Título (carrossel de telas)",
+      "en": "Movimento Humano — Heading (screens carousel)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddleScreensText",
+    "label": {
+      "pt": "Movimento Humano — Texto (carrossel de telas)",
+      "en": "Movimento Humano — Text (screens carousel)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddlePrototypeKicker",
+    "label": {
+      "pt": "Movimento Humano — Kicker (protótipo Va'a Paddle)",
+      "en": "Movimento Humano — Kicker (Va'a Paddle prototype)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddlePrototypeHeading",
+    "label": {
+      "pt": "Movimento Humano — Título (protótipo Va'a Paddle)",
+      "en": "Movimento Humano — Heading (Va'a Paddle prototype)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddlePrototypeText",
+    "label": {
+      "pt": "Movimento Humano — Texto (protótipo Va'a Paddle)",
+      "en": "Movimento Humano — Text (Va'a Paddle prototype)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddleLandingKicker",
+    "label": {
+      "pt": "Movimento Humano — Kicker (seção Landing Page)",
+      "en": "Movimento Humano — Kicker (Landing Page section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddleLandingHeading",
+    "label": {
+      "pt": "Movimento Humano — Título (seção Landing Page)",
+      "en": "Movimento Humano — Heading (Landing Page section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "text:movimento-humano:paddleLandingText",
+    "label": {
+      "pt": "Movimento Humano — Texto (seção Landing Page)",
+      "en": "Movimento Humano — Text (Landing Page section)"
+    },
+    "type": "text",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleHero",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, foto final do produto",
+      "en": "Movimento Humano — Va'a Paddle, final product photo"
+    },
+    "path": "src/assets/images/01_AppPaddle_finale-product-design.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen0",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 1 (01_boas-vindas)",
+      "en": "Movimento Humano — Va'a Paddle, screen 1 (01_boas-vindas)"
+    },
+    "path": "src/assets/images/01_boas-vindas.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen1",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 2 (02_perfil-inicial-e-modalidades)",
+      "en": "Movimento Humano — Va'a Paddle, screen 2 (02_perfil-inicial-e-modalidades)"
+    },
+    "path": "src/assets/images/02_perfil-inicial-e-modalidades.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen2",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 3 (03_conectar-sensor)",
+      "en": "Movimento Humano — Va'a Paddle, screen 3 (03_conectar-sensor)"
+    },
+    "path": "src/assets/images/03_conectar-sensor.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen3",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 4 (04_permissoes-essenciais)",
+      "en": "Movimento Humano — Va'a Paddle, screen 4 (04_permissoes-essenciais)"
+    },
+    "path": "src/assets/images/04_permissoes-essenciais.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen4",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 5 (05_inicio)",
+      "en": "Movimento Humano — Va'a Paddle, screen 5 (05_inicio)"
+    },
+    "path": "src/assets/images/05_inicio.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen5",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 6 (06_preparar-remada)",
+      "en": "Movimento Humano — Va'a Paddle, screen 6 (06_preparar-remada)"
+    },
+    "path": "src/assets/images/06_preparar-remada.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen6",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 7 (07_contagem-regressiva)",
+      "en": "Movimento Humano — Va'a Paddle, screen 7 (07_contagem-regressiva)"
+    },
+    "path": "src/assets/images/07_contagem-regressiva.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen7",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 8 (08_remada-ao-vivo)",
+      "en": "Movimento Humano — Va'a Paddle, screen 8 (08_remada-ao-vivo)"
+    },
+    "path": "src/assets/images/08_remada-ao-vivo.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen8",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 9 (09_treino-pausado)",
+      "en": "Movimento Humano — Va'a Paddle, screen 9 (09_treino-pausado)"
+    },
+    "path": "src/assets/images/09_treino-pausado.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen9",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 10 (10_confirmar-encerramento)",
+      "en": "Movimento Humano — Va'a Paddle, screen 10 (10_confirmar-encerramento)"
+    },
+    "path": "src/assets/images/10_confirmar-encerramento.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen10",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 11 (11_salvando-atividade)",
+      "en": "Movimento Humano — Va'a Paddle, screen 11 (11_salvando-atividade)"
+    },
+    "path": "src/assets/images/11_salvando-atividade.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen11",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 12 (12_resumo-da-remada)",
+      "en": "Movimento Humano — Va'a Paddle, screen 12 (12_resumo-da-remada)"
+    },
+    "path": "src/assets/images/12_resumo-da-remada.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen12",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 13 (13_analise-e-graficos)",
+      "en": "Movimento Humano — Va'a Paddle, screen 13 (13_analise-e-graficos)"
+    },
+    "path": "src/assets/images/13_analise-e-graficos.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen13",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 14 (13B_voltas-do-treino)",
+      "en": "Movimento Humano — Va'a Paddle, screen 14 (13B_voltas-do-treino)"
+    },
+    "path": "src/assets/images/13B_voltas-do-treino.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen14",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 15 (14_historico)",
+      "en": "Movimento Humano — Va'a Paddle, screen 15 (14_historico)"
+    },
+    "path": "src/assets/images/14_historico.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen15",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 16 (15_comparar-treinos)",
+      "en": "Movimento Humano — Va'a Paddle, screen 16 (15_comparar-treinos)"
+    },
+    "path": "src/assets/images/15_comparar-treinos.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen16",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 17 (16_progresso)",
+      "en": "Movimento Humano — Va'a Paddle, screen 17 (16_progresso)"
+    },
+    "path": "src/assets/images/16_progresso.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen17",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 18 (17_central-de-seguranca)",
+      "en": "Movimento Humano — Va'a Paddle, screen 18 (17_central-de-seguranca)"
+    },
+    "path": "src/assets/images/17_central-de-seguranca.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen18",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 19 (18_plano-de-remada)",
+      "en": "Movimento Humano — Va'a Paddle, screen 19 (18_plano-de-remada)"
+    },
+    "path": "src/assets/images/18_plano-de-remada.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen19",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 20 (19_sos-nautico)",
+      "en": "Movimento Humano — Va'a Paddle, screen 20 (19_sos-nautico)"
+    },
+    "path": "src/assets/images/19_sos-nautico.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleScreen20",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, tela 21 (20_perfil-e-dispositivos)",
+      "en": "Movimento Humano — Va'a Paddle, screen 21 (20_perfil-e-dispositivos)"
+    },
+    "path": "src/assets/images/20_perfil-e-dispositivos.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
+  },
+  {
+    "adminId": "image:movimento-humano:paddleLandingMockup",
+    "label": {
+      "pt": "Movimento Humano — Va'a Paddle, mockup da landing page",
+      "en": "Movimento Humano — Va'a Paddle, landing page mockup"
+    },
+    "path": "src/assets/images/mockup-desktop.png",
+    "project": "Movimento Humano",
+    "slug": "movimento-humano",
+    "type": "image"
   }
 ]

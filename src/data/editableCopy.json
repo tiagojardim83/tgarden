@@ -547,6 +547,14 @@
     "pt": "UX/UI • Web Dev • Motion",
     "en": "UX/UI • Web Dev • Motion"
   },
+  "movimento-humano:titleKicker": {
+    "pt": "01 / Movimento Humano",
+    "en": "01 / Movimento Humano"
+  },
+  "movimento-humano:prototypeSectionKicker": {
+    "pt": "05 / Protótipo",
+    "en": "05 / Prototype"
+  },
   "movimento-humano:prototypeKicker": {
     "pt": "Protótipo Interativo",
     "en": "Interactive Prototype"
@@ -560,8 +568,8 @@
     "en": "A HUMAN INTERFACE FOR A HUMAN PRACTICE, DESIGNED TO FEEL LIKE A GESTURE, NOT A SCREEN."
   },
   "movimento-humano:lobsKicker": {
-    "pt": "04 / Lobs Brazilian Art",
-    "en": "04 / Lobs Brazilian Art"
+    "pt": "06 / Lobs Brazilian Art",
+    "en": "06 / Lobs Brazilian Art"
   },
   "movimento-humano:lobsHeading": {
     "pt": "Uma loja com a mesma atitude da marca.",
@@ -580,8 +588,8 @@
     "en": "UX/UI Design, E-commerce"
   },
   "movimento-humano:mobileKicker": {
-    "pt": "05 / Mobile",
-    "en": "05 / Mobile"
+    "pt": "07 / Mobile",
+    "en": "07 / Mobile"
   },
   "movimento-humano:mobileHeading": {
     "pt": "Mobile em primeiro lugar.",
@@ -592,8 +600,8 @@
     "en": "The experience needed to work just as well on the small screen: the same store, the same attitude, without losing anything along the way."
   },
   "movimento-humano:paddleKicker": {
-    "pt": "06 / Va'a Paddle",
-    "en": "06 / Va'a Paddle"
+    "pt": "08 / Va'a Paddle",
+    "en": "08 / Va'a Paddle"
   },
   "movimento-humano:paddleHeading": {
     "pt": "Construído remada a remada, com quem rema.",
@@ -612,8 +620,8 @@
     "en": "UX/UI Design"
   },
   "movimento-humano:paddleScreensKicker": {
-    "pt": "07 / Fluxo Completo",
-    "en": "07 / Full Flow"
+    "pt": "09 / Fluxo Completo",
+    "en": "09 / Full Flow"
   },
   "movimento-humano:paddleScreensHeading": {
     "pt": "O app, tela a tela.",
@@ -623,9 +631,21 @@
     "pt": "Do primeiro acesso ao resgate de emergência: a jornada completa em 20 telas.",
     "en": "From first login to emergency rescue: the full journey across 20 screens."
   },
+  "movimento-humano:paddlePrototypeKicker": {
+    "pt": "10 / Protótipo",
+    "en": "10 / Prototype"
+  },
+  "movimento-humano:paddlePrototypeHeading": {
+    "pt": "Protótipo Interativo",
+    "en": "Interactive Prototype"
+  },
+  "movimento-humano:paddlePrototypeText": {
+    "pt": "Navegue pelo fluxo completo, do onboarding ao treino.",
+    "en": "Navigate the full flow, from onboarding to training."
+  },
   "movimento-humano:paddleLandingKicker": {
-    "pt": "08 / Landing Page",
-    "en": "08 / Landing Page"
+    "pt": "11 / Landing Page",
+    "en": "11 / Landing Page"
   },
   "movimento-humano:paddleLandingHeading": {
     "pt": "A primeira parada antes da primeira remada.",

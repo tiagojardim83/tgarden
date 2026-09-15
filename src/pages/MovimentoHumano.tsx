@@ -175,27 +175,29 @@ const copy = {
     ],
     sections: [
       {
-        number: '01',
+        number: '02',
         kicker: editableCopy['movimento-humano:s0:kicker'].pt,
         heading: editableCopy['movimento-humano:s0:heading'].pt,
         text: editableCopy['movimento-humano:s0:text'].pt,
         image: showcase01,
       },
       {
-        number: '02',
+        number: '03',
         kicker: editableCopy['movimento-humano:s1:kicker'].pt,
         heading: editableCopy['movimento-humano:s1:heading'].pt,
         text: editableCopy['movimento-humano:s1:text'].pt,
         image: showcase02,
       },
       {
-        number: '03',
+        number: '04',
         kicker: editableCopy['movimento-humano:s2:kicker'].pt,
         heading: editableCopy['movimento-humano:s2:heading'].pt,
         text: editableCopy['movimento-humano:s2:text'].pt,
         image: showcase03,
       },
     ],
+    titleKicker: editableCopy['movimento-humano:titleKicker'].pt,
+    prototypeSectionKicker: editableCopy['movimento-humano:prototypeSectionKicker'].pt,
     prototypeKicker: editableCopy['movimento-humano:prototypeKicker'].pt,
     prototypeCaption: editableCopy['movimento-humano:prototypeCaption'].pt,
     closing:
@@ -220,6 +222,10 @@ const copy = {
     paddleScreensHeading: editableCopy['movimento-humano:paddleScreensHeading'].pt,
     paddleScreensText:
       editableCopy['movimento-humano:paddleScreensText'].pt,
+    paddlePrototypeKicker: editableCopy['movimento-humano:paddlePrototypeKicker'].pt,
+    paddlePrototypeHeading: editableCopy['movimento-humano:paddlePrototypeHeading'].pt,
+    paddlePrototypeText:
+      editableCopy['movimento-humano:paddlePrototypeText'].pt,
     paddleLandingKicker: editableCopy['movimento-humano:paddleLandingKicker'].pt,
     paddleLandingHeading: editableCopy['movimento-humano:paddleLandingHeading'].pt,
     paddleLandingText:
@@ -232,27 +238,29 @@ const copy = {
     ],
     sections: [
       {
-        number: '01',
+        number: '02',
         kicker: editableCopy['movimento-humano:s0:kicker'].en,
         heading: editableCopy['movimento-humano:s0:heading'].en,
         text: editableCopy['movimento-humano:s0:text'].en,
         image: showcase01,
       },
       {
-        number: '02',
+        number: '03',
         kicker: editableCopy['movimento-humano:s1:kicker'].en,
         heading: editableCopy['movimento-humano:s1:heading'].en,
         text: editableCopy['movimento-humano:s1:text'].en,
         image: showcase02,
       },
       {
-        number: '03',
+        number: '04',
         kicker: editableCopy['movimento-humano:s2:kicker'].en,
         heading: editableCopy['movimento-humano:s2:heading'].en,
         text: editableCopy['movimento-humano:s2:text'].en,
         image: showcase03,
       },
     ],
+    titleKicker: editableCopy['movimento-humano:titleKicker'].en,
+    prototypeSectionKicker: editableCopy['movimento-humano:prototypeSectionKicker'].en,
     prototypeKicker: editableCopy['movimento-humano:prototypeKicker'].en,
     prototypeCaption: editableCopy['movimento-humano:prototypeCaption'].en,
     closing:
@@ -277,6 +285,10 @@ const copy = {
     paddleScreensHeading: editableCopy['movimento-humano:paddleScreensHeading'].en,
     paddleScreensText:
       editableCopy['movimento-humano:paddleScreensText'].en,
+    paddlePrototypeKicker: editableCopy['movimento-humano:paddlePrototypeKicker'].en,
+    paddlePrototypeHeading: editableCopy['movimento-humano:paddlePrototypeHeading'].en,
+    paddlePrototypeText:
+      editableCopy['movimento-humano:paddlePrototypeText'].en,
     paddleLandingKicker: editableCopy['movimento-humano:paddleLandingKicker'].en,
     paddleLandingHeading: editableCopy['movimento-humano:paddleLandingHeading'].en,
     paddleLandingText:
@@ -301,6 +313,13 @@ export default function MovimentoHumano() {
           <p className="label text-ink-soft mb-3">{ui.project} 01 / 03</p>
           <p className="label text-red-label">2025 / UX/UI Design</p>
         </div>
+
+        <p
+          className="md:col-start-4 md:col-span-9 label text-ink-soft"
+          data-admin-id="text:movimento-humano:titleKicker"
+        >
+          {c.titleKicker}
+        </p>
 
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
@@ -373,6 +392,12 @@ export default function MovimentoHumano() {
             transition={{ duration: 0.7 }}
             className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
           >
+            <p
+              className="label text-ink-soft md:col-span-3"
+              data-admin-id="text:movimento-humano:prototypeSectionKicker"
+            >
+              {c.prototypeSectionKicker}
+            </p>
             <h2
               data-admin-id="text:movimento-humano:prototypeKicker"
               className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
@@ -589,6 +614,33 @@ export default function MovimentoHumano() {
                 ))}
               </div>
             </Marquee>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mt-8 md:mt-10"
+          >
+            <p
+              className="label text-ink-soft md:col-span-3"
+              data-admin-id="text:movimento-humano:paddlePrototypeKicker"
+            >
+              {c.paddlePrototypeKicker}
+            </p>
+            <h2
+              data-admin-id="text:movimento-humano:paddlePrototypeHeading"
+              className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+            >
+              {c.paddlePrototypeHeading}
+            </h2>
+            <p
+              data-admin-id="text:movimento-humano:paddlePrototypeText"
+              className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+            >
+              {c.paddlePrototypeText}
+            </p>
           </motion.div>
 
           <motion.div
