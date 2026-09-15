@@ -216,6 +216,10 @@ const copy = {
       editableCopy['movimento-humano:paddleText'].pt,
     paddleSector: editableCopy['movimento-humano:paddleSector'].pt,
     paddleScope: editableCopy['movimento-humano:paddleScope'].pt,
+    paddleScreensKicker: editableCopy['movimento-humano:paddleScreensKicker'].pt,
+    paddleScreensHeading: editableCopy['movimento-humano:paddleScreensHeading'].pt,
+    paddleScreensText:
+      editableCopy['movimento-humano:paddleScreensText'].pt,
     paddleLandingKicker: editableCopy['movimento-humano:paddleLandingKicker'].pt,
     paddleLandingHeading: editableCopy['movimento-humano:paddleLandingHeading'].pt,
     paddleLandingText:
@@ -269,6 +273,10 @@ const copy = {
       editableCopy['movimento-humano:paddleText'].en,
     paddleSector: editableCopy['movimento-humano:paddleSector'].en,
     paddleScope: editableCopy['movimento-humano:paddleScope'].en,
+    paddleScreensKicker: editableCopy['movimento-humano:paddleScreensKicker'].en,
+    paddleScreensHeading: editableCopy['movimento-humano:paddleScreensHeading'].en,
+    paddleScreensText:
+      editableCopy['movimento-humano:paddleScreensText'].en,
     paddleLandingKicker: editableCopy['movimento-humano:paddleLandingKicker'].en,
     paddleLandingHeading: editableCopy['movimento-humano:paddleLandingHeading'].en,
     paddleLandingText:
@@ -538,11 +546,35 @@ export default function MovimentoHumano() {
           </motion.div>
 
           <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start mt-8 md:mt-10"
+          >
+            <p className="label text-ink-soft md:col-span-3" data-admin-id="text:movimento-humano:paddleScreensKicker">
+              {c.paddleScreensKicker}
+            </p>
+            <h2
+              data-admin-id="text:movimento-humano:paddleScreensHeading"
+              className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
+            >
+              {c.paddleScreensHeading}
+            </h2>
+            <p
+              data-admin-id="text:movimento-humano:paddleScreensText"
+              className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
+            >
+              {c.paddleScreensText}
+            </p>
+          </motion.div>
+
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10 bg-ink py-10 md:py-16"
+            className="relative left-1/2 -translate-x-1/2 w-screen mt-8 md:mt-10 bg-ink py-14 md:py-16"
           >
             <Marquee duration={70}>
               <div className="flex items-center gap-4 md:gap-6 pl-4 md:pl-6">
@@ -552,7 +584,7 @@ export default function MovimentoHumano() {
                     src={src}
                     alt=""
                     data-admin-id={`image:movimento-humano:paddleScreen${i}`}
-                    className="h-[360px] md:h-[560px] w-auto rounded-2xl shrink-0"
+                    className="h-[520px] md:h-[560px] w-auto rounded-2xl shrink-0"
                   />
                 ))}
               </div>

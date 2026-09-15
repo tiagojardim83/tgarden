@@ -611,9 +611,21 @@
     "pt": "UX/UI Design",
     "en": "UX/UI Design"
   },
+  "movimento-humano:paddleScreensKicker": {
+    "pt": "07 / Fluxo Completo",
+    "en": "07 / Full Flow"
+  },
+  "movimento-humano:paddleScreensHeading": {
+    "pt": "O app, tela a tela.",
+    "en": "The app, screen by screen."
+  },
+  "movimento-humano:paddleScreensText": {
+    "pt": "Do primeiro acesso ao resgate de emergência: a jornada completa em 20 telas.",
+    "en": "From first login to emergency rescue: the full journey across 20 screens."
+  },
   "movimento-humano:paddleLandingKicker": {
-    "pt": "07 / Landing Page",
-    "en": "07 / Landing Page"
+    "pt": "08 / Landing Page",
+    "en": "08 / Landing Page"
   },
   "movimento-humano:paddleLandingHeading": {
     "pt": "A primeira parada antes da primeira remada.",
