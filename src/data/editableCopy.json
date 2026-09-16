@@ -549,11 +549,11 @@
   },
   "movimento-humano:titleKicker": {
     "pt": "01 / Movimento Humano",
-    "en": "01 / Movimento Humano"
+    "en": "01 / Human Movement"
   },
   "movimento-humano:prototypeSectionKicker": {
-    "pt": "05 / Protótipo",
-    "en": "05 / Prototype"
+    "pt": "04 / Protótipo",
+    "en": "04 / Prototype"
   },
   "movimento-humano:prototypeKicker": {
     "pt": "Protótipo Interativo",
@@ -568,8 +568,8 @@
     "en": "A HUMAN INTERFACE FOR A HUMAN PRACTICE, DESIGNED TO FEEL LIKE A GESTURE, NOT A SCREEN."
   },
   "movimento-humano:lobsKicker": {
-    "pt": "06 / Lobs Brazilian Art",
-    "en": "06 / Lobs Brazilian Art"
+    "pt": "05 / Lobs Brazilian Art",
+    "en": "05 / Lobs Brazilian Art"
   },
   "movimento-humano:lobsHeading": {
     "pt": "Uma loja com a mesma atitude da marca.",
@@ -588,8 +588,8 @@
     "en": "UX/UI Design, E-commerce"
   },
   "movimento-humano:mobileKicker": {
-    "pt": "07 / Mobile",
-    "en": "07 / Mobile"
+    "pt": "06 / Mobile",
+    "en": "06 / Mobile"
   },
   "movimento-humano:mobileHeading": {
     "pt": "Mobile em primeiro lugar.",
@@ -600,8 +600,8 @@
     "en": "The experience needed to work just as well on the small screen: the same store, the same attitude, without losing anything along the way."
   },
   "movimento-humano:paddleKicker": {
-    "pt": "08 / Va'a Paddle",
-    "en": "08 / Va'a Paddle"
+    "pt": "07 / Va'a Paddle",
+    "en": "07 / Va'a Paddle"
   },
   "movimento-humano:paddleHeading": {
     "pt": "Construído remada a remada, com quem rema.",
@@ -620,8 +620,8 @@
     "en": "UX/UI Design"
   },
   "movimento-humano:paddleScreensKicker": {
-    "pt": "09 / Fluxo Completo",
-    "en": "09 / Full Flow"
+    "pt": "08 / Fluxo Completo",
+    "en": "08 / Full Flow"
   },
   "movimento-humano:paddleScreensHeading": {
     "pt": "O app, tela a tela.",
@@ -632,8 +632,8 @@
     "en": "From first login to emergency rescue: the full journey across 20 screens."
   },
   "movimento-humano:paddlePrototypeKicker": {
-    "pt": "10 / Protótipo",
-    "en": "10 / Prototype"
+    "pt": "09 / Protótipo",
+    "en": "09 / Prototype"
   },
   "movimento-humano:paddlePrototypeHeading": {
     "pt": "Protótipo Interativo",
@@ -644,8 +644,8 @@
     "en": "Navigate the full flow, from onboarding to training."
   },
   "movimento-humano:paddleLandingKicker": {
-    "pt": "11 / Landing Page",
-    "en": "11 / Landing Page"
+    "pt": "10 / Landing Page",
+    "en": "10 / Landing Page"
   },
   "movimento-humano:paddleLandingHeading": {
     "pt": "A primeira parada antes da primeira remada.",
@@ -657,23 +657,11 @@
   },
   "movimento-humano:intro0": {
     "pt": "Movimento Humano é um ecossistema de bem-estar construído em torno de treino, comunidade e autocuidado. O produto é organizado em três estágios de prática: Semente, Fruto e Movimento, mapeados em uma interface coerente e calma que guia o usuário sem ruído.",
-    "en": "Movimento Humano is a wellness ecosystem built around training, community and self-care. The product is organized into three stages of practice: Semente, Fruto and Movimento, mapped into a coherent, calm interface that guides the user without noise."
+    "en": "Human Movement is a wellness ecosystem built around training, community and self-care. The product is organized into three stages of practice: Semente, Fruto and Movimento, mapped into a coherent, calm interface that guides the user without noise."
   },
   "movimento-humano:intro1": {
     "pt": "Cada tela é um momento de intenção: hierarquia suave, tipografia editorial e espaço generoso para que o conteúdo permaneça em foco.",
     "en": "Every screen is a moment of intention: soft hierarchy, editorial typography and generous space so the content stays in focus."
-  },
-  "movimento-humano:s0:kicker": {
-    "pt": "Conceito",
-    "en": "Concept"
-  },
-  "movimento-humano:s0:heading": {
-    "pt": "Um app que respira com você.",
-    "en": "An app that breathes with you."
-  },
-  "movimento-humano:s0:text": {
-    "pt": "Antes de desenhar telas, desenhamos o ritmo: onboarding, treino e loja precisam parecer parte do mesmo corpo, não três produtos costurados um no outro.",
-    "en": "Before drawing screens, we drew the rhythm: onboarding, training and store need to feel like the same body, not three products stitched together."
   },
   "movimento-humano:s1:kicker": {
     "pt": "Fluxo",
@@ -721,11 +709,11 @@
   },
   "movimento-humano:titleLine1": {
     "pt": "Movimento",
-    "en": "Movimento"
+    "en": "Human"
   },
   "movimento-humano:titleLine2": {
     "pt": "Humano",
-    "en": "Humano"
+    "en": "Movement"
   },
   "movimento-humano:sector": {
     "pt": "Saúde & Bem-estar Digital",

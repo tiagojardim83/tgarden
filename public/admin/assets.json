@@ -2270,7 +2270,7 @@
     "slug": "movimento-humano"
   },
   {
-    "adminId": "text:movimento-humano:s0:kicker",
+    "adminId": "text:movimento-humano:s1:kicker",
     "label": {
       "pt": "Movimento Humano — Seção 1 — Kicker (categoria pequena)",
       "en": "Movimento Humano — Section 1 — Kicker (small category label)"
@@ -2280,7 +2280,7 @@
     "slug": "movimento-humano"
   },
   {
-    "adminId": "text:movimento-humano:s0:heading",
+    "adminId": "text:movimento-humano:s1:heading",
     "label": {
       "pt": "Movimento Humano — Seção 1 — Título",
       "en": "Movimento Humano — Section 1 — Heading"
@@ -2290,7 +2290,7 @@
     "slug": "movimento-humano"
   },
   {
-    "adminId": "text:movimento-humano:s0:text",
+    "adminId": "text:movimento-humano:s1:text",
     "label": {
       "pt": "Movimento Humano — Seção 1 — Texto",
       "en": "Movimento Humano — Section 1 — Text"
@@ -2300,7 +2300,7 @@
     "slug": "movimento-humano"
   },
   {
-    "adminId": "text:movimento-humano:s1:kicker",
+    "adminId": "text:movimento-humano:s2:kicker",
     "label": {
       "pt": "Movimento Humano — Seção 2 — Kicker (categoria pequena)",
       "en": "Movimento Humano — Section 2 — Kicker (small category label)"
@@ -2310,7 +2310,7 @@
     "slug": "movimento-humano"
   },
   {
-    "adminId": "text:movimento-humano:s1:heading",
+    "adminId": "text:movimento-humano:s2:heading",
     "label": {
       "pt": "Movimento Humano — Seção 2 — Título",
       "en": "Movimento Humano — Section 2 — Heading"
@@ -2320,40 +2320,10 @@
     "slug": "movimento-humano"
   },
   {
-    "adminId": "text:movimento-humano:s1:text",
+    "adminId": "text:movimento-humano:s2:text",
     "label": {
       "pt": "Movimento Humano — Seção 2 — Texto",
       "en": "Movimento Humano — Section 2 — Text"
-    },
-    "type": "text",
-    "project": "Movimento Humano",
-    "slug": "movimento-humano"
-  },
-  {
-    "adminId": "text:movimento-humano:s2:kicker",
-    "label": {
-      "pt": "Movimento Humano — Seção 3 — Kicker (categoria pequena)",
-      "en": "Movimento Humano — Section 3 — Kicker (small category label)"
-    },
-    "type": "text",
-    "project": "Movimento Humano",
-    "slug": "movimento-humano"
-  },
-  {
-    "adminId": "text:movimento-humano:s2:heading",
-    "label": {
-      "pt": "Movimento Humano — Seção 3 — Título",
-      "en": "Movimento Humano — Section 3 — Heading"
-    },
-    "type": "text",
-    "project": "Movimento Humano",
-    "slug": "movimento-humano"
-  },
-  {
-    "adminId": "text:movimento-humano:s2:text",
-    "label": {
-      "pt": "Movimento Humano — Seção 3 — Texto",
-      "en": "Movimento Humano — Section 3 — Text"
     },
     "type": "text",
     "project": "Movimento Humano",
@@ -2540,8 +2510,8 @@
   {
     "adminId": "image:movimento-humano:s0",
     "label": {
-      "pt": "Movimento Humano — Seção 1, foto",
-      "en": "Movimento Humano — Section 1, photo"
+      "pt": "Movimento Humano — Foto de abertura",
+      "en": "Movimento Humano — Opening photo"
     },
     "path": "src/assets/images/movimento-humano/showcase-01.png",
     "project": "Movimento Humano",
@@ -2551,8 +2521,8 @@
   {
     "adminId": "image:movimento-humano:s1",
     "label": {
-      "pt": "Movimento Humano — Seção 2, foto",
-      "en": "Movimento Humano — Section 2, photo"
+      "pt": "Movimento Humano — Seção 1, foto",
+      "en": "Movimento Humano — Section 1, photo"
     },
     "path": "src/assets/images/movimento-humano/showcase-02.png",
     "project": "Movimento Humano",
@@ -2562,8 +2532,8 @@
   {
     "adminId": "image:movimento-humano:s2",
     "label": {
-      "pt": "Movimento Humano — Seção 3, foto",
-      "en": "Movimento Humano — Section 3, photo"
+      "pt": "Movimento Humano — Seção 2, foto",
+      "en": "Movimento Humano — Section 2, photo"
     },
     "path": "src/assets/images/movimento-humano/showcase-03.png",
     "project": "Movimento Humano",

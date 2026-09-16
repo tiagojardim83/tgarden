@@ -175,21 +175,16 @@ const copy = {
     ],
     sections: [
       {
+        key: 's1',
         number: '02',
-        kicker: editableCopy['movimento-humano:s0:kicker'].pt,
-        heading: editableCopy['movimento-humano:s0:heading'].pt,
-        text: editableCopy['movimento-humano:s0:text'].pt,
-        image: showcase01,
-      },
-      {
-        number: '03',
         kicker: editableCopy['movimento-humano:s1:kicker'].pt,
         heading: editableCopy['movimento-humano:s1:heading'].pt,
         text: editableCopy['movimento-humano:s1:text'].pt,
         image: showcase02,
       },
       {
-        number: '04',
+        key: 's2',
+        number: '03',
         kicker: editableCopy['movimento-humano:s2:kicker'].pt,
         heading: editableCopy['movimento-humano:s2:heading'].pt,
         text: editableCopy['movimento-humano:s2:text'].pt,
@@ -238,21 +233,16 @@ const copy = {
     ],
     sections: [
       {
+        key: 's1',
         number: '02',
-        kicker: editableCopy['movimento-humano:s0:kicker'].en,
-        heading: editableCopy['movimento-humano:s0:heading'].en,
-        text: editableCopy['movimento-humano:s0:text'].en,
-        image: showcase01,
-      },
-      {
-        number: '03',
         kicker: editableCopy['movimento-humano:s1:kicker'].en,
         heading: editableCopy['movimento-humano:s1:heading'].en,
         text: editableCopy['movimento-humano:s1:text'].en,
         image: showcase02,
       },
       {
-        number: '04',
+        key: 's2',
+        number: '03',
         kicker: editableCopy['movimento-humano:s2:kicker'].en,
         heading: editableCopy['movimento-humano:s2:heading'].en,
         text: editableCopy['movimento-humano:s2:text'].en,
@@ -345,8 +335,18 @@ export default function MovimentoHumano() {
         </div>
       </div>
 
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="-mx-6 md:-mx-10 mt-16 md:mt-24 bg-ink/5"
+      >
+        <PanCoverImage src={showcase01} alt="Movimento Humano" adminId="image:movimento-humano:s0" />
+      </motion.div>
+
       <div className="flex flex-col gap-16 md:gap-24 mt-16 md:mt-24">
-        {c.sections.map((s, i) => (
+        {c.sections.map((s) => (
           <div key={s.number}>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -355,17 +355,17 @@ export default function MovimentoHumano() {
               transition={{ duration: 0.7 }}
               className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-4 md:items-start"
             >
-              <p className="label text-ink-soft md:col-span-3" data-admin-id={`text:movimento-humano:s${i}:kicker`}>
+              <p className="label text-ink-soft md:col-span-3" data-admin-id={`text:movimento-humano:${s.key}:kicker`}>
                 {s.number} / {s.kicker}
               </p>
               <h2
-                data-admin-id={`text:movimento-humano:s${i}:heading`}
+                data-admin-id={`text:movimento-humano:${s.key}:heading`}
                 className="md:col-start-4 md:col-span-9 font-display uppercase text-2xl md:text-4xl leading-tight"
               >
                 {s.heading}
               </h2>
               <p
-                data-admin-id={`text:movimento-humano:s${i}:text`}
+                data-admin-id={`text:movimento-humano:${s.key}:text`}
                 className="md:col-start-4 md:col-span-9 text-sm md:text-base leading-relaxed text-ink-soft"
               >
                 {s.text}
@@ -379,7 +379,7 @@ export default function MovimentoHumano() {
               transition={{ duration: 0.8 }}
               className="-mx-6 md:-mx-10 mt-8 md:mt-10 bg-ink/5"
             >
-              <PanCoverImage src={s.image} alt={s.heading} adminId={`image:movimento-humano:s${i}`} />
+              <PanCoverImage src={s.image} alt={s.heading} adminId={`image:movimento-humano:${s.key}`} />
             </motion.div>
           </div>
         ))}
@@ -648,7 +648,7 @@ export default function MovimentoHumano() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-8 md:mt-10 aspect-[3/5] md:aspect-video bg-ink"
+            className="mt-8 md:mt-10 h-[88dvh] md:h-auto md:aspect-video bg-ink"
           >
             <iframe
               className="w-full h-full"
