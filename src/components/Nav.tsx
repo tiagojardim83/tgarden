@@ -109,7 +109,7 @@ export default function Nav() {
               <span className="h-[2px] bg-paper block -rotate-45 -translate-y-[3px]" />
             </button>
 
-            <img src={logoMark} alt="TGarden" className="w-28 h-28 shrink-0" />
+            <img src={logoMark} alt="TGarden" className="w-56 h-56 shrink-0" />
 
             <div className="w-full max-w-sm border-t border-paper/30 shrink-0">
               {navItems.map((item, i) => (
@@ -126,7 +126,7 @@ export default function Nav() {
               ))}
             </div>
 
-            <div className="flex items-center justify-center flex-wrap gap-6 w-full shrink-0">
+            <div className="flex items-center justify-center flex-wrap gap-6 w-full shrink-0 mt-4">
               {socials.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="text-ink">
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
