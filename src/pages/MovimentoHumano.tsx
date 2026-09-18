@@ -417,12 +417,12 @@ export default function MovimentoHumano() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-8 md:mt-10 aspect-[3/5] md:aspect-video bg-ink"
+            className="mt-8 md:mt-10 h-[930px] md:h-[960px] bg-ink"
           >
             <iframe
               className="w-full h-full"
               title={c.prototypeKicker}
-              src="https://embed.figma.com/proto/A359K834znCzDXpKtlNCML/MOVIMENTO-HUMANO?node-id=14-55&starting-point-node-id=14%3A28&embed-host=share"
+              src="https://movimento-humano-app.vercel.app/"
               allowFullScreen
             />
           </motion.div>
