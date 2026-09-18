@@ -98,7 +98,7 @@ export default function Nav() {
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="md:hidden fixed inset-0 z-[100] bg-red flex flex-col items-center px-6 pt-20 pb-8"
+            className="md:hidden fixed inset-0 z-[100] bg-red flex flex-col items-center justify-center gap-10 px-6 py-12"
           >
             <button
               className="absolute top-6 right-6 flex flex-col gap-1.5 w-7"
@@ -109,23 +109,21 @@ export default function Nav() {
               <span className="h-[2px] bg-paper block -rotate-45 -translate-y-[3px]" />
             </button>
 
-            <img src={logoMark} alt="TGarden" className="w-40 h-40 shrink-0" />
+            <img src={logoMark} alt="TGarden" className="w-28 h-28 shrink-0" />
 
-            <div className="flex-1 flex flex-col items-center justify-center w-full">
-              <div className="w-full max-w-sm border-t border-paper/30">
-                {navItems.map((item, i) => (
-                  <motion.button
-                    key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + i * 0.06 }}
-                    onClick={() => scrollTo(item.id)}
-                    className="w-full border-b border-paper/30 py-5 font-display uppercase text-paper text-3xl"
-                  >
-                    {item.label}
-                  </motion.button>
-                ))}
-              </div>
+            <div className="w-full max-w-sm border-t border-paper/30 shrink-0">
+              {navItems.map((item, i) => (
+                <motion.button
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.06 }}
+                  onClick={() => scrollTo(item.id)}
+                  className="w-full border-b border-paper/30 py-5 font-display uppercase text-paper text-3xl"
+                >
+                  {item.label}
+                </motion.button>
+              ))}
             </div>
 
             <div className="flex items-center justify-center flex-wrap gap-6 w-full shrink-0">
