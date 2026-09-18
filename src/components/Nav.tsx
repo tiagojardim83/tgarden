@@ -98,7 +98,7 @@ export default function Nav() {
             animate={{ clipPath: 'inset(0 0 0% 0)' }}
             exit={{ clipPath: 'inset(0 0 100% 0)' }}
             transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-            className="md:hidden fixed inset-0 z-[100] bg-red flex flex-col items-center justify-center gap-10 px-6 py-12"
+            className="md:hidden fixed inset-0 z-[100] bg-red flex items-center justify-center px-6"
           >
             <button
               className="absolute top-6 right-6 flex flex-col gap-1.5 w-7"
@@ -109,7 +109,11 @@ export default function Nav() {
               <span className="h-[2px] bg-paper block -rotate-45 -translate-y-[3px]" />
             </button>
 
-            <img src={logoMark} alt="TGarden" className="w-56 h-56 shrink-0" />
+            <img
+              src={logoMark}
+              alt="TGarden"
+              className="absolute top-6 [@media(max-height:700px)]:top-3 w-56 h-56 [@media(max-height:700px)]:w-24 [@media(max-height:700px)]:h-24 shrink-0"
+            />
 
             <div className="w-full max-w-sm border-t border-paper/30 shrink-0">
               {navItems.map((item, i) => (
@@ -119,14 +123,14 @@ export default function Nav() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.06 }}
                   onClick={() => scrollTo(item.id)}
-                  className="w-full border-b border-paper/30 py-5 font-display uppercase text-paper text-3xl"
+                  className="w-full border-b border-paper/30 py-4 font-display uppercase text-paper text-3xl"
                 >
                   {item.label}
                 </motion.button>
               ))}
             </div>
 
-            <div className="flex items-center justify-center flex-wrap gap-6 w-full shrink-0 mt-4">
+            <div className="absolute bottom-10 flex items-center justify-center flex-wrap gap-6 w-full px-6 shrink-0">
               {socials.map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="text-ink">
                   <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
