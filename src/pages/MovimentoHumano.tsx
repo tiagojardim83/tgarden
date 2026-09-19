@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { m as motion, useInView, useScroll, useSpring, useTransform } from 'motion/react'
 import { useLang } from '../lib/lang'
@@ -107,60 +107,6 @@ function LobsBuild({
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
         />
       </motion.div>
-    </div>
-  )
-}
-
-// Renders the iframe at the prototype's own native mobile width, then scales
-// it down with a CSS transform to fit whatever width the container actually
-// gets. This keeps the embedded page's internal text wrapping identical to
-// its real mobile layout, instead of reflowing (and looking stretched) at
-// our narrower container width.
-function ScaledPrototype({
-  src,
-  title,
-  nativeWidth,
-  nativeHeight,
-  className,
-}: {
-  src: string
-  title: string
-  nativeWidth: number
-  nativeHeight: number
-  className?: string
-}) {
-  const wrapperRef = useRef<HTMLDivElement>(null)
-  const [scale, setScale] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const el = wrapperRef.current
-    if (!el) return
-    // Scale width and height independently to fill the wrapper's fixed box
-    // (e.g. h-[88dvh]) exactly, no cropping and no letterboxing. The two
-    // ratios are close enough that the resulting stretch is negligible.
-    const update = () => setScale({ x: el.offsetWidth / nativeWidth, y: el.offsetHeight / nativeHeight })
-    update()
-    const ro = new ResizeObserver(update)
-    ro.observe(el)
-    return () => ro.disconnect()
-  }, [nativeWidth, nativeHeight])
-
-  return (
-    <div ref={wrapperRef} className={className}>
-      {scale.x > 0 && (
-        <iframe
-          title={title}
-          src={src}
-          allowFullScreen
-          style={{
-            width: nativeWidth,
-            height: nativeHeight,
-            transform: `scale(${scale.x}, ${scale.y})`,
-            transformOrigin: 'top left',
-            border: 0,
-          }}
-        />
-      )}
     </div>
   )
 }
@@ -466,20 +412,12 @@ export default function MovimentoHumano() {
             </p>
           </motion.div>
 
-          <ScaledPrototype
-            src="https://movimento-humano-app.vercel.app/"
-            title={c.prototypeKicker}
-            nativeWidth={402}
-            nativeHeight={918}
-            className="md:hidden mt-8 h-[88dvh] bg-ink overflow-hidden"
-          />
-
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="hidden md:block md:mt-10 h-[960px] bg-ink"
+            className="mt-8 md:mt-10 h-[88dvh] md:h-[960px] bg-ink"
           >
             <iframe
               className="w-full h-full"
