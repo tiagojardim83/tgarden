@@ -143,7 +143,7 @@ function ScaledPrototype({
   }, [nativeWidth])
 
   return (
-    <div ref={wrapperRef} className={className} style={{ height: scale ? nativeHeight * scale : undefined }}>
+    <div ref={wrapperRef} className={className}>
       {scale > 0 && (
         <iframe
           title={title}
@@ -468,7 +468,7 @@ export default function MovimentoHumano() {
             title={c.prototypeKicker}
             nativeWidth={402}
             nativeHeight={918}
-            className="md:hidden mt-8 bg-ink overflow-hidden"
+            className="md:hidden mt-8 h-[88dvh] bg-ink overflow-hidden"
           />
 
           <motion.div
