@@ -135,15 +135,18 @@ function ScaledPrototype({
   useEffect(() => {
     const el = wrapperRef.current
     if (!el) return
-    const update = () => setScale(el.offsetWidth / nativeWidth)
+    // Scale to the wrapper's height (a fixed box, e.g. h-[88dvh]) so the
+    // full native-height content always fits with nothing cropped off the
+    // bottom. Any leftover width just centers with a bit of letterboxing.
+    const update = () => setScale(el.offsetHeight / nativeHeight)
     update()
     const ro = new ResizeObserver(update)
     ro.observe(el)
     return () => ro.disconnect()
-  }, [nativeWidth])
+  }, [nativeHeight])
 
   return (
-    <div ref={wrapperRef} className={className}>
+    <div ref={wrapperRef} className={`${className} flex items-center justify-center`}>
       {scale > 0 && (
         <iframe
           title={title}
@@ -153,8 +156,9 @@ function ScaledPrototype({
             width: nativeWidth,
             height: nativeHeight,
             transform: `scale(${scale})`,
-            transformOrigin: 'top left',
+            transformOrigin: 'center center',
             border: 0,
+            flexShrink: 0,
           }}
         />
       )}
