@@ -130,24 +130,24 @@ function ScaledPrototype({
   className?: string
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null)
-  const [scale, setScale] = useState(0)
+  const [scale, setScale] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     const el = wrapperRef.current
     if (!el) return
-    // Scale to the wrapper's height (a fixed box, e.g. h-[88dvh]) so the
-    // full native-height content always fits with nothing cropped off the
-    // bottom. Any leftover width just centers with a bit of letterboxing.
-    const update = () => setScale(el.offsetHeight / nativeHeight)
+    // Scale width and height independently to fill the wrapper's fixed box
+    // (e.g. h-[88dvh]) exactly, no cropping and no letterboxing. The two
+    // ratios are close enough that the resulting stretch is negligible.
+    const update = () => setScale({ x: el.offsetWidth / nativeWidth, y: el.offsetHeight / nativeHeight })
     update()
     const ro = new ResizeObserver(update)
     ro.observe(el)
     return () => ro.disconnect()
-  }, [nativeHeight])
+  }, [nativeWidth, nativeHeight])
 
   return (
-    <div ref={wrapperRef} className={`${className} flex items-center justify-center`}>
-      {scale > 0 && (
+    <div ref={wrapperRef} className={className}>
+      {scale.x > 0 && (
         <iframe
           title={title}
           src={src}
@@ -155,10 +155,9 @@ function ScaledPrototype({
           style={{
             width: nativeWidth,
             height: nativeHeight,
-            transform: `scale(${scale})`,
-            transformOrigin: 'center center',
+            transform: `scale(${scale.x}, ${scale.y})`,
+            transformOrigin: 'top left',
             border: 0,
-            flexShrink: 0,
           }}
         />
       )}
